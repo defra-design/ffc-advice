@@ -1,0 +1,78 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Search results</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <p class="govuk-body">4 results found</p>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="gf-fund-details">Sustainable Farming Incentive</a>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Funded by: <span class= "govuk-!-font-weight-regular">Government</span></li>
+        <li class="govuk-!-font-weight-bold">Fund type: <span class= "govuk-!-font-weight-regular">Scheme</span></li>
+      </ul>
+      <p>Through this scheme, we will pay farmers to produce public goods such as water quality, biodiversity, animal health and welfare and climate change mitigation, alongside food production.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="gf-fund-details">Farming Equipment and Technology Fund</a>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Funded by: <span class= "govuk-!-font-weight-regular">Government</span></li>
+        <li class="govuk-!-font-weight-bold">Fund type: <span class= "govuk-!-font-weight-regular">Grant</span></li>
+        <li class="govuk-!-font-weight-bold">Fund group: <span class= "govuk-!-font-weight-regular">Farming investment fund</span></li>
+      </ul>
+      <p>This fund provides grants towards the cost of equipment and technology to improve the productivity of farms in a sustainable way.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="gf-fund-details">Local nature recovery</a>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Funded by: <span class= "govuk-!-font-weight-regular">Government</span></li>
+        <li class="govuk-!-font-weight-bold">Fund type: <span class= "govuk-!-font-weight-regular">Scheme</span></li>
+      </ul>
+      <p>Local Nature Recovery is the improved and more ambitious successor to the Countryside Stewardship scheme in England. It will pay for locally-targeted actions to make space for nature in the farmed landscape and the wider countryside, alongside food production.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="gf-fund-details">Landscape recovery</a>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Funded by: <span class= "govuk-!-font-weight-regular">Government</span></li>
+        <li class="govuk-!-font-weight-bold">Fund type: <span class= "govuk-!-font-weight-regular">Scheme</span></li>
+      </ul>
+      <p>This scheme is for landowners and managers who want to take a more radical and large-scale approach to producing environmental and climate goods on their land.</p>
+    </div>
+
+  </div>
+</div>
+
+
+
+{% endblock %}
