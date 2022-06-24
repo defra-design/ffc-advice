@@ -26,13 +26,13 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="../fa-results" method="post" novalidate>
+        <form action="fa-receive-advice-type" method="post" novalidate>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  What types of funding would you like to find?
+                  What would you like funding advice on?
                 </h1>
               </legend>
               <div id="waste-hint" class="govuk-hint">
@@ -40,16 +40,31 @@
               </div>
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste">
-                    Government funding
+                  <input class="govuk-checkboxes__input" id="local-nature-recovery" name="advice-type" type="checkbox" value="local-nature-recovery">
+                  <label class="govuk-label govuk-checkboxes__label" for="local-nature-recovery">
+                    Local nature recovery
                   </label>
+                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
+                    This scheme will particularly contribute to our targets for trees, peatland restoration, habitat creation and restoration and natural flood management.
+                  </div>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste-2">
-                    Funding from non-government organisations
+                  <input class="govuk-checkboxes__input" id="landscape-recovery" name="advice-type" type="checkbox" value="landscape-recovery">
+                  <label class="govuk-label govuk-checkboxes__label" for="landscape-recovery">
+                    Landscape recovery
                   </label>
+                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
+                    This will pay landowners or managers who want to take a more radical and large-scale approach to producing environmental and climate outcomes through land use change and habitat and ecosystem restoration.
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="forestry" name="advice-type" type="checkbox" value="forestry">
+                  <label class="govuk-label govuk-checkboxes__label" for="forestry">
+                    Sustainable farming
+                  </label>
+                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
+                    This focuses on making agricultural activities more sustainable, including reducing inorganic fertiliser and pesticide use, taking care of our soils and improving farmland biodiversity, water quality, air quality and carbon sequestration. 
+                  </div>
                 </div>
               </div>
             </fieldset>
@@ -62,6 +77,18 @@
       </div>
     </div>
 
+    <div class="govuk-grid-row govuk-!-margin-top-4">
+      <div class="govuk-grid-column-two-thirds" style="padding-top: 20px; border-top: 1px solid #b1b4b6;">
+  
+        <h2 class="govuk-heading-m govuk-!-padding-top-2">If you need help</h2>
+        <p class="govuk-body-m">You can call our helpline to assist you with advice or contact us through the following email address.</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+          <li><span id="phoneNumber">0123 4567 890</span>, Monday to Friday 8.30am to 5pm</li>
+          <li><a href="" class="govuk-link" id="emailLink">email@defra.gov.uk</a></li>
+        </ul>
+
+      </div>
+    </div>
 
 
 {% endblock %}
