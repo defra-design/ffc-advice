@@ -24,7 +24,7 @@
 {% block content %}
 
     
-    <form action="pr-calculation" method="post" novalidate>
+    <form action="../_landing-page/funding-for-farmers-guidance" method="post" novalidate>
 
       <div class="govuk-form-group">
 
@@ -41,15 +41,17 @@
                   Your estimated progressive reductions are based on a starting payment amount of <br><strong>£50,000.00</strong>
                 </div>
               </div>
+            </div>
+          </div>
 
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-two-thirds">
               <!--YOUR progressive reductions -->
               <table class="govuk-table govuk-!-margin-top-6">
-                <caption class="govuk-table__caption govuk-table__caption--m">Your progressive reductions</caption>
+                <caption class="govuk-table__caption govuk-table__caption--m">Your progressive reductions and estimated payments</caption>
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">Scheme year</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">£30,000.00<br>or less</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Between £30,000.00<br>and £50,000.00</th>
                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total progressive<br>reductions</th>
                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Estimated payment</th>
                   </tr>
@@ -57,66 +59,69 @@
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">2021</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£1,500.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£2,000.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£3,500.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£46,500.00</strong></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">2022</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£6,000.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£5,000.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£11,000.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£39,000.00</strong></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">2023</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£10,500.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£8,000.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£18,500.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£31,500.00</strong></td>
                   </tr>
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header">2024</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£15,000.00</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">£11,000.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric">£26,000.00</td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><strong>£24,000.00</strong></td>
                   </tr>
                 </tbody>
               </table>
 
-              <!-- Progressive reductions -->
-              <table class="govuk-table govuk-!-margin-top-9">
-                <caption class="govuk-table__caption govuk-table__caption--m">Progressive reductions calculation</caption>
+              <!-- Progressive reductions
+              <p class="govuk-body-m govuk-!-margin-top-9">The follow table show the percentage and value of the reduction per year.</p>
+              <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Progressive reductions</caption>
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header govuk-!-width-one-half">Scheme year</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">2021</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">2022</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">2023</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">2024</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">£30,000.00 or less</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Amounts between £30,000.00 and £50,000.00</th>
                   </tr>
                 </thead>
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header govuk-!-width-one-half">£30,000.00 or less</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">5%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">20%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">35%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">50%</td>
+                    <th scope="row" class="govuk-table__header govuk-!-width-one-half">2021</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">5%<br>£1,500.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">10%<br>£2,00.00</td>
                   </tr>
                   <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header govuk-!-width-one-half">amounts above £30,000.00 and no more than £50,000.00</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">10%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">25%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">40%</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">55%</td>
+                    <th scope="row" class="govuk-table__header govuk-!-width-one-half">2022</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">20%<br>£6,000.000</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">25%<br>£5,000.00</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-width-one-half">2023</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">35%<br>£10,500.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">40%<br>£8,000.00</td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <th scope="row" class="govuk-table__header govuk-!-width-one-half">2024</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">50%<br>£15,000.00</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">55%<br>£11,000.00</td>
                   </tr>
                 </tbody>
               </table>
-
+              -->
             
+              <p class="govuk-body-m govuk-!-padding-top-4">For more information on regulations, schemes, and to connect with advisers and local farming clusters, find out more from our funding for farmers hub.</p>
+  
+              <button class="govuk-button" data-module="govuk-button">
+                Funding for farmers hub 
+              </button>
+
             </div>
           </div>
 
@@ -129,10 +134,8 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
   
-        <h2 class="govuk-heading-m">If you need help</h2>
-        <p class="govuk-body-m">If you require help in using this calculator, please call the Rural Payments helpline on <span id="phoneNumber"><a href="tel:03000 200 301">03000 200 301</a></span>, Monday to Friday 8.30am to 5pm.</p>
-  
-        <p class="govuk-body-m">If you would like more information about schemes and grants funded through the reductions to BPS, please visit the our <a href="https://www.gov.uk/government/collections/rural-payments-and-grants">Rural payments and grants</a> page.</p>
+        <h2 class="govuk-heading-m">Get help</h2>
+        <p class="govuk-body-m">If you need help with the calculator, call the Defra Rural Service helpline on  <span id="phoneNumber"><a href="tel:03000 200 301">03000 200 301</a></span>.</p>
   
         <div class="govuk-!-margin-top-6" style="padding:20px; background-color:#f3f2f1; border-left-color:#666;">
           <h2 class="govuk-heading-m">Give feedback on this service</h2>
