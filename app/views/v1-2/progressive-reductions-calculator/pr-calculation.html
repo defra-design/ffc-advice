@@ -38,7 +38,7 @@
                   Calculation complete
                 </h1>
                 <div class="govuk-panel__body">
-                  Your estimated progressive reductions are based on a starting payment amount of <br><strong>{{ data['starting-amount'] or "£50,000.00" }}</strong>
+                  Your estimated progressive reductions are based on a starting payment amount of <br><strong>{{ data['starting-amount'] | getFormattedValue or "£50,000.00" }}</strong>
                 </div>
               </div>
 
@@ -106,10 +106,10 @@
                 <tbody class="govuk-table__body">
                   <tr class="govuk-table__row">
                     <th scope="row" class="govuk-table__header govuk-!-width-one-half">£30,000.00 or less</th>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['starting-amount'] | calculateReductionTier(2021, "<30") or "£1,500.00" }}</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['starting-amount'] | calculateReductionTier(2022, "<30") or "£6,000.00" }}</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['starting-amount'] | calculateReductionTier(2023, "<30") or "£10,500.00" }}</td>
-                    <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['starting-amount'] | calculateReductionTier(2024, "<30") or "£15,000.00" }}</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['starting-amount'] | calculateReductionTier(2021, "30") or "£1,500.00" }}</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['starting-amount'] | calculateReductionTier(2022, "30") or "£6,000.00" }}</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['starting-amount'] | calculateReductionTier(2023, "30") or "£10,500.00" }}</td>
+                    <td class="govuk-table__cell govuk-table__cell--numeric">{{ data['starting-amount'] | calculateReductionTier(2024, "30") or "£15,000.00" }}</td>
                   </tr>
                   <tr class="govuk-table__row" id="30-50">
                     <th scope="row" class="govuk-table__header govuk-!-width-one-half">amounts above £30,000.00 and no more than £50,000.00</th>
