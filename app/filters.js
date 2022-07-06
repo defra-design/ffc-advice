@@ -39,6 +39,65 @@ module.exports = function (env) {
   ------------------------------------------------------------------ */
 
   /* ------------------------------------------------------------------
+    Progressive reduction calculator functions
+  ------------------------------------------------------------------ */
+
+  var limits = {
+    '<30': { min: 0, max: 30000, '2021': 0.05, '2022': 0.2, '2023': 0.35, '2024': 0.5 },	
+    '30-50': { min: 30000, max: 50000, '2021': 0.1, '2022': 0.25, '2023': 0.4, '2024': 0.55 },
+    '50-150': { min: 50000, max: 150000, '2021': 0.2, '2022': 0.35, '2023': 0.5, '2024': 0.65 },
+    '>150': { min: 150000, max: Infinity, '2021': 0.25, '2022': 0.4, '2023': 0.55, '2024': 0.7 },
+  
+  }
+  
+  var doCalc = function (amount, year, tier) {
+    return (Math.min(Math.max(amount, limits[tier].min), limits[tier].max) - limits[tier].min) * limits[tier][year]
+  }
+  
+  var parseValue = function (amount) {
+    amount = amount.replace(/[^0-9.-]+/g,"") // Remove anything not a digit or decimal point
+    return parseFloat(amount) // Convert into a number
+  }
+  
+  var formatValue = function (amount) {
+    var formatter = new Intl.NumberFormat('en-US', {
+      style: 'currency',
+      currency: 'GBP'
+    });
+  
+    return formatter.format(amount) // Format as currency
+  }
+  
+filters.getFormattedValue = function (amount) {
+    amount = parseValue(amount)
+    return formatValue(amount)
+  }
+  
+filters.calculateReduction = function(totalAmount, year) {
+    totalAmount = parseValue(totalAmount)
+    totalAmount = doCalc(totalAmount, year, '<30') 
+    + doCalc(totalAmount, year, '30-50') 
+    + doCalc(totalAmount, year, '50-150') 
+    + doCalc(totalAmount, year, '>150') // Apply reduction
+    return formatValue(totalAmount)
+  }
+  
+filters.calculateReductionTier = function(totalAmount, year, tier) {
+    totalAmount = parseValue(totalAmount)
+    totalAmount = doCalc (totalAmount, year, tier) // Apply reduction
+    return formatValue(totalAmount)
+  }
+  
+filters.calculatePayment = function(totalAmount, year) {
+    totalAmount = parseValue(totalAmount)
+    totalAmount = totalAmount - (doCalc(totalAmount, year, '<30') 
+      + doCalc(totalAmount, year, '30-50') 
+      + doCalc(totalAmount, year, '50-150') 
+      + doCalc(totalAmount, year, '>150')) // Apply reduction
+    return formatValue(totalAmount)
+  }
+
+  /* ------------------------------------------------------------------
     keep the following line to return your filters to the app
   ------------------------------------------------------------------ */
   return filters
