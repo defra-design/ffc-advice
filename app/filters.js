@@ -67,33 +67,33 @@ module.exports = function (env) {
   
     return formatter.format(amount) // Format as currency
   }
-  
-filters.getFormattedValue = function (amount) {
+
+  filters.getFormattedValue = function (amount) {
     amount = parseValue(amount)
     return formatValue(amount)
   }
   
-filters.calculateReduction = function(totalAmount, year) {
+  filters.calculateReduction = function(totalAmount, year) {
     totalAmount = parseValue(totalAmount)
-    totalAmount = doCalc(totalAmount, year, '30') 
+    totalAmount = doCalc(totalAmount, year, '<30') 
     + doCalc(totalAmount, year, '30-50') 
     + doCalc(totalAmount, year, '50-150') 
-    + doCalc(totalAmount, year, '150') // Apply reduction
+    + doCalc(totalAmount, year, '>150') // Apply reduction
     return formatValue(totalAmount)
   }
   
-filters.calculateReductionTier = function(totalAmount, year, tier) {
+  filters.calculateReductionTier = function(totalAmount, year, tier) {
     totalAmount = parseValue(totalAmount)
     totalAmount = doCalc (totalAmount, year, tier) // Apply reduction
     return formatValue(totalAmount)
   }
   
-filters.calculatePayment = function(totalAmount, year) {
+  filters.calculatePayment = function(totalAmount, year) {
     totalAmount = parseValue(totalAmount)
-    totalAmount = totalAmount - (doCalc(totalAmount, year, '30') 
+    totalAmount = totalAmount - (doCalc(totalAmount, year, '<30') 
       + doCalc(totalAmount, year, '30-50') 
       + doCalc(totalAmount, year, '50-150') 
-      + doCalc(totalAmount, year, '150')) // Apply reduction
+      + doCalc(totalAmount, year, '>150')) // Apply reduction
     return formatValue(totalAmount)
   }
 
