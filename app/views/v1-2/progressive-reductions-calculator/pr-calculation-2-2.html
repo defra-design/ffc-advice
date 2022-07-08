@@ -24,7 +24,7 @@
 {% block content %}
 
     
-    <form action="https://www.gov.uk/guidance/funding-for-farmers" method="post" novalidate>
+    <form action="../_landing-page/funding-for-farmers-guidance" method="post" novalidate>
 
       <div class="govuk-form-group">
 
@@ -38,7 +38,7 @@
                   Calculation complete
                 </h1>
                 <div class="govuk-panel__body">
-                  Your estimated progressive reductions are based on a starting payment amount of <br><strong>{{ data['starting-amount'] | getFormattedValue or "£50,000.00" }}</strong>
+                  Your estimated BPS payments are based on a starting payment amount of <br><strong>{{ data['starting-amount'] | getFormattedValue or "£50,000.00" }}</strong>
                 </div>
               </div>
             </div>
@@ -48,11 +48,11 @@
             <div class="govuk-grid-column-two-thirds">
               <!-- Estimated payments -->
               <table class="govuk-table govuk-!-margin-top-6">
-                <caption class="govuk-table__caption govuk-table__caption--m">Your progressive reductions and estimated payments</caption>
+                <caption class="govuk-table__caption govuk-table__caption--m">Your reductions and estimated payments</caption>
                 <thead class="govuk-table__head">
                   <tr class="govuk-table__row">
                     <th scope="col" class="govuk-table__header">Scheme year</th>
-                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total progressive<br>reductions</th>
+                    <th scope="col" class="govuk-table__header govuk-table__header--numeric">Total <br>reductions</th>
                     <th scope="col" class="govuk-table__header govuk-table__header--numeric">Estimated payment</th>
                   </tr>
                 </thead>
@@ -79,12 +79,6 @@
                   </tr>
                 </tbody>
               </table>
-            
-              <p class="govuk-body-m govuk-!-padding-top-4">For more information on regulations, schemes, and to connect with advisers and local farming clusters, find out more from our funding for farmers hub.</p>
-  
-              <button class="govuk-button" data-module="govuk-button">
-                Funding for farmers hub 
-              </button>
 
             </div>
           </div>
@@ -97,13 +91,12 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-  
-        <h2 class="govuk-heading-m">Get help</h2>
-        <p class="govuk-body-m">If you need help with the calculator, call the Defra Rural Service helpline on  <span id="phoneNumber"><a href="tel:03000 200 301">03000 200 301</a></span>.</p>
-  
-        <div class="govuk-!-margin-top-6" style="padding:20px; background-color:#f3f2f1; border-left-color:#666;">
+        <p class="govuk-body">If you have any queries about your payments, call the Defra Rural Service helpline on  <span id="phoneNumber"><a href="tel:03000 200 301">03000 200 301</a></span>.</p>
+        <p class="govuk-body">You can also apply for money to improve the environment and your farm's productivity.  <a href="https://www.gov.uk/guidance/funding-for-farmers">Check what funding is available to you</a>.</p>
+       
+        <div class="govuk-!-margin-top-8" style="padding:20px; background-color:#f3f2f1; border-left-color:#666;">
           <h2 class="govuk-heading-m">Give feedback on this service</h2>
-          <p class="govuk-body-m">Take a 3 minute survey about your application so that we can improve the service. The survey will open in a new window.<br><br>
+          <p class="govuk-body">Take a 3 minute survey about your application so that we can improve the service. The survey will open in a new window.<br><br>
             <a href="" target="_blank" class="govuk-link">Give feedback</a>
           </p>
         </div>
