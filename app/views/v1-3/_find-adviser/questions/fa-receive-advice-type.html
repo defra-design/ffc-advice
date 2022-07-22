@@ -1,0 +1,101 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="fa-adviser-session-type" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  How do you want to receive advice?
+                </h1>
+              </legend>
+              <div id="receiving-advice-hint" class="govuk-hint">
+                Choose from the options below the best method of receiving advice that suits your needs.
+              </div>
+              <h2 class="govuk-heading-m govuk-!-margin-top-6">I would like to:</h2>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="contact-adviser" name="advice-type" type="radio" value="contact-an-adviser">
+                  <label class="govuk-label govuk-radios__label" for="contact-adviser">
+                    contact an adviser
+                  </label>
+                  <div id="contact-adviser-hint" class="govuk-hint govuk-radios__hint">
+                    One to one advice in person or via digital channels.
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="group-adviser-session" name="advice-type" type="radio" value="join-a-group-advisery-session">
+                  <label class="govuk-label govuk-radios__label" for="group-adviser-session">
+                    join a group advisery session
+                  </label>
+                  <div id="group-adviser-session-hint" class="govuk-hint govuk-radios__hint">
+                    Engage with your peers in an adviser-led webinar or in-person conferences and local events.
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="facilitation-group" name="advice-type" type="radio" value="join-a-facilitation-group">
+                  <label class="govuk-label govuk-radios__label" for="facilitation-group">
+                    join a facilitation group
+                  </label>
+                  <div id="facilitation-group-hint" class="govuk-hint govuk-radios__hint">
+                    Collaborate with your neighbours in cross-boundary schemes; such as wildlife corridors.
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="farming-cluster" name="advice-type" type="radio" value="join-a-farming-cluster">
+                  <label class="govuk-label govuk-radios__label" for="farming-cluster">
+                    Join a farming cluster
+                  </label>
+                  <div id="farming-cluster-hint" class="govuk-hint govuk-radios__hint">
+                    Connect with your neighbours in established social networks.
+                  </div>
+                </div>
+                <div class="govuk-radios__divider">or</div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="funding-application" name="advice-type" type="radio" value="continue-with-funding-application">
+                  <label class="govuk-label govuk-radios__label" for="funding-application">
+                    Continue with funding application
+                  </label>
+                  <div id="funding-application-hint" class="govuk-hint govuk-radios__hint">
+                    You will first be presented with an eligibility questionnaire.
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}

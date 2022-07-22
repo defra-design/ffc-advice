@@ -1,0 +1,119 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<style>
+  #shortlist {
+    background-color: #f3f2f1;
+    border: 1px solid #000;
+    display: block;
+    height: auto;
+    margin-top: 64px;
+    padding: 16px 16px 0px 16px;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Based on your requirements, these are the advisers available</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">5 results found</p>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="fa-adviser-details">Gerard Martins</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="#">Remove</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Experience (years): <span class= "govuk-!-font-weight-regular">20</span></li>
+        <li class="govuk-!-font-weight-bold">Advice sectors: <span class= "govuk-!-font-weight-regular">Arable, Pastoral, Mixed</span></li>
+        <li class="govuk-!-font-weight-bold">Counties covered: <span class= "govuk-!-font-weight-regular">Herefordshire, Worcestershire, Gloucestershire</span></li>
+      </ul>
+      <p>Gerard has been providing advice to farmers and land managers in Herefordshire, Worcestershire and Gloucestershire for over 20 years. He specialises in arable, pastoral and mixed farming.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Rubie Wilkinson</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="#">Add to shortlist</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Experience (years): <span class= "govuk-!-font-weight-regular">7</span></li>
+        <li class="govuk-!-font-weight-bold">Advice sectors: <span class= "govuk-!-font-weight-regular">Horticulture, Market gardening</span></li>
+        <li class="govuk-!-font-weight-bold">Counties covered: <span class= "govuk-!-font-weight-regular">Lancashire, Cheshire, Greater Manchester</span></li>
+      </ul>
+      <p>Rubie is an independent consultant who supports farmers in the North West. She prides herself on building results-based relationships with her clients.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Jamie Sanderson</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="#">Add to shortlist</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Experience (years): <span class= "govuk-!-font-weight-regular">1</span></li>
+        <li class="govuk-!-font-weight-bold">Advice sectors: <span class= "govuk-!-font-weight-regular">Arable, Pastoral, Mixed</span></li>
+        <li class="govuk-!-font-weight-bold">Counties covered: <span class= "govuk-!-font-weight-regular">Herefordshire, Worcestershire, Gloucestershire</span></li>
+      </ul>
+      <p>Gerard has been providing advice to farmers and land managers in Herefordshire, Worcestershire and Gloucestershire for over 20 years. He specialises in arable, pastoral and mixed farming.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Noah Chase</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="#">Add to shortlist</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Experience (years): <span class= "govuk-!-font-weight-regular">5</span></li>
+        <li class="govuk-!-font-weight-bold">Advice sectors: <span class= "govuk-!-font-weight-regular">Arable, Pastoral, Mixed</span></li>
+        <li class="govuk-!-font-weight-bold">Counties covered: <span class= "govuk-!-font-weight-regular">Herefordshire, Worcestershire, Gloucestershire</span></li>
+      </ul>
+      <p>Gerard has been providing advice to farmers and land managers in Herefordshire, Worcestershire and Gloucestershire for over 20 years. He specialises in arable, pastoral and mixed farming.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Cheryl Donaldson</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="#">Add to shortlist</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Experience (years): <span class= "govuk-!-font-weight-regular">2</span></li>
+        <li class="govuk-!-font-weight-bold">Advice sectors: <span class= "govuk-!-font-weight-regular">Arable, Pastoral, Mixed</span></li>
+        <li class="govuk-!-font-weight-bold">Counties covered: <span class= "govuk-!-font-weight-regular">Herefordshire, Worcestershire, Gloucestershire</span></li>
+      </ul>
+      <p>Gerard has been providing advice to farmers and land managers in Herefordshire, Worcestershire and Gloucestershire for over 20 years. He specialises in arable, pastoral and mixed farming.</p>
+    </div>
+  </div>
+
+
+  <!-- SIDEBAR RELATED CONTENT -->
+  <div class="govuk-grid-column-one-third">
+    <div id="shortlist">
+      {% block sidebar %}
+        <h3 class="govuk-heading-s">Your shortlist</h3>
+        <ul style="margin: 0; display: block; padding: 0; width: 100%">
+          <p class="govuk-body-s"><a href="#" class="govuk-link">Gerard Martins</a><a href="#" class="govuk-link"><span style="display: block; float:right;"><strong>x</strong></span></a></p>
+        </ul>
+      {% endblock %}
+    </div>
+  </div>
+
+</div>
+
+
+
+{% endblock %}
