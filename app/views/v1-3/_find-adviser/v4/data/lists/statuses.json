@@ -1,20 +1,32 @@
 {% set statuses =
   [
   {
-    value: "Registered",
-    text: "Registered"
+    value: "Agricultural and livestock waste management",
+    text: "Agricultural and livestock waste management"
   },
   {
-    value: "Applied",
-    text: "Applied for"
+    value: "Arable",
+    text: "Arable"
   },
   {
-    value: "Published",
-    text: "In consultation"
+    value: "Forestry",
+    text: "Forestry"
   },
   {
-    value: "Rejected",
-    text: "Rejected"
+    value: "Horticuture",
+    text: "Horticuture"
+  },
+  {
+    value: "Landscape recovery",
+    text: "Landscape recovery"
+  },
+  {
+    value: "Livestock",
+    text: "Livestock"
+  },
+  {
+    value: "Sustainable farming",
+    text: "Sustainable farming"
   }
  ]
 %}
