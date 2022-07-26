@@ -5,7 +5,7 @@
 {% set productname = EA_Name %}
 
 {% block pageTitle %}
-  {{ productname }} protected product details and specification
+  Find an adviser
 {% endblock %}
 
 {% block header %}
@@ -19,21 +19,12 @@
 {% endblock %}
 
 {% block beforeContent %}
-<!-- no phase banner or back link -->
-<div class="gem-c-contextual-breadcrumbs">
-
-  <div class="gem-c-breadcrumbs govuk-breadcrumbs " data-module="track-click">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item" aria-current="false">
-        <a class="govuk-breadcrumbs__link" aria-current="false" href="/">Home</a>
-      </li>
-      <li class="govuk-breadcrumbs__list-item" aria-current="false">
-        <a class="govuk-breadcrumbs__link" aria-current="false" href="/{{folder}}/search-results_spec_pub-default?registers=_unchecked&statuses=_unchecked&name=&country=">Protected geographical food and drink names</a>
-      </li>
-    </ol>
-  </div>
-
-</div>
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -64,15 +55,15 @@
       <div class="gir_meta">
         <p class="govuk-body govuk-!-margin-bottom-8">{{EA_Summary}}</p>
         <p class="govuk-heading-m">{{EA_AdviserName}}</p>
-        <p class="govuk-body"><b>Contact details: </b><a href="mailto:{{EA_LegalInstrument}}">{{EA_LegalInstrument}}</a></p>
-        <p class="govuk-body"><b>Location: </b>{{EA_Country}}</p>
-        <p class="govuk-body"><b>Experience: </b>{{EA_Status}}</p>
-        <p class="govuk-body"><b>Payment: </b>{{EA_Payment}}</p>
-        <p class="govuk-body"><b>Is the adviser insured?: </b>{{EA_ApplicationDate}}</p>
-        <p class="govuk-body"><b>Qualifications: </b>{{EA_DatePublication}}</p>
-        <p class="govuk-body"><b>Sectors: </b>{{EA_Type}}</p>
-        <p class="govuk-body"><b>Skills: </b>{{EA_DateRegistration}}</p>
-        <p class="govuk-body"><a href="{{EA_OtherInformation}}">Link to further information</a></p>
+        <p class="govuk-body-s"><b>Contact details: </b><a href="mailto:{{EA_LegalInstrument}}">{{EA_LegalInstrument}}</a></p>
+        <p class="govuk-body-s"><b>Location: </b>{{EA_Country}}</p>
+        <p class="govuk-body-s"><b>Experience: </b>{{EA_Status}}</p>
+        <p class="govuk-body-s"><b>Payment: </b>{{EA_Payment}}</p>
+        <p class="govuk-body-s"><b>Is the adviser insured?: </b>{{EA_ApplicationDate}}</p>
+        <p class="govuk-body-s"><b>Qualifications: </b>{{EA_DatePublication}}</p>
+        <p class="govuk-body-s"><b>Sectors: </b>{{EA_Type}}</p>
+        <p class="govuk-body-s"><b>Skills: </b>{{EA_DateRegistration}}</p>
+        <p class="govuk-body-s"><a href="{{EA_OtherInformation}}">Link to further information</a></p>
 
         <!--
         {% if DEF_Register == "Spirits" %}

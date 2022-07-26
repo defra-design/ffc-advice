@@ -77,7 +77,6 @@
     </div>
   </details>
 
-
   <!-- Location -->
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
@@ -87,13 +86,47 @@
     </summary>
     <div class="govuk-checkboxes govuk-checkboxes--small">
       {% from "../data/lists/countries.json" import countries %}
-      {{ govukSelect({
-        id: "country",
-        name: "country",
-        items: countries
-      }) }}
+      {{ govukCheckboxes({
+                idPrefix: "countries",
+                name: "countries",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                  legend: {
+                    text: "",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: countries
+              }) }}
     </div>
   </details>
+
+<!-- Qualifications -->
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-body">
+      Qualifications
+    </span>
+  </summary>
+  <div class="govuk-checkboxes govuk-checkboxes--small">
+    {% from "../data/lists/qualifications.json" import qualifications %}
+    {{ govukCheckboxes({
+              idPrefix: "qualifications",
+              name: "qualifications",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: qualifications
+            }) }}
+
+  </div>
+</details>
 
   <!-- Experience -->
   <details class="govuk-details" data-module="govuk-details">
