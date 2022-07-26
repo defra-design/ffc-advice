@@ -1,33 +1,21 @@
-
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Find an adviser
+  Find an adviser
 {% endblock %}
 
 {% block header %}
-  {% include "../../../includes/cookie-banner.html" %}
-  {{ govukHeader({
-    homepageUrl: "/",
-    serviceName: " ",
-    serviceUrl: "/",
-    containerClasses: "govuk-width-container"
-  }) }}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
 {% endblock %}
 
 {% block beforeContent %}
-<!-- no phase banner or back link -->
-<div class="gem-c-contextual-breadcrumbs">
-
-  <div class="gem-c-breadcrumbs govuk-breadcrumbs " data-module="track-click">
-    <ol class="govuk-breadcrumbs__list">
-      <li class="govuk-breadcrumbs__list-item" aria-current="false">
-        <a class="govuk-breadcrumbs__link" aria-current="false" href="/">Home</a>
-      </li>
-    </ol>
-  </div>
-
-</div>
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -62,20 +50,24 @@ Find an adviser
             {% for result in results | sort(attribute="EA_Name") %}
 
                 {% if print %}
-                    <h3 class="gir_results_head"><a  style="text-decoration:none;" href="/{{folder}}/product-details-default/{{ result.EA_FileNumber }}">{{ result.EA_Name }}</a></h3>
-                      <p class="gir_small">
-                        {{ "Protected food name" if result.DEF_Register == "Food and Agri UK PDO" }}
-                        {{ "Traditional speciality guaranteed" if result.DEF_Register == "Food and Agri UK TSG" }}
-                        {{ "Protected spirit drink name" if result.DEF_Register == "Spirits" }}
-                        {{ "Protected wine name" if result.DEF_Register == "Wines" }}
-                        {{ "Protected aromatised wine name" if result.DEF_Register == "Aromatised wines" }}
-                        {{ "Traditional Term" if result.DEF_Register == "Traditional Terms" }}
-                      </p>
-                      <p class="gir_very_small">Status: {{ result.EA_Status }} &nbsp;&nbsp;
-                        Protection type: {{ result.EA_Type }}</p>
-
-                      <p class="gir_very_small">Date of registration: 31 Dec 2020  &nbsp;&nbsp;
-                        Country of origin: {{ result.EA_Country }}</p>
+                    <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="/{{folder}}/product-details-default/{{ result.EA_FileNumber }}">{{ result.EA_Name }}</a></h3>
+                    <!--
+                    <p class="gir_small">
+                      {{ "Protected food name" if result.DEF_Register == "Food and Agri UK PDO" }}
+                      {{ "Traditional speciality guaranteed" if result.DEF_Register == "Food and Agri UK TSG" }}
+                      {{ "Protected spirit drink name" if result.DEF_Register == "Spirits" }}
+                      {{ "Protected wine name" if result.DEF_Register == "Wines" }}
+                      {{ "Protected aromatised wine name" if result.DEF_Register == "Aromatised wines" }}
+                      {{ "Traditional Term" if result.DEF_Register == "Traditional Terms" }}
+                    </p>
+                    -->
+                    <p class="govuk-heading-s">{{ result.EA_AdviserName }}</p>
+                    <p class="govuk-body-s"><b>Location:</b> {{ result.EA_Country }}</p> 
+                    <p class="govuk-body-s"><b>Experience:</b> {{ result.EA_Status }}</p> 
+                    <p class="govuk-body-s"><b>Sectors:</b> {{ result.EA_Type }}</p>
+                    <p class="govuk-body-s"><b>Skills:</b> {{ result.EA_DateRegistration }}</p>
+                    <!--<p class="gir_very_small">Date of registration: 31 Dec 2020</p>-->
+                    <p style="margin: 30px 0 0 0; border-top: 1px solid #cccccc;">&nbsp;</p>
                 {% endif %}
 
                 {% if loop.index==numToDisplay %}

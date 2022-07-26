@@ -1,5 +1,5 @@
 <div>
-  <label class="govuk-label" for="search">
+  <label class="govuk-label govuk-!-margin-top-2" for="search">
     Search
   </label>
   <input class="govuk-input" style="width:250px;" id="search" name="name" type="text" value="{{ data.name }}">
@@ -9,43 +9,14 @@
 <!-- Product type -->
 <div class="gir_filterbox">
 
-
-
-
+  <!-- Sector -->
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Register
+      <span class="govuk-body">
+        Advice sector
       </span>
     </summary>
-    <div class="govuk-details__text">
-      <!-- Registers -->
-      {% from "../data/lists/registers.json" import registers %}
-
-      {{ govukCheckboxes({
-                idPrefix: "registers",
-                name: "registers",
-                classes: "govuk-checkboxes--small",
-                fieldset: {
-                  legend: {
-                    text: "",
-                    isPageHeading: false,
-                    classes: "govuk-fieldset__legend--s"
-                  }
-                },
-                items: registers
-              }) }}
-    </div>
-  </details>
-
-  <!-- Status -->
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Status
-      </span>
-    </summary>
-    <div class="govuk-details__text">
+    <div class="govuk-checkboxes govuk-checkboxes--small">
       {% from "../data/lists/statuses.json" import statuses %}
       {{ govukCheckboxes({
               idPrefix: "statuses",
@@ -63,15 +34,40 @@
     </div>
   </details>
 
-
-  <!-- Categories -->
+  <!-- Skills -->
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Class or category
+      <span class="govuk-body">
+        Skills
       </span>
     </summary>
-    <div class="govuk-details__text">
+    <div class="govuk-checkboxes govuk-checkboxes--small">
+      {% from "../data/lists/registers.json" import registers %}
+
+      {{ govukCheckboxes({
+                idPrefix: "registers",
+                name: "registers",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                  legend: {
+                    text: "",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: registers
+              }) }}
+    </div>
+  </details>
+
+  <!-- Adviser -->
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-body">
+        Adviser
+      </span>
+    </summary>
+    <div class="govuk-checkboxes govuk-checkboxes--small">
       {% from "../data/lists/categories.json" import categories %}
       {{ govukSelect({
         id: "category",
@@ -81,33 +77,65 @@
     </div>
   </details>
 
-
-  <!-- Countries -->
+  <!-- Location -->
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Country of origin
+      <span class="govuk-body">
+        Location
       </span>
     </summary>
-    <div class="govuk-details__text">
+    <div class="govuk-checkboxes govuk-checkboxes--small">
       {% from "../data/lists/countries.json" import countries %}
-      {{ govukSelect({
-        id: "country",
-        name: "country",
-        items: countries
-      }) }}
+      {{ govukCheckboxes({
+                idPrefix: "countries",
+                name: "countries",
+                classes: "govuk-checkboxes--small",
+                fieldset: {
+                  legend: {
+                    text: "",
+                    isPageHeading: false,
+                    classes: "govuk-fieldset__legend--m"
+                  }
+                },
+                items: countries
+              }) }}
     </div>
   </details>
 
+<!-- Qualifications -->
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-body">
+      Qualifications
+    </span>
+  </summary>
+  <div class="govuk-checkboxes govuk-checkboxes--small">
+    {% from "../data/lists/qualifications.json" import qualifications %}
+    {{ govukCheckboxes({
+              idPrefix: "qualifications",
+              name: "qualifications",
+              classes: "govuk-checkboxes--small",
+              fieldset: {
+                legend: {
+                  text: "",
+                  isPageHeading: false,
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: qualifications
+            }) }}
 
+  </div>
+</details>
+
+  <!-- Experience -->
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
-      <span class="govuk-details__summary-text">
-        Protection type
+      <span class="govuk-body">
+        Experience
       </span>
     </summary>
-    <div class="govuk-details__text">
-      <!-- Registers -->
+    <div class="govuk-checkboxes govuk-checkboxes--small">
       {% from "../data/lists/protection-types.json" import protectiontypes %}
 
       {{ govukCheckboxes({
@@ -118,7 +146,7 @@
                   legend: {
                     text: "",
                     isPageHeading: false,
-                    classes: "govuk-fieldset__legend--s"
+                    classes: "govuk-fieldset__legend--m"
                   }
                 },
                 items: protectiontypes

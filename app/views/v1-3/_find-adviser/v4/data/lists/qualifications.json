@@ -1,0 +1,40 @@
+{% set qualifications =
+  [
+    {
+      value: "CENV",
+      text: "CENV"
+    },
+    {
+      value: "IEMA",
+      text: "IEMA"
+    },
+    {
+      value: "FACTS",
+      text: "FACTS"
+    },
+    {
+      value: "Pinpoint",
+      text: "Pinpoint"
+      },
+    {
+      value: "BASIS",
+      text: "BASIS"
+    },
+    {
+      value: "BSSS",
+      text: "BSSS"
+    },
+    {
+      value: "CIEEM",
+      text: "CIEEM"
+    },
+    {
+      value: "RSWT",
+      text: "RSWT"
+    },
+    {
+      value: "BBCA",
+      text: "BBCA"
+    }
+  ]
+%}

@@ -19,7 +19,7 @@ var searchColumn = 'DEF_SearchTextAll'
 
 
 
-router.get('/landing-guide-page/:type', function(req, res) {
+router.get('../../landing-guide-page/:type', function(req, res) {
     if (req.params.type == "nodejs"){
       res.render(folder + '/landing-guide-page', { linkAction: "search-results_nodejs" })
     } else if (req.params.type == "default"){

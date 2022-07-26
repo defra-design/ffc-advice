@@ -16,7 +16,7 @@
 
 
 {% block header %}
-{% include "../includes/header-publisher.html" %}
+{% include "../../includes/header-publisher.html" %}
 {% endblock %}
 
 
@@ -139,7 +139,8 @@
             {% if linkAction == "search-results_nodejs" %}
               {% set linkHref = "/" + folder + "/search_nodejs" %}
             {% else %}
-              {% set linkHref = "/" + folder + "/" + linkAction + "?registers=_unchecked&statuses=_unchecked&name=&country=" %}
+              <!--{% set linkHref = "/" + folder + "/" + linkAction + "?registers=_unchecked&statuses=_unchecked&name=&country=" %}-->
+              {% set linkHref = "./" + "search-results_spec_pub-default" + "?registers=_unchecked&statuses=_unchecked&name=&country=" %}
             {% endif %}
 
             {{ govukButton({
