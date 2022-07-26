@@ -1,28 +1,64 @@
 {% set registers =
   [
     {
-      value: "Food and Agri UK PDO",
-      text: "Food PDO and PGI"
+      value: "Environmental assessment",
+      text: "Environmental assessment"
     },
     {
-      value: "Food and Agri UK TSG",
-      text: "Food TSG"
+      value: "Yard storage buildings",
+      text: "Yard storage buildings"
     },
     {
-      value: "Spirits",
-      text: "Spirits"
+      value: "Nutrients",
+      text: "Nutrients"
     },
     {
-      value: "Wines",
-      text: "Wines"
+      value: "Pesticides",
+      text: "Pesticides"
     },
     {
-      value: "Aromatised Wine",
-      text: "Aromatised wines"
+      value: "Soil health",
+      text: "Soil health"
     },
     {
-      value: "Traditional Terms",
-      text: "Traditional Terms"
+      value: "Species",
+      text: "Species"
+    },
+    {
+      value: "Natural flood management",
+      text: "Natural flood management"
+    },
+    {
+      value: "Water quality",
+      text: "Water quality"
+    },
+    {
+      value: "Habitats",
+      text: "Habitats"
+    },
+    {
+      value: "Climate resilience",
+      text: "Climate resilience"
+    },
+    {
+      value: "Air quality",
+      text: "Air quality"
+    },
+    {
+      value: "Social health and wellbeing",
+      text: "Social health and wellbeing"
+    },
+    {
+      value: "Education",
+      text: "Education"
+    },
+    {
+      value: "Forestry",
+      text: "Forestry"
+    },
+    {
+      value: "Land management plans",
+      text: "Land management plans"
     }
   ]
 %}

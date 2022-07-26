@@ -1,20 +1,20 @@
 {% set protectiontypes =
   [
     {
-      value: "Geographical indication (GI)",
-      text: "Geographical indication (GI)"
+      value: ">20",
+      text: "Over 20 years"
     },
     {
-      value: "Protected Geographical Indication (PGI)",
-      text: "Protected Geographical Indication (PGI)"
+      value: "10-20",
+      text: "Between 10 - 20 years"
     },
     {
-      value: "Protected Designation of Origin (PDO)",
-      text: "Protected Designation of Origin (PDO)"
+      value: "5-10",
+      text: "Between 5 - 10 years"
     },
     {
-      value: "Traditional Specialities Guaranteed (TSG)",
-      text: "Traditional Specialities Guaranteed (TSG)"
+      value: "< 5",
+      text: "Under 5 years"
     }
   ]
 %}
