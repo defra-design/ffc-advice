@@ -37,20 +37,20 @@
 
           <div class="govuk-grid-row">
             <div class="govuk-grid-column-one-third">
-              {% include "./includes/search_spec_pub_filters.html" %}
+              {% include "./includes/filters.html" %}
             </div>
             <div class="govuk-grid-column-two-thirds">
 
             <!-- Check if filters have been applied -->
             {% set filterLength = data.category | length + data.country | length + data.registers | length + data.statuses | length %}
 
-            {% include "./includes/filter-panel-default.html" %}
+            {% include "./includes/filter-panel.html" %}
 
             {% set print = true %}
             {% for result in results | sort(attribute="EA_Name") %}
 
                 {% if print %}
-                    <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="/{{folder}}/product-details-default/{{ result.EA_FileNumber }}">{{ result.EA_Name }}</a></h3>
+                    <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="/{{folder}}/product-details/{{ result.EA_FileNumber }}">{{ result.EA_Name }}</a></h3>
                     <!--
                     <p class="gir_small">
                       {{ "Protected food name" if result.DEF_Register == "Food and Agri UK PDO" }}
