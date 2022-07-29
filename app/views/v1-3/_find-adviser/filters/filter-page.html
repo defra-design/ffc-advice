@@ -50,7 +50,7 @@
             {% for result in results | sort(attribute="EA_Name") %}
 
                 {% if print %}
-                    <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="/{{folder}}/product-details/{{ result.EA_FileNumber }}">{{ result.EA_Name }}</a></h3>
+                    <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="adviser-details/{{ result.EA_FileNumber }}">{{ result.EA_Name }}</a></h3>
                     <!--
                     <p class="gir_small">
                       {{ "Protected food name" if result.DEF_Register == "Food and Agri UK PDO" }}
