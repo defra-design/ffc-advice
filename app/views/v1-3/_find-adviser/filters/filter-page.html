@@ -51,22 +51,11 @@
 
                 {% if print %}
                     <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="adviser-details/{{ result.EA_FileNumber }}">{{ result.EA_Name }}</a></h3>
-                    <!--
-                    <p class="gir_small">
-                      {{ "Protected food name" if result.DEF_Register == "Food and Agri UK PDO" }}
-                      {{ "Traditional speciality guaranteed" if result.DEF_Register == "Food and Agri UK TSG" }}
-                      {{ "Protected spirit drink name" if result.DEF_Register == "Spirits" }}
-                      {{ "Protected wine name" if result.DEF_Register == "Wines" }}
-                      {{ "Protected aromatised wine name" if result.DEF_Register == "Aromatised wines" }}
-                      {{ "Traditional Term" if result.DEF_Register == "Traditional Terms" }}
-                    </p>
-                    -->
                     <p class="govuk-heading-s">{{ result.EA_AdviserName }}</p>
                     <p class="govuk-body-s"><b>Location:</b> {{ result.EA_Country }}</p> 
                     <p class="govuk-body-s"><b>Experience:</b> {{ result.EA_Status }}</p> 
                     <p class="govuk-body-s"><b>Sectors:</b> {{ result.EA_Type }}</p>
-                    <p class="govuk-body-s"><b>Skills:</b> {{ result.EA_DateRegistration }}</p>
-                    <!--<p class="gir_very_small">Date of registration: 31 Dec 2020</p>-->
+                    <p class="govuk-body-s"><b>Skills:</b> {{ result.skills }}</p>
                     <p style="margin: 30px 0 0 0; border-top: 1px solid #cccccc;">&nbsp;</p>
                 {% endif %}
 

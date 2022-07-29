@@ -42,11 +42,11 @@
       </span>
     </summary>
     <div class="govuk-checkboxes govuk-checkboxes--small">
-      {% from "../data/lists/registers.json" import registers %}
+      {% from "../data/lists/skills.json" import skills %}
 
       {{ govukCheckboxes({
-                idPrefix: "registers",
-                name: "registers",
+                idPrefix: "skills",
+                name: "skills",
                 classes: "govuk-checkboxes--small",
                 fieldset: {
                   legend: {
@@ -55,7 +55,7 @@
                     classes: "govuk-fieldset__legend--s"
                   }
                 },
-                items: registers
+                items: skills
               }) }}
     </div>
   </details>

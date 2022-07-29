@@ -1,4 +1,4 @@
-{% set registers =
+{% set skills =
   [
     {
       value: "Environmental assessment",

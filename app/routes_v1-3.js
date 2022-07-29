@@ -19,7 +19,7 @@ var searchColumn = 'DEF_SearchTextAll'
 
 // Routes
 router.get('/_find-adviser/search', function(req, res) {
-    res.render(folder + '/filter-page', { results: filterRegister(req.query.name, req.query.registers, req.query.statuses, req.query.country, req.query.category), url: req.url  })
+    res.render(folder + '/filter-page', { results: filterRegister(req.query.name, req.query.skills, req.query.statuses, req.query.country, req.query.category), url: req.url  })
 })
 
 router.get('/_find-adviser/adviser-details/:adviserNumber', function(req, res) {
@@ -32,7 +32,7 @@ function findAdviser(adviserNumber) {
     return getRegisterData('register').find(element => element.EA_FileNumber === adviserNumber)
 }
 
-function filterRegister(name, registers, statuses, country, category) {
+function filterRegister(name, skills, statuses, country, category) {
     name = name.toLowerCase()
 
     let registerData = getRegisterData('register')
@@ -41,8 +41,8 @@ function filterRegister(name, registers, statuses, country, category) {
         registerData = registerData.filter(element => element[searchColumn].includes(name))
     }
 
-    if (registers != '_unchecked') {
-        registerData = registerData.filter(element => registers.includes(element.DEF_Register))
+    if (skills != '_unchecked') {
+        registerData = registerData.filter(element => listMatch(skills, element.skills))
     }
 
     if (statuses != '_unchecked') {
@@ -62,6 +62,12 @@ function filterRegister(name, registers, statuses, country, category) {
 
 function getRegisterData(registerName) {
     return require('./views/' + folder + '/data/registers/register.json')
+}
+
+function listMatch(listA, listB) {
+    listB = listB.split(',').map(element => element.trim()) // Turn string into array
+    result = listA.filter(element => listB.includes(element))
+    return result.length > 0
 }
 
 module.exports = router

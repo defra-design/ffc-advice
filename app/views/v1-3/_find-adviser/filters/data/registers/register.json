@@ -1,6 +1,5 @@
 [
   {
-    "DEF_OriginalOrder": 1260,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "Zac Battams",
@@ -21,11 +20,10 @@
     "EA_Payment": "Our advice is free",
     "EA_DatePublication": "BSc Environmental Science",
     "EA_Type": "Pig, Poultry, Dairy and grassland, Beef, Sheep, Arable (cereals), Arable (maize), Arable (vegetables incl. potatoes), Horticulture (vegetables), Horticulture (soft fruit)",
-    "EA_DateRegistration": "Yard storage and buildings, Nutrient management, Soil health management, Natural flood management, Water quality, Habitat creation and assessment, Climate resilience",
+    "skills": "Yard storage and buildings, Nutrient management, Soil health management, Natural flood management, Water quality, Habitat creation and assessment, Climate resilience",
     "EA_Summary": "The Water Sensitive Farming (WSF) initiative provides free, trusted and confidential farm advice to support the restoration of freshwater environments, nature and landscape resilience. Working across Norfolk - and in parts of Suffolk and Cambridgeshire - flexible grant support is available for interventions that improve soil health, water management, biodiversity and carbon storage."
   },
   {
-    "DEF_OriginalOrder": 1261,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "Emily Winter",
@@ -46,11 +44,10 @@
     "EA_Payment": "",
     "EA_DatePublication": "",
     "EA_Type": "Pig, Poultry, Dairy and grassland, Beef, Sheep, Arable (cereals), Arable (maize), Arable (vegetables incl. potatoes",
-    "EA_DateRegistration": "Yard storage buildings, Nutrients, Soil health, Natural flood management, Water quality, Habitats, Climate resiliance",
+    "skills": "Yard storage buildings, Nutrients, Soil health, Natural flood management, Water quality, Habitats, Climate resiliance",
     "EA_Summary": "In partnership with Norfolk Rivers Trust, the River Waveney Trust is delivering advice, support and funding for water quality improvements on farms throughout the Waveney catchment. Measures include silt traps, constructed wetlands, tree/hedge planting and livestock fencing - all with the aim to reduce erosion and pollution throughout the catchment."
   },
   {
-    "DEF_OriginalOrder": 1262,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "",
@@ -71,11 +68,10 @@
     "EA_Payment": "Our advice is available for a fee. Please contact us to find out more.",
     "EA_DatePublication": "Practitioner of the Institute of Environmental Managers & Assessors",
     "EA_Type": "Pig, Poultry, Dairy and grassland, Beef, Sheep, Arable (cereals), Arable (maize), Arable (vegetables incl. potatoes), Horticulture (vegetables)",
-    "EA_DateRegistration": "Yard storage buildings, Nutrients, Pesticides, Soil health, Species, Water quality, Climate resilience",
+    "skills": "Yard storage buildings, Nutrients, Pesticides, Soil health, Species, Water quality, Climate resilience",
     "EA_Summary": "We are the only charitable organisation in the county focused solely on nature conservation in Shropshire. Ours is a beautiful county, but nature here has suffered decades of destruction, just as it has elsewhere. We need your support to help turn our vision of nature recovery into reality. Shropshire Wildlife Trust is one of 46 Wildlife Trusts working across the UK."
   },
   {
-    "DEF_OriginalOrder": 1263,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "Stuart Holm",
@@ -96,11 +92,10 @@
     "EA_Payment": "",
     "EA_DatePublication": "CENV",
     "EA_Type": "Pig, Poultry, Dairy and grassland, Beef, Sheep, Arable (cereals), Arable (maize), Arable (vegetables incl. potatoes), Horticulture (vegetables), Horticulture (soft fruit)",
-    "EA_DateRegistration": "Habitats",
+    "skills": "Habitats",
     "EA_Summary": ""
   },
   {
-    "DEF_OriginalOrder": 1264,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "",
@@ -121,11 +116,10 @@
     "EA_Payment": "My advice is nearly always free, but dependant upon location and the projects funding.",
     "EA_DatePublication": "FACTS BASIS Pinpoint Member accreditation to BSSS",
     "EA_Type": "Pig Poultry Dairy and grassland Beef Sheep Arable (cereals) Arable (maize) Arable (vegetables incl. potatoes) Horticulture (vegetables)",
-    "EA_DateRegistration": "Yard storage and buildings Nutrient management Soil health management Natural flood management Water quality Climate resilience Development of land management plans",
+    "skills": "Yard storage and buildings Nutrient management Soil health management Natural flood management Water quality Climate resilience Development of land management plans",
     "EA_Summary": "I'm able to draw on experience gained from working for WRT, Natural England and FWAG. Considerable experience delivering advice to farmers through 1:1 visits, whole farm plans, sampling, nutrient planning, running farming workshops etc."
   },
   {
-    "DEF_OriginalOrder": 1265,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "John Hunt",
@@ -146,11 +140,10 @@
     "EA_Payment": "Our advice is free",
     "EA_DatePublication": "FACTS,BASIS",
     "EA_Type": "Poultry, Dairy and grassland, Beef, Sheep, Arable (cereals), Arable (maize)",
-    "EA_DateRegistration": "Environmental assessment, Yard storage buildings, Nutrients, Pesticides, Soil health, Natural flood management, Water quality, Climate resilience, Air quality, Forestry, Land management plan",
+    "skills": "Environmental assessment, Yard storage buildings, Nutrients, Pesticides, Soil health, Natural flood management, Water quality, Climate resilience, Air quality, Forestry, Land management plan",
     "EA_Summary": "Our mission is to restore and protect the rivers, lakes, and estuaries of the Westcountry for the benefit of nature, people, and local economies.. What we do is underpinned by science, evidence and experience and a commitment to the resilience of the region's freshwater resources. Whether we are working with farming or fishing communities, improving river habitats, mapping landscapes or monitoring streams, it is all to bring our rivers to life and keep them healthy for wildlife and people, both now and in the future."
   },
   {
-    "DEF_OriginalOrder": 1266,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "",
@@ -171,11 +164,10 @@
     "EA_Payment": "Our advice is available for a fee. Please contact us to find out more",
     "EA_DatePublication": "None",
     "EA_Type": "Dairy and grassland, Beef, Sheep",
-    "EA_DateRegistration": "Environmental assessment, Yard storage buildings, Soil health, Species, Natural flood management, Water quality, Habitats",
+    "skills": "Environmental assessment, Yard storage buildings, Soil health, Species, Natural flood management, Water quality, Habitats",
     "EA_Summary": "For over 50 years, FWAG SW provide independent advice and delivering real change on farmland by working with land managers and landowners across the region. Combining an understanding of farming systems, land management and farm businesses with habitat creation, habitat management and species conservation, FWAG SW is able to effect positive environmental change in the wider landscape. We also focus on helping farm businesses manage their natural capital assets like soil, water and carbon."
   },
   {
-    "DEF_OriginalOrder": 1267,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "",
@@ -196,11 +188,10 @@
     "EA_Payment": "Funding depending on project location",
     "EA_DatePublication": "Pinpoint",
     "EA_Type": "Pig, Poultry, Dairy and grassland, Beef, Sheep, Arable (cereals), Arable (maize), Arable (vegetables incl. potatoes), Horticulture (vegetables), Horticulture (soft fruit)",
-    "EA_DateRegistration": "Environmental assessment, Yard storage buildings, Soil health, Species, Natural flood management, Water quality, Habitats, Climate resilience, Air quality, Social health and wellbeing, Education, Forestry, Land management plans",
+    "skills": "Environmental assessment, Yard storage buildings, Soil health, Species, Natural flood management, Water quality, Habitats, Climate resilience, Air quality, Social health and wellbeing, Education, Forestry, Land management plans",
     "EA_Summary": "The Tyne Rivers Trust is a registered environmental charity dedicated to improving the River Tyne and its catchment. From Alston and Kielder to Tynemouth, we improve the wellbeing of the Tyne rivers and people through education, tackling pollution and practical conservation."
   },
   {
-    "DEF_OriginalOrder": 1268,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "Julia Dimbleby",
@@ -221,11 +212,10 @@
     "EA_Payment": "",
     "EA_DatePublication": "FACTS,BASIS",
     "EA_Type": "Pig, Poultry, Dairy and grassland, Beef, Sheep, Arable (cereals), Arable (maize), Arable (vegetables incl. potatoes), Horticulture (vegetables), Horticulture (soft fruit)",
-    "EA_DateRegistration": "Environmental assessment, Yard storage buildings, Nutrients, Pesticides, Soil health, Species, Natural flood management, Water quality, Habitats, Climate resilience, Air quality, Social health and wellbeing, Education, Forestry, Land management plans",
+    "skills": "Environmental assessment, Yard storage buildings, Nutrients, Pesticides, Soil health, Species, Natural flood management, Water quality, Habitats, Climate resilience, Air quality, Social health and wellbeing, Education, Forestry, Land management plans",
     "EA_Summary": "ADAS is the UK's largest independent provider of agricultural and environmental consultancy, policy advice and research and development. We understand food production and the challenges and opportunities faced by organisations operating in the natural environment. With 75 years of experience in the farming and environmental sector, we translate science into pragmatic, workable solutions for farmers, landowners, corporate organisations and government."
   },
   {
-    "DEF_OriginalOrder": 1268,
     "DEF_Register": "Wines",
     "EA_ProductType": "Wine",
     "EA_AdviserName": "David Ruddock",
@@ -246,7 +236,7 @@
     "EA_Payment": "",
     "EA_DatePublication": "CIEEM, RSWT Biodiversity Benchmark Certified Auditor, IEMA, CEnv, MArborA",
     "EA_Type": "Pig, Poultry, Dairy and grassland, Beef, Sheep, Arable (cereals), Arable (maize), Arable (vegetables incl. potatoes), Horticulture (vegetables), Horticulture (soft fruit)",
-    "EA_DateRegistration": "Environmental assessment, Nutrients, Species, Natural flood management, Water quality, Habitats, Climate resilience, Forestry, Land management plans",
+    "skills": "Environmental assessment, Nutrients, Species, Natural flood management, Water quality, Habitats, Climate resilience, Forestry, Land management plans",
     "EA_Summary": "Middlemarch Environmental is one of the UK's leading natural environment consultancies, based in Coventry, West Midlands. Since 1989, we've been helping our clients to get their ecology surveys actioned in time to meet tight planning deadlines. Today our expertise is called upon to address the many challenges that arise at the interface between nature and human society. We aim to be the consultant of choice for biodiversity advice and our mission is to create an enduring natural environment legacy."
   }
 ]
