@@ -17,10 +17,10 @@
       </span>
     </summary>
     <div class="govuk-checkboxes govuk-checkboxes--small">
-      {% from "../data/lists/statuses.json" import statuses %}
+      {% from "../data/lists/sectors.json" import sectors %}
       {{ govukCheckboxes({
-              idPrefix: "statuses",
-              name: "statuses",
+              idPrefix: "sectors",
+              name: "sectors",
               classes: "govuk-checkboxes--small",
               fieldset: {
                 legend: {
@@ -29,7 +29,7 @@
                   classes: "govuk-fieldset__legend--s"
                 }
               },
-              items: statuses
+              items: sectors
             }) }}
     </div>
   </details>
@@ -60,23 +60,6 @@
     </div>
   </details>
 
-  <!-- Adviser -->
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-body">
-        Adviser
-      </span>
-    </summary>
-    <div class="govuk-checkboxes govuk-checkboxes--small">
-      {% from "../data/lists/categories.json" import categories %}
-      {{ govukSelect({
-        id: "category",
-        name: "category",
-        items: categories
-      }) }}
-    </div>
-  </details>
-
   <!-- Location -->
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
@@ -85,10 +68,10 @@
       </span>
     </summary>
     <div class="govuk-checkboxes govuk-checkboxes--small">
-      {% from "../data/lists/countries.json" import countries %}
+      {% from "../data/lists/counties.json" import counties %}
       {{ govukCheckboxes({
-                idPrefix: "countries",
-                name: "countries",
+                idPrefix: "counties",
+                name: "counties",
                 classes: "govuk-checkboxes--small",
                 fieldset: {
                   legend: {
@@ -97,7 +80,7 @@
                     classes: "govuk-fieldset__legend--s"
                   }
                 },
-                items: countries
+                items: counties
               }) }}
     </div>
   </details>
@@ -136,11 +119,11 @@
       </span>
     </summary>
     <div class="govuk-checkboxes govuk-checkboxes--small">
-      {% from "../data/lists/protection-types.json" import protectiontypes %}
+      {% from "../data/lists/experiences.json" import experiences %}
 
       {{ govukCheckboxes({
-                idPrefix: "protectiontypes",
-                name: "protectiontypes",
+                idPrefix: "experiences",
+                name: "experiences",
                 classes: "govuk-checkboxes--small",
                 fieldset: {
                   legend: {
@@ -149,7 +132,7 @@
                     classes: "govuk-fieldset__legend--s"
                   }
                 },
-                items: protectiontypes
+                items: experiences
               }) }}
     </div>
   </details>

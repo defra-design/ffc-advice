@@ -19,7 +19,7 @@ var searchColumn = 'DEF_SearchTextAll'
 
 // Routes
 router.get('/_find-adviser/search', function(req, res) {
-    res.render(folder + '/filter-page', { results: filterRegister(req.query.name, req.query.skills, req.query.statuses, req.query.country, req.query.category), url: req.url  })
+    res.render(folder + '/filter-page', { results: filterRegister(req.query.name, req.query.skills, req.query.sectors, req.query.counties, req.query.qualifications, req.query.experiences), url: req.url  })
 })
 
 router.get('/_find-adviser/adviser-details/:adviserNumber', function(req, res) {
@@ -32,7 +32,7 @@ function findAdviser(adviserNumber) {
     return getRegisterData('register').find(element => element.EA_FileNumber === adviserNumber)
 }
 
-function filterRegister(name, skills, statuses, country, category) {
+function filterRegister(name, skills, sectors, counties, qualifications, experiences) {
     name = name.toLowerCase()
 
     let registerData = getRegisterData('register')
@@ -45,16 +45,20 @@ function filterRegister(name, skills, statuses, country, category) {
         registerData = registerData.filter(element => listMatch(skills, element.skills))
     }
 
-    if (statuses != '_unchecked') {
-        registerData = registerData.filter(element => statuses.includes(element.EA_Status))
+    if (sectors != '_unchecked') {
+        registerData = registerData.filter(element => listMatch(sectors, element.sectors))
     }
 
-    if (country) {
-        registerData = registerData.filter(element => element.EA_Country === country)
+    if (counties != '_unchecked') {
+        registerData = registerData.filter(element => listMatch(counties, element.counties))
     }
 
-    if (category) {
-        registerData = registerData.filter(element => element.EA_ProductCategory === category)
+    if (qualifications != '_unchecked') {
+        registerData = registerData.filter(element => listMatch(qualifications, element.qualifications))
+    }
+
+    if (experiences != '_unchecked') {
+        registerData = registerData.filter(element => matchExperiences(experiences, element.experience))
     }
 
     return registerData
@@ -68,6 +72,18 @@ function listMatch(listA, listB) {
     listB = listB.split(',').map(element => element.trim()) // Turn string into array
     result = listA.filter(element => listB.includes(element))
     return result.length > 0
+}
+
+function matchExperiences(listA, experience) {
+    experience = parseInt(experience)
+    return listA.some(element => matchExperience(element, experience))
+}
+
+function matchExperience(experience, value) {
+    return experience === '<5' && value <= 5
+     || experience === '5-10' && value >= 5 && value <= 10
+     || experience === '10-20' && value >= 10 && value <= 20
+     || experience === '>20' && value >= 20
 }
 
 module.exports = router

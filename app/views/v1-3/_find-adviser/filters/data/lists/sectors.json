@@ -1,4 +1,4 @@
-{% set statuses =
+{% set sectors =
   [
   {
     value: "Agricultural and livestock waste management",
