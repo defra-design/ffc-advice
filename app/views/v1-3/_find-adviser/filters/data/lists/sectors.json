@@ -1,32 +1,44 @@
 {% set sectors =
   [
   {
-    value: "Agricultural and livestock waste management",
-    text: "Agricultural and livestock waste management"
+    value: "Pig",
+    text: "Pig"
   },
   {
-    value: "Arable",
-    text: "Arable"
+    value: "Poultry",
+    text: "Poultry"
   },
   {
-    value: "Forestry",
-    text: "Forestry"
+    value: "Dairy and grassland",
+    text: "Dairy and grassland"
   },
   {
-    value: "Horticuture",
-    text: "Horticuture"
+    value: "Beef",
+    text: "Beef"
   },
   {
-    value: "Landscape recovery",
-    text: "Landscape recovery"
+    value: "Sheep",
+    text: "Sheep"
   },
   {
-    value: "Livestock",
-    text: "Livestock"
+    value: "Arable (cereals)",
+    text: "Arable (cereals)"
   },
   {
-    value: "Sustainable farming",
-    text: "Sustainable farming"
+    value: "Arable (maize)",
+    text: "Arable (maize)"
+  },
+  {
+    value: "Arable (vegetables incl. potatoes)",
+    text: "Arable (vegetables incl. potatoes)"
+  },
+  {
+    value: "Horticulture (vegetables)",
+    text: "Horticulture (vegetables)"
+  },
+  {
+    value: "Horticulture (soft fruit)",
+    text: "Horticulture (soft fruit)"
   }
  ]
 %}
