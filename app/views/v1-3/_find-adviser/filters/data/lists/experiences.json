@@ -1,4 +1,4 @@
-{% set protectiontypes =
+{% set experiences =
   [
     {
       value: ">20",
@@ -13,7 +13,7 @@
       text: "Between 5 - 10 years"
     },
     {
-      value: "< 5",
+      value: "<5",
       text: "Under 5 years"
     }
   ]

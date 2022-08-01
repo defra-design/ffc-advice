@@ -1,4 +1,4 @@
-{% set countries =
+{% set counties =
 [
   {
       "value":"Avon",
