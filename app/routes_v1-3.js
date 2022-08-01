@@ -14,9 +14,6 @@ router.use(function (req, res, next) {
   next()
 })
 
-
-var searchColumn = 'searchText'
-
 // Routes
 router.get('/_find-adviser/search', function(req, res) {
     res.render(folder + '/filter-page', { results: filterRegister(req.query.name, req.query.skills, req.query.sectors, req.query.counties, req.query.qualifications, req.query.experiences), url: req.url  })
@@ -38,7 +35,7 @@ function filterRegister(name, skills, sectors, counties, qualifications, experie
     let registerData = getRegisterData('register')
 
     if (name) {
-        registerData = registerData.filter(element => element[searchColumn].includes(name))
+        registerData = registerData.filter(element => element.searchText.toLowerCase().includes(name))
     }
 
     if (skills != '_unchecked') {
@@ -65,7 +62,7 @@ function filterRegister(name, skills, sectors, counties, qualifications, experie
 }
 
 function getRegisterData(registerName) {
-    return require('./views/' + folder + '/data/registers/register.json')
+    return require('./views/' + folder + '/data/registers/advisers.json')
 }
 
 function listMatch(listA, listB) {
