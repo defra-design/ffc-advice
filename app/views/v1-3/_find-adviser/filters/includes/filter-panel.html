@@ -12,13 +12,11 @@
 </div>
 
 <!--
-{% if filterLength != 0 %}
 <div class="gir-filter-panel">
-  {% if data.statuses | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Status</span> <span class="gir-filtername">{{ data.statuses | join(", ") }}</span></span>{% endif %}
-    {% if data.category | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Class or category</span> <span class="gir-filtername">{{ data.category }}</span></span>{% endif %}
-    {% if data.country | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Country</span> <span class="gir-filtername">{{ data.country }}</span></span>{% endif %}
-    {% if data.registers | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Register</span> <span class="gir-filtername">{{ data.registers | join(', ' ) }}</span></span>{% endif %}
-
+  {% if data.skills | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Skills</span> <span class="gir-filtername">{{ data.skills | join(", ") }}</span></span>{% endif %}
+  {% if data.sectors | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Sectors</span> <span class="gir-filtername">{{ data.sectors }}</span></span>{% endif %}
+  {% if data.counties | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Counties</span> <span class="gir-filtername">{{ data.counties }}</span></span>{% endif %}
+  {% if data.qualifications | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Qualifications</span> <span class="gir-filtername">{{ data.qualifications | join(', ' ) }}</span></span>{% endif %}
+  {% if data.experiences | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Experience</span> <span class="gir-filtername">{{ data.experiences | join(', ' ) }}</span></span>{% endif %}
 </div>
-{% endif %}
 -->
