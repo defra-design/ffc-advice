@@ -15,7 +15,7 @@ router.use(function (req, res, next) {
 })
 
 
-var searchColumn = 'DEF_SearchTextAll'
+var searchColumn = 'searchText'
 
 // Routes
 router.get('/_find-adviser/search', function(req, res) {
@@ -29,7 +29,7 @@ router.get('/_find-adviser/adviser-details/:adviserNumber', function(req, res) {
 
 // Functions
 function findAdviser(adviserNumber) {
-    return getRegisterData('register').find(element => element.EA_FileNumber === adviserNumber)
+    return getRegisterData('register').find(element => element.adviserID === adviserNumber)
 }
 
 function filterRegister(name, skills, sectors, counties, qualifications, experiences) {
