@@ -2,8 +2,6 @@
 
 {% set tocPage = true %}
 
-{% set productname = EA_Name %}
-
 {% block pageTitle %}
   Find an adviser
 {% endblock %}
@@ -32,20 +30,20 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">{{ productname }}</h1>
+      <h1 class="govuk-heading-xl">{{ name }}</h1>
 
       <div class="gir_meta">
-        <p class="govuk-body govuk-!-margin-bottom-8">{{EA_Summary}}</p>
-        <p class="govuk-heading-m">{{EA_AdviserName}}</p>
-        <p class="govuk-body-s"><b>Contact details: </b><a href="mailto:{{EA_LegalInstrument}}">{{EA_LegalInstrument}}</a></p>
+        <p class="govuk-body govuk-!-margin-bottom-8">{{summary}}</p>
+        <p class="govuk-heading-m">{{adviserName}}</p>
+        <p class="govuk-body-s"><b>Contact details: </b><a href="mailto:{{emailAddress}}">{{emailAddress}}</a></p>
         <p class="govuk-body-s"><b>Location: </b>{{counties}}</p>
         <p class="govuk-body-s"><b>Experience: </b>{{experience}}</p>
-        <p class="govuk-body-s"><b>Payment: </b>{{EA_Payment}}</p>
-        <p class="govuk-body-s"><b>Is the adviser insured?: </b>{{EA_ApplicationDate}}</p>
+        <p class="govuk-body-s"><b>Payment: </b>{{payment}}</p>
+        <p class="govuk-body-s"><b>Is the adviser insured?: </b>{{insured}}</p>
         <p class="govuk-body-s"><b>Qualifications: </b>{{qualifications}}</p>
         <p class="govuk-body-s"><b>Sectors: </b>{{sectors}}</p>
         <p class="govuk-body-s"><b>Skills: </b>{{skills}}</p>
-        <p class="govuk-body-s"><a href="{{EA_OtherInformation}}">Link to further information</a></p>
+        <p class="govuk-body-s"><a href="{{website}}">Link to further information</a></p>
 
     </div>
   </div>
