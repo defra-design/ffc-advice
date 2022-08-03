@@ -40,12 +40,11 @@
               {% include "./includes/filters.html" %}
             </div>
             <div class="govuk-grid-column-two-thirds">
-
             <!-- Check if filters have been applied -->
-            {% set filterLength = data.category | length + data.country | length + data.registers | length + data.statuses | length %}
+            {% set filterLength = data.sectors | length + data.counties | length + data.qualifications | length + data.skills | length + data.experience | length %}
 
             {% include "./includes/filter-panel.html" %}
-
+            <div class="govuk-!-margin-4"></div>
             {% set print = true %}
             {% for result in results | sort(attribute="EA_Name") %}
 
