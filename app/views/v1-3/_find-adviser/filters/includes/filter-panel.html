@@ -1,6 +1,6 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <p class="govuk-heading-l">
+    <p class="govuk-heading-l" style="margin-bottom: 0;">
       {{ results | length }} <span class="govuk-body-s">results</span>
     </p>
   </div>
@@ -11,12 +11,36 @@
   </div>
 </div>
 
-<!--
+{% if filterLength != 0 %}
 <div class="gir-filter-panel">
-  {% if data.skills | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Skills</span> <span class="gir-filtername">{{ data.skills | join(", ") }}</span></span>{% endif %}
-  {% if data.sectors | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Sectors</span> <span class="gir-filtername">{{ data.sectors }}</span></span>{% endif %}
-  {% if data.counties | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Counties</span> <span class="gir-filtername">{{ data.counties }}</span></span>{% endif %}
-  {% if data.qualifications | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Qualifications</span> <span class="gir-filtername">{{ data.qualifications | join(', ' ) }}</span></span>{% endif %}
-  {% if data.experiences | length != 0 %}<span class="govuk-body gir-filter"><span class="govuk-!-font-weight-bold">Experience</span> <span class="gir-filtername">{{ data.experiences | join(', ' ) }}</span></span>{% endif %}
+  {% if data.sectors | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Sector</span> <span class="gir-filtername">{{ data.sectors | join(", ") }}</span></span>{% endif %}
+    {% if data.skills | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Skills</span> <span class="gir-filtername">{{ data.skills }}</span></span>{% endif %}
+    {% if data.counties | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Location</span> <span class="gir-filtername">{{ data.counties }}</span></span>{% endif %}
+    {% if data.qualifications | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Qualifications</span> <span class="gir-filtername">{{ data.qualifications | join(', ' ) }}</span></span>{% endif %}
+    {% if data.experience | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Experience</span> <span class="gir-filtername">{{ data.experience | join(', ' ) }}</span></span>{% endif %}
+
 </div>
--->
+{% endif %}
+
+<style>
+  .gir-filter-panel {
+    background-color: #f3f2f1;
+    padding: 4px 8px 2px
+  }
+  .gir-filter {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 18px;
+    font-size: 14px
+  }
+  .gir-filtername {
+    border: 1px solid #505a5f;
+    border-radius: 5px;
+    padding: 10px 7px 7px 7px;
+  }
+  .gir-filtername:before {
+    content: "\00D7\00A0";
+    font-size: 18px;
+    font-weight: 700
+  }
+</style>
