@@ -41,7 +41,7 @@
             </div>
             <div class="govuk-grid-column-two-thirds">
             <!-- Check if filters have been applied -->
-            {% set filterLength = data.sectors | length + data.counties | length + data.qualifications | length + data.skills | length + data.experience | length %}
+            {% set filterLength = data.sectors | length + data.counties | length + data.qualifications | length + data.skills | length + data.experiences | length %}
 
             {% include "./includes/filter-panel.html" %}
             <div class="govuk-!-margin-4"></div>
@@ -52,7 +52,7 @@
                     <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="adviser-details/{{ result.adviserID }}">{{ result.name }}</a></h3>
                     <p class="govuk-heading-s">{{ result.adviserName }}</p>
                     <p class="govuk-body-s"><b>Location:</b> {{ result.counties }}</p> 
-                    <p class="govuk-body-s"><b>Experience:</b> {{ result.experience }}</p>
+                    <p class="govuk-body-s"><b>Experience:</b> {{ result.experiences }}</p>
                     <p class="govuk-body-s"><b>Qualifications:</b> {{ result.qualifications }}</p>
                     <p class="govuk-body-s"><b>Sectors:</b> {{ result.sectors }}</p>
                     <p class="govuk-body-s"><b>Skills:</b> {{ result.skills }}</p>
