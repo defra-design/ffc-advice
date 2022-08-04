@@ -15,10 +15,10 @@
 {% if filterLength != 0 %}
 <div class="gir-filter-panel">
   {% if data.sectors | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Sector</span> <span class="gir-filtername">{{ data.sectors | join(", ") }}</span></span>{% endif %}
-    {% if data.skills | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Skills</span> <span class="gir-filtername">{{ data.skills }}</span></span>{% endif %}
-    {% if data.counties | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Location</span> <span class="gir-filtername">{{ data.counties }}</span></span>{% endif %}
+    {% if data.skills | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Skills</span> <span class="gir-filtername">{{ data.skills | join(", ") }}</span></span>{% endif %}
+    {% if data.counties | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Location</span> <span class="gir-filtername">{{ data.counties | join(", ") }}</span></span>{% endif %}
     {% if data.qualifications | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Qualifications</span> <span class="gir-filtername">{{ data.qualifications | join(', ' ) }}</span></span>{% endif %}
-    {% if data.experience | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Experience</span> <span class="gir-filtername">{{ data.experience | join(', ' ) }}</span></span>{% endif %}
+    {% if data.experiences | length != 0 %}<span class="govuk-body-s gir-filter"><span class="govuk-!-font-weight-bold">Experience</span> <span class="gir-filtername">{{ data.experiences | join(', ' ) }}</span></span>{% endif %}
 
 </div>
 {% endif %}
