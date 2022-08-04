@@ -46,11 +46,11 @@
             {% include "./includes/filter-panel.html" %}
             <div class="govuk-!-margin-4"></div>
             {% set print = true %}
-            {% for result in results | sort(attribute="EA_Name") %}
+            {% for result in results | sort(attribute="name") %}
 
                 {% if print %}
-                    <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="adviser-details/{{ result.EA_FileNumber }}">{{ result.EA_Name }}</a></h3>
-                    <p class="govuk-heading-s">{{ result.EA_AdviserName }}</p>
+                    <h3 class="govuk-heading-m"><a  style="text-decoration:none;" href="adviser-details/{{ result.adviserID }}">{{ result.name }}</a></h3>
+                    <p class="govuk-heading-s">{{ result.adviserName }}</p>
                     <p class="govuk-body-s"><b>Location:</b> {{ result.counties }}</p> 
                     <p class="govuk-body-s"><b>Experience:</b> {{ result.experience }}</p>
                     <p class="govuk-body-s"><b>Qualifications:</b> {{ result.qualifications }}</p>
