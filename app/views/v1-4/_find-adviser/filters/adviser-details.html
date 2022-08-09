@@ -1,0 +1,51 @@
+{% extends "layout.html" %}
+
+{% set tocPage = true %}
+
+{% block pageTitle %}
+  Find an adviser
+{% endblock %}
+
+{% block header %}
+  {% include "includes/cookie-banner.html" %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: " ",
+    serviceUrl: "/",
+    containerClasses: "govuk-width-container"
+  }) }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">{{ name }}</h1>
+
+      <div class="gir_meta">
+        <p class="govuk-body govuk-!-margin-bottom-8">{{summary}}</p>
+        <p class="govuk-heading-m">{{adviserName}}</p>
+        <p class="govuk-body-s"><b>Contact details: </b><a href="mailto:{{emailAddress}}">{{emailAddress}}</a></p>
+        <p class="govuk-body-s"><b>Location: </b>{{counties}}</p>
+        <p class="govuk-body-s"><b>Experience: </b>{{experience}}</p>
+        <p class="govuk-body-s"><b>Payment: </b>{{payment}}</p>
+        <p class="govuk-body-s"><b>Is the adviser insured: </b>{{insured}}</p>
+        <p class="govuk-body-s"><b>Qualifications: </b>{{qualifications}}</p>
+        <p class="govuk-body-s"><b>Sectors: </b>{{sectors}}</p>
+        <p class="govuk-body-s"><b>Skills: </b>{{skills}}</p>
+        <p class="govuk-body-s"><a href="{{website}}">Link to further information</a></p>
+
+    </div>
+  </div>
+
+{% endblock %}
