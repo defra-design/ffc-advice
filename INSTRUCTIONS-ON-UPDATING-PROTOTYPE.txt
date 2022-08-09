@@ -1,0 +1,52 @@
+SPRINT VERSION CONTROL
+
+Follow these steps to keep the prototype up-to-date
+
+
+1. DUPLICATE VERSION DIRECTORY
+Simply select the current directory (example v1-4) and save it as
+a new chronological version.
+
+2. UPDATE INDEX PAGE
+When you begin a new sprint you should update /views/index page
+so that the work for each sprint is correctly represented. To 
+archive the current sprint, scroll down the page until you find
+the 'Previous phases' comment above the accordion component code.
+
+Then copy the code block that has the comment <!-- SPRINT ... -->
+above it. Include this comment too.
+
+Within this, you will see the following comment:
+
+<!-- CONTENT --><!-- END CONTENT -->
+
+Now scroll back up to the current sprint, copy the code that appears
+between the same 'CONTENT / END CONTENT' comments, and replace the
+code in the accordion block.
+
+You can then change the relevant URLs to correspond with the new
+version directory created in step 1 above.
+
+
+
+*****************************************
+*****************************************
+
+
+
+UPDATING FIND ADVISER FILTERING PROTOTYPE
+
+1. Duplicate routes_v1-4.js and mirror the naming convention of the 
+updated directory completed in the above step (example routes_v1-5.js).
+
+2. Inside this new file, update the following line accordingly 
+var folder = "v1-4/_find-adviser/filters"
+
+3. Open routes.js and add a line to corrolate to this new js file you
+created in step 1. The new line should look like this:
+
+router.use('/v1-5', require('./routes_v1-5'))
+
+NB: Make sure you use correct syntax and close the previous line with
+a comma
+
