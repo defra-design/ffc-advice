@@ -34,6 +34,31 @@
     </div>
   </details>
 
+    <!-- Location -->
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-body">
+          Location
+        </span>
+      </summary>
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        {% from "../data/lists/counties.json" import counties %}
+        {{ govukCheckboxes({
+                  idPrefix: "counties",
+                  name: "counties",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: false,
+                      classes: "govuk-fieldset__legend--s"
+                    }
+                  },
+                  items: counties
+                }) }}
+      </div>
+    </details>
+
   <!-- Skills -->
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
@@ -56,31 +81,6 @@
                   }
                 },
                 items: skills
-              }) }}
-    </div>
-  </details>
-
-  <!-- Location -->
-  <details class="govuk-details" data-module="govuk-details">
-    <summary class="govuk-details__summary">
-      <span class="govuk-body">
-        Location
-      </span>
-    </summary>
-    <div class="govuk-checkboxes govuk-checkboxes--small">
-      {% from "../data/lists/counties.json" import counties %}
-      {{ govukCheckboxes({
-                idPrefix: "counties",
-                name: "counties",
-                classes: "govuk-checkboxes--small",
-                fieldset: {
-                  legend: {
-                    text: "",
-                    isPageHeading: false,
-                    classes: "govuk-fieldset__legend--s"
-                  }
-                },
-                items: counties
               }) }}
     </div>
   </details>

@@ -26,13 +26,13 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="fa-receive-advice-type" method="post" novalidate>
+        <form action="fa-advice-types" method="post" novalidate>
 
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  What area do you specialise in?
+                  What would you like advice on?
                 </h1>
               </legend>
               <div id="waste-hint" class="govuk-hint">
@@ -41,40 +41,22 @@
               <div class="govuk-checkboxes" data-module="govuk-checkboxes">
                 
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="arable" name="advice-type" type="checkbox" value="arable">
-                  <label class="govuk-label govuk-checkboxes__label" for="arable">
-                    Arable
+                  <input class="govuk-checkboxes__input" id="funding" name="advice-category" type="checkbox" value="funding">
+                  <label class="govuk-label govuk-checkboxes__label" for="funding">
+                    Funding
                   </label>
-                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
-                    Grain, pulses, oil seed, forage, fibrous and tuber crops.
-                  </div>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="horticulture" name="advice-type" type="checkbox" value="horticulture">
-                  <label class="govuk-label govuk-checkboxes__label" for="horticulture">
-                    Horticuture
+                  <input class="govuk-checkboxes__input" id="regulations" name="advice-category" type="checkbox" value="regulations">
+                  <label class="govuk-label govuk-checkboxes__label" for="regulations">
+                    Regulations
                   </label>
-                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
-                    Fruits, vegetables, medicinal, aromatic, and ornamental plants.
-                  </div>
                 </div>
                 <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="livestock" name="advice-type" type="checkbox" value="livestock">
-                  <label class="govuk-label govuk-checkboxes__label" for="livestock">
-                    Livestock
+                  <input class="govuk-checkboxes__input" id="schemes" name="advice-category" type="checkbox" value="schemes">
+                  <label class="govuk-label govuk-checkboxes__label" for="schemes">
+                    Schemes
                   </label>
-                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
-                    Pigs, poultry, beef and sheep.
-                  </div>
-                </div>
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="horticulture" name="woodland" type="checkbox" value="woodland">
-                  <label class="govuk-label govuk-checkboxes__label" for="woodland">
-                    Woodland and forestry
-                  </label>
-                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
-                    Woodland and forestry habitats, increasing resilience to pests, diseases and climate change.
-                  </div>
                 </div>
                 <!--
                 <div class="govuk-checkboxes__item">
