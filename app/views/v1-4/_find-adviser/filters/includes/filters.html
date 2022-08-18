@@ -2,15 +2,20 @@
   <label class="govuk-label govuk-!-margin-top-2" for="search">
     Search
   </label>
-  <input class="govuk-input" style="width:250px;" id="search" name="name" type="text" value="{{ data.name }}">
-  <button class="govuk-button gem-c-search__submit gem-c-search--on-white" data-module="govuk-button">O</button>
+  <input class="govuk-input" style="width:250px; height:44px;" id="search" name="name" type="text" value="{{ data.name }}">
+  <button class="govuk-button" height="20" data-module="govuk-button">
+    <svg class="gem-c-search__icon" width="21" height="21" viewbox="0 0 28 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <circle cx="12.0161" cy="11.0161" r="8.51613" stroke="currentColor" stroke-width="3"></circle>
+      <line x1="17.8668" y1="17.3587" x2="26.4475" y2="25.9393" stroke="currentColor" stroke-width="3"></line>
+    </svg>
+  </button>
 </div><!-- END govuk-form-group -->
 
 <!-- Product type -->
 <div class="gir_filterbox">
 
   <!-- Sector -->
-  <details class="govuk-details" data-module="govuk-details">
+  <details class="govuk-details" data-module="govuk-details" open>
     <summary class="govuk-details__summary">
       <span class="govuk-body">
         Advice sector
@@ -34,8 +39,8 @@
     </div>
   </details>
 
-    <!-- Location -->
-    <details class="govuk-details" data-module="govuk-details">
+  <!-- Location -->
+  <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-body">
           Location
@@ -51,13 +56,13 @@
                     legend: {
                       text: "",
                       isPageHeading: false,
-                      classes: "govuk-fieldset__legend--s"
+                      classes: "govuk-checkboxes__label"
                     }
                   },
                   items: counties
                 }) }}
       </div>
-    </details>
+  </details>
 
   <!-- Skills -->
   <details class="govuk-details" data-module="govuk-details">
@@ -77,7 +82,7 @@
                   legend: {
                     text: "",
                     isPageHeading: false,
-                    classes: "govuk-fieldset__legend--s"
+                    classes: ""
                   }
                 },
                 items: skills
@@ -85,8 +90,8 @@
     </div>
   </details>
 
-<!-- Qualifications -->
-<details class="govuk-details" data-module="govuk-details">
+  <!-- Qualifications -->
+  <details class="govuk-details" data-module="govuk-details">
   <summary class="govuk-details__summary">
     <span class="govuk-body">
       Qualifications
@@ -102,14 +107,14 @@
                 legend: {
                   text: "",
                   isPageHeading: false,
-                  classes: "govuk-fieldset__legend--s"
+                  classes: ""
                 }
               },
               items: qualifications
             }) }}
 
   </div>
-</details>
+  </details>
 
   <!-- Experience -->
   <details class="govuk-details" data-module="govuk-details">
@@ -129,7 +134,7 @@
                   legend: {
                     text: "",
                     isPageHeading: false,
-                    classes: "govuk-fieldset__legend--s"
+                    classes: ""
                   }
                 },
                 items: experiences
@@ -137,6 +142,41 @@
     </div>
   </details>
 
-
+    <!-- Payment -->
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-body">
+          Payment
+        </span>
+      </summary>
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        {% from "../data/lists/payment.json" import payment %}
+  
+        {{ govukCheckboxes({
+                  idPrefix: "payment",
+                  name: "payment",
+                  classes: "govuk-checkboxes--small",
+                  fieldset: {
+                    legend: {
+                      text: "",
+                      isPageHeading: false,
+                      classes: ""
+                    }
+                  },
+                  items: payment
+                }) }}
+      </div>
+    </details>
 
 </div>
+
+<!-- OVERRIDE STYLES -->
+<style>
+  .govuk-form-group {
+    overflow-y: scroll;
+    max-height: 200px
+  }
+  .govuk-checkboxes__label {
+    font-size: 16px
+  }
+</style>
