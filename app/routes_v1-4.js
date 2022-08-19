@@ -16,7 +16,7 @@ router.use(function (req, res, next) {
 
 // Routes
 router.get('/_find-adviser/search', function(req, res) {
-    res.render(folder + '/filter-page', { results: filterRegister(req.query.name, req.query.skills, req.query.sectors, req.query.counties, req.query.qualifications, req.query.experiences), url: req.url  })
+    res.render(folder + '/filter-page', { results: filterRegister(req.query.searchText, req.query.skills, req.query.sectors, req.query.counties, req.query.qualifications, req.query.experiences), url: req.url  })
 })
 
 router.get('/_find-adviser/adviser-details/:adviserNumber', function(req, res) {
@@ -29,13 +29,12 @@ function findAdviser(adviserNumber) {
     return getRegisterData('register').find(element => element.adviserID === adviserNumber)
 }
 
-function filterRegister(name, skills, sectors, counties, qualifications, experiences) {
-    name = name.toLowerCase()
+function filterRegister(searchText, skills, sectors, counties, qualifications, experiences) {
 
     let registerData = getRegisterData('register')
 
-    if (name) {
-        registerData = registerData.filter(element => element.searchText.toLowerCase().includes(name))
+    if (searchText) {
+        registerData = registerData.filter(element => searchMatch(element, searchText))
     }
 
     if (skills != '_unchecked') {
@@ -59,6 +58,16 @@ function filterRegister(name, skills, sectors, counties, qualifications, experie
     }
 
     return registerData
+}
+
+function searchMatch(element, searchText) {
+    var elementSearchText = element.adviserName 
+        + "|" + element.name 
+        + "|" + element.counties 
+        + "|" + element.qualifications 
+        + "|" + element.sectors
+        + "|" + element.skills
+    return elementSearchText.toLowerCase().includes(searchText.toLowerCase())
 }
 
 function getRegisterData(registerName) {
