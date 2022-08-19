@@ -2,7 +2,6 @@
   {
     "adviserName": "Zac Battams",
     "name": "Norfolk Rivers Trust",
-    "searchText": "Norfolk Rivers Trust",
     "adviserID": "PGI-ES-A0121",
     "counties": "Norfolk, Suffolk, Cambridgeshire",
     "emailAddress": "zacbattams@norfolkriverstrust.org",
@@ -18,7 +17,6 @@
   {
     "adviserName": "Emily Winter",
     "name": "River Waveney Trust",
-    "searchText": "River Waveney Trust",
     "adviserID": "PGI-ES-A0122",
     "counties": "East Suffolk, North Suffolk",
     "emailAddress": "emily@riverwaveneytrust.org",
@@ -34,7 +32,6 @@
   {
     "adviserName": "Marcus Davies",
     "name": "Shropshire Wildlife Trust",
-    "searchText": "Shropshire Wildlife Trust",
     "adviserID": "PGI-ES-A0123",
     "counties": "Shropshire",
     "emailAddress": "enquiries@shropshirewildlifetrust.org.uk",
@@ -50,7 +47,6 @@
   {
     "adviserName": "Stuart Holm",
     "name": "Woodland Trust",
-    "searchText": "Woodland Trust",
     "adviserID": "PGI-ES-A0124",
     "counties": "Cornwall, Devon, Somerset, Dorset, Wiltshire, Gloucestershire, Dorset, Bristol",
     "emailAddress": "stuartholm@woodlandtrust.org.uk",
@@ -66,7 +62,6 @@
   {
     "adviserName": "Yannis Pandonis",
     "name": "Westcountry Rivers Trust",
-    "searchText": "Westcountry Rivers Trust",
     "adviserID": "PGI-ES-A0125",
     "counties": "Cornwall, Devon, Somerset, Dorset, Wiltshire, Gloucestershire, Dorset, Bristol",
     "emailAddress": "yog@wrt.org.uk",
@@ -82,7 +77,6 @@
   {
     "adviserName": "John Hunt",
     "name": "Westcountry Rivers Trust",
-    "searchText": "Westcountry Rivers Trust",
     "adviserID": "PGI-ES-A0126",
     "counties": "Cornwall, Devon, Somerset, Dorset, Wiltshire, Gloucestershire, Dorset, Bristol",
     "emailAddress": "johnhunt@wrt.org.uk",
@@ -98,7 +92,6 @@
   {
     "adviserName": "Deborah Miller",
     "name": "FWAG SouthWest",
-    "searchText": "FWAG SouthWest",
     "adviserID": "PGI-ES-A0127",
     "counties": "Cornwall, Devon, Somerset, Dorset, Wiltshire, Gloucestershire",
     "emailAddress": "07557094029",
@@ -114,7 +107,6 @@
   {
     "adviserName": "Adam Banbridge",
     "name": "Tyne Rivers Trust",
-    "searchText": "tyne rivers trust",
     "adviserID": "PGI-ES-A0128",
     "counties": "Northumberland",
     "emailAddress": "info@tyneriverstrust.org",
@@ -130,7 +122,6 @@
   {
     "adviserName": "Julia Dimbleby",
     "name": "ADAS",
-    "searchText": "ADAS",
     "adviserID": "PGI-ES-A0129",
     "counties": "West Midlands",
     "emailAddress": "Julia.Dimbleby@adas.co.uk",
@@ -146,7 +137,6 @@
   {
     "adviserName": "David Ruddock",
     "name": "Middlemarch Environmental Ltd",
-    "searchText": "Middlemarch Environmental Ltd",
     "adviserID": "PGI-ES-A0130",
     "counties": "Derbyshire, Northamptonshire, London, Kent, Sussex, Hampshire, Worcestershiree",
     "emailAddress": "david.ruddock@middlemarch.eco",
