@@ -1,0 +1,74 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="gf-farm-type" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Important updates to funding schemes, policy and regulations.
+                </h1>
+              </legend>
+              <p class="govuk-body">
+                These are the most recent updates that may be relevant to you. Please either read these or continue with your funding search.
+              </p>
+
+              <button class="govuk-button govuk-!-margin-top-4" data-module="govuk-button">
+                Continue with funding search
+              </button>
+
+              <h2 class="govuk-heading-m govuk-!-margin-top-4">Update to funding scheme 1</h2>
+              <p class="govuk-body">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla. <a href="#" class="govuk-link">Find out more</a></p>
+              <h2 class="govuk-heading-m">Policy updates</h2>
+              <p class="govuk-body">Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. <a href="#" class="govuk-link">Find out more</a></p>
+              <h2 class="govuk-heading-m">Updated regulations</h2>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><a href="#">The Countryside Stewardship (England) (Amendment) Regulations 2022</a></li>
+                <li><a href="#">The Common Agricultural Policy (Cross-Compliance Exemptions and Transitional Regulation) (Amendment) (EU Exit) Regulations 2022</a></li>
+              </ul>
+            </fieldset>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row govuk-!-margin-top-4">
+      <div class="govuk-grid-column-two-thirds" style="padding-top: 20px; border-top: 1px solid #b1b4b6;">
+  
+        <h2 class="govuk-heading-m govuk-!-padding-top-2">If you need help</h2>
+        <p class="govuk-body-m">You can call our helpline to assist you with advice or contact us through the following email address.</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+          <li><span id="phoneNumber">0123 4567 890</span>, Monday to Friday 8.30am to 5pm</li>
+        </ul>
+
+      </div>
+    </div>
+
+
+{% endblock %}
