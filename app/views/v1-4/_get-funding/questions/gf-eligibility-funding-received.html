@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <form action="../gf-results" method="post" class="form">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          How much funding did you receive?
+        </h1>
+      </legend>
+      <p class="govuk-body">
+        Some text here....
+      </p>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="funding-amount-received">
+          Total funding received
+        </label>
+        <input class="govuk-input govuk-input--width-10" id="funding-amount-received" name="funding-amount-received" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        Continue
+      </button>
+
+    </fieldset>
+  </form>
+</div>
+
+
+
+{% endblock %}
