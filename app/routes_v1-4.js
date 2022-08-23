@@ -92,4 +92,25 @@ function matchExperience(experience, value) {
      || experience === '>20' && value >= 20
 }
 
+
+
+// ROUTING for funding eligibility journey
+router.post('/_get-funding/questions/gf-eligibility-what-for', function (req, res) {
+    const fundingApplication = req.session.data['previous-funding-application'];
+    if (fundingApplication === "yes") {
+        res.redirect('/_get-funding/questions/gf-eligibility-what-for');
+    } else {
+        res.redirect('/_get-funding/gf-results');
+    };
+})
+
+router.post('/_get-funding/questions/gf-eligibility-funding-received', function (req, res) {
+    const fundingApplication = req.session.data['funding-application-successful'];
+    if (fundingApplication === "yes") {
+        res.redirect('/_get-funding/questions/gf-eligibility-funding-received');
+    } else {
+        res.redirect('/_get-funding/questions/gf-eligibility-why-unsuccessful');
+    };
+})
+
 module.exports = router
