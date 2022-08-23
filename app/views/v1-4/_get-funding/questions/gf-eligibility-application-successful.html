@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <form method="get" class="form">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Was your application successful?
+        </h1>
+      </legend>
+      <div id="funding-application-successful-hint" class="govuk-hint">
+        Select one option.
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="funding-application-successful-yes" name="funding-application-successful" type="radio" value="yes" >
+          <label class="govuk-label govuk-radios__label" for="funding-application-successful-yes">
+            Yes, it was a successful application
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="funding-application-successful-no" name="funding-application-successful" type="radio" value="no" >
+          <label class="govuk-label govuk-radios__label" for="funding-application-successful-no">
+            No, my application was not successful
+          </label>
+        </div>
+
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        Continue
+      </button>
+
+    </fieldset>
+  </form>
+</div>
+
+
+
+{% endblock %}
