@@ -95,21 +95,21 @@ function matchExperience(experience, value) {
 
 
 // ROUTING for funding eligibility journey
-router.post('/_get-funding/questions/gf-eligibility-what-for', function (req, res) {
+router.post('/v1-4/_get-funding/questions/gf-eligibility-what-for', function (req, res) {
     const fundingApplication = req.session.data['previous-funding-application'];
     if (fundingApplication === "yes") {
-        res.redirect('/_get-funding/questions/gf-eligibility-what-for');
+        res.redirect('/v1-4/_get-funding/questions/gf-eligibility-what-for');
     } else {
-        res.redirect('/_get-funding/gf-results');
+        res.redirect('/v1-4/_get-funding/gf-results');
     };
 })
 
-router.post('/_get-funding/questions/gf-eligibility-funding-received', function (req, res) {
+router.post('/v1-4/_get-funding/questions/gf-eligibility-funding-received', function (req, res) {
     const fundingApplication = req.session.data['funding-application-successful'];
     if (fundingApplication === "yes") {
-        res.redirect('/_get-funding/questions/gf-eligibility-funding-received');
+        res.redirect('/v1-4/_get-funding/questions/gf-eligibility-funding-received');
     } else {
-        res.redirect('/_get-funding/questions/gf-eligibility-why-unsuccessful');
+        res.redirect('/v1-4/_get-funding/questions/gf-eligibility-why-unsuccessful');
     };
 })
 
