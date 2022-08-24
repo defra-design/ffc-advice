@@ -34,11 +34,16 @@
       <p class="govuk-body">
         Some text here....
       </p>
+      
+      
       <div class="govuk-form-group">
         <label class="govuk-label" for="funding-amount-received">
           Total funding received
         </label>
-        <input class="govuk-input govuk-input--width-10" id="funding-amount-received" name="funding-amount-received" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+        <div class="govuk-input__wrapper">
+          <div class="govuk-input__prefix" aria-hidden="true">£</div>
+          <input class="govuk-input govuk-input--width-10" id="funding-amount-received" name="funding-amount-received" type="text" spellcheck="false" aria-describedby="account-number-hint" inputmode="numeric">
+        </div>
       </div>
 
       <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
