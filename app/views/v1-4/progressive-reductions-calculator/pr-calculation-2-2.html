@@ -179,7 +179,7 @@
                   </tr>
                   {% endif %}
                   <tr class="govuk-table__row">
-                    <th scope="row" class="govuk-table__header govuk-!-width-one-half">Total progressive reductions</th>
+                    <th scope="row" class="govuk-table__header govuk-!-width-one-half">Total reductions</th>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ data['starting-amount'] | calculateReduction(2021) or "£3,500.00" }}</strong></td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ data['starting-amount'] | calculateReduction(2022) or "£11,000.00" }}</strong></td>
                     <td class="govuk-table__cell govuk-table__cell--numeric"><strong>{{ data['starting-amount'] | calculateReduction(2023) or "£18,500.00" }}</strong></td>
