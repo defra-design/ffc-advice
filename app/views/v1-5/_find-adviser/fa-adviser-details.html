@@ -1,0 +1,86 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back to results</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form action="fa-results-2" method="post" novalidate>
+    <h1 class="govuk-heading-l">Gerard Martins</h1>
+
+      <p>Gerard has been providing advice to farmers and land managers in Herefordshire, Worcestershire and Gloucestershire for over 20 years. He specialises in arable, pastoral and mixed farming.</p>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Counties covered:</th>
+            <td class="govuk-table__cell">Herefordshire, Worcestershire, Gloucestershire</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Email address:</th>
+            <td class="govuk-table__cell"><a href="" class="govuk-link" id="emailLink">gmartin@defra.gov.uk</a></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Contact number:</th>
+            <td class="govuk-table__cell"><span id="phoneNumber">0123 4567 890</span></td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Experience (years):</th>
+            <td class="govuk-table__cell">20</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Qualifications:</th>
+            <td class="govuk-table__cell">FACTS, BASIS</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Is the adviser insured:</th>
+            <td class="govuk-table__cell">Yes</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Farm sectors:</th>
+            <td class="govuk-table__cell">pig, poultry, dairy and grassland, beef, sheep, arable (cereals), arable (maize), arable (vegetables including potatoes), horticulture (vegetables), horticulture (soft fruits)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Skills:</th>
+            <td class="govuk-table__cell">environmental assessment, yard storage buildings, nutrients, pesticides, soil health, species, natural flood management, water quality, habitats, climate resilience, air quality, social health and wellbeing, education, forestry, land management plans</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <button class="govuk-button" data-module="govuk-button">
+        Add to shortlist
+      </button>
+
+    </form>
+
+
+    </div>
+</div>
+
+<div class="govuk-grid-row govuk-!-margin-top-4">
+  <div class="govuk-grid-column-two-thirds" style="padding-top: 20px; border-top: 1px solid #b1b4b6;">
+
+    <h2 class="govuk-heading-m govuk-!-padding-top-2">If you need help</h2>
+    <p class="govuk-body-m">Telephone: <span id="phoneNumber">0123 4567 890</span></p>
+    <p class="govuk-body-m">Monday to Friday 8.30am to 5pm</p>
+    </ul>
+
+  </div>
+</div>
+
+
+
+
+{% endblock %}
