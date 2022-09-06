@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="fa-receive-advice-type" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What area do you specialise in?
+                </h1>
+              </legend>
+              <div id="waste-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="arable" name="advice-type" type="checkbox" value="arable">
+                  <label class="govuk-label govuk-checkboxes__label" for="arable">
+                    Arable
+                  </label>
+                  <div id="arable-hint" class="govuk-hint govuk-radios__hint">
+                    Grain, pulses, oil seed, forage, fibrous and tuber crops.
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="dairy" name="advice-type" type="checkbox" value="dairy">
+                  <label class="govuk-label govuk-checkboxes__label" for="dairy">
+                    Dairy
+                  </label>
+                  <div id="dairy-hint" class="govuk-hint govuk-radios__hint">
+                    Food products made from milk.
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="horticulture" name="advice-type" type="checkbox" value="horticulture">
+                  <label class="govuk-label govuk-checkboxes__label" for="horticulture">
+                    Horticuture
+                  </label>
+                  <div id="horticulture-hint" class="govuk-hint govuk-radios__hint">
+                    Fruits, vegetables, medicinal, aromatic, and ornamental plants.
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="livestock" name="advice-type" type="checkbox" value="livestock">
+                  <label class="govuk-label govuk-checkboxes__label" for="livestock">
+                    Livestock
+                  </label>
+                  <div id="livestock-hint" class="govuk-hint govuk-radios__hint">
+                    Pigs, poultry, beef and sheep.
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="horticulture" name="woodland" type="checkbox" value="woodland">
+                  <label class="govuk-label govuk-checkboxes__label" for="woodland">
+                    Woodland and forestry
+                  </label>
+                  <div id="woodland-forestry-hint" class="govuk-hint govuk-radios__hint">
+                    Woodland and forestry habitats, increasing resilience to pests, diseases and climate change.
+                  </div>
+                </div>
+                <!--
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="horticulture" name="waste" type="checkbox" value="waste">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                    Agricultural and livestock waste management
+                  </label>
+                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
+                    Disposal and or recycling of slurry, furtilizer, pestisides, green waste, waste medicines.
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="horticulture" name="forestry" type="checkbox" value="forestry">
+                  <label class="govuk-label govuk-checkboxes__label" for="forestry">
+                    Sustainable forestry
+                  </label>
+                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
+                    Preservation and reclaimation of woodland, forest lands, soil, and wildlife.
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="landscape-recovery" name="advice-type" type="checkbox" value="landscape-recovery">
+                  <label class="govuk-label govuk-checkboxes__label" for="landscape-recovery">
+                    Landscape recovery
+                  </label>
+                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
+                    This will pay landowners or managers who want to take a more radical and large-scale approach to producing environmental and climate outcomes through land use change and habitat and ecosystem restoration.
+                  </div>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="sustainable-farming" name="advice-type" type="checkbox" value="sustainable-farmning">
+                  <label class="govuk-label govuk-checkboxes__label" for="sustainable-farming">
+                    Sustainable farming
+                  </label>
+                  <div id="local-nature-recoverr-hint" class="govuk-hint govuk-radios__hint">
+                    This focuses on making agricultural activities more sustainable, including reducing inorganic fertiliser and pesticide use, taking care of our soils and improving farmland biodiversity, water quality, air quality and carbon sequestration. 
+                  </div>
+                </div>
+                -->
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row govuk-!-margin-top-4">
+      <div class="govuk-grid-column-two-thirds" style="padding-top: 20px; border-top: 1px solid #b1b4b6;">
+  
+        <h2 class="govuk-heading-m govuk-!-padding-top-2">If you need help</h2>
+        <p class="govuk-body-m">You can call our helpline to assist you with advice or contact us through the following email address.</p>
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+          <li><span id="phoneNumber">0123 4567 890</span>, Monday to Friday 8.30am to 5pm</li>
+        </ul>
+
+      </div>
+    </div>
+
+
+{% endblock %}

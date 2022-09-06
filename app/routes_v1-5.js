@@ -5,7 +5,7 @@ const fs = require('fs')
 
 
 
-var folder = "v1-4/_find-adviser/filters"
+var folder = "v1-5/_find-adviser/filters"
 var versionServiceName = "Find an adviser"
 router.use(function (req, res, next) {
   // store in locals this can then be used in pages as {{folder}} etc
@@ -94,27 +94,35 @@ function matchExperience(experience, value) {
 
 
 
-// ROUTING for funding eligibility journey
-
-
+// ************** ROUTING FOR FUNDING ELIGIBILITY JOURNEY ************** 
 
 // have you previously applied for funding
 router.post('/_get-funding/questions/gf-eligibility-previous-application', function (req, res) {
     const fundingApplication = req.session.data['previous-funding-application'];
     if (fundingApplication === "yes") {
-        res.redirect('/v1-4/_get-funding/questions/gf-eligibility-what-for');
+        res.redirect('/v1-5/_get-funding/questions/gf-eligibility-what-for');
     } else {
-        res.redirect('/v1-4/_get-funding/gf-results');
+        res.redirect('/v1-5/_get-funding/gf-results');
+    };
+})
+
+// funding type
+router.post('/_get-funding/questions/gf-eligibility-what-for', function (req, res) {
+    const fundingType = req.session.data['fund-type'];
+    if (fundingType === "yes") {
+        res.redirect('/v1-5/_get-funding/questions/gf-eligibility-application-successful');
+    } else {
+        res.redirect('/v1-5/_get-funding/questions/gf-eligibility-application-successful');
     };
 })
 
 // was funding application successful
 router.post('/_get-funding/questions/gf-eligibility-application-successful', function (req, res) {
-    const fundingSuccessful = req.session.data['funding-application-successful'];
-    if (fundingSuccessful === "yes") {
-        res.redirect('/v1-4/_get-funding/questions/gf-eligibility-application-successful');
+    const applicationStatus = req.session.data['application-successful'];
+    if (applicationStatus === "yes") {
+        res.redirect('/v1-5/_get-funding/questions/gf-eligibility-funding-received');
     } else {
-        res.redirect('/v1-4/_get-funding/gf-results');
+        res.redirect('/v1-5/_get-funding/questions/gf-eligibility-why-unsuccessful');
     };
 })
 
