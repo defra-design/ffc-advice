@@ -95,8 +95,11 @@ function matchExperience(experience, value) {
 
 
 // ROUTING for funding eligibility journey
-// DT - Not fixed this
-router.post('/_get-funding/questions/gf-eligibility-what-for', function (req, res) {
+
+
+
+// have you previously applied for funding
+router.post('/_get-funding/questions/gf-eligibility-previous-application', function (req, res) {
     const fundingApplication = req.session.data['previous-funding-application'];
     if (fundingApplication === "yes") {
         res.redirect('/v1-4/_get-funding/questions/gf-eligibility-what-for');
@@ -105,14 +108,13 @@ router.post('/_get-funding/questions/gf-eligibility-what-for', function (req, re
     };
 })
 
-
-// DT - Fixed this
-router.post('/_get-funding/questions/gf-eligibility-previous-application', function (req, res) {
-    const fundingApplication = req.session.data['previous-funding-application'];
-    if (fundingApplication === "yes") {
-        res.redirect('/v1-4/_get-funding/questions/gf-eligibility-funding-received');
+// was funding application successful
+router.post('/_get-funding/questions/gf-eligibility-application-successful', function (req, res) {
+    const fundingSuccessful = req.session.data['funding-application-successful'];
+    if (fundingSuccessful === "yes") {
+        res.redirect('/v1-4/_get-funding/questions/gf-eligibility-application-successful');
     } else {
-        res.redirect('/v1-4/_get-funding/questions/gf-eligibility-why-unsuccessful');
+        res.redirect('/v1-4/_get-funding/gf-results');
     };
 })
 
