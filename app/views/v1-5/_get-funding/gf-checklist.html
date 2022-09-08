@@ -37,8 +37,8 @@
               <p class="govuk-body">
                 Below is a summary of the answers you have given.
               </p>
-              
-              <dl class="govuk-summary-list govuk-!-margin-top-6">
+              <h3 class="govuk-heading-m  govuk-!-margin-top-6">Application details</h2>
+              <dl class="govuk-summary-list govuk-!-margin-top-4">
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     What area do you specialise in?
@@ -70,6 +70,37 @@
                 -->
                 </div>
                 <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Land type
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data ['location'] }}
+                    </dd>
+                    <!--
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> farm or land type</span>
+                      </a>
+                    </dd>
+                  -->
+                  </div>
+                  <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Land size
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data ['size'] }}
+                    </dd>
+                    <!--
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> farm or land type</span>
+                      </a>
+                    </dd>
+                  -->
+                  </div>
+                  <h3 class="govuk-heading-m  govuk-!-margin-top-6">Eligibility</h2>
+                  <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     Have you previously applied for funding?
                   </dt>
@@ -84,6 +115,21 @@
                   </dd>
                 -->
                 </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                      Previous application reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                      {{ data ['previous-application-reference'] or 'unknown'}}
+                    </dd>
+                    <!--
+                    <dd class="govuk-summary-list__actions">
+                      <a class="govuk-link" href="#">
+                        Change<span class="govuk-visually-hidden"> what was funding for</span>
+                      </a>
+                    </dd>
+                  -->
+                  </div>
                 <div class="govuk-summary-list__row">
                   <dt class="govuk-summary-list__key">
                     What was the funding for?
