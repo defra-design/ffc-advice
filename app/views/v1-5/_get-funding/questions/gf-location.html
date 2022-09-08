@@ -31,11 +31,11 @@
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Land details
+                  {% if (data['user-type'] == "Farmer") %}Farm {% elseif (data['user-type'] == "Forester") %}Land {% else %}Farm or land {% endif %} details
                 </h1>
               </legend>
               <div id="location-hint" class="govuk-hint">
-                This will help us find applicable funding schemes. If your farm or land parcel for whih you would ike to aply for funding appears across counties, please enter them all.
+                This will help us find applicable funding schemes. If your farm or land parcel for which you would ike to aply for funding appears across counties, please enter them all, separated by a comma.
               </div>
               <label class="govuk-label govuk-!-margin-top-6" for="location">
                 Enter your postcode or county
