@@ -100,7 +100,7 @@ function matchExperience(experience, value) {
 router.post('/_get-funding/questions/gf-eligibility-previous-application', function (req, res) {
     const fundingApplication = req.session.data['previous-funding-application'];
     if (fundingApplication === "yes") {
-        res.redirect('/v1-5/_get-funding/questions/gf-eligibility-what-for');
+        res.redirect('/v1-5/_get-funding/questions/gf-eligibility-application-reference');
     } else {
         res.redirect('/v1-5/_get-funding/gf-results');
     };
