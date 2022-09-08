@@ -31,12 +31,15 @@
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  What type of farm do you need funding for?
+                  What type of {% if (data['user-type'] == "Forester") %}land {% else %}farm {% endif %}do you need funding for?
                 </h1>
               </legend>
               <div id="type-of-farm-hint" class="govuk-hint">
                 Select all that apply.
               </div>
+              
+              <!-- Farmer options -->
+              {% if (data['user-type'] == "Farmer") %}
               <div class="govuk-radios" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="type-of-farm" name="type-of-farm" type="radio" value="Arable">
@@ -81,7 +84,7 @@
           <details class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                Help with farming types
+                Help with land types
               </span>
             </summary>
             <div class="govuk-details__text">
@@ -95,6 +98,40 @@
               </ul>
             </div>
           </details>
+          {% endif %}
+
+          <!-- Forester options -->
+          {% if (data['user-type'] == "Forester") %}
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="type-of-farm" name="type-of-farm" type="radio" value="Woodland">
+              <label class="govuk-label govuk-radios__label" for="type-of-farm">
+                Woodland
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="type-of-farm-2" name="type-of-farm" type="radio" value="Forest">
+              <label class="govuk-label govuk-radios__label" for="type-of-farm-2">
+                Forest
+              </label>
+            </div>
+        </fieldset>
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Help with land types
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <ul>
+            <li>Woodland - areas covered with trees and vegitation</li>
+            <li>Forest - large areas covered with trees and vegitation</li>
+          </ul>
+        </div>
+      </details>
+      {% endif %}
 
           <button class="govuk-button" data-module="govuk-button">
             Continue
