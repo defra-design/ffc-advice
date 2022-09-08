@@ -98,10 +98,9 @@
               </ul>
             </div>
           </details>
-          {% endif %}
 
           <!-- Forester options -->
-          {% if (data['user-type'] == "Forester") %}
+          {% elseif (data['user-type'] == "Forester") %}
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="type-of-farm" name="type-of-farm" type="radio" value="Woodland">
@@ -131,7 +130,82 @@
           </ul>
         </div>
       </details>
-      {% endif %}
+
+      <!-- ALL options -->
+      {% else %}
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="arable" name="type-of-farm" type="radio" value="Arable">
+          <label class="govuk-label govuk-radios__label" for="arable">
+            Arable
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="pastoral" name="type-of-farm" type="radio" value="Pastoral">
+          <label class="govuk-label govuk-radios__label" for="pastoral">
+            Pastoral
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="mixed-farmning" name="type-of-farm" type="radio" value="Mixed farming">
+          <label class="govuk-label govuk-radios__label" for="mixed-farmning">
+            Mixed farming
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="horticulture" name="type-of-farm" type="radio" value="Horticulture">
+          <label class="govuk-label govuk-radios__label" for="horticulture">
+            Horticulture
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="market-gardening" name="type-of-farm" type="radio" value="Market gardening">
+          <label class="govuk-label govuk-radios__label" for="market-gardening">
+            Market gardening
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="viticulture" name="type-of-farm" type="radio" value="Viticulture">
+          <label class="govuk-label govuk-radios__label" for="viticulture">
+            Viticulture
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="woodland" name="type-of-farm" type="radio" value="Woodland">
+          <label class="govuk-label govuk-radios__label" for="oodland">
+            Woodland
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="forest" name="type-of-farm" type="radio" value="Forest">
+          <label class="govuk-label govuk-radios__label" for="forest">
+            Forest
+          </label>
+        </div>
+      </div>
+    </fieldset>
+  </div>
+
+  <details class="govuk-details" data-module="govuk-details">
+    <summary class="govuk-details__summary">
+      <span class="govuk-details__summary-text">
+        Help with land types
+      </span>
+    </summary>
+    <div class="govuk-details__text">
+      <ul>
+        <li>Arable - growing of crops and cereals</li>
+        <li>Pastoral - rearing and production of animals including pigs, chickens, hill farming sheep, beef and dairy cattle)</li>
+        <li>Mixed farming - a combination of arable and pastoral</li>
+        <li>Horticulture - production of flowers, fruit, vegetables and ornamental plants)</li>
+        <li>Market gardening - production of fruit and vegetables</li>
+        <li>Viticulture - grapes</li>
+        <li>Woodland - areas covered with trees and vegitation</li>
+        <li>Forest - large areas covered with trees and vegitation</li>
+      </ul>
+    </div>
+  </details>
+  {% endif %}
 
           <button class="govuk-button" data-module="govuk-button">
             Continue
