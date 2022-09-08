@@ -31,12 +31,9 @@
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  What type of {% if (data['user-type'] == "Forester") %}land {% else %}farm {% endif %}do you need funding for?
+                  What type of {% if (data['user-type'] == "Farmer") %}farm {% elseif (data['user-type'] == "Forester") %}land {% else %}farm or land {% endif %}do you need funding for?
                 </h1>
               </legend>
-              <div id="type-of-farm-hint" class="govuk-hint">
-                Select all that apply.
-              </div>
               
               <!-- Farmer options -->
               {% if (data['user-type'] == "Farmer") %}
