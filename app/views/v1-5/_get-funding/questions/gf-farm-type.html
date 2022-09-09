@@ -100,15 +100,21 @@
           {% elseif (data['user-type'] == "Forester") %}
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="type-of-farm" name="type-of-farm" type="radio" value="Woodland">
-              <label class="govuk-label govuk-radios__label" for="type-of-farm">
-                Woodland
+              <input class="govuk-radios__input" id="forest" name="type-of-farm" type="radio" value="Forest">
+              <label class="govuk-label govuk-radios__label" for="forest">
+                Forest
               </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="type-of-farm-2" name="type-of-farm" type="radio" value="Forest">
-              <label class="govuk-label govuk-radios__label" for="type-of-farm-2">
-                Forest
+              <input class="govuk-radios__input" id="park" name="type-of-farm" type="radio" value="Park">
+              <label class="govuk-label govuk-radios__label" for="park">
+                Park
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="type-of-farm" name="type-of-farm" type="radio" value="Woodland">
+              <label class="govuk-label govuk-radios__label" for="type-of-farm">
+                Woodland
               </label>
             </div>
         </fieldset>
@@ -122,8 +128,8 @@
         </summary>
         <div class="govuk-details__text">
           <ul>
-            <li>Woodland - areas covered with trees and vegitation</li>
-            <li>Forest - large areas covered with trees and vegitation</li>
+            <li>Woodland - a habitat where trees are the dominant plant form</li>
+            <li>Forest - areas above 1.24 acres with over 60% covered with tall trees (over 16 feet), and vegitation</li>
           </ul>
         </div>
       </details>
@@ -168,15 +174,21 @@
           </label>
         </div>
         <div class="govuk-radios__item">
-          <input class="govuk-radios__input" id="woodland" name="type-of-farm" type="radio" value="Woodland">
-          <label class="govuk-label govuk-radios__label" for="oodland">
-            Woodland
-          </label>
-        </div>
-        <div class="govuk-radios__item">
           <input class="govuk-radios__input" id="forest" name="type-of-farm" type="radio" value="Forest">
           <label class="govuk-label govuk-radios__label" for="forest">
             Forest
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="park" name="type-of-farm" type="radio" value="Park">
+          <label class="govuk-label govuk-radios__label" for="park">
+            Park
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="woodland" name="type-of-farm" type="radio" value="Woodland">
+          <label class="govuk-label govuk-radios__label" for="oodland">
+            Woodland
           </label>
         </div>
       </div>
@@ -186,7 +198,7 @@
   <details class="govuk-details" data-module="govuk-details">
     <summary class="govuk-details__summary">
       <span class="govuk-details__summary-text">
-        Help with land types
+        Help with farm and land types
       </span>
     </summary>
     <div class="govuk-details__text">
@@ -197,8 +209,8 @@
         <li>Horticulture - production of flowers, fruit, vegetables and ornamental plants)</li>
         <li>Market gardening - production of fruit and vegetables</li>
         <li>Viticulture - grapes</li>
-        <li>Woodland - areas covered with trees and vegitation</li>
-        <li>Forest - large areas covered with trees and vegitation</li>
+        <li>Woodland - a habitat where trees are the dominant plant form</li>
+        <li>Forest - Forest - areas above 1.24 acres with over 60% covered with tall trees (over 16 feet), and vegitation</li>
       </ul>
     </div>
   </details>
