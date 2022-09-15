@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/v1-5/_get-funding/questions/gf-eligibility-what-for" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="funt-type-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What was the funding for?
+                </h1>
+              </legend>
+              <div id="fund-type-hint" class="govuk-hint">
+                Select all that apply.
+              </div>
+              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="fund-type" name="fund-type" type="checkbox" value="one">
+                  <label class="govuk-label govuk-checkboxes__label" for="funding-type">
+                    option 1
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="fund-type-1" name="fund-type" type="checkbox" value="two">
+                  <label class="govuk-label govuk-checkboxes__label" for="funding-type-1">
+                    option 2
+                  </label>
+                </div>
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="fund-type-2" name="fund-type" type="checkbox" value="three">
+                    <label class="govuk-label govuk-checkboxes__label" for="funding-type-2">
+                      option 3
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="fund-type-3" name="fund-type" type="checkbox" value="four">
+                    <label class="govuk-label govuk-checkboxes__label" for="funding-type-3">
+                      option 4
+                    </label>
+                  </div>
+              
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}
