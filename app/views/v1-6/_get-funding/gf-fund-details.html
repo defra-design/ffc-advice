@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Search results
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-l">Farming Equipment and Technology Fund</h1>
+
+      <p>This fund provides grants towards the cost of equipment and technology to improve the productivity of farms in a sustainable way.</p>
+
+      <table class="govuk-table">
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Funding type</th>
+            <td class="govuk-table__cell">Grant</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Fund group</th>
+            <td class="govuk-table__cell">Part of the Farming Investment Fund (FIF)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name</th>
+            <td class="govuk-table__cell">Farming Equipment and Technology Fund</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Funding available</th>
+            <td class="govuk-table__cell">Between £2,000 and £25,000</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Related funds</th>
+            <td class="govuk-table__cell"><a href="#">Farming Transformation Fund</a></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Farming Transformation Fund (for grants between £35,000 and £500,000) -->
+
+      <button class="govuk-button" data-module="govuk-button">
+        Apply for funding
+      </button>
+
+        <h2 class="govuk-heading-s">Round 1</h2>
+
+        <p>The Farming Equipment and Technology Fund Round 1 is closed for new applications.</p>
+
+          <p>The FETF Round 1 manual explains what the FETF is for, who is eligible, the information needed to apply for Round 1 and, if an application is successful, how to claim funding.</p>
+
+            <h2 class="govuk-heading-s">Accept your Grant Funding Agreement</h2>
+
+            <p>If you have received a Grant Funding Agreement you should check that items are available with your supplier and accept your offer by midnight on 1 April 2022.</p>
+
+              <p>You can accept (or withdraw) from the offer using the FETF acceptance portal.</p>
+
+                <p>Once you have accepted your Grant Funding Agreement, you can purchase your items and claim your money by midnight on 31 October 2022.</p>
+
+                  <p>Some items have been very popular, so please make sure you order as soon as you can. If you do not order early, you may not be able to get your items by the claim deadline.</p>
+
+
+
+
+
+    </div>
+</div>
+
+
+
+
+
+{% endblock %}
