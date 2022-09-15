@@ -74,5 +74,5 @@ After creating the new routes.js version file, find the following line of
 comment:
 // ROUTING for funding eligibility journey
 
-all insances of the folder name e.g /v1-4/ needs to be updated to align
+all instances of the folder name e.g /v1-4/ needs to be updated to align
 with the new folder version
