@@ -76,3 +76,6 @@ comment:
 
 all instances of the folder name e.g /v1-4/ needs to be updated to align
 with the new folder version
+
+In addition, navigate to /_get-funding/questions/ and update the url in 
+the form action with the new version number
