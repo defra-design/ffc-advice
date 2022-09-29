@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-form-group">
+  <form action="/v1-5/_get-funding/questions/gf-eligibility-previous-application" method="post" class="form">
+    <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+      <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+        <h1 class="govuk-fieldset__heading">
+          Have you previously applied for funding?
+        </h1>
+      </legend>
+      <div id="previous-funding-application-hint" class="govuk-hint">
+        Select one option.
+      </div>
+      <div class="govuk-radios" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="previous-funding-application-yes" name="previous-funding-application" type="radio" value="yes" >
+          <label class="govuk-label govuk-radios__label" for="previous-funding-application-yes">
+            Yes, I have applied for funding
+          </label>
+        </div>
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="previous-funding-application-no" name="previous-funding-application" type="radio" value="no" >
+          <label class="govuk-label govuk-radios__label" for="previous-funding-application-no">
+            No, I have not applied for funding
+          </label>
+        </div>
+
+      </div>
+
+      <button class="govuk-button govuk-!-margin-top-6" data-module="govuk-button">
+        Continue
+      </button>
+
+    </fieldset>
+  </form>
+</div>
+
+
+
+{% endblock %}
