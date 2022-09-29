@@ -1,0 +1,44 @@
+{% set sectors =
+  [
+  {
+    value: "Pig",
+    text: "Pig"
+  },
+  {
+    value: "Poultry",
+    text: "Poultry"
+  },
+  {
+    value: "Dairy and grassland",
+    text: "Dairy and grassland"
+  },
+  {
+    value: "Beef",
+    text: "Beef"
+  },
+  {
+    value: "Sheep",
+    text: "Sheep"
+  },
+  {
+    value: "Arable (cereals)",
+    text: "Arable (cereals)"
+  },
+  {
+    value: "Arable (maize)",
+    text: "Arable (maize)"
+  },
+  {
+    value: "Arable (vegetables incl. potatoes)",
+    text: "Arable (vegetables incl. potatoes)"
+  },
+  {
+    value: "Horticulture (vegetables)",
+    text: "Horticulture (vegetables)"
+  },
+  {
+    value: "Horticulture (soft fruit)",
+    text: "Horticulture (soft fruit)"
+  }
+ ]
+%}
