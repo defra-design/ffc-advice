@@ -1,0 +1,110 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Funding for farmers
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<style>
+  #shortlist {
+    background-color: #f3f2f1;
+    border: 1px solid #000;
+    display: block;
+    height: auto;
+    margin-top: 64px;
+    padding: 16px 16px 0px 16px;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+      <h1 class="govuk-fieldset__heading">
+        List of available funding schemes
+      </h1>
+    </legend>
+    <p class="govuk-body">
+      These funding schemes are most suitable for you based on the information you provided.
+    </p>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    
+    <p class="govuk-body-s">4 results found</p>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Sustainable Farming Incentive</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="#">Add to shortlist</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Funded by: <span class= "govuk-!-font-weight-regular">Government</span></li>
+        <li class="govuk-!-font-weight-bold">Fund type: <span class= "govuk-!-font-weight-regular">Scheme</span></li>
+      </ul>
+      <p>Through this scheme, we will pay farmers to produce public goods such as water quality, biodiversity, animal health and welfare and climate change mitigation, alongside food production.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="gf-fund-details">Farming Equipment and Technology Fund</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="#">Add to shortlist</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Funded by: <span class= "govuk-!-font-weight-regular">Government</span></li>
+        <li class="govuk-!-font-weight-bold">Fund type: <span class= "govuk-!-font-weight-regular">Grant</span></li>
+        <li class="govuk-!-font-weight-bold">Fund group: <span class= "govuk-!-font-weight-regular">Farming Investment Fund (FIF)</span></li>
+      </ul>
+      <p>This fund provides grants towards the cost of equipment and technology to improve the productivity of farms in a sustainable way.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Local Nature Recovery</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="fa-results-2.html">Add to shortlist</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Funded by: <span class= "govuk-!-font-weight-regular">Government</span></li>
+        <li class="govuk-!-font-weight-bold">Fund type: <span class= "govuk-!-font-weight-regular">Scheme</span></li>
+      </ul>
+      <p>Local Nature Recovery is the improved and more ambitious successor to the Countryside Stewardship scheme in England. It will pay for locally-targeted actions to make space for nature in the farmed landscape and the wider countryside, alongside food production.</p>
+    </div>
+
+    <div class="results-row">
+      <h2 class="govuk-heading-m">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">Landscape Recovery</a><span style="display: block; float:right;"><a class="govuk-link govuk-!-font-size-16" href="#">Add to shortlist</a></span>
+      </h2>
+      <ul class="govuk-list">
+        <li class="govuk-!-font-weight-bold">Funded by: <span class= "govuk-!-font-weight-regular">Government</span></li>
+        <li class="govuk-!-font-weight-bold">Fund type: <span class= "govuk-!-font-weight-regular">Scheme</span></li>
+      </ul>
+      <p>This scheme is for landowners and managers who want to take a more radical and large-scale approach to producing environmental and climate goods on their land.</p>
+    </div>
+
+  </div>
+
+  <!-- SIDEBAR RELATED CONTENT -->
+  <div class="govuk-grid-column-one-third">
+    <div id="shortlist">
+      {% block sidebar %}
+        <h3 class="govuk-heading-s">Your shortlist</h3>
+        <ul style="margin: 0; display: block; padding: 0; width: 100%">
+         </ul>
+      {% endblock %}
+    </div>
+  </div>
+
+</div>
+
+
+
+{% endblock %}
