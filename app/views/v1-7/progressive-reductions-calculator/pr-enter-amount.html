@@ -31,13 +31,15 @@
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                 <h1 class="govuk-fieldset__heading">
-                  Add your starting payment amount
+                  How payments are calculated
                 </h1>
               </legend>
-              <p class="govuk-body">The reductions apply to BPS and delinked payments in England. You should exclude payments for land in Scotland, Wales or Northern Ireland from your starting payment amount.</p>
+              <p class="govuk-body">The calculator will estimate your payments for each year based on the starting payment amount you add.</p>
+              <p class="govuk-body">The value of this amount should be taken from your 2020 BPS claim statement, or your most recent claim statement, depending on your circumstances.</p>
+              <p class="govuk-body">You should exclude payments for land in Scotland, Wales or Northern Ireland from your starting payment amount.</p>
 
               <h3 class="govuk-heading-s">If you claimed BPS in 2020</h3>
-              <p class="govuk-body">You should add the the total of the following amounts shown on your BPS claim statement for 2020 as your starting amount, if you're claiming for a similar area of land in 2022 and 2023:</p>
+              <p class="govuk-body">You should use the total of the following amounts shown on your 2020 BPS claim statement as your starting payment amount:</p>
               <ul class="govuk-list govuk-list--bullet">
                 <li>BPS 'gross value' amount</li>
                 <li>young farmer claim value, if relevant</li>
@@ -47,11 +49,23 @@
                 <li>any penalties</li>
                 <li>a 5% reduction if your claim was more than €150,000</li>
               </ul>
-              <h3 class="govuk-heading-s">If you claimed BPS in 2021 or 2022 for the first time</h3>
-              <p class="govuk-body">You should add the total of the following amounts shown on your most recent BPS claim statement as your starting payment amount, if you're claiming for a similar area of land in 2023:</p>
+              <h3 class="govuk-heading-s">If you claimed BPS for the first time after 2020</h3>
+              <p class="govuk-body">You should use the total of the following amounts shown on your 2020 BPS claim statement as your starting payment amount:</p>
               <ul class="govuk-list govuk-list--bullet">
                 <li>BPS 'gross value' amount</li>
                 <li>young farmer claim value, if relevant</li>
+              </ul>
+              <h3 class="govuk-heading-s">2024 payment results</h3>
+              <p class="govuk-body">The calculator assumes you received the same claim value each year between 2022-2022 to calculate the 2024 payment result.</p>
+              <p class="govuk-body">To get a more accurate result for 2024 if you have not claimed BPS each year or your land has changed, you can either:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>use the average claim value you received between 2020-2022 as your starting payment amount</li>
+                <li>calculate what proportion of the the 2024 payment you’re likely to receive</li>
+              </ul>
+              <p class="govuk-body">You should divide the 2024 payment:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>by 3 if you claimed for 1 out of the 3 years</li>
+                <li>by 3, and multiply by 2 if you claimed for 2 out of the 3 years</li>
               </ul>
 
               <div class="govuk-input__wrapper">
@@ -64,13 +78,6 @@
           <button class="govuk-button" data-module="govuk-button">
             Calculate my payments
           </button>
-
-          <details class="govuk-details" data-module="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">I'm claiming for land that has changed or may change</span>
-            </summary>
-            <div class="govuk-details__text">If the land you're claiming for has changed or may change, you should take the average unit values from your most recent BPS claim statement. Multiply these values by the revised claim area you're planning to use to get your starting amount.</div>
-          </details>
         </form>
       </div>
     </div>
