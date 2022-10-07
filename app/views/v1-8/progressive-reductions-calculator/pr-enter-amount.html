@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="pr-calculation" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  How payments are calculated
+                </h1>
+              </legend>
+              <p class="govuk-body">The calculator will estimate your payments for each year based on the starting payment amount you add.</p>
+              <p class="govuk-body">You should exclude payments for land in Scotland, Wales or Northern Ireland from your starting payment amount.</p>
+              <p class="govuk-body">If you did not claim in any of the years then enter 0 as your amount</p>
+
+              <h3 class="govuk-heading-s">For your BPS claim in 2020</h3>
+              <p class="govuk-body">You should use the total of the following amounts shown on your 2020 BPS claim statement as your starting payment amount:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>BPS 'gross value' amount</li>
+                <li>young farmer claim value, if relevant</li>
+              </ul>
+              <p class="govuk-body">This is the value of your claim before the RPA applied:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>any penalties</li>
+                <li>a 5% reduction if your claim was more than €150,000</li>
+              </ul>
+              <h3 class="govuk-heading-s">For your BPS claims in 2021 and 2022</h3>
+              <p class="govuk-body">You should use the total of the following amounts shown on your most recent BPS claim statement as your starting payment amount:</p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li>BPS 'gross value' amount</li>
+                <li>young farmer claim value, if relevant</li>
+              </ul>
+              
+              <h3 class="govuk-heading-s">Enter your 2020 payment amount</h3>
+              <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-!-width-one-third" id="starting-amount-2020" name="starting-amount-2020" type="text" spellcheck="false" value="{{ data['starting-amount-2020'] }}">
+              </div>
+              
+              <h3 class="govuk-heading-s">Enter your 2021 payment amount</h3>
+              <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-!-width-one-third" id="starting-amount-2021" name="starting-amount-2021" type="text" spellcheck="false" value="{{ data['starting-amount-2021'] }}">
+              </div>
+              
+              <h3 class="govuk-heading-s">Enter your 2022 payment amount</h3>
+              <div class="govuk-input__wrapper">
+                <div class="govuk-input__prefix" aria-hidden="true">£</div>
+                <input class="govuk-input govuk-!-width-one-third" id="starting-amount-2022" name="starting-amount-2022" type="text" spellcheck="false" value="{{ data['starting-amount-2022'] }}">
+              </div>
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Calculate my payments
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+{% endblock %}

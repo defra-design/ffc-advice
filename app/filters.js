@@ -72,7 +72,7 @@ module.exports = function (env) {
     amount = parseValue(amount)
     return formatValue(amount)
   }
-  
+
   filters.calculateReduction = function(totalAmount, year) {
     totalAmount = parseValue(totalAmount)
     totalAmount = doCalc(totalAmount, year, '<30') 
@@ -95,6 +95,34 @@ module.exports = function (env) {
       + doCalc(totalAmount, year, '50-150') 
       + doCalc(totalAmount, year, '>150')) // Apply reduction
     return formatValue(totalAmount)
+  }
+
+  filters.calculateAverage = function(amount2020, amount2021, amount2022) {
+    amount2020 = parseValue(amount2020)
+    amount2021 = parseValue(amount2021)
+    amount2022 = parseValue(amount2022)
+    return ((amount2020 + amount2021 + amount2022) / 3) + ""
+  }
+  
+  filters.calculateDelinkedReduction = function(amount2020, amount2021, amount2022, year) {
+    amount2020 = parseValue(amount2020)
+    amount2021 = parseValue(amount2021)
+    amount2022 = parseValue(amount2022)
+    return filters.calculateReduction ((amount2020 + amount2021 + amount2022) / 3 + "", year)
+  }
+  
+  filters.calculateDelinkedReductionTier = function(amount2020, amount2021, amount2022, year, tier) {
+    amount2020 = parseValue(amount2020)
+    amount2021 = parseValue(amount2021)
+    amount2022 = parseValue(amount2022)
+    return filters.calculateReductionTier ((amount2020 + amount2021 + amount2022) / 3 + "", year, tier)
+  }
+  
+  filters.calculateDelinkedPayment = function(amount2020, amount2021, amount2022, year) {
+    amount2020 = parseValue(amount2020)
+    amount2021 = parseValue(amount2021)
+    amount2022 = parseValue(amount2022)
+    return filters.calculatePayment ((amount2020 + amount2021 + amount2022) / 3 + "", year)
   }
 
   /* ------------------------------------------------------------------
