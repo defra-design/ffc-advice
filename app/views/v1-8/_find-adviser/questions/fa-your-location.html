@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="../fa-results" method="post" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  What is your location?
+                </h1>
+              </legend>
+              <div id="location-hint" class="govuk-hint">
+                This will help us find advisers close to your local area.
+              </div>
+              <label class="govuk-label govuk-!-margin-top-6" for="postcode">
+                Enter your postcode or county
+              </label>
+              <div id="postcode-hint" class="govuk-hint">For example GL54 1BB or Gloucestershire</div>
+              <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}

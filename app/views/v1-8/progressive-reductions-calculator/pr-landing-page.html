@@ -1,0 +1,120 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Check how your BPS payments will reduce until 2024</h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <p class="govuk-body-m">Payments from the Basic Payment Scheme (BPS) are reducing each year from 2021 until the end of the 2023 scheme year in England.</p>
+      <p class="govuk-body-m">Defra plans to replace BPS payments with delinked payments from 2024. Delinked payments will reduce each year until payments finish in 2027. More information about reductions to delinked payments from 2025 to 2027 will be published when it's available.</p>
+      <p class="govuk-body-m">Use the calculator to get an estimate of how much money you could receive each year until the end of 2024.</p>
+      <p class="govuk-body-m">It should give you a result in less than 2 minutes.</p>
+      <p class="govuk-body-m">You do not need to add personal information to the calculator. No personal information is collected or stored.</p>
+      <p class="govuk-body-m">There's no limit to the number of times you can use the calculator.</p>
+
+      <a href="pr-enter-amount.html" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-4 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start new calculation
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+      
+      <h3 class="govuk-heading-s">How RPA calculate your payment</h3>
+      <p class="govuk-body">The Rural Payments Agency (RPA) will apply the following percentage reductions to:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>BPS payments for 2021 to 2023 scheme years</li>
+        <li>delinked payments in 2024</li>
+      </ul>
+      <p class="govuk-body">Percentage reductions will:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>apply to different portions of your payment</li>
+        <li>increase each year</li>
+      </ul>
+      <p class="govuk-body">For example, a BPS 2022 claim worth £40,000 would be reduced by a total of £8,500 to £31,500. The total reduction is made up of a:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>20% reduction applied to the first £30,000 (a reduction of £6,000)</li>
+        <li>25% reduction applied to the next £10,000 (a reduction of £2,500)</li>
+      </ul>
+            <!-- Progressive reductions -->
+            <table class="govuk-table govuk-!-margin-top-6 govuk-!-margin-bottom-8">
+              <caption class="govuk-table__caption govuk-table__caption--m"><span style="display:none;">Progressive reductions calculation</span></caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th scope="col" class="govuk-table__header govuk-!-width-one-half">Scheme year</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">2021</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">2022</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">2023</th>
+                  <th scope="col" class="govuk-table__header govuk-table__header--numeric">2024</th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-half">£30,000.00 or less</th>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">5%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">20%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">35%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">50%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-half">Amounts above £30,000.00 and no more than £50,000.00</th>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">10%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">25%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">40%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">55%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-half">Amounts above £50,000.00 and no more than £150,000.00</th>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">20%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">35%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">50%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">65%</td>
+                </tr>
+                <tr class="govuk-table__row">
+                  <th scope="row" class="govuk-table__header govuk-!-width-one-half">Amounts above £150,000.00</th>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">25%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">40%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">55%</td>
+                  <td class="govuk-table__cell govuk-table__cell--numeric">70%</td>
+                </tr>
+              </tbody>
+            </table>
+      
+    </div>
+  </div>
+
+  <!--
+  <div class="govuk-grid-row govuk-!-margin-top-4">
+    <div class="govuk-grid-column-two-thirds" style="padding-top: 20px; border-top: 1px solid #b1b4b6;">
+
+      <h2 class="govuk-heading-m govuk-!-padding-top-2">Get help</h2>
+      <p class="govuk-body-m">If you need help with the calculator, call the Defra Rural Service helpline on  <span id="phoneNumber"><a href="tel:03000 200 301">03000 200 301</a></span>.</p>
+
+    </div>
+  </div>
+  -->
+
+  
+{% endblock %}
