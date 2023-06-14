@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Get funding for farming and land management
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "prototype"
+    },
+    html: 'This is not a real service.'
+  }) }}
+<a onclick="history.back()" class="govuk-back-link">Back</a>
+{% endblock %}
+
+
+
+{% block content %}
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="gf-eligibility-previous-application" method="get" novalidate>
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  {% if (data['user-type'] == "Farmer") %}Farm {% elseif (data['user-type'] == "Forester") %}Land {% else %}Farm or land {% endif %} details
+                </h1>
+              </legend>
+              <div id="location-hint" class="govuk-hint">
+                This will help us find applicable funding schemes. If your farm or land parcel for which you would ike to aply for funding appears across counties, please enter them all, separated by a comma.
+              </div>
+              <label class="govuk-label govuk-!-margin-top-6" for="location">
+                Enter your postcode or county
+              </label>
+              <div id="location-hint" class="govuk-hint">For example GL54 1BB or Gloucestershire</div>
+              <input class="govuk-input govuk-input--width-10" id="location" name="location" type="text">
+              <label class="govuk-label govuk-!-margin-top-6" for="size">
+                Size in acres (approximate)
+              </label>
+              <input class="govuk-input govuk-input--width-5" id="size" name="size" type="text">
+            </fieldset>
+          </div>
+
+          <button class="govuk-button" data-module="govuk-button">
+            Continue
+          </button>
+        </form>
+      </div>
+    </div>
+
+
+
+{% endblock %}
