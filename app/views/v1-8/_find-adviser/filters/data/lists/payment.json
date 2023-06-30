@@ -1,8 +1,0 @@
-{% set payment =
-  [
-    {
-      value: "Free consultation",
-      text: "Free consultation"
-    }
-  ]
-%}

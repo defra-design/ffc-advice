@@ -1,0 +1,754 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Content page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+      <span class="govuk-caption-xl">Guidance</span>
+      <h1 class="govuk-heading-xl">Get funding for your farm or land</h1>
+
+      <p>Find out the funding you could get for land in England after checks and vetting.</p>
+
+      <p>
+        From: <a href="/path/of/page">Department for Environment, Food & Rural Affairs</a> and <a href="/path/of/page" class="govuk-link" >Rural Payments Agency</a>
+      </p>
+      <p>
+        Published: <strong class="govuk-tag govuk-tag--grey"> 12 June 2023 </strong>
+      </p>
+      <p>
+        Last updated: <strong class="govuk-tag govuk-tag--grey"> 12 June 2023 </strong> - <a href="/path/of/page" class="govuk-link" >See all updates</a>
+      </p>
+
+      <p>
+        <a href="/path/of/page" class="govuk-link" >Get emails about this page</a>
+      </p>
+      <hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+    <h2 class="govuk-heading-m">Applies to England</h2>
+
+    <p class="govuk-body">Contents:</p>
+    <ul class="govuk-list govuk-list--bullet">
+    <li>
+      <a class="govuk-link" href="#">Grant schemes</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for access and engagement</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for annual animal health and welfare review</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for arable land</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for boundaries</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for coastal habitats</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for grassland</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#"> Actions for heritage</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for lowland heathland</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for lowland peat</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for moorland and upland peat</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for permanent crops</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for species recovery and management</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for waterbodies</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for wetland habitats</a>
+    </li>
+    <li>
+      <a class="govuk-link" href="#">Actions for woodland, trees and agroforestry</a>
+    </li>
+    </ul>
+    
+    <p>You can get a range of funding to help you improve farm productivity and the environment.</p>
+
+    <p>Before you apply for a payment, you’ll need to check you (and your land, if relevant) are eligible.</p>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    <p class="govuk-body">The tables set out:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>the name of each action and scheme we will pay for</li>
+      <li>whether the action is new or is already paid for in our existing schemes, and if so which scheme</li>
+      <li>when we plan for the action to be available through the schemes. Where this is not yet confirmed they are marked as to be confirmed (tbc)</li>
+      <li>where we plan to update and improve existing actions that are already available through Countryside Stewardship (CS)</li>
+      <li>the payment rates for the actions. We will continue to keep payment rates under review, including as we make improvements to the CS actions. Where payment rates are not yet confirmed they have been included as ranges that we expect the payment rates to fall within or are marked as tbc</li>
+      <li>where to find details on the actions</li>
+    </ul>
+      </div>
+    </div>
+    <hr class="govuk-section-break govuk-section-break--l">
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Grant Schemes</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class">Scheme</th>
+            <th scope="col" class="govuk-table__header app-custom-class">When scheme availble</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Payment Rate</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Where to find details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Capital Grants: part of Countryside Stewardship</th>
+            <td class="govuk-table__cell">Available from 5 January 2023</td>
+            <td class="govuk-table__cell">No lower or upper limits</td>
+            <td class="govuk-table__cell">Find out about Capital Grants</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">England Woodland Creation Offer (EWCO)</th>
+            <td class="govuk-table__cell">Open for applications from 22 June 2022 to 1 January 2025</td>
+            <td class="govuk-table__cell">You could get up to £10,200 per hectare. Plus up to a further £8,000 in Additional Contributions. This is for public benefits, to support your woodland creation scheme</td>
+            <td class="govuk-table__cell">Find out about EWCO</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Higher Tier Capital Grants: part of Countryside Stewardship</th>
+            <td class="govuk-table__cell">Available from 5 January 2023</td>
+            <td class="govuk-table__cell">No lower or upper limits</td>
+            <td class="govuk-table__cell">Find out about Higher Tier Capital Grants</td>
+          </tr>
+           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Implementation Plan (PA1) and Feasibility Study (PA2) grants: part of Countryside Stewardship</th>
+            <td class="govuk-table__cell">Available throughout the year</td>
+            <td class="govuk-table__cell">No lower or upper limits</td>
+            <td class="govuk-table__cell">Find out about Implementation Plan (PA1) and Feasibility Study (PA2) grants</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Mid Tier and Wildlife Offers: part of Countryside Stewardship</th>
+            <td class="govuk-table__cell">Open for applications from 21 March 2023 to 18 August 2023</td>
+            <td class="govuk-table__cell">No lower or upper limits</td>
+            <td class="govuk-table__cell">Find out about Mid Tier and Wildlife Offers</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Protection and Infrastructure grants: part of Countryside Stewardship</th>
+            <td class="govuk-table__cell">Open for applications all year from 5 January 2023</td>
+            <td class="govuk-table__cell">No lower or upper limits</td>
+            <td class="govuk-table__cell">Find out about Protection and Infrastructure grants</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Woodland Creation Planning Grant (WCPG)</th>
+            <td class="govuk-table__cell">Available throughout the year</td>
+            <td class="govuk-table__cell">The total amount of funding is capped at £30,000 per project</td>
+            <td class="govuk-table__cell">Find out about WCPG</td>
+          </tr>          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Woodland Management Plan (WMP) grants: part of Countryside Stewardship</th>
+            <td class="govuk-table__cell">Open for applications all year from 5 January 2023</td>
+            <td class="govuk-table__cell">No lower or upper limits</td>
+            <td class="govuk-table__cell">Find out about WMP grants</td>
+          </tr>          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Woodland Tree Health (WTH) grants: part of Countryside Stewardship</th>
+            <td class="govuk-table__cell">Open for applications all year from 5 January 2023</td>
+            <td class="govuk-table__cell">No lower or upper limits</td>
+            <td class="govuk-table__cell">Find out about WTH grants</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Actions for access and engagement</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Existing or new action</th>
+            <th scope="col" class="govuk-table__header app-custom-class">When action available</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Existing actions to be updated</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Payment rate</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Where to find details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Farmers hosting tours of their farms for school pupils and care farming visitors</th>
+            <td class="govuk-table__cell">CS (ED1)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£318 per visit</td>
+            <td class="govuk-table__cell">Find out about ED1: educational access</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Capital grant for providing access maps and signage, and preparing sites for access by providing toilet facilities, shelters, new footpaths, bridges and gates</th>
+            <td class="govuk-table__cell">CS (AC1)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">Actual cost</td>
+            <td class="govuk-table__cell">Find out about AC1: access capital items</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Capital grant for accreditation for staff carrying out countryside educational access visits</th>
+            <td class="govuk-table__cell">CS (AC2)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£277.26 once per agreement</td>
+            <td class="govuk-table__cell">Find out about AC2: countryside educational access visits accreditation</td>
+          </tr>
+           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Supplement to enable permissive access across woodland, where access is currently limited</th>
+            <td class="govuk-table__cell">CS (WS4)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£50 per ha</td>
+            <td class="govuk-table__cell">Find out about WS4: access for people</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Permissive access</th>
+            <td class="govuk-table__cell">New, being explored</td>
+            <td class="govuk-table__cell">tbc</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£10 to £50 per ha</td>
+            <td class="govuk-table__cell">Coming by Summer 2023</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Managing existing access pressures on land and water</th>
+            <td class="govuk-table__cell">New, being explored</td>
+            <td class="govuk-table__cell">tbc</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">tbc</td>
+            <td class="govuk-table__cell">Coming by Summer 2023</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Expanding education access beyond groups of school pupils and care farming visitors</th>
+            <td class="govuk-table__cell">Available throughout the year</td>
+            <td class="govuk-table__cell">The total amount of funding is capped at £30,000 per project</td>
+            <td class="govuk-table__cell">Find out about WCPG</td>
+            <td class="govuk-table__cell">tbc</td>
+            <td class="govuk-table__cell">Coming by Summer 2023</td>
+        </tbody>
+      </table>
+
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Actions for annual animal health and welfare review</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Existing or new action</th>
+            <th scope="col" class="govuk-table__header app-custom-class">When action available</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Existing actions to be updated</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Payment rate</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Where to find details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Farm visit from a vet to complete an annual review of the health and welfare of a farmer’s livestock</th>
+            <td class="govuk-table__cell">Sustainable Farming Incentive (SFI)</td>
+            <td class="govuk-table__cell">Available in SFI</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£684 for a pig review, £436 for a sheep review, £522 for a beef cattle review, £372 for a dairy cattle review</td>
+            <td class="govuk-table__cell">Find out about the SFI annual health and welfare review</td>
+          </tr>
+        </tbody>
+      </table>
+      
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Actions for arable land</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Existing or new action</th>
+            <th scope="col" class="govuk-table__header app-custom-class">When action available</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Existing actions to be updated</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Payment rate</th>
+            <th scope="col" class="govuk-table__header app-custom-class">Where to find details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing and maintaining a nectar flower mix</th>
+            <td class="govuk-table__cell">CS (AB1)</td>
+            <td class="govuk-table__cell">Available in CS; related action in SFI from 2023 (differs to CS option)</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£614 per ha</td>
+            <td class="govuk-table__cell">Find out about AB1: nectar flower mix</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing and maintaining flower rich margins and plots</th>
+            <td class="govuk-table__cell">CS (AB8)</td>
+            <td class="govuk-table__cell">Available in CS; related action in SFI from 2023 (differs to CS option)</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£673 per ha</td>
+            <td class="govuk-table__cell">Find out about AB8: flower-rich margins and plots</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing and maintaining winter bird mix</th>
+            <td class="govuk-table__cell">CS (AB8)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£732 once per agreement</td>
+            <td class="govuk-table__cell">Find out about AB9: Winter bird mix</td>
+          </tr>
+           <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing and maintaining autumn sown bumblebird mix</th>
+            <td class="govuk-table__cell">CS (AB16)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£637 per ha</td>
+            <td class="govuk-table__cell">Find out about AB16: Autumn sown bumblebird mix</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Basic overwinter stubbles</th>
+            <td class="govuk-table__cell">CS (AB2)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£58 per ha</td>
+            <td class="govuk-table__cell">Find out about AB2: basic overwinter stubble</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Enhanced overwinter stubbles</th>
+            <td class="govuk-table__cell">CS (AB6)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£522 per ha</td>
+            <td class="govuk-table__cell">Find out about AB6: enhanced overwinter stubble</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing beetle banks</th>
+            <td class="govuk-table__cell">CS (AB3)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£667 per ha</td>
+            <td class="govuk-table__cell">Find out about AB3: beetle banks</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Creating skylark plots</th>
+            <td class="govuk-table__cell">CS (AB4)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£10.38 per ha</td>
+            <td class="govuk-table__cell">Find out about AB4: skylark plots</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Creating nesting plots for lapwing and stone curlew</th>
+            <td class="govuk-table__cell">CS (AB5)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£587 per ha</td>
+            <td class="govuk-table__cell">Find out about AB5: nesting plots for lapwing and stone curlew</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing spring cereal crops and harvesting as a whole crop</th>
+            <td class="govuk-table__cell">CS (AB7)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£584 per ha</td>
+            <td class="govuk-table__cell">Find out about AB7: whole crop cereals</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Leaving cereal headlands unharvested</th>
+            <td class="govuk-table__cell">CS (AB10)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£822 per ha</td>
+            <td class="govuk-table__cell">Find out about AB10: unharvested cereal headland</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Having cultivated areas for arable plants</th>
+            <td class="govuk-table__cell">CS (AB11)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£550 per ha</td>
+            <td class="govuk-table__cell">Find out about AB11: cultivated areas for arable plants</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Providing supplementary winter feed for farmland birds</th>
+            <td class="govuk-table__cell">CS (AB12)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£669 per ha</td>
+            <td class="govuk-table__cell">Find out about AB12: supplementary winter feeding for farmland birds</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Grow a low input harvested cereal</th>
+            <td class="govuk-table__cell">CS (AB14)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£584 per ha</td>
+            <td class="govuk-table__cell">Find out about AB14: harvested low input cereal</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing two-year sown legume fallow</th>
+            <td class="govuk-table__cell">CS (AB15)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£593 per ha</td>
+            <td class="govuk-table__cell">Find out about AB15: two-year sown legume fallow</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Supplement to control invasive plant species</th>
+            <td class="govuk-table__cell">CS (SP4)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£347 per ha</td>
+            <td class="govuk-table__cell">Find out about SP4: control of invasive plant species supplement</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Supplement for threatened species</th>
+            <td class="govuk-table__cell">CS (AB15)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£171 per ha</td>
+            <td class="govuk-table__cell">Find out about SP9: threatened species supplement</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Protecting in-field trees on arable land</th>
+            <td class="govuk-table__cell">CS (BE1)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£503 per ha</td>
+            <td class="govuk-table__cell">Find out about BE1: protection of in-field trees on arable land</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing and maintaining legume and herb-rich swards</th>
+            <td class="govuk-table__cell">CS (GS4)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£382 per ha</td>
+            <td class="govuk-table__cell">Find out about GS4: legume and herb-rich swards</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Creating and managing 4-6m buffer strips on cultivated land</th>
+            <td class="govuk-table__cell">CS (SW1)</td>
+            <td class="govuk-table__cell">Available in CS; related action in SFI from 2023 (differs to CS option)</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£451 per ha</td>
+            <td class="govuk-table__cell">Find out about SW1: 4m to 6m buffer strip on cultivated land</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Having in-field grass strips</th>
+            <td class="govuk-table__cell">CS (SW3)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£658 per ha</td>
+            <td class="govuk-table__cell">Find out about SW3: in-field grass strips</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Creating and managing 12-24m watercourse buffer strips on cultivated land</th>
+            <td class="govuk-table__cell">CS (SW4)</td>
+            <td class="govuk-table__cell">Available in CS; related action in SFI from 2023 (differs to CS option)</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£612 per ha</td>
+            <td class="govuk-table__cell">Find out about SW4: 12m to 24m watercourse buffer strip on cultivated land</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Carrying out enhanced management of maize crops</th>
+            <td class="govuk-table__cell">CS (SW5)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£172 per ha</td>
+            <td class="govuk-table__cell">Find out about SW5: enhanced management of maize crops.</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing winter cover crops</th>
+            <td class="govuk-table__cell">CS (SW6)</td>
+            <td class="govuk-table__cell">Available in CS; related action in SFI from 2023 (differs to CS option)</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£129 per ha</td>
+            <td class="govuk-table__cell">Find out about SW6: Winter cover crops</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Reverting arable land to grassland with low fertiliser input</th>
+            <td class="govuk-table__cell">CS (SW7)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£326 per ha</td>
+            <td class="govuk-table__cell">Find out about SW7: arable reversion to grassland with low fertiliser input</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Managing woodland edges on arable land</th>
+            <td class="govuk-table__cell">CS (WD3)</td>
+            <td class="govuk-table__cell">Available in CS; related action in SFI from 2023 (differs to CS option)</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£402 per ha</td>
+            <td class="govuk-table__cell">Find out about WD3: woodland edges on arable land</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Creating successional areas and scrub</th>
+            <td class="govuk-table__cell">CS (WD8)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£149 per ha</td>
+            <td class="govuk-table__cell">Find out about WD8: creation of successional areas and scrub</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Managing successional areas and scrub</th>
+            <td class="govuk-table__cell">CS (WD7)</td>
+            <td class="govuk-table__cell">Available in CS; related action in SFI from 2023 (differs to CS option)</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£88 per ha</td>
+            <td class="govuk-table__cell">Find out about WD7: management of successional areas and scrub</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Leaving stubbles overwinter (organics)</th>
+            <td class="govuk-table__cell">CS (OP1)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£176 per ha</td>
+            <td class="govuk-table__cell">Find out about OP1: overwintered stubble (organics)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Sowing wild bird seed mixture (organics)</th>
+            <td class="govuk-table__cell">CS (OP2)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£768 per ha</td>
+            <td class="govuk-table__cell">Find out about OP2: wild bird seed mixture (organics)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Supplementary feeding for farmland birds (organics)</th>
+            <td class="govuk-table__cell">CS (OP3)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£887 per ha</td>
+            <td class="govuk-table__cell">Find out about OP3: supplementary feeding for farmland birds (organics)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing and managing a multi-species herbal ley (organics)</th>
+            <td class="govuk-table__cell">CS (OP4)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£115 per ha</td>
+            <td class="govuk-table__cell">Find out about OP4: multi species ley (organics)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Undersowing cereals (organics)</th>
+            <td class="govuk-table__cell">CS (OP5)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£306 per ha</td>
+            <td class="govuk-table__cell">Find out about OP5: undersown cereal (organics)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Converting rotational land (including arable land) from conventional management to organic management (organics)</th>
+            <td class="govuk-table__cell">CS (OR3)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£296 per ha</td>
+            <td class="govuk-table__cell">Find out about OR3: organic conversion, rotational land (organics)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Converting horticultural land from conventional management to organic management (organics)</th>
+            <td class="govuk-table__cell">CS (OP4)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£703 per ha</td>
+            <td class="govuk-table__cell">Find out about OR4: organic conversion - horticulture (organics)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Maintaining arable land under organic management (organics)</th>
+            <td class="govuk-table__cell">CS (OT3)</td>
+            <td class="govuk-table__cell">Available in CS</td>
+            <td class="govuk-table__cell">CS option to be updated</td>
+            <td class="govuk-table__cell">£132 per ha</td>
+            <td class="govuk-table__cell">Find out about OT3: organic conversion, rotational land (organics)</td>
+          </tr>
+          <tr class="govuk-table__row"> 
+            <th scope="row" class="govuk-table__header">Converting horticultural land from conventional management to organic management (organics)</th>
+            <td class="govuk-table__cell">SFI (arable and horticultural soils standard)</td>
+            <td class="govuk-table__cell">Available in SFI</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£471 per ha</td>
+            <td class="govuk-table__cell">Find out about OT4: organic land management - horticulture (organics)</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Testing soil organic matter</th>
+            <td class="govuk-table__cell">SFI (arable and horticultural soils standard)</td>
+            <td class="govuk-table__cell">Available in SFI</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">Action included in Introductory rate £22 per ha Intermediate rate £40 per ha (for standard)</td>
+            <td class="govuk-table__cell">Find out about the SFI arable and horticultural soils standard</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Adding organic matter</th>
+            <td class="govuk-table__cell">SFI (arable and horticultural soils standard)</td>
+            <td class="govuk-table__cell">Available in SFI</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">Action included in Introductory rate £22 per ha Intermediate rate £40 per ha (for standard)</td>
+            <td class="govuk-table__cell">Find out about the SFI arable and horticultural soils standard</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Having green cover on at least 70% of the land in the standard over winter (with the 70% including 20% multi-species cover crops at the intermediate level)</th>
+            <td class="govuk-table__cell">SFI (arable and horticultural soils standard)</td>
+            <td class="govuk-table__cell">Available in SFI</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">Action included in Introductory rate £22 per ha Intermediate rate £40 per ha (for standard)</td>
+            <td class="govuk-table__cell">Find out about the SFI arable and horticultural soils standard</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Adviser visit to assess and advise on integrated pest management and help to produce a plan</th>
+            <td class="govuk-table__cell">New</td>
+            <td class="govuk-table__cell">Available in SFI from 2023</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£989 per year</td>
+            <td class="govuk-table__cell">Find out in the Environmental Land Management (ELM) update</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Adviser visit to review and improve nutrient use efficiency</th>
+            <td class="govuk-table__cell">New</td>
+            <td class="govuk-table__cell">Available in SFI from 2023</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£589 per year</td>
+            <td class="govuk-table__cell">Find out in the Environmental Land Management (ELM) update</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing and maintaining in-field flower-rich strips, which will provide habitat for natural pest enemies</th>
+            <td class="govuk-table__cell">New</td>
+            <td class="govuk-table__cell">Available in SFI from 2023</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£673 per year</td>
+            <td class="govuk-table__cell">Find out in the Environmental Land Management (ELM) update</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing and maintaining grassy field corners and blocks</th>
+            <td class="govuk-table__cell">New</td>
+            <td class="govuk-table__cell">Available in SFI from 2023</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£590 per year</td>
+            <td class="govuk-table__cell">Find out in the Environmental Land Management (ELM) update</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishing a companion crop for integrated pest management</th>
+            <td class="govuk-table__cell">New</td>
+            <td class="govuk-table__cell">Available in SFI from 2023</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£55 per year</td>
+            <td class="govuk-table__cell">Find out in the Environmental Land Management (ELM) update</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">No use of insecticide</th>
+            <td class="govuk-table__cell">New</td>
+            <td class="govuk-table__cell">Available in SFI from 2023</td>
+            <td class="govuk-table__cell">Not applicable</td>
+            <td class="govuk-table__cell">£45 per year</td>
+            <td class="govuk-table__cell">Find out in the Environmental Land Management (ELM) update</td>
+          </tr>
+          
+          <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-table__caption--m">Actions for boundaries</caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header app-custom-class">Action</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Existing or new action</th>
+                <th scope="col" class="govuk-table__header app-custom-class">When action available</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Existing actions to be updated</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Payment rate</th>
+                <th scope="col" class="govuk-table__header app-custom-class">Where to find details</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Management of hedgerows by rotational cutting and leaving some hedgerows uncut</th>
+                <td class="govuk-table__cell">CS (BE3)</td>
+                <td class="govuk-table__cell">Available in CS; related action in SFI from 2023</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£10 per 100m for one side of hedge</td>
+                <td class="govuk-table__cell">Find out about BE3: management of hedgerows</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Supplement for restorative pruning of fruit trees</th>
+                <td class="govuk-table__cell">CS (BE7)</td>
+                <td class="govuk-table__cell">Available in CS</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£113 per TREE</td>
+                <td class="govuk-table__cell">Find out about BE7: supplement for restorative pruning of fruit trees</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Manage hedgerows, including annual incremental cutting or leaving hedgerows uncut for longer</th>
+                <td class="govuk-table__cell">New</td>
+                <td class="govuk-table__cell">Available in SFI from 2023</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£10 per 100m (One Side)</td>
+                <td class="govuk-table__cell">Find out in the Environmental Land Management (ELM) update</td>
+              </tr>
+               <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Maintain hedgerow trees, or establishing new ones</th>
+                <td class="govuk-table__cell">New</td>
+                <td class="govuk-table__cell">Available in SFI from 2023</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£10 per 100m (Both sides)</td>
+                <td class="govuk-table__cell">Find out in the Environmental Land Management (ELM) update</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Maintain drystone walls in good condition</th>
+                <td class="govuk-table__cell">New</td>
+                <td class="govuk-table__cell">Available in 2024</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£15 to £20 per 100m</td>
+                <td class="govuk-table__cell">Coming by summer 2023</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Capital grants to restore stone-faced hedgebanks</th>
+                <td class="govuk-table__cell">CS (BN2)</td>
+                <td class="govuk-table__cell">Available in CS</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£163.26 per m</td>
+                <td class="govuk-table__cell">Find out about BN2: stone-faced bank restoration</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Maintain stone-faced hedgebanks in good condition</th>
+                <td class="govuk-table__cell">New</td>
+                <td class="govuk-table__cell">2024</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£15 to £20 per 100m</td>
+                <td class="govuk-table__cell">Coming by Summer 2023</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Capital grants to create earth banks</th>
+                <td class="govuk-table__cell">CS (BN3)</td>
+                <td class="govuk-table__cell">Available in CS</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£20.59 per m</td>
+                <td class="govuk-table__cell">Find out about BN3: earth bank creation</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Capital grants to restore earth banks</th>
+                <td class="govuk-table__cell">CS (BN4)</td>
+                <td class="govuk-table__cell">Available in CS</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£10.54 per m</td>
+                <td class="govuk-table__cell">Find out about BN4: earth bank restoration</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">Maintain earth banks in good condition</th>
+                <td class="govuk-table__cell">New</td>
+                <td class="govuk-table__cell">2024</td>
+                <td class="govuk-table__cell">Not applicable</td>
+                <td class="govuk-table__cell">£5 to £10 per 100m</td>
+                <td class="govuk-table__cell">Coming by Summer 2023</td>
+              </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div> 
+{% endblock %}
