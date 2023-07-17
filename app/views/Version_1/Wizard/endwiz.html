@@ -1,8 +1,12 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukHeader ({
+    homepageUrl: "https://ffc-advice-2023.herokuapp.com/"
+  }) }}
 {% endblock %}
+
+
 
 {% block content %}
 
@@ -16,7 +20,7 @@
       <p>Thank you, you have reached the end of this prototype.</p>
 
       <p>
-        Please return to the start page using the Gov.uk link in the header</a>
+        Please return to the start page using the header links
       </p>
 
     </div>

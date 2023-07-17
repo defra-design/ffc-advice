@@ -1,7 +1,9 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukHeader ({
+    homepageUrl: "https://ffc-advice-2023.herokuapp.com/"
+  }) }}
 {% endblock %}
 
 {% block content %}
