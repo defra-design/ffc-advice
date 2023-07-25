@@ -1,0 +1,155 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBackLink({
+    text: "Back",
+    href: "javascript:window.history.back()"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">
+        Your results page
+      </h1>
+        <h2 class="govuk-heading-m">Your answers</h2>
+          <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What types of funding are you interested in?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Countryside Stewardship - Capital Items, Options
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> previous application number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Which Countryside Stewardship tiers, offers or standalone items are you interested in?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                All tiers, offers or standalone items
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> previous application number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                What type of land use do you want the funding to cover?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Arable land,Organic land, Trees (non-woodland), Woodland
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> previous application number</span>
+                </a>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Do you want to see funding that is closing soon?
+              </dt>
+              <dd class="govuk-summary-list__value">
+                No, I want to see all funding
+              </dd>
+              <dd class="govuk-summary-list__actions">
+                <a class="govuk-link" href="#">
+                  Change<span class="govuk-visually-hidden"> previous application number</span>
+                </a>
+              </dd>
+            </div>
+          </dl>
+
+        <h2 class="govuk-heading-m">27 results</h2>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <p class="govuk-body"> <a href="guidancepagewiz.html" class="govuk-link">AB1: Nectar flower mix</a></p>
+        <p class="govuk-body">This is an option that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
+        <p class="govuk-body">Funding type: Countryside Stewardship (CS)</p>
+        <p class="govuk-body">Land use: Arable land, Permanent crops</p>
+        <p class="govuk-body">Tiers, offers or standalone items: Higher Tier, Mid Tier, Offer: Arable, Offer: Mixed Farming</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">BN4: Earth bank restoration</a></p>
+        <p class="govuk-body">This is a capital item that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
+        <p class="govuk-body">Funding type: Countryside Stewardship (CS)</p>
+        <p class="govuk-body">Land use: Arable land</p>
+        <p class="govuk-body">Items, options and supplements: Capital item</p>
+        <p class="govuk-body">Tiers, offers or standalone items: Higher Tier, Mid Tier, Standalone capital items</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">OP4: Multi species ley</a></p>
+        <p class="govuk-body">This is an option that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
+        <p class="govuk-body">Funding type: Countryside Stewardship (CS)</p>
+        <p class="govuk-body">Land use: Arable land, Biodiversity, Organic land, Uplands</p>
+        <p class="govuk-body">Items, options and supplements: Option</p>
+        <p class="govuk-body">Tiers, offers or standalone items: Higher Tier, Mid Tier</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">England Woodland Creation Offer (EWCO)</a></p>
+        <p class="govuk-body">Funding type: Other</p>
+        <p class="govuk-body">Land use: Woodland</p>
+        <p class="govuk-body">Closing date:1 January 2025</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">WD4: Management of lowland wood pasture and parkland </a></p>
+        <p class="govuk-body">This is an option that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
+        <p class="govuk-body">Land use: Air quality, Historic environment, Priority habitats, Uplands, Woodland</p>
+        <p class="govuk-body">Items, options and supplements: Option</p>
+        <p class="govuk-body">Tiers, offers or standalone items: Higher Tier, Mid Tier, Offer: Arable, Offer: Lowland Grazing, Offer: Mixed Farming, Offer: Upland</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+        <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">WD12: Creation of upland wood pasture</a></p>
+        <p class="govuk-body">This is an option that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
+        <p class="govuk-body">Funding type: Countryside Stewardship (CS)</p>
+        <p class="govuk-body">Land use: Priority habitats, Upland, Woodland</p>
+        <p class="govuk-body">Items, options and supplements: Option</p>
+        <p class="govuk-body">Tiers, offers or standalone items: Higher Tier</p>
+  
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">Woodland Creation Planning Grant (WCPG)</a></p>
+        <p class="govuk-body">Funding type: Other</p>
+        <p class="govuk-body">Land use: Woodland</p>
+        <p class="govuk-body">Closing date: 31 March 2024</p>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+    </div>
+  </div>
+  <nav class="govuk-pagination" role="navigation" aria-label="results">
+    <ul class="govuk-pagination__list">
+      <li class="govuk-pagination__item govuk-pagination__item--current">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+          1
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+          2
+        </a>
+      </li>
+      <li class="govuk-pagination__item">
+        <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+          3
+        </a>
+      </li>
+    </ul>
+    <div class="govuk-pagination__next">
+      <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+          <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+        </svg></a>
+    </div>
+  </nav>
+
+{% endblock %}
