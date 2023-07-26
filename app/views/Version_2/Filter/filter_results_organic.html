@@ -19,7 +19,7 @@
   </div>
 </div> 
 
-<div class="govuk-width-container">
+<div class="govuk-width-container" id="search">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
 
@@ -29,12 +29,15 @@
           <p class="govuk-!-font-size-16 govuk-hint">Enter a grant name or the type of funding. Use the filters to narrow your search.</p>
           <input class="govuk-input govuk-!-width-full" id="one-third" name="one-third" type="text">
           <hr class="govuk-section-break govuk-section-break--m">
-          <a href="filternew.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
             Search
-            </svg></a>
+          </a>
+          <hr class="govuk-section-break govuk-section-break">
+          <a href="filternew.html#filtersearch" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+            Clear all filters
+          </a>
           
-          
-          <div class="govuk-accordion" data-module="govuk-accordion" id="Heading">
+          <div class="govuk-accordion" data-module="govuk-accordion" id="Heading" expanded>
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
@@ -142,7 +145,7 @@
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                    <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" checked>
                     <label class="govuk-label govuk-checkboxes__label" for="waste-2">
                       Organic land
                     </label>
@@ -317,7 +320,7 @@
  
     </div>
     <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m" id="search">16 results</h2>
+      <h2 class="govuk-heading-m" >16 results</h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">OR1: Organic conversion - improved permanent grassland</a></p>
       <p class="govuk-body">This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.</p>
@@ -438,6 +441,7 @@
     </div>
   </main>
 </div>
+
 
 
 {% endblock %}
