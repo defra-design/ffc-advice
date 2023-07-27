@@ -16,11 +16,11 @@
     <p>Find out what funding you could get from the Farming and Countryside Programme. This is for land or farms in England.</p>
     <p>This service does not confirm your eligibility. You may be able to apply for one or more funds and grants if you or your land is eligible.</p>
     <p> The guidance for each fund and grant will explain where this is possible.</p>
-    <p><a href="shortlist.html" >Go to shortlist</a></p>
+    <p> <a href="shortlist.html" >Go to shortlist</a></p>
   </div>
 </div> 
 
-<div class="govuk-width-container" id="filtersearch">
+<div class="govuk-width-container" id="filtersearch" id="refresh">
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row" >
 
@@ -317,7 +317,7 @@
     </div>
  
     </div>
-    <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-grid-column-two-thirds" id="refresh">
       <h2 class="govuk-heading-m">575 results</h2>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
       <p class="govuk-body"> <a href="https://www.gov.uk/countryside-stewardship-grants/nectar-flower-mix-ab1" class="govuk-link">AB1: Nectar flower mix</a></p>
@@ -327,9 +327,16 @@
               This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">
+            <p>
+              <a class="govuk-link" href="#refresh" id=Add onclick="changetoremove()">
                 Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
               </a>
+            </p>
+            <script>
+            function changetoremove() {
+            document.getElementById("Add").innerHTML = "Remove from shortlist";
+            }
+            </script>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -353,18 +360,24 @@
             </dd>
           </div>
         </dl>
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"id="refresh2">
 
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">BN4: Earth bank restoration</a></p>
+      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link" >BN4: Earth bank restoration</a></p>
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
             This is a capital item that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
-              Add to shortlist<span class="govuk-visually-hidden"> add BN4: Earth bank restoration</span>
+            <a class="govuk-link" href="#refresh2" id=Add2 onclick="changetoremove2()">
+              Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
             </a>
+          </p>
+          <script>
+          function changetoremove2() {
+          document.getElementById("Add2").innerHTML = "Remove from shortlist";
+          }
+          </script>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -388,18 +401,24 @@
           </dd>
         </div>
       </dl>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" id="refresh3">
 
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">OP4: Multi species ley</a></p>
+      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link" >OP4: Multi species ley</a></p>
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
             This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
           </dd>
           <dd class="govuk-summary-list__actions">
-            <a class="govuk-link" href="#">
+            <a class="govuk-link" href="#refresh3" id=Add3 onclick="changetoremove3()">
               Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
             </a>
+          </p>
+          <script>
+          function changetoremove3() {
+          document.getElementById("Add3").innerHTML = "Remove from shortlist";
+          }
+          </script>
           </dd>
         </div>
         <div class="govuk-summary-list__row">
