@@ -10,29 +10,36 @@
   <div class="govuk-grid-column-full">
 
     <h1 class="govuk-heading-xl">
-      Check funding and grants you can get for your land or farm
+      Check available funding and grants for your land or farm
     </h1>
     <p> From: <a href="/path/of/page">Department for Environment, Food & Rural Affairs</a> and <a href="/path/of/page" class="govuk-link" >Rural Payments Agency</a></p>
-    <p>Find out what funding you could get for your land or farm in England.</p>
-    <p>Before you apply for funding, you'll need to check if you're eligible.</p>
-    <p>We'll add more funding as we develop the service.</p>
+
+    <p>Find out what funding we offer as part of the Farming and Countryside Programme. This is for land or farms in England. </p>
+    <p>You may be able to apply for one or more funds and grants if you or your land are eligible. The guidance for each fund and grant will explain where this is possible. </p>
+
+    <div class="govuk-inset-text">
+      This service does not confirm your eligibility. You cannot get the same funding twice on a single land parcel.
+    </div>
+    <p>You can also <a href="startwiz.html">answer a few questions to narrow funding.</a> </p>
   </div>
 </div> 
 
-<div class="govuk-width-container">
+<div class="govuk-width-container" id="filtersearch" id="refresh">
   <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
+    <div class="govuk-grid-row" >
 
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
           <h2 class="govuk-heading-m">Search</h2>
+          <p class="govuk-!-font-size-16 govuk-hint">Enter a keyword or the name of a grant. Use the filters to narrow your search.</p>
           <input class="govuk-input govuk-!-width-full" id="one-third" name="one-third" type="text">
           <hr class="govuk-section-break govuk-section-break--m">
-          <button class="govuk-button" data-module="govuk-button">
+          <a href="filter_results_organic.html#search" role="button" draggable="false" class="govuk-button" data-module="govuk-button" >
             Search
-          </button>
+            </svg></a>
           
-          <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+          
+          <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default" aria-expanded="true">
             <div class="govuk-accordion__section">
               <div class="govuk-accordion__section-header">
                 <h2 class="govuk-accordion__section-heading">
@@ -59,12 +66,6 @@
                     <input class="govuk-checkboxes__input" id="organisation-3" name="organisation" type="checkbox" value="MOD">
                     <label class="govuk-label govuk-checkboxes__label" for="organisation-3">
                       Sustainable Farming Incentive (SFI)
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="organisation-4" name="organisation" type="checkbox" value="DfT">
-                    <label class="govuk-label govuk-checkboxes__label" for="organisation-4">
-                      Other
                     </label>
                   </div>
               </div>
@@ -314,58 +315,257 @@
     </div>
  
     </div>
-    <div class="govuk-grid-column-two-thirds">
-      <h2 class="govuk-heading-m">156 results</h2>
+    <div class="govuk-grid-column-two-thirds" id="refresh">
+      <dd class="govuk-summary-list__value govuk-heading-m ">
+        575 results
+      </dd>
+      <dd class="govuk-!-text-align-right">
+        <a class="govuk-link govuk-!-font-size-19" href="shortlist.html">
+          Go to shortlist
+        </a>
+      </p>
+      </dd>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">AB1: Nectar flower mix</a></p>
-      <p class="govuk-body">This is an option that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
-      <p class="govuk-body">Funding type: Countryside Stewardship (CS)</p>
-      <p class="govuk-body">Land use: Arable land, Permanent crops</p>
-      <p class="govuk-body">Tiers, offers or standalone items: Higher Tier, Mid Tier, Offer: Arable, Offer: Mixed Farming</p>
+      <p class="govuk-body"> <a href="#" class="govuk-link">Capital Grants</a></p>
+       <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Funding type: Countryside Stewardship (CS)
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#refresh1" id=Add1 onclick="changetoremove1()">
+            Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+          </a>
+        </p>
+        <script>
+        function changetoremove1() {
+        document.getElementById("Add1").innerHTML = "Remove from shortlist";
+        }
+        </script>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Land use: Air quality, Biodiversity, Trees (non-woodland), Uplands, Woodland
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Closing date: 11:59pm 4 January 2024
+        </dd>
+      </div>
+    </dl>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+     
+  <p class="govuk-body"> <a href="#" class="govuk-link">England Woodland Creation Offer</a></p>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Land use: Biodiversity, Priority habitats, Organic land, Uplands, Woodland
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#refresh1" id=Add1 onclick="changetoremove1()">
+            Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+          </a>
+        </p>
+        <script>
+        function changetoremove1() {
+        document.getElementById("Add1").innerHTML = "Remove from shortlist";
+        }
+        </script>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dd class="govuk-summary-list__value">
+          Closing date: 11:59pm 1 January 2025
+        </dd>
+      </div>
+    </dl>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <p class="govuk-body"> <a href="https://www.gov.uk/countryside-stewardship-grants/nectar-flower-mix-ab1" class="govuk-link">HS2 Woodland Fund </a></p>
+        <dl class="govuk-summary-list govuk-summary-list--no-border">
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Land use: Biodiversity, Priority habitats, Uplands, Woodland
+            </dd>
+            <dd class="govuk-summary-list__actions">
+            <p>
+              <a class="govuk-link" href="#refresh" id=Add onclick="changetoremove()">
+                Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+              </a>
+            </p>
+            <script>
+            function changetoremove() {
+            document.getElementById("Add").innerHTML = "Remove from shortlist";
+            }
+            </script>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Closing date: 11:59pm 31 March 2024
+            </dd>
+          </div>
+        </dl>
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible"id="refresh2">
+
+      <p class="govuk-body"> <a href="https://www.gov.uk/countryside-stewardship-grants/earth-bank-restoration-bn4" class="govuk-link" >Local Authority Treescapes Fund</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Land use: Trees (non-woodland), Uplands, Woodland 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#refresh2" id=Add2 onclick="changetoremove2()">
+              Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+            </a>
+          </p>
+          <script>
+          function changetoremove2() {
+          document.getElementById("Add2").innerHTML = "Remove from shortlist";
+          }
+          </script>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Closed: 11:59pm 8 February 2024 
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible" id="refresh3">
+
+      <p class="govuk-body"> <a href="https://www.gov.uk/countryside-stewardship-grants/multi-species-ley-op4" clasCs="govuk-link" >Species Survival Fund</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Land use: Arable land, Biodiversity, Organic land, Priority habitats, Uplands 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#refresh3" id=Add3 onclick="changetoremove3()">
+              Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+            </a>
+          </p>
+          <script>
+          function changetoremove3() {
+          document.getElementById("Add3").innerHTML = "Remove from shortlist";
+          }
+          </script>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Closing date: 11:59pm 26 October 2023 
+          </dd>
+        </div>
+      </dl>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">BN4: Earth bank restoration</a></p>
-      <p class="govuk-body">This is a capital item that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
-      <p class="govuk-body">Funding type: Countryside Stewardship (CS)</p>
-      <p class="govuk-body">Land use: Arable land</p>
-      <p class="govuk-body">Items, options and supplements: Capital item</p>
-      <p class="govuk-body">Tiers, offers or standalone items: Higher Tier, Mid Tier, Standalone capital items</p>
+      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">Tree Health Pilot</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Land use: Air quality, Biodiversity, Trees (non-woodland), Uplands, Woodland 
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Closing date: 11:59pm 31 August 2024 
+          </dd>
+        </div>
+      </dl>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">OP4: Multi species ley</a></p>
-      <p class="govuk-body">This is an option that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
-      <p class="govuk-body">Funding type: Countryside Stewardship (CS)</p>
-      <p class="govuk-body">Land use: Arable land, Biodiversity, Organic land, Uplands</p>
-      <p class="govuk-body">Items, options and supplements: Option</p>
-      <p class="govuk-body">Tiers, offers or standalone items: Higher Tier, Mid Tier</p>
+      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">Urban Tree Challenge Fund </a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Land use: Air quality, Biodiversity, Trees (non-woodland), Uplands, Woodland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Closing date: 11:59pm 8 February 2024
+          </dd>
+        </div>
+      </dl>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">England Woodland Creation Offer (EWCO)</a></p>
-      <p class="govuk-body">Funding type: Other</p>
-      <p class="govuk-body">Land use: Woodland</p>
-      <p class="govuk-body">Closing date:1 January 2025</p>
+      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">Woodland Creation Planning Grant</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Land use: Biodiversity, Priority habitats, Uplands, Woodland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Closing date: 11:59pm 31 March 2024 
+          </dd>
+        </div>
+      </dl>
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">WD4: Management of lowland wood pasture and parkland </a></p>
-      <p class="govuk-body">This is an option that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
-      <p class="govuk-body">Land use: Air quality, Historic environment, Priority habitats, Uplands, Woodland</p>
-      <p class="govuk-body">Items, options and supplements: Option</p>
-      <p class="govuk-body">Tiers, offers or standalone items: Higher Tier, Mid Tier, Offer: Arable, Offer: Lowland Grazing, Offer: Mixed Farming, Offer: Upland</p>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">WD12: Creation of upland wood pasture</a></p>
-      <p class="govuk-body">This is an option that you can add to a Country Stewardship (CS) agreement if you meet the eligibility criteria.</p>
-      <p class="govuk-body">Funding type: Countryside Stewardship (CS)</p>
-      <p class="govuk-body">Land use: Priority habitats, Upland, Woodland</p>
-      <p class="govuk-body">Items, options and supplements: Option</p>
-      <p class="govuk-body">Tiers, offers or standalone items: Higher Tier</p>
-
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">Woodland Creation Planning Grant (WCPG)</a></p>
-      <p class="govuk-body">Funding type: Other</p>
-      <p class="govuk-body">Land use: Woodland</p>
-      <p class="govuk-body">Closing date: 31 March 2024</p>
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <p class="govuk-body"> <a href="guidancepage.html" class="govuk-link">Woodland Partnership</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Land use: Biodiversity, Priority habitats, Uplands, Woodland
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              Add to shortlist<span class="govuk-visually-hidden"> Remove WD12: Creation of upland wood pasture from shortlist</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Closing date: 11:59pm 31 March 2024
+          </dd>
+        </div>
+      </dl>
+     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+     <nav class="govuk-pagination" role="navigation" aria-label="results">
+      <ul class="govuk-pagination__list">
+        <li class="govuk-pagination__item govuk-pagination__item--current">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 1" aria-current="page">
+            1
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 2">
+            2
+          </a>
+        </li>
+        <li class="govuk-pagination__item">
+          <a class="govuk-link govuk-pagination__link" href="#" aria-label="Page 3">
+            3
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-pagination__next">
+        <a class="govuk-link govuk-pagination__link" href="#" rel="next"> <span class="govuk-pagination__link-title">Next</span> <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+            <path d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z"></path>
+          </svg></a>
+      </div>
+    </nav>
     </div>
   </main>
 </div>

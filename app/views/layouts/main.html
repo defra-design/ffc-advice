@@ -1,30 +1,33 @@
 {#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
-
-{% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
-
-{% block header %}
-{{ govukHeader({
-  homepageUrl: "",
-  serviceName: "Prototypes",
-  serviceUrl: "https://ffc-advice-2023.herokuapp.com/Testing_Version_3/Testing-Index",
-  navigation: [
-    {
-
-    },
-    {
-
-    },
-    {
-
-    }
-  ]
-}) }}
-{% endblock %}s
-
-{% block footer %}
- {{ govukFooter({
+  For guidance on how to use layouts see:
+  https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
+  #}
+  
+  {% extends "govuk-prototype-kit/layouts/govuk-branded.njk" %}
+  <head>
+    <script src="https://kit.fontawesome.com/deb1d61b21.js" crossorigin="anonymous"></script>
+  </head>
+  
+  {% block header %}
+  {{ govukHeader({
+    homepageUrl: "",
+    serviceName: "Prototypes",
+    serviceUrl: "https://ffc-advice-2023.herokuapp.com/Testing_Version_3/Testing-Index",
+    navigation: [
+      {
+  
+      },
+      {
+  
+      },
+      {
+  
+      }
+    ]
   }) }}
-{% endblock %}
+  {% endblock %}s
+  
+  {% block footer %}
+   {{ govukFooter({
+    }) }}
+  {% endblock %}
