@@ -1,0 +1,408 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  GOV.UK page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h1 class="govuk-heading-xl">
+      What are the priority areas for your land or farm?
+    </h1>
+
+  </div>
+</div>
+
+<div id="contact-hint" class="govuk-hint">
+  Select all that apply.
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+  
+    <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="test" name="test" type="checkbox" value="test">
+        <label class="govuk-label govuk-checkboxes__label" for="test">
+          All priority areas 
+        </label>
+      </div>
+    </div>
+
+
+
+  </div>
+</div>
+
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+
+<div class="govuk-body-l">or</div>
+
+
+
+
+
+<div class="govuk-grid-row">
+<div class="govuk-grid-column-one-third">
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Air quality</h2>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste">
+      </label>
+    </div>
+  </div>
+  <div class="govuk-summary-card__content">
+    <div class="govuk-body"> Cleanliness and purity levels in the air.</div>
+  </div>
+</div>
+
+
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">Arable land</h2>
+    <div class="govuk-checkboxes__item">
+      <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+      <label class="govuk-label govuk-checkboxes__label" for="waste">
+      </label>
+    </div>
+  </div>
+  <div class="govuk-summary-card__content">
+    <div class="govuk-body"> Fertile land suitable for growing crops.</div>
+  </div>
+</div>
+
+</div>
+
+<div class="govuk-grid-column-one-third">
+
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Biodiversity</h2>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        </label>
+      </div>
+    </div>
+    <div class="govuk-summary-card__content">
+      <div class="govuk-body"> Variety of plant and animal species.</div>
+    </div>
+  </div>
+  
+
+  </div>
+</div>
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+  
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Boundaries</h2>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        </label>
+      </div>
+    </div>
+    <div class="govuk-summary-card__content">
+      <div class="govuk-body"> Physical or legal borders for land.</div>
+    </div>
+  </div>
+  
+  
+  </div>
+  
+  <div class="govuk-grid-column-one-third">
+  
+  <div class="govuk-summary-card">
+    <div class="govuk-summary-card__title-wrapper">
+      <h2 class="govuk-summary-card__title">Coast</h2>
+      <div class="govuk-checkboxes__item">
+        <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+        <label class="govuk-label govuk-checkboxes__label" for="waste">
+        </label>
+      </div>
+    </div>
+    <div class="govuk-summary-card__content">
+      <div class="govuk-body"> Where land meets a body of water.</div>
+    </div>
+  </div>
+  
+  </div>
+  
+  <div class="govuk-grid-column-one-third">
+  
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Educational access</h2>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+        </div>
+      </div>
+      <div class="govuk-summary-card__content">
+        <div class="govuk-body"> Ways to help with learning for visitors.</div>
+      </div>
+    </div>
+    
+  
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third">
+    
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Flood risk</h2>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+        </div>
+      </div>
+      <div class="govuk-summary-card__content">
+        <div class="govuk-body"> How likely flooding is to happen.</div>
+      </div>
+    </div>
+    
+    
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+    
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h2 class="govuk-summary-card__title">Grassland</h2>
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+          <label class="govuk-label govuk-checkboxes__label" for="waste">
+          </label>
+        </div>
+      </div>
+      <div class="govuk-summary-card__content">
+        <div class="govuk-body">  Land covered with different types of grass.</div>
+      </div>
+    </div>
+    
+    </div>
+    
+    <div class="govuk-grid-column-one-third">
+    
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Historic environment</h2>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+            </label>
+          </div>
+        </div>
+        <div class="govuk-summary-card__content">
+          <div class="govuk-body"> Sites with historical importance.</div>
+        </div>
+      </div>
+      
+    
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-third">
+      
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Livestock management</h2>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+            </label>
+          </div>
+        </div>
+        <div class="govuk-summary-card__content">
+          <div class="govuk-body"> Care and handling of farm animals.</div>
+        </div>
+      </div>
+      
+      
+      </div>
+      
+      <div class="govuk-grid-column-one-third">
+      
+      <div class="govuk-summary-card">
+        <div class="govuk-summary-card__title-wrapper">
+          <h2 class="govuk-summary-card__title">Organic land</h2>
+          <div class="govuk-checkboxes__item">
+            <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+            <label class="govuk-label govuk-checkboxes__label" for="waste">
+            </label>
+          </div>
+        </div>
+        <div class="govuk-summary-card__content">
+          <div class="govuk-body"> Land cultivated using organic methods.</div>
+        </div>
+      </div>
+      
+      </div>
+      
+      <div class="govuk-grid-column-one-third">
+      
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Pollinators and wildlife</h2>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+              </label>
+            </div>
+          </div>
+          <div class="govuk-summary-card__content">
+            <div class="govuk-body"> Ways to increase food sources for pollinators.</div>
+          </div>
+        </div>
+        
+      
+        </div>
+      </div>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-third">
+        
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Priority habitats</h2>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+              </label>
+            </div>
+          </div>
+          <div class="govuk-summary-card__content">
+            <div class="govuk-body"> Areas that need protection and conservation.</div>
+          </div>
+        </div>
+        
+        
+        </div>
+        
+        <div class="govuk-grid-column-one-third">
+        
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">Trees (non-woodland)</h2>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+              </label>
+            </div>
+          </div>
+          <div class="govuk-summary-card__content">
+            <div class="govuk-body"> Trees not part of a larger forested area.</div>
+          </div>
+        </div>
+        
+        </div>
+        
+        <div class="govuk-grid-column-one-third">
+        
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Uplands</h2>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-summary-card__content">
+              <div class="govuk-body"> Higher areas of land used for grazing.</div>
+            </div>
+          </div>
+          
+        
+          </div>
+        </div>
+
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-one-third">
+          
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Vegetation control</h2>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-summary-card__content">
+              <div class="govuk-body"> Management of plants for crops to grow.</div>
+            </div>
+          </div>
+          
+          
+          </div>
+          
+          <div class="govuk-grid-column-one-third">
+          
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Water quality</h2>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                </label>
+              </div>
+            </div>
+            <div class="govuk-summary-card__content">
+              <div class="govuk-body"> Cleanliness and health of water sources.</div>
+            </div>
+          </div>
+          
+          </div>
+          
+          <div class="govuk-grid-column-one-third">
+          
+            <div class="govuk-summary-card">
+              <div class="govuk-summary-card__title-wrapper">
+                <h2 class="govuk-summary-card__title">Woodland</h2>
+                <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                  <label class="govuk-label govuk-checkboxes__label" for="waste">
+                  </label>
+                </div>
+              </div>
+              <div class="govuk-summary-card__content">
+                <div class="govuk-body"> Areas of land covered with trees.</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+            
+                <a href="card-result.html" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                  Continue
+                  </a>
+            
+              </div>
+            </div>
+
+{% endblock %}
