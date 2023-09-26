@@ -17,3 +17,15 @@ router.post('/Version_4/Filter/filterfirst1', function(request, response) {
         response.redirect('/Version_4/Filter/filterfirst2')
     }
 })
+
+
+// Version 5 routes
+
+router.post("/Version_5/Filter/filterfirst1", function (request, response) {
+    var choice = request.session.data["choice"];
+    if (choice == "Yes") {
+      response.redirect("/Version_5/Filter/option3filter");
+    } else {
+      response.redirect("/Version_5/Filter/filter3");
+    }
+  });
