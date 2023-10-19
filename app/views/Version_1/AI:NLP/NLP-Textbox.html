@@ -1,42 +1,50 @@
-{% extends "layouts/main.html" %}
+{% extends "layouts/main.html" %} {% block pageTitle %} NLP Text box – {{
+serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block beforeContent %}
+{{ govukBackLink({ text: "Back", href: "javascript:window.history.back()" }) }}
+{% endblock %} {% block content %}
 
-{% block pageTitle %}
-  NLP Text box – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+      Tell us about the information you are trying to find
+    </h1>
+    <p class="govuk-body">
+      In your own words, type your query in to the text box.
+    </p>
+    <form class="form" action="/path/of/next/page" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="more-detail">
+          For example, Grants for a 50 hectare agricultural farm in Dorset
+        </label>
+        <textarea
+          class="govuk-textarea"
+          id="more-detail"
+          name="more-detail"
+          rows="5"
+        ></textarea>
+      </div>
 
-{% block beforeContent %}
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.back()"
-}) }}
-{% endblock %}
-
-{% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-
-      <h1 class="govuk-heading-l">
-        Tell us about the information you are trying to find
-      </h1>
-      <p class="govuk-body">In your own words, type your query in to the text box.</p>
-      <form class="form" action="/path/of/next/page" method="post">
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="more-detail">
-            For example, Grants for a 50 hectare agricultural farm in Dorset  
-          </label>
-          <textarea class="govuk-textarea" id="more-detail" name="more-detail" rows="5"></textarea>
-        </div>
-
-        <a href="endNLP.html" role="button" draggable="false" class="govuk-button govuk-button--start" data-module="govuk-button">
-          Continue
-          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" aria-hidden="true" focusable="false">
-            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
-          </svg></a>
-
-      </form>
-
-    </div>
+      <a
+        href="endNLP.html"
+        role="button"
+        draggable="false"
+        class="govuk-button govuk-button--start"
+        data-module="govuk-button"
+      >
+        Continue
+        <svg
+          class="govuk-button__start-icon"
+          xmlns="http://www.w3.org/2000/svg"
+          width="17.5"
+          height="19"
+          viewBox="0 0 33 40"
+          aria-hidden="true"
+          focusable="false"
+        >
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" /></svg
+      ></a>
+    </form>
   </div>
+</div>
 
 {% endblock %}

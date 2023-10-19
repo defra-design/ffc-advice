@@ -1,5 +1,8 @@
-{% extends "layouts/main.html" %} {% block pageTitle %} GOV.UK page template –
-{{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block content %}
+{% extends "layouts/main.html" %} {% block pageTitle %} Check your answers
+template – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block
+beforeContent %} {{ govukBackLink({ text: "Back", href:
+"javascript:window.history.back()" }) }} {% endblock %} 
+{% block content %}
 
 
 <div class="govuk-grid-row">
@@ -18,14 +21,21 @@
         <p class="govuk-!-font-size-16 govuk-hint">
           Enter a keyword or the name of a grant.
         </p>
-        <input
-          class="govuk-input govuk-!-width-full"
-          id="one-third"
-          name="one-third"
-          type="text"/>
+        
+        <form id="searchBox" name="searchBox" action="/" method="post">
+          <div class="govuk-form-group">
+                       
+            {{ govukInput({
+            
+            name: 'search-box'
+            
+            }) }}
+            
+          </div>
+        
 
-        <hr class="govuk-section-break govuk-section-break--m" />
-        <hr class="govuk-section-break govuk-section-break" />
+        <hr class="govuk-section-break govuk-section-break--m">
+        <hr class="govuk-section-break govuk-section-break">
 
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -41,261 +51,115 @@
                     </span>
                   </summary>
                   <div class="govuk-form-group">
-                    <div
-                      class="govuk-checkboxes govuk-checkboxes--small"
-                      data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities"
-                          name="priorities"
-                          type="checkbox"
-                          value="air-qualilty"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities">
-                          Air Quality
+                        <input class="govuk-checkboxes__input" id="air-qualilty" name="air-qualilty" type="checkbox" value="air-qualilty">
+                        <label class="govuk-label govuk-checkboxes__label" for="air-qualilty">
+                          Air quality
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-2"
-                          name="priorities"
-                          type="checkbox"
-                          value="arable-land"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-2">
+                        <input class="govuk-checkboxes__input" id="arable" name="arable" type="checkbox" value="arable">
+                        <label class="govuk-label govuk-checkboxes__label" for="arable">
                           Arable land
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-3"
-                          name="priorities"
-                          type="checkbox"
-                          value="biodiversity"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-3">
+                        <input class="govuk-checkboxes__input" id="biodiversity" name="biodiversity" type="checkbox" value="biodiversity">
+                        <label class="govuk-label govuk-checkboxes__label" for="biodiversity">
                           Biodiversity
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-4"
-                          name="priorities"
-                          type="checkbox"
-                          value="boundaries"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-4">
+                        <input class="govuk-checkboxes__input" id="boundaries" name="boundaries" type="checkbox" value="boundaries">
+                        <label class="govuk-label govuk-checkboxes__label" for="boundaries">
                           Boundaries
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-5"
-                          name="priorities"
-                          type="checkbox"
-                          value="coast"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-5">
+                        <input class="govuk-checkboxes__input" id="coast" name="coast" type="checkbox" value="coast">
+                        <label class="govuk-label govuk-checkboxes__label" for="coast">
                           Coast
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-6"
-                          name="priorities"
-                          type="checkbox"
-                          value="educational-access"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-6">
+                        <input class="govuk-checkboxes__input" id="educational" name="educational" type="checkbox" value="educational">
+                        <label class="govuk-label govuk-checkboxes__label" for="educational">
                           Educational access
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-7"
-                          name="priorities"
-                          type="checkbox"
-                          value="flood-risk"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-7"
-                        >
-                          Flood risk
+                        <input class="govuk-checkboxes__input" id="flood" name="flood" type="checkbox" value="flood">
+                        <label class="govuk-label govuk-checkboxes__label" for="flood">
+                          Flood risk 
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-8"
-                          name="priorities"
-                          type="checkbox"
-                          value="grassland"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-8" >
+                        <input class="govuk-checkboxes__input" id="grassland" name="grassland" type="checkbox" value="grassland" checked>
+                        <label class="govuk-label govuk-checkboxes__label" for="grassland">
                           Grassland
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-9"
-                          name="priorities"
-                          type="checkbox"
-                          value="historic-environment"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-9">
+                        <input class="govuk-checkboxes__input" id="historic-environment" name="historic-environment" type="checkbox" value="historic-environment">
+                        <label class="govuk-label govuk-checkboxes__label" for="historic-environment">
                           Historic environment
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-10"
-                          name="priorities"
-                          type="checkbox"
-                          value="livestock-management"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-10"
-                        >
+                        <input class="govuk-checkboxes__input" id="livestock" name="livestock" type="checkbox" value="livestock">
+                        <label class="govuk-label govuk-checkboxes__label" for="livestock">
                           Livestock management
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-11"
-                          name="priorities"
-                          type="checkbox"
-                          value="organic-land"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-11"
-                        >
+                        <input class="govuk-checkboxes__input" id="organic" name="organic" type="checkbox" value="organic">
+                        <label class="govuk-label govuk-checkboxes__label" for="organic">
                           Organic land
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-12"
-                          name="priorities"
-                          type="checkbox"
-                          value="pollinators-widlife"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-12"
-                        >
+                        <input class="govuk-checkboxes__input" id="pollinators" name="pollinators" type="checkbox" value="pollinators">
+                        <label class="govuk-label govuk-checkboxes__label" for="pollinators">
                           Pollinators and wildlife
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-13"
-                          name="priorities"
-                          type="checkbox"
-                          value="priority-habitats"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-13"
-                        >
+                        <input class="govuk-checkboxes__input" id="habitats" name="habitats" type="checkbox" value="habitats">
+                        <label class="govuk-label govuk-checkboxes__label" for="habitats">
                           Priority habitats
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-14"
-                          name="priorities"
-                          type="checkbox"
-                          value="trees-non-woodland"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-14"
-                        >
-                          Trees (non-woodland)
+                        <input class="govuk-checkboxes__input" id="trees" name="trees" type="checkbox" value="trees">
+                        <label class="govuk-label govuk-checkboxes__label" for="trees">
+                          Trees (non-woodland)  
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-15"
-                          name="priorities"
-                          type="checkbox"
-                          value="uplands"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-15"
-                        >
+                        <input class="govuk-checkboxes__input" id="uplands" name="uplands" type="checkbox" value="uplands">
+                        <label class="govuk-label govuk-checkboxes__label" for="uplands">
                           Uplands
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-16"
-                          name="priorities"
-                          type="checkbox"
-                          value="vegetable-control"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-16"
-                        >
-                          Vegetable control
+                        <input class="govuk-checkboxes__input" id="vegetation" name="vegetation" type="checkbox" value="vegetation">
+                        <label class="govuk-label govuk-checkboxes__label" for="vegetation">
+                          Vegetation control
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-17"
-                          name="priorities"
-                          type="checkbox"
-                          value="water-quality"
-                        />
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-17">
+                        <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water">
+                        <label class="govuk-label govuk-checkboxes__label" for="water">
                           Water quality
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="priorities-18"
-                          name="priorities"
-                          type="checkbox"
-                          value="woodland"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="priorities-18">
+                        <input class="govuk-checkboxes__input" id="woodland" name="woodland" type="checkbox" value="woodland">
+                        <label class="govuk-label govuk-checkboxes__label" for="woodland">
                           Woodland
                         </label>
-                      </div>
+                    </div>
                     </div>
                   </div>
                 </details>
@@ -311,32 +175,16 @@
                     </span>
                   </summary>
                   <div class="govuk-form-group">
-                    <div
-                      class="govuk-checkboxes govuk-checkboxes--small"
-                      data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="activities"
-                          name="activities"
-                          type="checkbox"
-                          value="creating-improving"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="activities">
+                        <input class="govuk-checkboxes__input" id="create" name="create" type="checkbox" value="create">
+                        <label class="govuk-label govuk-checkboxes__label" for="create">
                           Creating or improving
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="activities-2"
-                          name="activities"
-                          type="checkbox"
-                          value="managing-protecting"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="activities-2" >
+                        <input class="govuk-checkboxes__input" id="manage" name="manage" type="checkbox" value="manage">
+                        <label class="govuk-label govuk-checkboxes__label" for="manage">
                           Managing or protecting
                         </label>
                       </div>
@@ -355,45 +203,22 @@
                     </span>
                   </summary>
                   <div class="govuk-form-group">
-                    <div
-                      class="govuk-checkboxes govuk-checkboxes--small"
-                      data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="grant-scheme"
-                          name="grant-scheme"
-                          type="checkbox"
-                          value="countryside-stewardship"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="grant-scheme" >
+                        <input class="govuk-checkboxes__input" id="cs" name="cs" type="checkbox" value="cs">
+                        <label class="govuk-label govuk-checkboxes__label" for="cs">
                           Countryside Stewardship (CS)
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="grant-scheme-2"
-                          name="grant-scheme"
-                          type="checkbox"
-                          value="farming-equipment-techology"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="grant-scheme-2">
+                        <input class="govuk-checkboxes__input" id="fetf" name="fetf" type="checkbox" value="fetf">
+                        <label class="govuk-label govuk-checkboxes__label" for="fetf">
                           Farming Equipment and Technology fund (FETF)
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="grant-scheme-3"
-                          name="grant-scheme"
-                          type="checkbox"
-                          value="sustainable-farming;">
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="grant-scheme-3">
+                        <input class="govuk-checkboxes__input" id="sfi" name="sfi" type="checkbox" value="sfi">
+                        <label class="govuk-label govuk-checkboxes__label" for="sfi">
                           Sustainable Farming Incentive (SFI)
                         </label>
                       </div>
@@ -412,33 +237,17 @@
                     </span>
                   </summary>
                   <div class="govuk-form-group">
-                    <div
-                      class="govuk-checkboxes govuk-checkboxes--small"
-                      data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="payment-type"
-                          name="payment-type"
-                          type="checkbox"
-                          value="capital-payment"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="payment-type">
+                        <input class="govuk-checkboxes__input" id="capital" name="capital" type="checkbox" value="capital">
+                        <label class="govuk-label govuk-checkboxes__label" for="capital">
                           Capital payment
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="payment-type-2"
-                          name="payment-type"
-                          type="checkbox"
-                          value="revenue-payment"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="payment-type-2">
-                          Revenue-payment
+                        <input class="govuk-checkboxes__input" id="revenue" name="revenue" type="checkbox" value="revenue">
+                        <label class="govuk-label govuk-checkboxes__label" for="revenue">
+                          Revenue payment
                         </label>
                       </div>
                     </div>
@@ -456,45 +265,22 @@
                     </span>
                   </summary>
                   <div class="govuk-form-group">
-                    <div
-                      class="govuk-checkboxes govuk-checkboxes--small"
-                      data-module="govuk-checkboxes">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="closing date"
-                          name="closing date"
-                          type="checkbox"
-                          value="one-month"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="closing date">
+                        <input class="govuk-checkboxes__input" id="1month" name="1month" type="checkbox" value="1month">
+                        <label class="govuk-label govuk-checkboxes__label" for="1month">
                           Less than 1 month
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="closing date-2"
-                          name="closing date"
-                          type="checkbox"
-                          value="one-three-months"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="closing date-2">
+                        <input class="govuk-checkboxes__input" id="3month" name="3month" type="checkbox" value="3month">
+                        <label class="govuk-label govuk-checkboxes__label" for="3month">
                           Between 1 and 3 months
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input
-                          class="govuk-checkboxes__input"
-                          id="closing date-3"
-                          name="closing date"
-                          type="checkbox"
-                          value="three-months"/>
-                        <label
-                          class="govuk-label govuk-checkboxes__label"
-                          for="closing date-3">
+                        <input class="govuk-checkboxes__input" id="plus3month" name="plus3month" type="checkbox" value="plus3month">
+                        <label class="govuk-label govuk-checkboxes__label" for="plus3month">
                           Over 3 months
                         </label>
                       </div>
@@ -505,15 +291,16 @@
             </tr>
           </thead>
         </table>
-        <a
-          href="option3filter.html"
-          role="button"
-          draggable="false"
-          class="govuk-button"
-          data-module="govuk-button">
-          Search
-        </a>
-      </main>
+      </form>
+      <a href="option3filter.html">
+          <button id="search-box" class="govuk-button" data-module="govuk-button">
+            Search
+          </button>
+      </a>
+     </div>
+    </main>
+  </div>
+</div>
 
 
 {% endblock %}
