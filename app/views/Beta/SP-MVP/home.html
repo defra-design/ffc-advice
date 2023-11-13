@@ -1,0 +1,841 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Check your answers
+template – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block
+beforeContent %} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Private Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new tool – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl" style="margin-top: 20px;">
+      Check available funding and grants for your land or farm
+    </h1>
+    <p> From: <b><a href="/path/of/page">Department for Environment, Food & Rural Affairs</a> </b> and <a href="/path/of/page" class="govuk-link"> <b>Rural Payments Agency</a> </b></p>
+
+    <p>Find out what funding the Farming and Countryside Programme offers. This is for land or farms in England. </p>
+    <p>You may be able to apply for one or more funds and grants if you or your land are eligible. The guidance for each fund and grant will explain where this is possible. </p>
+
+    <div class="govuk-inset-text">
+      This service does not confirm your eligibility. You cannot get the same funding twice on a single land parcel.
+    </div>
+    <p>You can also find out about<a href=""> upcoming funding and grants</a> or check <a href=""> closed funding or grants</a>. </p>
+    
+  </div>
+</div> 
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <h2 class="govuk-heading-m">Search</h2>
+          <p class="govuk-!-font-size-16 govuk-hint">Enter a keyword or the name of a grant. Use the filters to narrow your search.</p>
+          <input type="text" name="search" class="govuk-input govuk-!-width-full" id="search">
+          
+          <hr class="govuk-section-break govuk-section-break--m">
+          <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+            Search
+          </a>
+
+          <hr class="govuk-section-break govuk-section-break">
+
+
+              <!--Priorities details tag-->
+                <details
+                  class="govuk-details"
+                  style="text-align: left"
+                  data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Priorities
+                    </span>
+                  </summary>
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="air-qualilty" name="air-qualilty" type="checkbox" value="air-qualilty">
+                        <label class="govuk-label govuk-checkboxes__label" for="air-qualilty">
+                          Air quality
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="arable" name="arable" type="checkbox" value="arable">
+                        <label class="govuk-label govuk-checkboxes__label" for="arable">
+                          Arable land
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="biodiversity" name="biodiversity" type="checkbox" value="biodiversity">
+                        <label class="govuk-label govuk-checkboxes__label" for="biodiversity">
+                          Biodiversity
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="boundaries" name="boundaries" type="checkbox" value="boundaries">
+                        <label class="govuk-label govuk-checkboxes__label" for="boundaries">
+                          Boundaries
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="coast" name="coast" type="checkbox" value="coast">
+                        <label class="govuk-label govuk-checkboxes__label" for="coast">
+                          Coast
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="educational" name="educational" type="checkbox" value="educational">
+                        <label class="govuk-label govuk-checkboxes__label" for="educational">
+                          Educational access
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="flood" name="flood" type="checkbox" value="flood">
+                        <label class="govuk-label govuk-checkboxes__label" for="flood">
+                          Flood risk 
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="grassland" name="grassland" type="checkbox" value="grassland" checked>
+                        <label class="govuk-label govuk-checkboxes__label" for="grassland">
+                          Grassland
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="historic-environment" name="historic-environment" type="checkbox" value="historic-environment">
+                        <label class="govuk-label govuk-checkboxes__label" for="historic-environment">
+                          Historic environment
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="livestock" name="livestock" type="checkbox" value="livestock">
+                        <label class="govuk-label govuk-checkboxes__label" for="livestock">
+                          Livestock management
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="organic" name="organic" type="checkbox" value="organic">
+                        <label class="govuk-label govuk-checkboxes__label" for="organic">
+                          Organic land
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="pollinators" name="pollinators" type="checkbox" value="pollinators">
+                        <label class="govuk-label govuk-checkboxes__label" for="pollinators">
+                          Pollinators and wildlife
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="habitats" name="habitats" type="checkbox" value="habitats">
+                        <label class="govuk-label govuk-checkboxes__label" for="habitats">
+                          Priority habitats
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="trees" name="trees" type="checkbox" value="trees">
+                        <label class="govuk-label govuk-checkboxes__label" for="trees">
+                          Trees (non-woodland)  
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="uplands" name="uplands" type="checkbox" value="uplands">
+                        <label class="govuk-label govuk-checkboxes__label" for="uplands">
+                          Uplands
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="vegetation" name="vegetation" type="checkbox" value="vegetation">
+                        <label class="govuk-label govuk-checkboxes__label" for="vegetation">
+                          Vegetation control
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water">
+                        <label class="govuk-label govuk-checkboxes__label" for="water">
+                          Water quality
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="woodland" name="woodland" type="checkbox" value="woodland">
+                        <label class="govuk-label govuk-checkboxes__label" for="woodland">
+                          Woodland
+                        </label>
+                    </div>
+                    </div>
+                  </div>
+                </details>
+
+               <!--Activities details tag-->
+               <details
+               class="govuk-details"
+               style="text-align: left"
+               data-module="govuk-details">
+               <summary class="govuk-details__summary">
+                 <span class="govuk-details__summary-text">
+                   Activities
+                 </span>
+               </summary>
+               <div class="govuk-form-group">
+                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                   <div class="govuk-checkboxes__item">
+                     <input class="govuk-checkboxes__input" id="create" name="create" type="checkbox" value="create">
+                     <label class="govuk-label govuk-checkboxes__label" for="create">
+                       Creating or improving
+                     </label>
+                   </div>
+                   <div class="govuk-checkboxes__item">
+                     <input class="govuk-checkboxes__input" id="manage" name="manage" type="checkbox" value="manage">
+                     <label class="govuk-label govuk-checkboxes__label" for="manage">
+                       Managing or protecting
+                     </label>
+                   </div>
+                 </div>
+               </div>
+             </details>
+
+             <!--Grant scheme details tag-->
+             <details
+             class="govuk-details"
+             style="text-align: left"
+             data-module="govuk-details">
+             <summary class="govuk-details__summary">
+               <span class="govuk-details__summary-text">
+                 Grant scheme
+               </span>
+             </summary>
+             <div class="govuk-form-group">
+               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                 <div class="govuk-checkboxes__item">
+                   <input class="govuk-checkboxes__input" id="cs" name="cs" type="checkbox" value="cs">
+                   <label class="govuk-label govuk-checkboxes__label" for="cs">
+                     Countryside Stewardship (CS)
+                   </label>
+                 </div>
+                 <div class="govuk-checkboxes__item">
+                   <input class="govuk-checkboxes__input" id="fetf" name="fetf" type="checkbox" value="fetf">
+                   <label class="govuk-label govuk-checkboxes__label" for="fetf">
+                     Farming Equipment and Technology fund (FETF)
+                   </label>
+                 </div>
+                 <div class="govuk-checkboxes__item">
+                   <input class="govuk-checkboxes__input" id="sfi" name="sfi" type="checkbox" value="sfi">
+                   <label class="govuk-label govuk-checkboxes__label" for="sfi">
+                     Sustainable Farming Incentive (SFI)
+                   </label>
+                 </div>
+               </div>
+             </div>
+           </details>
+
+           <!--Payment details details tag-->
+           <details
+           class="govuk-details"
+           style="text-align: left"
+           data-module="govuk-details">
+           <summary class="govuk-details__summary">
+             <span class="govuk-details__summary-text">
+               Payment type
+             </span>
+           </summary>
+           <div class="govuk-form-group">
+             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="capital" name="capital" type="checkbox" value="capital">
+                 <label class="govuk-label govuk-checkboxes__label" for="capital">
+                   Capital payment
+                 </label>
+               </div>
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="revenue" name="revenue" type="checkbox" value="revenue">
+                 <label class="govuk-label govuk-checkboxes__label" for="revenue">
+                   Revenue payment
+                 </label>
+               </div>
+             </div>
+           </div>
+         </details>
+
+         <!--Closing date details tag-->
+         <details
+         class="govuk-details"
+         style="text-align: left"
+         data-module="govuk-details">
+         <summary class="govuk-details__summary">
+           <span class="govuk-details__summary-text">
+             Closing date
+           </span>
+         </summary>
+         <div class="govuk-form-group">
+           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="1month" name="1month" type="checkbox" value="1month">
+               <label class="govuk-label govuk-checkboxes__label" for="1month">
+                 Less than 1 month
+               </label>
+             </div>
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="3month" name="3month" type="checkbox" value="3month">
+               <label class="govuk-label govuk-checkboxes__label" for="3month">
+                 Between 1 and 3 months
+               </label>
+             </div>
+             <div class="govuk-checkboxes__item">
+               <input class="govuk-checkboxes__input" id="plus3month" name="plus3month" type="checkbox" value="plus3month">
+               <label class="govuk-label govuk-checkboxes__label" for="plus3month">
+                 Over 3 months
+               </label>
+             </div>
+           </div>
+         </div>
+       </details>
+                
+            
+
+            
+          
+ 
+
+    </div>
+ 
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+           <tr class="govuk-table__row">
+            <th scope="col" class="govuk-body-l govuk-!-font-weight-bold" style="text-align: left;">29 results</h3></th>
+            <th scope="col" class="govuk-link"><a class="govuk-link" href="#">Get emails</a></th>
+             <th scope="col" class="govuk-link"><a class="govuk-link" href="#">Subscribe to feed</a></th>
+            </tr>
+         </thead>
+         </table>
+    
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+        <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">SAM1: Assess soil, test soil organic matter and produce a soil management plan</a></p>
+         <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an action that you can add to a Sustainable Farming Incentive (SFI) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Sustainable Farming Incentive (SFI)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Biodiversity, Flood risk, Uplands, Water quality
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+       
+    <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">England Woodland Creation Offer</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Biodiversity, Priority habitats, Organic land, Uplands, Woodland
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Closing date: 11:59pm 1 January 2025
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+    <p class="govuk-body govuk-!-font-weight-bold"> <a href="https://www.gov.uk/countryside-stewardship-grants/organic-conversion-improved-permanent-grassland-or1" class="govuk-link">OR1: Organic conversion - improved permanent grassland</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Grassland, Organic land, Uplands, Water quality
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="https://www.gov.uk/countryside-stewardship-grants/organic-land-management-improved-permanent-grassland-ot1" class="govuk-link">OT1: Organic land management - improved permanent grassland</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Grassland, Organic land, Uplands
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="https://www.gov.uk/countryside-stewardship-grants/organic-land-management-unimproved-permanent-grassland-ot2" class="govuk-link">OR2: Organic conversion - unimproved permanent grassland</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Biodiversity, Grassland, Organic land, Uplands, Water quality
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OT2: Organic land management - unimproved permanent grassland</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Grassland, Organic land, Uplands 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OT6: Organic land management - enclosed rough grazing </a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Organic land, Uplands  
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OT4: Organic land management - horticulture</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Organic land, Uplands  
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OR5: Organic conversion - top fruit </a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Organic land, Trees (non-woodland), Uplands   
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OR4: Organic conversion - horticulture</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Organic land, Uplands, Water quality    
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OR3: Organic conversion - rotational land </a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Arable land, Organic land, Uplands, Water quality   
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OT5: Organic land management - top fruit</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Organic land, Trees (non-woodland), Uplands  
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OT3: Organic land management - rotational land</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Arable land, Organic land, Uplands  
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OP4: Multi species ley</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OP5: Undersown cereal</a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OP3: Supplementary feeding for farmland birds </a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OP1: Overwintered stubble </a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <p class="govuk-body govuk-!-font-weight-bold"> <a href="guidancepage.html" class="govuk-link">OP2: Wild bird seed mixture </a></p>
+      <dl class="govuk-summary-list govuk-summary-list--no-border">
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            This is an option that you can add to a Countryside Stewardship (CS) agreement if you meet the eligibility criteria.
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Grant scheme: Countryside Stewardship (CS)
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Activities: Option
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Payment type: Higher Tier
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </main>
+</div>
+
+
+
+{% endblock %}
