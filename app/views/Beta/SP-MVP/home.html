@@ -4,6 +4,14 @@ beforeContent %}
 {% endblock %} 
 
 {% block content %}
+<style>
+  /* Set a fixed height for the container */
+  .vertical {
+    height: 300px; /* vertical scroll bar height */
+    overflow-y: scroll; /* Add a vertical scrollbar when content overflows */
+    
+  }
+</style>
 
 <div class="govuk-grid-row">
   <div class="govuk-phase-banner">
@@ -51,29 +59,58 @@ beforeContent %}
 
           <hr class="govuk-section-break govuk-section-break">
 
+          <!--Open or Closed details tag-->
+           <details open
+           class="govuk-details"
+           style="text-align: left"
+           data-module="govuk-details">
+           <summary class="govuk-details__summary">
+             <span class="govuk-details__summary-text">
+               Open or closed
+             </span>
+           </summary>
+           <div class="govuk-form-group">
+             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="open" name="open" type="checkbox" value="open">
+                 <label class="govuk-label govuk-checkboxes__label" for="open">
+                   Open
+                 </label>
+               </div>
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="closed" name="closed" type="checkbox" value="closed">
+                 <label class="govuk-label govuk-checkboxes__label" for="closed">
+                   Closed
+                 </label>
+               </div>
+             </div>
+           </div>
+          </details>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-              <!--Priorities details tag-->
-                <details
+              <!--Area of interest details tag-->
+                <details 
                   class="govuk-details"
                   style="text-align: left"
                   data-module="govuk-details">
                   <summary class="govuk-details__summary">
                     <span class="govuk-details__summary-text">
-                      Priorities
+                      Area of interest
                     </span>
                   </summary>
+                  <div class="vertical">
                   <div class="govuk-form-group">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="agroforestry" name="agroforestry" type="checkbox" value="agroforestry">
+                        <label class="govuk-label govuk-checkboxes__label" for="agroforestry">
+                          Agroforestry
+                        </label>
+                      </div>
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="air-qualilty" name="air-qualilty" type="checkbox" value="air-qualilty">
                         <label class="govuk-label govuk-checkboxes__label" for="air-qualilty">
                           Air quality
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="arable" name="arable" type="checkbox" value="arable">
-                        <label class="govuk-label govuk-checkboxes__label" for="arable">
-                          Arable land
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -107,15 +144,9 @@ beforeContent %}
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="grassland" name="grassland" type="checkbox" value="grassland" checked>
-                        <label class="govuk-label govuk-checkboxes__label" for="grassland">
-                          Grassland
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="historic-environment" name="historic-environment" type="checkbox" value="historic-environment">
                         <label class="govuk-label govuk-checkboxes__label" for="historic-environment">
-                          Historic environment
+                          Heritage and historic environment
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -125,9 +156,9 @@ beforeContent %}
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="organic" name="organic" type="checkbox" value="organic">
-                        <label class="govuk-label govuk-checkboxes__label" for="organic">
-                          Organic land
+                        <input class="govuk-checkboxes__input" id="permanent-crops" name="permanent-crops" type="checkbox" value="permanent-crops">
+                        <label class="govuk-label govuk-checkboxes__label" for="permanent-crops">
+                          Permanent crops
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -143,15 +174,21 @@ beforeContent %}
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="trees" name="trees" type="checkbox" value="trees">
-                        <label class="govuk-label govuk-checkboxes__label" for="trees">
-                          Trees (non-woodland)  
+                        <input class="govuk-checkboxes__input" id="soil" name="soil" type="checkbox" value="soil">
+                        <label class="govuk-label govuk-checkboxes__label" for="soil">
+                          Soil
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="uplands" name="uplands" type="checkbox" value="uplands">
-                        <label class="govuk-label govuk-checkboxes__label" for="uplands">
-                          Uplands
+                        <input class="govuk-checkboxes__input" id="species-recovery" name="species-recovery" type="checkbox" value="species-recovery">
+                        <label class="govuk-label govuk-checkboxes__label" for="species-recovery">
+                          Species recovery and management
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="trees" name="trees" type="checkbox" value="trees">
+                        <label class="govuk-label govuk-checkboxes__label" for="trees">
+                          Trees (non-woodland)  
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -163,46 +200,104 @@ beforeContent %}
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water">
                         <label class="govuk-label govuk-checkboxes__label" for="water">
-                          Water quality
+                          Water
                         </label>
                       </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="woodland" name="woodland" type="checkbox" value="woodland">
-                        <label class="govuk-label govuk-checkboxes__label" for="woodland">
-                          Woodland
-                        </label>
-                    </div>
                     </div>
                   </div>
+                  </div>
                 </details>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-               <!--Activities details tag-->
+               <!--Land type details tag-->
                <details
                class="govuk-details"
                style="text-align: left"
                data-module="govuk-details">
                <summary class="govuk-details__summary">
                  <span class="govuk-details__summary-text">
-                   Activities
+                   Land type
                  </span>
                </summary>
+               <div class="vertical">
                <div class="govuk-form-group">
                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                    <div class="govuk-checkboxes__item">
-                     <input class="govuk-checkboxes__input" id="create" name="create" type="checkbox" value="create">
-                     <label class="govuk-label govuk-checkboxes__label" for="create">
-                       Creating or improving
+                     <input class="govuk-checkboxes__input" id="arable" name="arable" type="checkbox" value="arable">
+                     <label class="govuk-label govuk-checkboxes__label" for="arable">
+                       Arable land
                      </label>
                    </div>
                    <div class="govuk-checkboxes__item">
-                     <input class="govuk-checkboxes__input" id="manage" name="manage" type="checkbox" value="manage">
-                     <label class="govuk-label govuk-checkboxes__label" for="manage">
-                       Managing or protecting
+                     <input class="govuk-checkboxes__input" id="grassland" name="grassland" type="checkbox" value="grassland">
+                     <label class="govuk-label govuk-checkboxes__label" for="grassland">
+                       Grassland
                      </label>
                    </div>
+                   <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="lowland" name="lowland" type="checkbox" value="lowland">
+                    <label class="govuk-label govuk-checkboxes__label" for="lowland">
+                      Lowland
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="moorland" name="moorland" type="checkbox" value="moorland">
+                    <label class="govuk-label govuk-checkboxes__label" for="moorland">
+                      Moorland
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organic" name="organic" type="checkbox" value="organic">
+                    <label class="govuk-label govuk-checkboxes__label" for="organic">
+                      Organic land
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="upland" name="upland" type="checkbox" value="upland">
+                    <label class="govuk-label govuk-checkboxes__label" for="upland">
+                      Upland
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="woodland" name="woodland" type="checkbox" value="woodland">
+                    <label class="govuk-label govuk-checkboxes__label" for="woodland">
+                      Woodland
+                    </label>
+                  </div>
                  </div>
                </div>
-             </details>
+               </div>
+              </details>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+           <!--Type of funding details tag-->
+           <details
+           class="govuk-details"
+           style="text-align: left"
+           data-module="govuk-details">
+           <summary class="govuk-details__summary">
+             <span class="govuk-details__summary-text">
+               Type of funding
+             </span>
+           </summary>
+           <div class="govuk-form-group">
+             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="grant" name="grant" type="checkbox" value="grant">
+                 <label class="govuk-label govuk-checkboxes__label" for="grant">
+                   Grant
+                 </label>
+               </div>
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="option" name="option" type="checkbox" value="option">
+                 <label class="govuk-label govuk-checkboxes__label" for="option">
+                   Option
+                 </label>
+               </div>
+             </div>
+           </div>
+          </details>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
              <!--Grant scheme details tag-->
              <details
@@ -234,9 +329,16 @@ beforeContent %}
                      Sustainable Farming Incentive (SFI)
                    </label>
                  </div>
+                 <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="sig" name="sig" type="checkbox" value="sig">
+                  <label class="govuk-label govuk-checkboxes__label" for="sig">
+                    Slurry Infrastructure grant
+                  </label>
+                </div>
                </div>
              </div>
-           </details>
+             </details>
+             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
            <!--Payment details details tag-->
            <details
@@ -264,42 +366,9 @@ beforeContent %}
                </div>
              </div>
            </div>
-         </details>
-
-         <!--Closing date details tag-->
-         <details
-         class="govuk-details"
-         style="text-align: left"
-         data-module="govuk-details">
-         <summary class="govuk-details__summary">
-           <span class="govuk-details__summary-text">
-             Closing date
-           </span>
-         </summary>
-         <div class="govuk-form-group">
-           <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-             <div class="govuk-checkboxes__item">
-               <input class="govuk-checkboxes__input" id="1month" name="1month" type="checkbox" value="1month">
-               <label class="govuk-label govuk-checkboxes__label" for="1month">
-                 Less than 1 month
-               </label>
-             </div>
-             <div class="govuk-checkboxes__item">
-               <input class="govuk-checkboxes__input" id="3month" name="3month" type="checkbox" value="3month">
-               <label class="govuk-label govuk-checkboxes__label" for="3month">
-                 Between 1 and 3 months
-               </label>
-             </div>
-             <div class="govuk-checkboxes__item">
-               <input class="govuk-checkboxes__input" id="plus3month" name="plus3month" type="checkbox" value="plus3month">
-               <label class="govuk-label govuk-checkboxes__label" for="plus3month">
-                 Over 3 months
-               </label>
-             </div>
-           </div>
-         </div>
-       </details>
-                
+           </details>
+           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              
             
 
             
@@ -313,13 +382,13 @@ beforeContent %}
       <table class="govuk-table">
         <thead class="govuk-table__head">
            <tr class="govuk-table__row">
-            <th scope="col" class="govuk-body-l govuk-!-font-weight-bold" style="text-align: left;">29 results</h3></th>
-            <th scope="col" class="govuk-link"><a class="govuk-link" href="#">Get emails</a></th>
-             <th scope="col" class="govuk-link"><a class="govuk-link" href="#">Subscribe to feed</a></th>
-            </tr>
+            <th scope="col" class="govuk-body-l govuk-!-font-weight-bold" style="text-align: left;">29 results</th>
+            <th scope="col" class="govuk-link" style="float: right; padding-left: 40px;"><a class="govuk-link" href="#">Get emails</a></th>
+            <th scope="col" class="govuk-link" style="float: right;"><a class="govuk-link" href="#">Subscribe to feed</a></th>
+           </tr>
          </thead>
          </table>
-    
+  
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
         <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">SAM1: Assess soil, test soil organic matter and produce a soil management plan</a></p>
          <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -335,7 +404,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Biodiversity, Flood risk, Uplands, Water quality
+            Area of interest: Biodiversity, Flood risk, Uplands, Water
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dd class="govuk-summary-list__value">
+            Area of interest: Biodiversity, Flood risk, Uplands, Water quality
           </dd>
         </div>
       </dl>
@@ -345,12 +419,12 @@ beforeContent %}
       <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Biodiversity, Priority habitats, Organic land, Uplands, Woodland
+            Area of interest: Biodiversity, Priority habitats, Organic land, Uplands, Woodland
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Closing date: 11:59pm 1 January 2025
+            <!--facet to be added-->
           </dd>
         </div>
       </dl>
@@ -370,12 +444,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Grassland, Organic land, Uplands, Water quality
+            Area of interest: Grassland, Organic land, Uplands, Water quality
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -400,12 +474,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Grassland, Organic land, Uplands
+            Area of interest: Grassland, Organic land, Uplands
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: Option
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -430,12 +504,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Biodiversity, Grassland, Organic land, Uplands, Water quality
+            Area of interest: Biodiversity, Grassland, Organic land, Uplands, Water quality
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -460,12 +534,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Grassland, Organic land, Uplands 
+            Area of interest: Grassland, Organic land, Uplands 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -490,12 +564,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Organic land, Uplands  
+            Area of interest: Organic land, Uplands  
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -520,12 +594,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Organic land, Uplands  
+            Area of interest: Organic land, Uplands  
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: Option
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -547,12 +621,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Organic land, Trees (non-woodland), Uplands   
+            Area of interest: Organic land, Trees (non-woodland), Uplands   
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -577,12 +651,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Organic land, Uplands, Water quality    
+            Area of interest: Organic land, Uplands, Water quality    
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -607,12 +681,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Arable land, Organic land, Uplands, Water quality   
+            Area of interest: Arable land, Organic land, Uplands, Water quality   
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -637,12 +711,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Organic land, Trees (non-woodland), Uplands  
+            Area of interest: Organic land, Trees (non-woodland), Uplands  
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -667,12 +741,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Arable land, Organic land, Uplands  
+            Area of interest: Arable land, Organic land, Uplands  
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -698,12 +772,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+            Area of interest: Arable land, Biodiversity, Organic land, Uplands 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -728,12 +802,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+            Area of interest: Arable land, Biodiversity, Organic land, Uplands 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -758,12 +832,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+            Area of interest: Arable land, Biodiversity, Organic land, Uplands 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -788,12 +862,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+            Area of interest: Arable land, Biodiversity, Organic land, Uplands 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -818,12 +892,12 @@ beforeContent %}
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Priorities: Arable land, Biodiversity, Organic land, Uplands 
+            Area of interest: Arable land, Biodiversity, Organic land, Uplands 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
           <dd class="govuk-summary-list__value">
-            Activities: Option
+            Land type: 
           </dd>
         </div>
         <div class="govuk-summary-list__row">
