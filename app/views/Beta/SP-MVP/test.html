@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filter Results with Multiple Checkboxes</title>
+  <style>
+    /* Optional: Style for better appearance */
+    .filter-container {
+      margin-bottom: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Filter checkboxes -->
+  <div class="filter-container">
+    <label>
+      <input type="checkbox" id="filter1" onclick="filterResults()"> Option 1
+    </label>
+    <label>
+      <input type="checkbox" id="filter2" onclick="filterResults()"> Option 2
+    </label>
+    <label>
+      <input type="checkbox" id="filter3" onclick="filterResults()"> Option 3
+    </label>
+  </div>
+
+  <!-- Results list -->
+  <ul id="results">
+    <li data-options="option1">Result 1</li>
+    <li data-options="option2">Result 2</li>
+    <li data-options="option1 option3">Result 3</li>
+    <!-- Add more results as needed -->
+  </ul>
+
+  <script>
+    function filterResults() {
+      // Get the checkboxes
+      var checkbox1 = document.getElementById('filter1');
+      var checkbox2 = document.getElementById('filter2');
+      var checkbox3 = document.getElementById('filter3');
+
+      // Get the list of results
+      var resultsList = document.getElementById('results');
+
+      // Get the list items inside the results list
+      var items = resultsList.getElementsByTagName('li');
+
+      // Loop through the list items and show/hide based on checkbox selection
+      for (var i = 0; i < items.length; i++) {
+        var item = items[i];
+        var options = item.getAttribute('data-options').split(' '); // Split options into an array
+
+        // Check if each selected checkbox matches the options of the current item
+        var showItem =
+          (!checkbox1.checked || options.includes('option1')) &&
+          (!checkbox2.checked || options.includes('option2')) &&
+          (!checkbox3.checked || options.includes('option3'));
+
+        item.style.display = showItem ? '' : 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
