@@ -11,6 +11,36 @@ beforeContent %}
     overflow-y: scroll; /* Add a vertical scrollbar when content overflows */
     
   }
+  /*Search bar styling*/
+  .search-container {
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .search-button {
+      background-color: #1f70b8;
+      color: #fff;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    /*Row links for email, etc*/
+    .link-container {
+      display: flex;
+      justify-content: space-between; /* Distribute items with space between them */
+      flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    }
+
+    /* Style for each item */
+    .item {
+      margin: 0px 0px 0px 0px;
+    }
+
+    /* Style to align the first item to the left */
+    .item:first-child {
+      margin-right: auto;
+    }
+
 </style>
 
 <script>
@@ -51,6 +81,7 @@ beforeContent %}
     var checkboxSig = document.getElementById('sig');
     var checkboxCapital = document.getElementById('capital');
     var checkboxRevenue = document.getElementById('revenue');
+    var searchBoxInputText = document.getElementById('searchInput').value.toLowerCase();
     
   
 
@@ -61,11 +92,16 @@ beforeContent %}
     var items = resultsList.getElementsByTagName('li');
     console.log(JSON.stringify(items));
     var resultsCount = 0;
+    var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 
-    // Loop through the list items and show/hide based on checkbox selection
+
+    // Loop through the list items and show/hide based on checkbox selection and search query
     for (var i = 0; i < items.length; i++) {
       var item = items[i];
       var options = item.getAttribute('data-options').split(' '); // Split options into an array
+
+      // Check if the search query is present in the text of the current item
+      var containsSearchQuery = item.textContent.toLowerCase().includes(searchQuery);
 
       var showItem =
         (!checkboxOpen.checked || options.includes('open'))  &&
@@ -104,9 +140,9 @@ beforeContent %}
         (!checkboxCapital.checked || options.includes('capital')) &&
         (!checkboxRevenue.checked || options.includes('revenue'));
 
-      item.style.display = showItem ? '' : 'none';
+      item.style.display = (containsSearchQuery && showItem) ? '' : 'none';
 
-      if (showItem) {
+      if (containsSearchQuery && showItem) {
         item.style.display = '';
         resultsCount ++;
       } else {
@@ -115,6 +151,21 @@ beforeContent %}
     }
     document.getElementById("resultsCount").innerHTML = resultsCount;
   }
+// Event listeners
+  const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+// Set the maximum number of listeners to 40
+emitter.setMaxListeners(40);
+
+//<!-- Initial down chevron and toggle-->
+
+  function toggleChevron(icon) {
+    // Toggle between up and down chevron
+    icon.classList.toggle('fa-chevron-down');
+    icon.classList.toggle('fa-chevron-up');
+  }
+
 </script>
 
 <body onload="filterResults()">
@@ -156,17 +207,18 @@ beforeContent %}
           <h2 class="govuk-heading-m">Search</h2>
           <p class="govuk-!-font-size-16 govuk-hint">Enter a keyword or the name of a grant.
           Use the filters to narrow your search.</p>
-          <input type="text" name="search" class="govuk-input govuk-!-width-full" id="search">
+          <div class="search-container">
+            <input type="text" name="search" class="govuk-input govuk-!-width-full" id="searchInput">
+            <div class="search-button" onclick="filterResults()"><i class="fas fa-search"></i></div>
+            
+          </div>
           
           <hr class="govuk-section-break govuk-section-break--m">
-          <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-            Search
-          </a>
-
           <hr class="govuk-section-break govuk-section-break">
 
           <!--Open or Closed details tag-->
-           <details open
+
+          <details open
            class="govuk-details"
            style="text-align: left"
            data-module="govuk-details">
@@ -497,15 +549,12 @@ beforeContent %}
  
     </div>
     <div class="govuk-grid-column-two-thirds">
-      <table class="govuk-table">
-        <thead class="govuk-table__head">
-           <tr class="govuk-table__row">
-            <th scope="col" class="govuk-body-l govuk-!-font-weight-bold" style="text-align: left;"><span id="resultsCount"></span> results</th>
-            <th scope="col" class="govuk-link" style="float: right; padding-left: 40px;"><a class="govuk-link" href="#">Get emails</a></th>
-            <th scope="col" class="govuk-link" style="float: right;"><a class="govuk-link" href="#">Subscribe to feed</a></th>
-           </tr>
-         </thead>
-         </table>
+      <div class="link-container">
+        <div class="item govuk-body-l govuk-!-font-weight-bold"><span id="resultsCount"></span> results</div>
+        <div class="item" style="padding-right: 20px;"><a class="govuk-link" href="#"><i class="fa-regular fa-envelope" style="padding-right: 5px;"></i>Get emails</a></div>
+        <div class="item"><a class="govuk-link" href="#"><i class="fa-solid fa-wifi" style="rotate: 45deg; padding-right: 5px;"></i>Subscribe to feed</a></div>
+        <!-- Add more items as needed -->
+      </div>
   
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
@@ -652,6 +701,43 @@ beforeContent %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
             <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open biodiversity pollinators water option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">AB1: Nectar flower mix</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity, Pollinators and wildlife, Water
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Arable, Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Grant scheme:</b> Countryside Stewardship (CS)
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">

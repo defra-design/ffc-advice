@@ -4,6 +4,8 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts #} {% extends
 <head>
   <!--Font awesome scripts for icon use-->
   <script src="https://kit.fontawesome.com/deb1d61b21.js" crossorigin="anonymous"></script>
+  
+ 
 </head>
 
 {% block header %} {{ govukHeader({
@@ -21,5 +23,6 @@ govukFooter({ }) }} {% endblock %}
 {% block stylesheets %}
   {{ super() }}
   <link href="/app/assets/css/filter-elements.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 {% endblock %}
 
