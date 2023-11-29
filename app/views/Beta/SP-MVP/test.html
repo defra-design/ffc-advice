@@ -1,1 +1,1019 @@
-<i class="fas fa-chevron-down chevron-icon" onclick="toggleChevron(this)"></i>
+{% extends "layouts/main.html" %} {% block pageTitle %} Check your answers
+template – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block
+beforeContent %} 
+{% endblock %} 
+
+{% block content %}
+<style>
+  /* Set a fixed height for the container */
+  .vertical {
+    height: 300px; /* vertical scroll bar height */
+    overflow-y: scroll; /* Add a vertical scrollbar when content overflows */
+    
+  }
+  /*Search bar styling*/
+  .search-container {
+      display: flex;
+      overflow: hidden;
+      margin-bottom: 10px;
+    }
+
+    .search-button {
+      background-color: #1f70b8;
+      color: #fff;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+    /*Row links for email, etc*/
+    .link-container {
+      display: flex;
+      justify-content: space-between; /* Distribute items with space between them */
+      flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+    }
+
+    /* Style for each item */
+    .item {
+      margin: 0px 0px 0px 0px;
+    }
+
+    /* Style to align the first item to the left */
+    .item:first-child {
+      margin-right: auto;
+    }
+
+</style>
+
+<script>
+  function filterResults() {
+    // Get the checkboxes
+    var checkboxOpen = document.getElementById('open');
+    var checkboxClosed = document.getElementById('closed');
+    var checkboxAgroForestry = document.getElementById('agroforestry');
+    var checkboxAirQuality = document.getElementById('air-qualilty');
+    var checkboxBiodiversity = document.getElementById('biodiversity');
+    var checkboxBoundaries = document.getElementById('boundaries');
+    var checkboxCoast = document.getElementById('coast');
+    var checkboxEducational = document.getElementById('educational');
+    var checkboxFlood = document.getElementById('flood');
+    var checkboxHistoricEnvironment = document.getElementById('historic-environment');
+    var checkboxPermanentCrops = document.getElementById('permanent-crops');
+    var checkboxPollinators = document.getElementById('pollinators');
+    var checkboxHabitats = document.getElementById('habitats');
+    var checkboxSoil = document.getElementById('soil');
+    var checkboxSpeciesRecovery = document.getElementById('species-recovery');
+    var checkboxTrees = document.getElementById('trees');
+    var checkboxVegetation = document.getElementById('vegetation');
+    var checkboxWater = document.getElementById('water');
+    var checkboxArableLand = document.getElementById('arable');
+    var checkboxGrassland = document.getElementById('grassland');
+    var checkboxLowland = document.getElementById('lowland');
+    var checkboxMoorland = document.getElementById('moorland');
+    var checkboxOrganic = document.getElementById('organic');
+    var checkboxUpland = document.getElementById('upland');
+    var checkboxWoodland = document.getElementById('woodland');
+    var checkboxGrant = document.getElementById('grant');
+    var checkboxOption = document.getElementById('option');
+    var checkboxCapitalItem = document.getElementById('capital-item');
+    var checkboxSupplement = document.getElementById('supplement');
+    var checkboxCs = document.getElementById('cs');
+    var checkboxFetf = document.getElementById('fetf');
+    var checkboxSfi = document.getElementById('sfi');
+    var checkboxSig = document.getElementById('sig');
+    var checkboxCapital = document.getElementById('capital');
+    var checkboxRevenue = document.getElementById('revenue');
+    var searchBoxInputText = document.getElementById('searchInput').value.toLowerCase();
+    
+  
+
+    // Get the list of results
+    var resultsList = document.getElementById('results');
+
+    // Get the list items inside the results list
+    var items = resultsList.getElementsByTagName('li');
+    console.log(JSON.stringify(items));
+    var resultsCount = 0;
+    var searchQuery = document.getElementById('searchInput').value.toLowerCase();
+
+
+    // Loop through the list items and show/hide based on checkbox selection and search query
+    for (var i = 0; i < items.length; i++) {
+      var item = items[i];
+      var options = item.getAttribute('data-options').split(' '); // Split options into an array
+
+      // Check if the search query is present in the text of the current item
+      var containsSearchQuery = item.textContent.toLowerCase().includes(searchQuery);
+
+      var showItem =
+        (!checkboxOpen.checked || options.includes('open'))  &&
+        (!checkboxClosed.checked || options.includes('closed'))  &&
+        (!checkboxAgroForestry.checked|| options.includes('agroForestry')) &&
+        (!checkboxAirQuality.checked || options.includes('airQuality'))  &&
+        (!checkboxBiodiversity.checked || options.includes('biodiversity')) &&
+        (!checkboxBoundaries.checked || options.includes('boundaries')) &&
+        (!checkboxCoast.checked || options.includes('coast')) &&
+        (!checkboxEducational.checked || options.includes('educational')) &&
+        (!checkboxFlood.checked || options.includes('flood')) &&
+        (!checkboxHistoricEnvironment.checked || options.includes('historicEnvironment')) &&
+        (!checkboxPermanentCrops.checked || options.includes('permanentCrops')) &&
+        (!checkboxPollinators.checked || options.includes('pollinators')) &&
+        (!checkboxHabitats.checked || options.includes('habitats')) &&
+        (!checkboxSoil.checked || options.includes('soil')) &&
+        (!checkboxSpeciesRecovery.checked || options.includes('speciesRecovery')) &&
+        (!checkboxTrees.checked || options.includes('trees')) &&
+        (!checkboxVegetation.checked || options.includes('vegetation')) &&
+        (!checkboxWater.checked || options.includes('water')) &&
+        (!checkboxArableLand.checked || options.includes('arableLand')) &&
+        (!checkboxGrassland.checked || options.includes('grassLand')) &&
+        (!checkboxLowland.checked || options.includes('lowland')) &&
+        (!checkboxMoorland.checked || options.includes('moorland')) &&
+        (!checkboxOrganic.checked || options.includes('organic')) &&
+        (!checkboxUpland.checked || options.includes('upland')) &&
+        (!checkboxWoodland.checked || options.includes('woodland')) &&
+        (!checkboxGrant.checked || options.includes('grant')) &&
+        (!checkboxOption.checked || options.includes('option')) &&
+        (!checkboxCapitalItem.checked || options.includes('capitalItem')) &&
+        (!checkboxSupplement.checked || options.includes('supplement')) &&
+        (!checkboxCs.checked || options.includes('cs')) &&
+        (!checkboxFetf.checked || options.includes('fetf')) &&
+        (!checkboxSfi.checked || options.includes('sfi'))  &&
+        (!checkboxSig.checked || options.includes('sig')) &&
+        (!checkboxCapital.checked || options.includes('capital')) &&
+        (!checkboxRevenue.checked || options.includes('revenue'));
+
+      item.style.display = (containsSearchQuery && showItem) ? '' : 'none';
+
+      if (containsSearchQuery && showItem) {
+        item.style.display = '';
+        resultsCount ++;
+      } else {
+        item.style.display = 'none';
+      }
+    }
+    document.getElementById("resultsCount").innerHTML = resultsCount;
+  }
+// Event listeners
+  const EventEmitter = require('events');
+const emitter = new EventEmitter();
+
+// Set the maximum number of listeners to 40
+emitter.setMaxListeners(40);
+
+//<!-- Initial down chevron and toggle-->
+
+  function toggleChevron(icon) {
+    // Toggle between up and down chevron
+    icon.classList.toggle('fa-chevron-down');
+    icon.classList.toggle('fa-chevron-up');
+  }
+
+
+
+
+</script>
+
+<body onload="filterResults()">
+
+<div class="govuk-grid-row">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Private Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new tool – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <div class="govuk-grid-column-full-width">
+
+    <h1 class="govuk-heading-xl" style="margin-top: 20px;">
+      Check available funding and grants for your land or farm
+    </h1>
+    <p class="govuk-body"> From: <b><a href="/path/of/page">Department for Environment, Food & Rural Affairs</a> </b> and <a href="/path/of/page" class="govuk-link"> <b>Rural Payments Agency</a> </b></p>
+
+    <p class="govuk-body">Find out what funding the Farming and Countryside Programme offers. This is for land or farms in England. </p>
+    
+    <div class="govuk-inset-text">
+      This tool does not confirm your eligibility. You cannot get the same funding twice on a single land parcel.
+    </div>
+    <p class="govuk-body">You may be able to apply for one or more funds and grants if you or you land are eligible. The guidance for each fund and grant will explain where this is possible.  </p>
+    
+  </div>
+</div> 
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-form-group">
+          <h2 class="govuk-heading-m">Search</h2>
+          <p class="govuk-!-font-size-16 govuk-hint">Enter a keyword or the name of a grant.
+          Use the filters to narrow your search.</p>
+          <div class="search-container">
+            <input type="text" name="search" class="govuk-input govuk-!-width-full" id="searchInput">
+            <div class="search-button" onclick="filterResults()"><i class="fas fa-search"></i></div>
+            
+          </div>
+          
+          <hr class="govuk-section-break govuk-section-break--m">
+          <hr class="govuk-section-break govuk-section-break">
+
+          <!--Open or Closed details tag-->
+
+          <details open
+           class="govuk-details"
+           style="text-align: left"
+           data-module="govuk-details">
+           <summary class="govuk-details__summary">
+             <span class="govuk-details__summary-text">
+               Open or closed
+             </span>
+           </summary>
+           <div class="govuk-form-group">
+             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="open" name="open" type="checkbox" value="open" onclick="filterResults()">
+                 <label class="govuk-label govuk-checkboxes__label" for="open">
+                   Open
+                 </label>
+               </div>
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="closed" name="closed" type="checkbox" value="closed" onclick="filterResults()">
+                 <label class="govuk-label govuk-checkboxes__label" for="closed">
+                   Closed
+                 </label>
+               </div>
+             </div>
+           </div>
+          </details>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+              <!--Area of interest details tag-->
+                <details 
+                  class="govuk-details"
+                  style="text-align: left"
+                  data-module="govuk-details">
+                  <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                      Area of interest
+                    </span>
+                  </summary>
+                  <div class="vertical">
+                  <div class="govuk-form-group">
+                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="agroforestry" name="agroforestry" type="checkbox" value="agroforestry" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="agroforestry">
+                          Agroforestry
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="air-qualilty" name="air-qualilty" type="checkbox" value="air-qualilty" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="air-qualilty">
+                          Air quality
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="biodiversity" name="biodiversity" type="checkbox" value="biodiversity" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="biodiversity">
+                          Biodiversity
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="boundaries" name="boundaries" type="checkbox" value="boundaries" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="boundaries">
+                          Boundaries
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="coast" name="coast" type="checkbox" value="coast" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="coast">
+                          Coast
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="educational" name="educational" type="checkbox" value="educational" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="educational">
+                          Educational access
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="flood" name="flood" type="checkbox" value="flood" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="flood">
+                          Flood risk 
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="historic-environment" name="historic-environment" type="checkbox" value="historic-environment" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="historic-environment">
+                          Heritage and historic environment
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="livestock" name="livestock" type="checkbox" value="livestock" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="livestock">
+                          Livestock management
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="permanent-crops" name="permanent-crops" type="checkbox" value="permanent-crops" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="permanent-crops">
+                          Permanent crops
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="pollinators" name="pollinators" type="checkbox" value="pollinators" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="pollinators">
+                          Pollinators and wildlife
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="habitats" name="habitats" type="checkbox" value="habitats" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="habitats">
+                          Priority habitats
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="soil" name="soil" type="checkbox" value="soil" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="soil">
+                          Soil
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="species-recovery" name="species-recovery" type="checkbox" value="species-recovery" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="species-recovery">
+                          Species recovery and management
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="trees" name="trees" type="checkbox" value="trees" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="trees">
+                          Trees (non-woodland)  
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="vegetation" name="vegetation" type="checkbox" value="vegetation" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="vegetation">
+                          Vegetation control
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="water">
+                          Water
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                  </div>
+                </details>
+                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+               <!--Land type details tag-->
+               <details
+               class="govuk-details"
+               style="text-align: left"
+               data-module="govuk-details">
+               <summary class="govuk-details__summary">
+                 <span class="govuk-details__summary-text">
+                   Land type
+                 </span>
+               </summary>
+               <div class="vertical">
+               <div class="govuk-form-group">
+                 <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                   <div class="govuk-checkboxes__item">
+                     <input class="govuk-checkboxes__input" id="arable" name="arable" type="checkbox" value="arable" onclick="filterResults()">
+                     <label class="govuk-label govuk-checkboxes__label" for="arable">
+                       Arable land
+                     </label>
+                   </div>
+                   <div class="govuk-checkboxes__item">
+                     <input class="govuk-checkboxes__input" id="grassland" name="grassland" type="checkbox" value="grassland" onclick="filterResults()">
+                     <label class="govuk-label govuk-checkboxes__label" for="grassland">
+                       Grassland
+                     </label>
+                   </div>
+                   <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="lowland" name="lowland" type="checkbox" value="lowland" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="lowland">
+                      Lowland
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="moorland" name="moorland" type="checkbox" value="moorland" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="moorland">
+                      Moorland
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="organic" name="organic" type="checkbox" value="organic" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="organic">
+                      Organic land
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="upland" name="upland" type="checkbox" value="upland" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="upland">
+                      Upland
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="woodland" name="woodland" type="checkbox" value="woodland" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="woodland">
+                      Woodland
+                    </label>
+                  </div>
+                 </div>
+               </div>
+               </div>
+              </details>
+              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+           <!--Type of funding details tag-->
+           <details
+           class="govuk-details"
+           style="text-align: left"
+           data-module="govuk-details">
+           <summary class="govuk-details__summary">
+             <span class="govuk-details__summary-text">
+               Type of funding
+             </span>
+           </summary>
+           <div class="govuk-form-group">
+             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="grant" name="grant" type="checkbox" value="grant" onclick="filterResults()">
+                 <label class="govuk-label govuk-checkboxes__label" for="grant">
+                   Grant
+                 </label>
+               </div>
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="option" name="option" type="checkbox" value="option" onclick="filterResults()">
+                 <label class="govuk-label govuk-checkboxes__label" for="option">
+                   Option
+                 </label>
+               </div>
+               <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="capital-item" name="capital-item" type="checkbox" value="capital-item" onclick="filterResults()">
+                <label class="govuk-label govuk-checkboxes__label" for="capital-item">
+                  Capital item
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="supplement" name="supplement" type="checkbox" value="supplement" onclick="filterResults()">
+                <label class="govuk-label govuk-checkboxes__label" for="supplement">
+                  Supplement
+                </label>
+              </div>
+             </div>
+           </div>
+          </details>
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+             <!--Grant scheme details tag-->
+             <details
+             class="govuk-details"
+             style="text-align: left"
+             data-module="govuk-details">
+             <summary class="govuk-details__summary">
+               <span class="govuk-details__summary-text">
+                 Grant scheme
+               </span>
+             </summary>
+             <div class="govuk-form-group">
+               <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                 <div class="govuk-checkboxes__item">
+                   <input class="govuk-checkboxes__input" id="cs" name="cs" type="checkbox" value="cs" onclick="filterResults()">
+                   <label class="govuk-label govuk-checkboxes__label" for="cs">
+                     Countryside Stewardship (CS)
+                   </label>
+                 </div>
+                 <div class="govuk-checkboxes__item">
+                   <input class="govuk-checkboxes__input" id="fetf" name="fetf" type="checkbox" value="fetf" onclick="filterResults()">
+                   <label class="govuk-label govuk-checkboxes__label" for="fetf">
+                     Farming Equipment and Technology fund (FETF)
+                   </label>
+                 </div>
+                 <div class="govuk-checkboxes__item">
+                   <input class="govuk-checkboxes__input" id="sfi" name="sfi" type="checkbox" value="sfi" onclick="filterResults()">
+                   <label class="govuk-label govuk-checkboxes__label" for="sfi">
+                     Sustainable Farming Incentive (SFI)
+                   </label>
+                 </div>
+                 <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="sig" name="sig" type="checkbox" value="sig" onclick="filterResults()">
+                  <label class="govuk-label govuk-checkboxes__label" for="sig">
+                    Slurry Infrastructure grant
+                  </label>
+                </div>
+               </div>
+             </div>
+             </details>
+             <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+           <!--Payment details details tag-->
+           <details
+           class="govuk-details"
+           style="text-align: left"
+           data-module="govuk-details">
+           <summary class="govuk-details__summary">
+             <span class="govuk-details__summary-text">
+               Payment type
+             </span>
+           </summary>
+           <div class="govuk-form-group">
+             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="capital" name="capital" type="checkbox" value="capital" onclick="filterResults()">
+                 <label class="govuk-label govuk-checkboxes__label" for="capital">
+                   Capital payment
+                 </label>
+               </div>
+               <div class="govuk-checkboxes__item">
+                 <input class="govuk-checkboxes__input" id="revenue" name="revenue" type="checkbox" value="revenue" onclick="filterResults()">
+                 <label class="govuk-label govuk-checkboxes__label" for="revenue">
+                   Revenue payment
+                 </label>
+               </div>
+             </div>
+           </div>
+           </details>
+           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+              
+            
+
+            
+          
+ 
+
+    </div>
+ 
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+      <div class="link-container">
+        <div class="item govuk-body-l govuk-!-font-weight-bold"><span id="resultsCount"></span> results</div>
+        <div class="item" style="padding-right: 20px;"><a class="govuk-link" href="#"><i class="fa-regular fa-envelope" style="padding-right: 5px;"></i>Get emails</a></div>
+        <div class="item"><a class="govuk-link" href="#"><i class="fa-solid fa-wifi" style="rotate: 45deg; padding-right: 5px;"></i>Subscribe to feed</a></div>
+        <!-- Add more items as needed -->
+      </div>
+      
+      <!--Pill container-->
+
+      <div class="pill-container" id="pillContainer"></div>
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <ul class="govuk-list"  id="results">
+        <li data-options="open biodiversity pollinators water option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">AB1: Nectar flower mix</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity, Pollinators and wildlife, Water
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Arable, Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+        
+        <li data-options="open trees grassLand upland option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">BE2: Protetion of in-field trees on intensive grassland</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Trees (non-woodland)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Grassland, Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open biodiversity boundaries habitats pollinators water arableLand lowland upland option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">BE3: Management of hedgerows</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity, Boundaries, Priority habitats, Pollinators and wildlife and Water
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Arable, Lowland, Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open educational upland woodland option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">ED1: Educational access</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Educational access
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Upland, Woodland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open biodiversity pollinators water option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">FETF10: Fruit ripeness spectrometers</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity, Pollinators and wildlife, Water
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Arable, Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Grant scheme:</b> Farming Equipment and Technology (FETF)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open biodiversity organic upland option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">OP1: Overwintered stubble</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Arable, Organic, Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open flood habitats water upland capital-item cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">PA1: Implemenation plan</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Flood risk, Priority habitats, Water
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Capital item
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open biodiversity livestock water upland capital-item cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">RP4: Livestock and machinery hardcore tracks</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity, Livestock, Water
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Capital item
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open biodiversity flood soil water upland capital-item cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">RP9: Earth banks and soil bunds</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity, Flood risk, Soil, Water
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Capital item
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open biodiversity habitats vegetation upland woodland supplement cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">SP4: Control of invasive plant species supplement </a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity, Priority habitats, Vegetation control
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Upland, Woodland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Supplement
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open biodiversity habitats moorland upland option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">UP3: Management of moorland</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Biodiversity, Priority habitats
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Moorland, Upland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+
+        <li data-options="open air-qualilty historic-environment upland woodland option cs" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">WD10: Management of upland wood pasture and parkland</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Air quality, Heritage and historic environment
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Upland, Woodland
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Type of funding:</b> Option
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
+        
+   
+    </div>
+  </main>
+</div>
+</body>
+
+
+{% endblock %}

@@ -41,6 +41,29 @@ beforeContent %}
       margin-right: auto;
     }
 
+    /*Styling for pills*/
+    .pill-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .pill {
+      background-color: #4CAF50;
+      color: #fff;
+      border-radius: 20px;
+      padding: 5px 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .pill-close {
+      margin-left: 5px;
+      cursor: pointer;
+    }
+
 </style>
 
 <script>
@@ -56,6 +79,7 @@ beforeContent %}
     var checkboxEducational = document.getElementById('educational');
     var checkboxFlood = document.getElementById('flood');
     var checkboxHistoricEnvironment = document.getElementById('historic-environment');
+    var checkboxLivestock = document.getElementById('livestock');
     var checkboxPermanentCrops = document.getElementById('permanent-crops');
     var checkboxPollinators = document.getElementById('pollinators');
     var checkboxHabitats = document.getElementById('habitats');
@@ -82,8 +106,6 @@ beforeContent %}
     var checkboxCapital = document.getElementById('capital');
     var checkboxRevenue = document.getElementById('revenue');
     var searchBoxInputText = document.getElementById('searchInput').value.toLowerCase();
-    
-  
 
     // Get the list of results
     var resultsList = document.getElementById('results');
@@ -114,6 +136,7 @@ beforeContent %}
         (!checkboxEducational.checked || options.includes('educational')) &&
         (!checkboxFlood.checked || options.includes('flood')) &&
         (!checkboxHistoricEnvironment.checked || options.includes('historicEnvironment')) &&
+        (!checkboxLivestock.checked || options.includes('livestock')) &&
         (!checkboxPermanentCrops.checked || options.includes('permanentCrops')) &&
         (!checkboxPollinators.checked || options.includes('pollinators')) &&
         (!checkboxHabitats.checked || options.includes('habitats')) &&
@@ -149,8 +172,157 @@ beforeContent %}
         item.style.display = 'none';
       }
     }
+    // Clear existing pills
+    clearPills();
+
+// Get the search input value
+var searchQuery = document.getElementById('searchInput').value.toLowerCase();
+
+// Create pills for selected filters
+searchQuery != '' ? createPill(searchQuery) : null;
+checkboxOpen.checked ? createPill('open') : null;
+checkboxClosed.checked ? createPill('closed') : null;
+checkboxAgroForestry.checked ? createPill('agroForestry') : null;
+checkboxAirQuality.checked ? createPill('airQuality') : null;
+checkboxBiodiversity.checked ? createPill('biodiversity') : null;
+checkboxBoundaries.checked ? createPill ('boundaries') : null;
+checkboxCoast.checked ? createPill('coast'): null;
+checkboxEducational.checked ? createPill('educational'): null;
+checkboxFlood.checked ? createPill('flood'): null;
+checkboxHistoricEnvironment.checked ? createPill('historicEnvironment') : null;
+checkboxLivestock.checked ? createPill('livestock') : null;
+checkboxPermanentCrops.checked ? createPill('permanentCrops') : null;
+checkboxPollinators.checked ? createPill('pollinators') : null;
+checkboxHabitats.checked ? createPill('habitats') : null;
+checkboxSoil.checked ? createPill('soil') : null;
+checkboxSpeciesRecovery.checked ? createPill('speciesRecovery') : null;
+checkboxTrees.checked ? createPill('trees') : null;
+checkboxVegetation.checked ? createPill('vegetation') : null;
+checkboxWater.checked ? createPill('water') : null;
+checkboxArableLand.checked ? createPill('arableLand') : null;
+checkboxGrassland.checked ? createPill('grassLand') : null;
+checkboxLowland.checked ? createPill('lowland') : null;
+checkboxMoorland.checked ? createPill('moorland') : null;
+checkboxOrganic.checked ? createPill('organic') : null;
+checkboxUpland.checked ? createPill('upland') : null;
+checkboxWoodland.checked ? createPill('woodland') : null;
+checkboxGrant.checked ? createPill('grant') : null;
+checkboxOption.checked ? createPill('option') : null;
+checkboxCapitalItem.checked ? createPill('capitalItem') : null;
+checkboxSupplement.checked ? createPill('supplement') : null;
+checkboxCs.checked ? createPill('cs') : null;
+checkboxFetf.checked ? createPill('fetf') : null;
+checkboxSfi.checked ? createPill('sfi') : null;
+checkboxSig.checked ? createPill('sig') : null;
+checkboxCapital.checked ? createPill('capital') : null;
+checkboxRevenue.checked ? createPill('revenue') : null;
+
+
+// ... (create pills for each selected checkbox)
+
+
     document.getElementById("resultsCount").innerHTML = resultsCount;
-  }
+  
+}
+//Create pills
+function createPill(text) {
+      var pillContainer = document.getElementById('pillContainer');
+      var pill = document.createElement('div');
+      pill.id = 'pill-' + text;
+      pill.className = 'pill';
+      pill.innerHTML = 'tag: ' + text + '<span class="pill-close" onclick="removePill(this)">&times;</span>';
+      pillContainer.appendChild(pill);
+    }
+
+    function clearPills() {
+      var pillContainer = document.getElementById('pillContainer');
+      pillContainer.innerHTML = '';
+    }
+
+    function removePill(element) {
+      var pillContainer = document.getElementById('pillContainer');
+      if (element.parentNode.id === 'pill-' + document.getElementById('searchInput').value.toLowerCase()) {
+        document.getElementById('searchInput').value = '';
+      } else if (element.parentNode.id === 'pill-open') {
+        document.getElementById("open").checked = false;
+      } else if (element.parentNode.id === 'pill-closed') {
+        document.getElementById("closed").checked = false;
+      } else if (element.parentNode.id === 'pill-agroForestry') {
+        document.getElementById("agroForestry").checked = false;
+      } else if (element.parentNode.id === 'pill-airQuality') {
+        document.getElementById("airQuality").checked = false;
+      } else if (element.parentNode.id === 'pill-biodiversity') {
+        document.getElementById("biodiversity").checked = false;
+      } else if (element.parentNode.id === 'pill-boundaries') {
+        document.getElementById("boundaries").checked = false;
+      } else if (element.parentNode.id === 'pill-coast') {
+        document.getElementById("coast").checked = false;
+      } else if (element.parentNode.id === 'pill-educational') {
+        document.getElementById("educational").checked = false;
+      } else if (element.parentNode.id === 'pill-flood') {
+        document.getElementById("flood").checked = false;
+      } else if (element.parentNode.id === 'pill-historicEnvironment') {
+        document.getElementById("historicEnvironment").checked = false;
+      } else if (element.parentNode.id === 'pill-livestock') {
+        document.getElementById("livestock").checked = false;
+      } else if (element.parentNode.id === 'pill-permanentCrops') {
+        document.getElementById("permanentCrops").checked = false;
+      } else if (element.parentNode.id === 'pill-pollinators') {
+        document.getElementById("pollinators").checked = false;
+      } else if (element.parentNode.id === 'pill-habitats') {
+        document.getElementById("habitats").checked = false;
+      } else if (element.parentNode.id === 'pill-soil') {
+        document.getElementById("soil").checked = false;
+      } else if (element.parentNode.id === 'pill-speciesRecovery') {
+        document.getElementById("speciesRecovery").checked = false;
+      } else if (element.parentNode.id === 'pill-trees') {
+        document.getElementById("trees").checked = false;
+      } else if (element.parentNode.id === 'pill-vegetation') {
+        document.getElementById("vegetation").checked = false;
+      } else if (element.parentNode.id === 'pill-water') {
+        document.getElementById("water").checked = false;
+      } else if (element.parentNode.id === 'pill-arableLand') {
+        document.getElementById("arableLand").checked = false;
+      } else if (element.parentNode.id === 'pill-grassLand') {
+        document.getElementById("grassLand").checked = false;
+      } else if (element.parentNode.id === 'pill-lowland') {
+        document.getElementById("lowland").checked = false;
+      } else if (element.parentNode.id === 'pill-moorland') {
+        document.getElementById("moorland").checked = false;
+      } else if (element.parentNode.id === 'pill-organic') {
+        document.getElementById("organic").checked = false;
+      } else if (element.parentNode.id === 'pill-upland') {
+        document.getElementById("upland").checked = false;
+      } else if (element.parentNode.id === 'pill-woodland') {
+        document.getElementById("woodland").checked = false;
+      } else if (element.parentNode.id === 'pill-grant') {
+        document.getElementById("grant").checked = false;
+      } else if (element.parentNode.id === 'pill-option') {
+        document.getElementById("option").checked = false;
+      } else if (element.parentNode.id === 'pill-capitalItem') {
+        document.getElementById("capitalItem").checked = false;
+      } else if (element.parentNode.id === 'pill-supplement') {
+        document.getElementById("supplement").checked = false;
+      } else if (element.parentNode.id === 'pill-cs') {
+        document.getElementById("cs").checked = false;
+      } else if (element.parentNode.id === 'pill-fetf') {
+        document.getElementById("fetf").checked = false;
+      } else if (element.parentNode.id === 'pill-sfi') {
+        document.getElementById("sfi").checked = false;
+      } else if (element.parentNode.id === 'pill-sig') {
+        document.getElementById("sig").checked = false;
+      } else if (element.parentNode.id === 'pill-capital') {
+        document.getElementById("capital").checked = false;
+      } else if (element.parentNode.id === 'pill-revenue') {
+        document.getElementById("revenue").checked = false;
+      }
+
+
+      pillContainer.removeChild(element.parentNode);
+      // Trigger filtering logic after removing a pill
+      filterResults();
+    }
+
 // Event listeners
   const EventEmitter = require('events');
 const emitter = new EventEmitter();
@@ -165,6 +337,9 @@ emitter.setMaxListeners(40);
     icon.classList.toggle('fa-chevron-down');
     icon.classList.toggle('fa-chevron-up');
   }
+
+
+
 
 </script>
 
@@ -555,7 +730,10 @@ emitter.setMaxListeners(40);
         <div class="item"><a class="govuk-link" href="#"><i class="fa-solid fa-wifi" style="rotate: 45deg; padding-right: 5px;"></i>Subscribe to feed</a></div>
         <!-- Add more items as needed -->
       </div>
-  
+      
+      <!--Pill container-->
+      <div class="pill-container" id="pillContainer"></div>
+
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <ul class="govuk-list"  id="results">
@@ -708,7 +886,7 @@ emitter.setMaxListeners(40);
         </li>
 
         <li data-options="open biodiversity pollinators water option cs" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">AB1: Nectar flower mix</a></p>
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">FETF10: Fruit ripeness spectrometers</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -737,7 +915,7 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-             <b> Grant scheme:</b> Countryside Stewardship (CS)
+             <b> Grant scheme:</b> Farming Equipment and Technology (FETF)
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Include FontAwesome CSS (you can download it or use a CDN) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+  <style>
+    /* Optional: Style for better appearance */
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .search-container {
+      display: flex;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .search-input {
+      flex: 1;
+      padding: 8px;
+      border: none;
+      outline: none;
+    }
+
+    .search-button {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 8px 12px;
+      cursor: pointer;
+    }
+
+    /* Optional: Style for the list items */
+    .result-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .result-item {
+      margin: 5px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      display: none;
+    }
+
+    .pill-container {
+      display: flex;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .pill {
+      background-color: #4CAF50;
+      color: #fff;
+      border-radius: 20px;
+      padding: 5px 10px;
+      margin: 5px;
+      display: flex;
+      align-items: center;
+      cursor: pointer;
+    }
+
+    .pill-close {
+      margin-left: 5px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="search-container">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search..." oninput="filterResults()">
+    <button class="search-button"><i class="fas fa-search"></i></button>
+  </div>
+
+  <ul class="result-list" id="results">
+    <li class="result-item" data-options="open educational">Result 1</li>
+    <li class="result-item" data-options="closed airQuality">Result 2</li>
+    <li class="result-item" data-options="agroForestry biodiversity">Result 3</li>
+    <!-- Add more results as needed -->
+  </ul>
+
+  <p id="resultsCount">Results Count: 0</p>
+
+  <div class="pill-container" id="pillContainer"></div>
+
+  <script>
+    function filterResults() {
+      // ... (your existing filtering logic)
+
+      // Clear existing pills
+      clearPills();
+
+      // Get the search input value
+      var searchQuery = document.getElementById('searchInput').value.toLowerCase();
+
+      // Create pills for selected filters
+      createPill('Search: ' + searchQuery);
+
+      // ... (create pills for each selected checkbox)
+
+    }
+
+    function createPill(text) {
+      var pillContainer = document.getElementById('pillContainer');
+      var pill = document.createElement('div');
+      pill.className = 'pill';
+      pill.innerHTML = text + '<span class="pill-close" onclick="removePill(this)">&times;</span>';
+      pillContainer.appendChild(pill);
+    }
+
+    function clearPills() {
+      var pillContainer = document.getElementById('pillContainer');
+      pillContainer.innerHTML = '';
+    }
+
+    function removePill(element) {
+      var pillContainer = document.getElementById('pillContainer');
+      pillContainer.removeChild(element.parentNode);
+      // Trigger filtering logic after removing a pill
+      filterResults();
+    }
+  </script>
+
+</body>
+</html>
