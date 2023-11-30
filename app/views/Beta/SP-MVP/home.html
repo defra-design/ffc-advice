@@ -49,19 +49,23 @@ beforeContent %}
     }
 
     .pill {
-      background-color: #4CAF50;
-      color: #fff;
+      background-color: 	#f3f2f1;
+      color: #000;
       border-radius: 20px;
       padding: 5px 10px;
       margin: 5px;
       display: flex;
       align-items: center;
       cursor: pointer;
+      text-transform: capitalize;
+      border-color: #000;
+      border-style: solid;
     }
 
     .pill-close {
-      margin-left: 5px;
+      margin-right: 5px;
       cursor: pointer;
+      
     }
 
 </style>
@@ -226,13 +230,24 @@ checkboxRevenue.checked ? createPill('revenue') : null;
 }
 //Create pills
 function createPill(text) {
-      var pillContainer = document.getElementById('pillContainer');
-      var pill = document.createElement('div');
-      pill.id = 'pill-' + text;
-      pill.className = 'pill';
-      pill.innerHTML = 'tag: ' + text + '<span class="pill-close" onclick="removePill(this)">&times;</span>';
-      pillContainer.appendChild(pill);
-    }
+  var pillContainer = document.getElementById('pillContainer');
+  var pill = document.createElement('div');
+  pill.className = 'pill';
+  
+  // Create a span for the close button and add it to the pill after the text
+  var closeButton = document.createElement('span');
+  closeButton.className = 'pill-close';
+  closeButton.innerHTML = '&times;';
+  closeButton.onclick = function() { removePill(this); };
+  pill.appendChild(closeButton);
+  
+  // Add the text to the pill after the close button
+  var pillText = document.createElement('span');
+  pillText.innerHTML = text;
+  pill.appendChild(pillText);
+  
+  pillContainer.appendChild(pill);
+}
 
     function clearPills() {
       var pillContainer = document.getElementById('pillContainer');
@@ -324,7 +339,7 @@ function createPill(text) {
     }
 
 // Event listeners
-  const EventEmitter = require('events');
+const EventEmitter = require('events');
 const emitter = new EventEmitter();
 
 // Set the maximum number of listeners to 40
