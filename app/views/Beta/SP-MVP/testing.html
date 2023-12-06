@@ -50,46 +50,15 @@
       display: none;
     }
 
-    .pill-container {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
 
-    .pill {
-      background-color: #4CAF50;
-      color: #fff;
-      border-radius: 20px;
-      padding: 5px 10px;
-      margin: 5px;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-    }
-
-    .pill-close {
-      margin-left: 5px;
-      cursor: pointer;
-    }
   </style>
 </head>
 <body>
 
-  <div class="search-container">
-    <input type="text" class="search-input" id="searchInput" placeholder="Search..." oninput="filterResults()">
-    <button class="search-button"><i class="fas fa-search"></i></button>
-  </div>
 
-  <ul class="result-list" id="results">
-    <li class="result-item" data-options="open educational">Result 1</li>
-    <li class="result-item" data-options="closed airQuality">Result 2</li>
-    <li class="result-item" data-options="agroForestry biodiversity">Result 3</li>
-    <!-- Add more results as needed -->
-  </ul>
 
-  <p id="resultsCount">Results Count: 0</p>
 
-  <div class="pill-container" id="pillContainer"></div>
+
 
   <script>
     function filterResults() {
