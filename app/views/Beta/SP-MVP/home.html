@@ -93,12 +93,15 @@ beforeContent %}
     var checkboxTrees = document.getElementById('trees');
     var checkboxVegetation = document.getElementById('vegetation');
     var checkboxWater = document.getElementById('water');
-    var checkboxArableLand = document.getElementById('arable');
+    var checkboxArableLand = document.getElementById('coast');
+    var checkboxCoast = document.getElementById('arable');
     var checkboxGrassland = document.getElementById('grassland');
     var checkboxLowland = document.getElementById('lowland');
     var checkboxMoorland = document.getElementById('moorland');
     var checkboxOrganic = document.getElementById('organic');
-    var checkboxUpland = document.getElementById('upland');
+    var checkboxHabitat = document.getElementById('habitat');
+    var checkboxWaterbodies = document.getElementById('waterbodies');
+    var checkboxWetland = document.getElementById('wetland');
     var checkboxWoodland = document.getElementById('woodland');
     var checkboxGrant = document.getElementById('grant');
     var checkboxOption = document.getElementById('option');
@@ -151,11 +154,14 @@ beforeContent %}
         (!checkboxVegetation.checked || options.includes('vegetation')) &&
         (!checkboxWater.checked || options.includes('water')) &&
         (!checkboxArableLand.checked || options.includes('arableLand')) &&
+        (!checkboxCoast.checked || options.includes('coast')) &&
         (!checkboxGrassland.checked || options.includes('grassLand')) &&
         (!checkboxLowland.checked || options.includes('lowland')) &&
         (!checkboxMoorland.checked || options.includes('moorland')) &&
         (!checkboxOrganic.checked || options.includes('organic')) &&
-        (!checkboxUpland.checked || options.includes('upland')) &&
+        (!checkboxHabitat.checked || options.includes('habitat')) &&
+        (!checkboxWaterbodies.checked || options.includes('waterbodies')) &&
+        (!checkboxWetland.checked || options.includes('wetland')) &&
         (!checkboxWoodland.checked || options.includes('woodland')) &&
         (!checkboxGrant.checked || options.includes('grant')) &&
         (!checkboxOption.checked || options.includes('option')) &&
@@ -205,11 +211,14 @@ checkboxTrees.checked ? createPill('trees') : null;
 checkboxVegetation.checked ? createPill('vegetation') : null;
 checkboxWater.checked ? createPill('water') : null;
 checkboxArableLand.checked ? createPill('arableLand') : null;
+checkboxCoast.checked ? createPill('coast') : null;
 checkboxGrassland.checked ? createPill('grassLand') : null;
 checkboxLowland.checked ? createPill('lowland') : null;
 checkboxMoorland.checked ? createPill('moorland') : null;
 checkboxOrganic.checked ? createPill('organic') : null;
-checkboxUpland.checked ? createPill('upland') : null;
+checkboxHabitat.checked ? createPill('habitat') : null;
+checkboxWaterbodies.checked ? createPill('waterbodies') : null;
+checkboxWetland.checked ? createPill('wetland') : null;
 checkboxWoodland.checked ? createPill('woodland') : null;
 checkboxGrant.checked ? createPill('grant') : null;
 checkboxOption.checked ? createPill('option') : null;
@@ -296,8 +305,12 @@ function createPill(text) {
         document.getElementById("moorland").checked = false;
       } else if (element.parentNode.id === 'pill-organic') {
         document.getElementById("organic").checked = false;
-      } else if (element.parentNode.id === 'pill-upland') {
-        document.getElementById("upland").checked = false;
+      } else if (element.parentNode.id === 'pill-habitat') {
+        document.getElementById("habitat").checked = false;
+      } else if (element.parentNode.id === 'pill-waterbodies') {
+        document.getElementById("waterbodies").checked = false;
+      } else if (element.parentNode.id === 'pill-wetland') {
+        document.getElementById("wetland").checked = false;
       } else if (element.parentNode.id === 'pill-woodland') {
         document.getElementById("woodland").checked = false;
       } else if (element.parentNode.id === 'pill-grant') {
@@ -567,6 +580,12 @@ emitter.setMaxListeners(40);
                      </label>
                    </div>
                    <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="coast" name="grassland" type="checkbox" value="coast" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="coast">
+                      Coast
+                    </label>
+                  </div>
+                   <div class="govuk-checkboxes__item">
                      <input class="govuk-checkboxes__input" id="grassland" name="grassland" type="checkbox" value="grassland" onclick="filterResults()">
                      <label class="govuk-label govuk-checkboxes__label" for="grassland">
                        Grassland
@@ -575,13 +594,13 @@ emitter.setMaxListeners(40);
                    <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="lowland" name="lowland" type="checkbox" value="lowland" onclick="filterResults()">
                     <label class="govuk-label govuk-checkboxes__label" for="lowland">
-                      Lowland
+                      Lowland heath
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
                     <input class="govuk-checkboxes__input" id="moorland" name="moorland" type="checkbox" value="moorland" onclick="filterResults()">
                     <label class="govuk-label govuk-checkboxes__label" for="moorland">
-                      Moorland
+                      Moorland and upland
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
@@ -591,9 +610,21 @@ emitter.setMaxListeners(40);
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="upland" name="upland" type="checkbox" value="upland" onclick="filterResults()">
-                    <label class="govuk-label govuk-checkboxes__label" for="upland">
-                      Upland
+                    <input class="govuk-checkboxes__input" id="habitat" name="habitat" type="checkbox" value="habitat" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="habitat">
+                      Priority habitats
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waterbodies" name="waterbodies" type="checkbox" value="waterbodies" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="waterbodies">
+                      Waterbodies
+                    </label>
+                  </div>
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="wetland name="wetland" type="checkbox" value="wetland" onclick="filterResults()">
+                    <label class="govuk-label govuk-checkboxes__label" for="wetland">
+                      Wetland
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
