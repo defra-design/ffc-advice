@@ -76,20 +76,20 @@ beforeContent %}
     // Get the checkboxes
     var checkboxOpen = document.getElementById('open');
     var checkboxClosed = document.getElementById('closed');
-    var checkboxAgroForestry = document.getElementById('agroforestry');
+    var checkboxAccessManagement = document.getElementById('access-management');
     var checkboxAirQuality = document.getElementById('air-qualilty');
     var checkboxBiodiversity = document.getElementById('biodiversity');
     var checkboxBoundaries = document.getElementById('boundaries');
-    var checkboxCoast = document.getElementById('coast');
-    var checkboxEducational = document.getElementById('educational');
+    var checkboxCoast = document.getElementById('crops');
     var checkboxFlood = document.getElementById('flood');
+    var checkboxForestry = document.getElementById('forestry');
     var checkboxHistoricEnvironment = document.getElementById('historic-environment');
     var checkboxLivestock = document.getElementById('livestock');
-    var checkboxPermanentCrops = document.getElementById('permanent-crops');
+    var checkboxPeat = document.getElementById('peat');
     var checkboxPollinators = document.getElementById('pollinators');
-    var checkboxHabitats = document.getElementById('habitats');
+    var checkboxPrecision = document.getElementById('precision');
+    var checkboxSlurry = document.getElementById('slurry');
     var checkboxSoil = document.getElementById('soil');
-    var checkboxSpeciesRecovery = document.getElementById('species-recovery');
     var checkboxTrees = document.getElementById('trees');
     var checkboxVegetation = document.getElementById('vegetation');
     var checkboxWater = document.getElementById('water');
@@ -133,20 +133,20 @@ beforeContent %}
       var showItem =
         (!checkboxOpen.checked || options.includes('open'))  &&
         (!checkboxClosed.checked || options.includes('closed'))  &&
-        (!checkboxAgroForestry.checked|| options.includes('agroForestry')) &&
+        (!checkboxAccessManagement.checked|| options.includes('accessManagement')) &&
         (!checkboxAirQuality.checked || options.includes('airQuality'))  &&
         (!checkboxBiodiversity.checked || options.includes('biodiversity')) &&
         (!checkboxBoundaries.checked || options.includes('boundaries')) &&
-        (!checkboxCoast.checked || options.includes('coast')) &&
-        (!checkboxEducational.checked || options.includes('educational')) &&
+        (!checkboxCoast.checked || options.includes('crops')) &&
         (!checkboxFlood.checked || options.includes('flood')) &&
+        (!checkboxForestry.checked || options.includes('forestry')) &&
         (!checkboxHistoricEnvironment.checked || options.includes('historicEnvironment')) &&
         (!checkboxLivestock.checked || options.includes('livestock')) &&
-        (!checkboxPermanentCrops.checked || options.includes('permanentCrops')) &&
+        (!checkboxPeat.checked || options.includes('peat')) &&
         (!checkboxPollinators.checked || options.includes('pollinators')) &&
-        (!checkboxHabitats.checked || options.includes('habitats')) &&
+        (!checkboxPrecision.checked || options.includes('precision')) &&
+        (!checkboxSlurry.checked || options.includes('slurry')) &&
         (!checkboxSoil.checked || options.includes('soil')) &&
-        (!checkboxSpeciesRecovery.checked || options.includes('speciesRecovery')) &&
         (!checkboxTrees.checked || options.includes('trees')) &&
         (!checkboxVegetation.checked || options.includes('vegetation')) &&
         (!checkboxWater.checked || options.includes('water')) &&
@@ -187,20 +187,20 @@ var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 searchQuery != '' ? createPill(searchQuery) : null;
 checkboxOpen.checked ? createPill('open') : null;
 checkboxClosed.checked ? createPill('closed') : null;
-checkboxAgroForestry.checked ? createPill('agroForestry') : null;
+checkboxAccessManagement.checked ? createPill('accessManagement') : null;
 checkboxAirQuality.checked ? createPill('airQuality') : null;
 checkboxBiodiversity.checked ? createPill('biodiversity') : null;
 checkboxBoundaries.checked ? createPill ('boundaries') : null;
-checkboxCoast.checked ? createPill('coast'): null;
-checkboxEducational.checked ? createPill('educational'): null;
+checkboxCoast.checked ? createPill('crops'): null;
 checkboxFlood.checked ? createPill('flood'): null;
+checkboxForestry.checked ? createPill('forestry'): null;
 checkboxHistoricEnvironment.checked ? createPill('historicEnvironment') : null;
 checkboxLivestock.checked ? createPill('livestock') : null;
-checkboxPermanentCrops.checked ? createPill('permanentCrops') : null;
+checkboxPeat.checked ? createPill('peat') : null;
 checkboxPollinators.checked ? createPill('pollinators') : null;
-checkboxHabitats.checked ? createPill('habitats') : null;
+checkboxPrecision.checked ? createPill('precision') : null;
+checkboxSlurry.checked ? createPill('slurry') : null;
 checkboxSoil.checked ? createPill('soil') : null;
-checkboxSpeciesRecovery.checked ? createPill('speciesRecovery') : null;
 checkboxTrees.checked ? createPill('trees') : null;
 checkboxVegetation.checked ? createPill('vegetation') : null;
 checkboxWater.checked ? createPill('water') : null;
@@ -252,34 +252,34 @@ function createPill(text) {
         document.getElementById("open").checked = false;
       } else if (element.parentNode.id === 'pill-closed') {
         document.getElementById("closed").checked = false;
-      } else if (element.parentNode.id === 'pill-agroForestry') {
-        document.getElementById("agroForestry").checked = false;
+      } else if (element.parentNode.id === 'pill-accessManagement') {
+        document.getElementById("accessManagement").checked = false;
       } else if (element.parentNode.id === 'pill-airQuality') {
         document.getElementById("airQuality").checked = false;
       } else if (element.parentNode.id === 'pill-biodiversity') {
         document.getElementById("biodiversity").checked = false;
       } else if (element.parentNode.id === 'pill-boundaries') {
         document.getElementById("boundaries").checked = false;
-      } else if (element.parentNode.id === 'pill-coast') {
-        document.getElementById("coast").checked = false;
-      } else if (element.parentNode.id === 'pill-educational') {
-        document.getElementById("educational").checked = false;
+      } else if (element.parentNode.id === 'pill-crops') {
+        document.getElementById("crops").checked = false;
       } else if (element.parentNode.id === 'pill-flood') {
         document.getElementById("flood").checked = false;
+      } else if (element.parentNode.id === 'pill-forestry') {
+        document.getElementById("forestry").checked = false;
       } else if (element.parentNode.id === 'pill-historicEnvironment') {
         document.getElementById("historicEnvironment").checked = false;
       } else if (element.parentNode.id === 'pill-livestock') {
         document.getElementById("livestock").checked = false;
-      } else if (element.parentNode.id === 'pill-permanentCrops') {
-        document.getElementById("permanentCrops").checked = false;
+      } else if (element.parentNode.id === 'pill-peat') {
+        document.getElementById("peat").checked = false;
       } else if (element.parentNode.id === 'pill-pollinators') {
         document.getElementById("pollinators").checked = false;
-      } else if (element.parentNode.id === 'pill-habitats') {
-        document.getElementById("habitats").checked = false;
+      } else if (element.parentNode.id === 'pill-precision') {
+        document.getElementById("precision").checked = false;
       } else if (element.parentNode.id === 'pill-soil') {
         document.getElementById("soil").checked = false;
-      } else if (element.parentNode.id === 'pill-speciesRecovery') {
-        document.getElementById("speciesRecovery").checked = false;
+      } else if (element.parentNode.id === 'pill-slurry') {
+        document.getElementById("slurry").checked = false;
       } else if (element.parentNode.id === 'pill-trees') {
         document.getElementById("trees").checked = false;
       } else if (element.parentNode.id === 'pill-vegetation') {
@@ -440,9 +440,9 @@ emitter.setMaxListeners(40);
                   <div class="govuk-form-group">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="agroforestry" name="agroforestry" type="checkbox" value="agroforestry" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="agroforestry">
-                          Agroforestry
+                        <input class="govuk-checkboxes__input" id="access-management" name="access-management" type="checkbox" value="access-management" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="access-management">
+                          Access and Management
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -464,15 +464,9 @@ emitter.setMaxListeners(40);
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="coast" name="coast" type="checkbox" value="coast" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="coast">
-                          Coast
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="educational" name="educational" type="checkbox" value="educational" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="educational">
-                          Educational access
+                        <input class="govuk-checkboxes__input" id="crops" name="crops" type="checkbox" value="crops" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="crops">
+                          Crops
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -482,9 +476,15 @@ emitter.setMaxListeners(40);
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
+                        <input class="govuk-checkboxes__input" id="forestry" name="forestry" type="checkbox" value="forestry" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="forestry">
+                          Forestry 
+                        </label>
+                      </div>
+                      <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="historic-environment" name="historic-environment" type="checkbox" value="historic-environment" onclick="filterResults()">
                         <label class="govuk-label govuk-checkboxes__label" for="historic-environment">
-                          Heritage and historic environment
+                          Historic environment
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -494,9 +494,9 @@ emitter.setMaxListeners(40);
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="permanent-crops" name="permanent-crops" type="checkbox" value="permanent-crops" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="permanent-crops">
-                          Permanent crops
+                        <input class="govuk-checkboxes__input" id="peat" name="peat" type="checkbox" value="peat" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="peat">
+                          Peat
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -506,9 +506,9 @@ emitter.setMaxListeners(40);
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="habitats" name="habitats" type="checkbox" value="habitats" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="habitats">
-                          Priority habitats
+                        <input class="govuk-checkboxes__input" id="precision" name="precision" type="checkbox" value="precision" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="precision">
+                          Precision farming
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -518,9 +518,9 @@ emitter.setMaxListeners(40);
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="species-recovery" name="species-recovery" type="checkbox" value="species-recovery" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="species-recovery">
-                          Species recovery and management
+                        <input class="govuk-checkboxes__input" id="slurry" name="slurry" type="checkbox" value="slurry" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="slurry">
+                          Slurry management
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -538,7 +538,7 @@ emitter.setMaxListeners(40);
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water" onclick="filterResults()">
                         <label class="govuk-label govuk-checkboxes__label" for="water">
-                          Water
+                          Water Quality
                         </label>
                       </div>
                     </div>
@@ -816,7 +816,7 @@ emitter.setMaxListeners(40);
           </dl>
         </li>
 
-        <li data-options="open biodiversity boundaries habitats pollinators water arableLand lowland upland option cs" style="list-style: none;">
+        <li data-options="open biodiversity boundaries precision pollinators water arableLand lowland upland option cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">BE3: Management of hedgerows</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
@@ -831,7 +831,7 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Boundaries, Priority habitats, Pollinators and wildlife and Water
+              <b>Area of interest:</b> Biodiversity, Boundaries, Priority precision, Pollinators and wildlife and Water
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -853,7 +853,7 @@ emitter.setMaxListeners(40);
           </dl>
         </li>
 
-        <li data-options="open educational upland woodland option cs" style="list-style: none;">
+        <li data-options="open access-management woodland option cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">ED1: Educational access</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
@@ -964,7 +964,7 @@ emitter.setMaxListeners(40);
           </dl>
         </li>
 
-        <li data-options="open flood habitats water upland capital-item cs" style="list-style: none;">
+        <li data-options="open flood precision water upland capital-item cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">PA1: Implemenation plan</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
@@ -979,7 +979,7 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Flood risk, Priority habitats, Water
+              <b>Area of interest:</b> Flood risk, Priority precision, Water
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -1075,7 +1075,7 @@ emitter.setMaxListeners(40);
           </dl>
         </li>
 
-        <li data-options="open biodiversity habitats vegetation upland woodland supplement cs" style="list-style: none;">
+        <li data-options="open biodiversity precision vegetation upland woodland supplement cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">SP4: Control of invasive plant species supplement </a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
@@ -1090,7 +1090,7 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Priority habitats, Vegetation control
+              <b>Area of interest:</b> Biodiversity, Priority precision, Vegetation control
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -1112,7 +1112,7 @@ emitter.setMaxListeners(40);
           </dl>
         </li>
 
-        <li data-options="open biodiversity habitats moorland upland option cs" style="list-style: none;">
+        <li data-options="open biodiversity precision moorland upland option cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">UP3: Management of moorland</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
@@ -1127,7 +1127,7 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Priority habitats
+              <b>Area of interest:</b> Biodiversity, Priority precision
             </dd>
           </div>
           <div class="govuk-summary-list__row">
