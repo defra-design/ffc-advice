@@ -80,7 +80,7 @@ beforeContent %}
     var checkboxAirQuality = document.getElementById('air-qualilty');
     var checkboxBiodiversity = document.getElementById('biodiversity');
     var checkboxBoundaries = document.getElementById('boundaries');
-    var checkboxCoast = document.getElementById('crops');
+    var checkboxCrops = document.getElementById('crops');
     var checkboxFlood = document.getElementById('flood');
     var checkboxForestry = document.getElementById('forestry');
     var checkboxHistoricEnvironment = document.getElementById('historic-environment');
@@ -136,11 +136,11 @@ beforeContent %}
       var showItem =
         (!checkboxOpen.checked || options.includes('open'))  &&
         (!checkboxClosed.checked || options.includes('closed'))  &&
-        (!checkboxAccessManagement.checked|| options.includes('accessManagement')) &&
+        (!checkboxAccessManagement.checked || options.includes('accessManagement')) &&
         (!checkboxAirQuality.checked || options.includes('airQuality'))  &&
         (!checkboxBiodiversity.checked || options.includes('biodiversity')) &&
         (!checkboxBoundaries.checked || options.includes('boundaries')) &&
-        (!checkboxCoast.checked || options.includes('crops')) &&
+        (!checkboxCrops.checked || options.includes('crops')) &&
         (!checkboxFlood.checked || options.includes('flood')) &&
         (!checkboxForestry.checked || options.includes('forestry')) &&
         (!checkboxHistoricEnvironment.checked || options.includes('historicEnvironment')) &&
@@ -622,7 +622,7 @@ emitter.setMaxListeners(40);
                     </label>
                   </div>
                   <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="wetland name="wetland" type="checkbox" value="wetland" onclick="filterResults()">
+                    <input class="govuk-checkboxes__input" id="wetland" name="wetland" type="checkbox" value="wetland" onclick="filterResults()">
                     <label class="govuk-label govuk-checkboxes__label" for="wetland">
                       Wetland
                     </label>
@@ -884,7 +884,7 @@ emitter.setMaxListeners(40);
           </dl>
         </li>
 
-        <li data-options="open access-management woodland option cs" style="list-style: none;">
+        <li data-options="open woodland option cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">ED1: Educational access</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
