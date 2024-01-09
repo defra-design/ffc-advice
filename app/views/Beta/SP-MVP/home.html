@@ -76,7 +76,7 @@ beforeContent %}
     // Get the checkboxes
     var checkboxOpen = document.getElementById('open');
     var checkboxClosed = document.getElementById('closed');
-    var checkboxAccessManagement = document.getElementById('access-management');
+    var checkboxAccessEngagement = document.getElementById('access-engagement');
     var checkboxAirQuality = document.getElementById('air-qualilty');
     var checkboxBiodiversity = document.getElementById('biodiversity');
     var checkboxBoundaries = document.getElementById('boundaries');
@@ -105,9 +105,10 @@ beforeContent %}
     var checkboxWoodland = document.getElementById('woodland');
     var checkboxGrant = document.getElementById('grant');
     var checkboxOption = document.getElementById('option');
-    var checkboxCapitalItem = document.getElementById('capital-item');
-    var checkboxSupplement = document.getElementById('supplement');
+    var checkboxItem = document.getElementById('item');
+    var checkboxAction = document.getElementById('action');
     var checkboxCs = document.getElementById('cs');
+    var checkboxCo = document.getElementById('combined-offer');
     var checkboxFetf = document.getElementById('fetf');
     var checkboxSfi = document.getElementById('sfi');
     var checkboxSig = document.getElementById('sig');
@@ -136,7 +137,7 @@ beforeContent %}
       var showItem =
         (!checkboxOpen.checked || options.includes('open'))  &&
         (!checkboxClosed.checked || options.includes('closed'))  &&
-        (!checkboxAccessManagement.checked || options.includes('accessManagement')) &&
+        (!checkboxAccessEngagement.checked || options.includes('accessEngagement')) &&
         (!checkboxAirQuality.checked || options.includes('airQuality'))  &&
         (!checkboxBiodiversity.checked || options.includes('biodiversity')) &&
         (!checkboxBoundaries.checked || options.includes('boundaries')) &&
@@ -165,9 +166,10 @@ beforeContent %}
         (!checkboxWoodland.checked || options.includes('woodland')) &&
         (!checkboxGrant.checked || options.includes('grant')) &&
         (!checkboxOption.checked || options.includes('option')) &&
-        (!checkboxCapitalItem.checked || options.includes('capitalItem')) &&
-        (!checkboxSupplement.checked || options.includes('supplement')) &&
+        (!checkboxItem.checked || options.includes('item')) &&
+        (!checkboxAction.checked || options.includes('action')) &&
         (!checkboxCs.checked || options.includes('cs')) &&
+        (!checkboxCo.checked || options.includes('combinedOffer')) &&
         (!checkboxFetf.checked || options.includes('fetf')) &&
         (!checkboxSfi.checked || options.includes('sfi'))  &&
         (!checkboxSig.checked || options.includes('sig')) &&
@@ -193,7 +195,7 @@ var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 searchQuery != '' ? createPill(searchQuery) : null;
 checkboxOpen.checked ? createPill('open') : null;
 checkboxClosed.checked ? createPill('closed') : null;
-checkboxAccessManagement.checked ? createPill('accessManagement') : null;
+checkboxAccessEngagement.checked ? createPill('accessEngagement') : null;
 checkboxAirQuality.checked ? createPill('airQuality') : null;
 checkboxBiodiversity.checked ? createPill('biodiversity') : null;
 checkboxBoundaries.checked ? createPill ('boundaries') : null;
@@ -222,9 +224,10 @@ checkboxWetland.checked ? createPill('wetland') : null;
 checkboxWoodland.checked ? createPill('woodland') : null;
 checkboxGrant.checked ? createPill('grant') : null;
 checkboxOption.checked ? createPill('option') : null;
-checkboxCapitalItem.checked ? createPill('capitalItem') : null;
-checkboxSupplement.checked ? createPill('supplement') : null;
+checkboxItem.checked ? createPill('item') : null;
+checkboxAction.checked ? createPill('action') : null;
 checkboxCs.checked ? createPill('cs') : null;
+checkboxCo.checked ? createPill('combinedOffer') : null;
 checkboxFetf.checked ? createPill('fetf') : null;
 checkboxSfi.checked ? createPill('sfi') : null;
 checkboxSig.checked ? createPill('sig') : null;
@@ -261,8 +264,8 @@ function createPill(text) {
         document.getElementById("open").checked = false;
       } else if (element.parentNode.id === 'pill-closed') {
         document.getElementById("closed").checked = false;
-      } else if (element.parentNode.id === 'pill-accessManagement') {
-        document.getElementById("accessManagement").checked = false;
+      } else if (element.parentNode.id === 'pill-accessEngagement') {
+        document.getElementById("accessEngagement").checked = false;
       } else if (element.parentNode.id === 'pill-airQuality') {
         document.getElementById("airQuality").checked = false;
       } else if (element.parentNode.id === 'pill-biodiversity') {
@@ -317,12 +320,14 @@ function createPill(text) {
         document.getElementById("grant").checked = false;
       } else if (element.parentNode.id === 'pill-option') {
         document.getElementById("option").checked = false;
-      } else if (element.parentNode.id === 'pill-capitalItem') {
-        document.getElementById("capitalItem").checked = false;
-      } else if (element.parentNode.id === 'pill-supplement') {
-        document.getElementById("supplement").checked = false;
+      } else if (element.parentNode.id === 'pill-item') {
+        document.getElementById("item").checked = false;
+      } else if (element.parentNode.id === 'pill-action') {
+        document.getElementById("action").checked = false;
       } else if (element.parentNode.id === 'pill-cs') {
         document.getElementById("cs").checked = false;
+      } else if (element.parentNode.id === 'pill-combinedOffer') {
+        document.getElementById("combinedOffer").checked = false;
       } else if (element.parentNode.id === 'pill-fetf') {
         document.getElementById("fetf").checked = false;
       } else if (element.parentNode.id === 'pill-sfi') {
@@ -377,17 +382,18 @@ emitter.setMaxListeners(40);
   <div class="govuk-grid-column-full-width">
 
     <h1 class="govuk-heading-xl" style="margin-top: 20px;">
-      Check available funding and grants for your land or farm
+      Farming grant options finder
     </h1>
     <p class="govuk-body"> From: <b><a href="/path/of/page">Department for Environment, Food & Rural Affairs</a> </b> and <a href="/path/of/page" class="govuk-link"> <b>Rural Payments Agency</a> </b></p>
 
-    <p class="govuk-body">Find out what funding the Farming and Countryside Programme offers. This is for land or farms in England. </p>
+    <p class="govuk-body">Find out about grant options, items and actions in the Farming and Countryside Programme. This is for land or farms in England.</p>
     
     <div class="govuk-inset-text">
-      This tool does not confirm your eligibility. You cannot get the same funding twice on a single land parcel.
+      This tool does not confirm your eligibility.
     </div>
-    <p class="govuk-body">You may be able to apply for one or more funds and grants if you or you land are eligible. The guidance for each fund and grant will explain where this is possible.  </p>
+    <p class="govuk-body">For information on grant schemes and funding see <a href="https://www.gov.uk/guidance/funding-for-farmers" class="govuk-link">Funding for farmers, growers and land managers. </p></a>
     
+
   </div>
 </div> 
 
@@ -453,9 +459,9 @@ emitter.setMaxListeners(40);
                   <div class="govuk-form-group">
                     <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
                       <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="access-management" name="access-management" type="checkbox" value="access-management" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="access-management">
-                          Access and Management
+                        <input class="govuk-checkboxes__input" id="access-engagement" name="access-engagement" type="checkbox" value="access-engagement" onclick="filterResults()">
+                        <label class="govuk-label govuk-checkboxes__label" for="access-engagement">
+                          Access and engagement
                         </label>
                       </div>
                       <div class="govuk-checkboxes__item">
@@ -551,7 +557,7 @@ emitter.setMaxListeners(40);
                       <div class="govuk-checkboxes__item">
                         <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water" onclick="filterResults()">
                         <label class="govuk-label govuk-checkboxes__label" for="water">
-                          Water Quality
+                          Water quality
                         </label>
                       </div>
                     </div>
@@ -639,14 +645,14 @@ emitter.setMaxListeners(40);
               </details>
               <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-           <!--Type of funding details tag-->
+           <!--Funding types details tag-->
            <details
            class="govuk-details"
            style="text-align: left"
            data-module="govuk-details">
            <summary class="govuk-details__summary">
              <span class="govuk-details__summary-text">
-               Type of funding
+               Funding types
              </span>
            </summary>
            <div class="govuk-form-group">
@@ -664,15 +670,15 @@ emitter.setMaxListeners(40);
                  </label>
                </div>
                <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="capital-item" name="capital-item" type="checkbox" value="capital-item" onclick="filterResults()">
-                <label class="govuk-label govuk-checkboxes__label" for="capital-item">
-                  Capital item
+                <input class="govuk-checkboxes__input" id="item" name="item" type="checkbox" value="item" onclick="filterResults()">
+                <label class="govuk-label govuk-checkboxes__label" for="item">
+                  Item
                 </label>
               </div>
               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="supplement" name="supplement" type="checkbox" value="supplement" onclick="filterResults()">
-                <label class="govuk-label govuk-checkboxes__label" for="supplement">
-                  Supplement
+                <input class="govuk-checkboxes__input" id="action" name="action" type="checkbox" value="action" onclick="filterResults()">
+                <label class="govuk-label govuk-checkboxes__label" for="action">
+                  Action
                 </label>
               </div>
              </div>
@@ -680,14 +686,14 @@ emitter.setMaxListeners(40);
           </details>
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-             <!--Grant scheme details tag-->
+             <!--Grant schemes details tag-->
              <details
              class="govuk-details"
              style="text-align: left"
              data-module="govuk-details">
              <summary class="govuk-details__summary">
                <span class="govuk-details__summary-text">
-                 Grant scheme
+                 Grant schemes
                </span>
              </summary>
              <div class="govuk-form-group">
@@ -695,19 +701,19 @@ emitter.setMaxListeners(40);
                  <div class="govuk-checkboxes__item">
                    <input class="govuk-checkboxes__input" id="cs" name="cs" type="checkbox" value="cs" onclick="filterResults()">
                    <label class="govuk-label govuk-checkboxes__label" for="cs">
-                     Countryside Stewardship (CS)
+                     Countryside Stewardship
                    </label>
                  </div>
+                 <div class="govuk-checkboxes__item">
+                  <input class="govuk-checkboxes__input" id="combined-offer" name="combined-offer" type="checkbox" value="combined-offer" onclick="filterResults()">
+                  <label class="govuk-label govuk-checkboxes__label" for="combined-offer">
+                    Combined offer
+                  </label>
+                </div>
                  <div class="govuk-checkboxes__item">
                    <input class="govuk-checkboxes__input" id="fetf" name="fetf" type="checkbox" value="fetf" onclick="filterResults()">
                    <label class="govuk-label govuk-checkboxes__label" for="fetf">
-                     Farming Equipment and Technology fund (FETF)
-                   </label>
-                 </div>
-                 <div class="govuk-checkboxes__item">
-                   <input class="govuk-checkboxes__input" id="sfi" name="sfi" type="checkbox" value="sfi" onclick="filterResults()">
-                   <label class="govuk-label govuk-checkboxes__label" for="sfi">
-                     Sustainable Farming Incentive (SFI)
+                     Farming Equipment and Technology Fund
                    </label>
                  </div>
                  <div class="govuk-checkboxes__item">
@@ -716,6 +722,12 @@ emitter.setMaxListeners(40);
                     Slurry Infrastructure grant
                   </label>
                 </div>
+                 <div class="govuk-checkboxes__item">
+                   <input class="govuk-checkboxes__input" id="sfi" name="sfi" type="checkbox" value="sfi" onclick="filterResults()">
+                   <label class="govuk-label govuk-checkboxes__label" for="sfi">
+                     Sustainable Farming Incentive
+                   </label>
+                 </div>
                </div>
              </div>
              </details>
@@ -728,7 +740,7 @@ emitter.setMaxListeners(40);
            data-module="govuk-details">
            <summary class="govuk-details__summary">
              <span class="govuk-details__summary-text">
-               Payment type
+               Payment types
              </span>
            </summary>
            <div class="govuk-form-group">
@@ -736,13 +748,13 @@ emitter.setMaxListeners(40);
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="capital" name="capital" type="checkbox" value="capital" onclick="filterResults()">
                  <label class="govuk-label govuk-checkboxes__label" for="capital">
-                   Capital payment
+                   Capital
                  </label>
                </div>
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="revenue" name="revenue" type="checkbox" value="revenue" onclick="filterResults()">
                  <label class="govuk-label govuk-checkboxes__label" for="revenue">
-                   Revenue payment
+                   Revenue
                  </label>
                </div>
              </div>
@@ -777,9 +789,11 @@ emitter.setMaxListeners(40);
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">AB1: Nectar flower mix</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -793,17 +807,22 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable, Upland
+              <b>Land type:</b> Arable Land, Upland
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-             <b> Type of funding:</b> Option
+             <b> Funding types:</b> Option
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-             <b> Grant scheme:</b> Countryside Stewardship (CS)
+             <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -814,9 +833,10 @@ emitter.setMaxListeners(40);
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">BE2: Protetion of in-field trees on intensive grassland</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
+           <!-- <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -835,12 +855,17 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-             <b> Type of funding:</b> Option
+             <b> Funding types:</b> Option
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-             <b> Grant scheme:</b> Countryside Stewardship (CS)
+             <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -851,9 +876,11 @@ emitter.setMaxListeners(40);
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">BE3: Management of hedgerows</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+           <!--  
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+          -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -867,17 +894,22 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable, Lowland, Upland
+              <b>Land type:</b> Arable Land, Lowland, Upland
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Option
+            <b> Funding types:</b> Option
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -888,9 +920,11 @@ emitter.setMaxListeners(40);
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">ED1: Educational access</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -909,12 +943,17 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Option
+            <b> Funding types:</b> Option
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -922,12 +961,14 @@ emitter.setMaxListeners(40);
         </li>
 
         <li data-options="open biodiversity pollinators water option cs" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">FETF10: Fruit ripeness spectrometers</a></p>
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">FETF1: Electronic tray filling machine</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -941,17 +982,22 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable, Upland
+              <b>Land type:</b> Arable Land, Upland
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-             <b> Type of funding:</b> Option
+             <b> Funding types:</b> Option
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-             <b> Grant scheme:</b> Farming Equipment and Technology (FETF)
+             <b> Grant schemes:</b> Farming Equipment and Technology (FETF)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -962,9 +1008,11 @@ emitter.setMaxListeners(40);
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">OP1: Overwintered stubble</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -978,30 +1026,37 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable, Organic, Upland
+              <b>Land type:</b> Arable Land, Organic, Upland
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Option
+            <b> Funding types:</b> Option
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           </dl>
         </li>
 
-        <li data-options="open flood precision water upland capital-item cs" style="list-style: none;">
+        <li data-options="open flood precision water upland item cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">PA1: Implemenation plan</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -1020,25 +1075,32 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Capital item
+            <b> Funding types:</b> Item
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           </dl>
         </li>
 
-        <li data-options="open biodiversity livestock water upland capital-item cs" style="list-style: none;">
+        <li data-options="open biodiversity livestock water upland item cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">RP4: Livestock and machinery hardcore tracks</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -1057,25 +1119,32 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Capital item
+            <b> Funding types:</b> Item
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           </dl>
         </li>
 
-        <li data-options="open biodiversity flood soil water upland capital-item cs" style="list-style: none;">
+        <li data-options="open biodiversity flood soil water upland item cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">RP9: Earth banks and soil bunds</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -1094,25 +1163,32 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Capital item
+            <b> Funding types:</b> Item
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           </dl>
         </li>
 
-        <li data-options="open biodiversity precision vegetation upland woodland supplement cs" style="list-style: none;">
+        <li data-options="open biodiversity precision vegetation upland woodland action cs" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">SP4: Control of invasive plant species supplement </a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -1131,12 +1207,17 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Supplement
+            <b> Funding types:</b> Supplement
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -1147,9 +1228,11 @@ emitter.setMaxListeners(40);
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">UP3: Management of moorland</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -1168,12 +1251,17 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Option
+            <b> Funding types:</b> Option
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
@@ -1184,9 +1272,11 @@ emitter.setMaxListeners(40);
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">WD10: Management of upland wood pasture and parkland</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
+            <!-- 
             <dd class="govuk-summary-list__value">
               Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
             </dd>
+            -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
@@ -1205,12 +1295,17 @@ emitter.setMaxListeners(40);
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Type of funding:</b> Option
+            <b> Funding types:</b> Option
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant scheme:</b> Countryside Stewardship (CS)
+            <b> Grant schemes:</b> Countryside Stewardship (CS)
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Revenue
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
