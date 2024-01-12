@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Check your answers
+template – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block
+beforeContent %} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag">
+          Private Beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new tool – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+        </span>
+      </p>
+    </div>
+    <div class="govuk-breadcrumbs">
+        <ol class="govuk-breadcrumbs__list">
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="#">Home</a>
+          </li>
+          <li class="govuk-breadcrumbs__list-item">
+            <a class="govuk-breadcrumbs__link" href="/Beta/SP-MVP/home.html">Farming grant options finder</a>
+          </li>
+        </ol>
+      </div> 
+</div>
+
+<div class="govuk-width-container">
+    <main class="govuk-main-wrapper">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <h1 class="govuk-heading-xl">Above ground steel slurry store</h1>
+          <p class="govuk-body">Find out about the grant contribution and item specification for the above ground steel slurry store.</p>
+          <p class="govuk-body">Updated 13 December 2023</p>
+        
+        <div style=" background: 	#1d70b8"class="govuk-!-padding-4">
+            <ul class="govuk-list" style="color: white;">
+                <li><strong>Open or closed:</strong> Open</li>
+                <li><strong>Area of interest:</strong> Air quality, Slurry management</li>
+                <li><strong>Land type:</strong> Arable land</li>
+                <li><strong>Funding types:</strong> Item</li>
+                <li><strong>Grant schemes:</strong> Slurry Infrastructure grant</li>
+                <li><strong>Payment types:</strong> Capital</li>
+              </ul>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--m">
+        
+
+        <ul class="govuk-list" style="color: #1d70b8;">
+            <li style="color:	#0b0c0c ;">Contents</li>
+            <a class="class=govuk-link govuk-link--no-underline" href="#contribution"><li>Grant contribution</li></a>
+            <a class="class=govuk-link govuk-link--no-underline" href="#where"> <li>Where to use this item</li></a>
+            <a class="class=govuk-link govuk-link--no-underline" href="#spec"><li>Specification</li></a>
+            <a class="class=govuk-link govuk-link--no-underline" href="#reference-cost"><li>Reference cost includes</li></a>
+            <a class="class=govuk-link govuk-link--no-underline" href="#reference-cost-not-included"><li>Reference cost does not include</li></a>
+        </ul>
+        <div class="govuk-inset-text">
+          This is an item in the Slurry Infrastructure grant. Read 
+            <a href="https://www.gov.uk/government/publications/slurry-infrastructure-grant" class="govuk-link"> Slurry Infrastructure grant: guidance for applicants</a>
+            to find out more information about slurry storage including how to apply.
+        </div>
+          <a class="class=govuk-link govuk-link--no-underline" id="contribution"><h2 class="govuk-heading-m">Grant contribution</h2></a>
+          <p class="govuk-body">£31.50 per m3</p>
+          <a class="class=govuk-link govuk-link--no-underline" id="where"><h2 class="govuk-heading-m">Where to use this item</h2></a>
+          <p class="govuk-body">Available for Slurry Infrastructure grant.</p>
+          <a class="class=govuk-link govuk-link--no-underline" id="spec"><h2 class="govuk-heading-m">Specification</h2></a>
+          <p class="govuk-body">Cylindrical tank constructed of lapped and bolted vitreous enamel or epoxy resin coated steel panels, or stainless-steel panels, on a concrete base. Tank to be constructed to meet:</p>
+            <ul class="govuk-list govuk-list--bullet">
+                <li><a href="https://www.legislation.gov.uk/uksi/2010/639/contents/made)" class="govuk-link">silage, slurry and agricultural fuel oil (SSAFO) 2010 regulations</a></li>
+                <li>BS5502-50</li>
+                <li>BS EN ISO 28722:2011</li>
+            </ul>
+            <p class="govuk-body">
+              The store must have a minimum freeboard of 300mm and be designed with a lifespan of more than 20 years.
+            </p>
+            <a class="class=govuk-link govuk-link--no-underline" id="reference-cost"><h2 class="govuk-heading-m">Reference cost includes</h2></a>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>supply and construction of tank</li>
+              <li>excavation for foundation and base</li>
+              <li>supply, laying and consolidating of hardcore</li>
+              <li>supply, pour and laying of concrete base to BS 8500-1:2015</li>
+              <li>foundations including any necessary reinforcement</li>
+              <li>SSAFO compliant controllable lockable sluice</li>
+              <li>leak detection system where appropriate</li>
+              <li>gas monitoring safety equipment</li>
+            </ul>
+            <p class="govuk-body">
+              Where the installation is such that slurry could be released under gravity by the opening of a valve or sluice, the facility should be fitted with 2 valves in series not less than one metre (1m) apart and locked shut when not in use in accordance with SSAFO standards.
+            </p>
+            <a class="class=govuk-link govuk-link--no-underline" id="reference-cost-not-included"><h2 class="govuk-heading-m">Reference cost does not include</h2></a>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>tank cover</li>
+              <li>reception pit</li>
+              <li>agitator</li>
+              <li>pumps</li>
+              <li>inspection platform and ladders</li>
+            </ul>
+            <p class="govuk-body">These items are listed separately.</p>
+            
+    </div>
+    </main>
+  </div>
+
+
+{% endblock %}
