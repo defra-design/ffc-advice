@@ -103,7 +103,7 @@ beforeContent %}
     var checkboxWaterbodies = document.getElementById('waterbodies');
     var checkboxWetland = document.getElementById('wetland');
     var checkboxWoodland = document.getElementById('woodland');
-    var checkboxGrant = document.getElementById('grant');
+    //var checkboxGrant = document.getElementById('grant');
     var checkboxOption = document.getElementById('option');
     var checkboxItem = document.getElementById('item');
     var checkboxAction = document.getElementById('action');
@@ -164,7 +164,7 @@ beforeContent %}
         (!checkboxWaterbodies.checked || options.includes('waterbodies')) &&
         (!checkboxWetland.checked || options.includes('wetland')) &&
         (!checkboxWoodland.checked || options.includes('woodland')) &&
-        (!checkboxGrant.checked || options.includes('grant')) &&
+        //(!checkboxGrant.checked || options.includes('grant')) &&
         (!checkboxOption.checked || options.includes('option')) &&
         (!checkboxItem.checked || options.includes('item')) &&
         (!checkboxAction.checked || options.includes('action')) &&
@@ -222,7 +222,7 @@ checkboxHabitat.checked ? createPill('habitat') : null;
 checkboxWaterbodies.checked ? createPill('waterbodies') : null;
 checkboxWetland.checked ? createPill('wetland') : null;
 checkboxWoodland.checked ? createPill('woodland') : null;
-checkboxGrant.checked ? createPill('grant') : null;
+//checkboxGrant.checked ? createPill('grant') : null;
 checkboxOption.checked ? createPill('option') : null;
 checkboxItem.checked ? createPill('item') : null;
 checkboxAction.checked ? createPill('action') : null;
@@ -316,8 +316,8 @@ function createPill(text) {
         document.getElementById("wetland").checked = false;
       } else if (element.parentNode.id === 'pill-woodland') {
         document.getElementById("woodland").checked = false;
-      } else if (element.parentNode.id === 'pill-grant') {
-        document.getElementById("grant").checked = false;
+     // } else if (element.parentNode.id === 'pill-grant') {
+     //   document.getElementById("grant").checked = false;
       } else if (element.parentNode.id === 'pill-option') {
         document.getElementById("option").checked = false;
       } else if (element.parentNode.id === 'pill-item') {
@@ -350,7 +350,7 @@ function createPill(text) {
 const EventEmitter = require('events');
 const emitter = new EventEmitter();
 
-// Set the maximum number of listeners to 40
+// Set the maximum number of listeners to 500
 emitter.setMaxListeners(500);
 
 //<!-- Initial down chevron and toggle-->
@@ -822,9 +822,54 @@ emitter.setMaxListeners(500);
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           </dl>
         </li>
+
+        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Above-ground-steel-slurry-store.html" class="govuk-link">Above ground steel slurry store</a></p>
+          <dl class="govuk-summary-list govuk-summary-list--no-border" >
+          <div class="govuk-summary-list__row">
+            <!-- 
+            <dd class="govuk-summary-list__value">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
+            </dd>
+            -->
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Open or closed:</b> Open
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Area of interest:</b> Air quality, Slurry management
+            </dd>
+          </div>
+          <!--<div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+              <b>Land type:</b> Arable Land
+            </dd>
+          </div>
+        -->
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Funding types:</b> Item
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Grant schemes:</b>  Slurry Infrastructure grant
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dd class="govuk-summary-list__value">
+             <b> Payment types:</b> Capital
+            </dd>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          </dl>
+        </li>
         
         <li data-options="open trees grassLand upland option cs" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">BE2: Protetion of in-field trees on intensive grassland</a></p>
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="#" class="govuk-link">BE2: Protection of in-field trees on intensive grassland</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
            <!-- <dd class="govuk-summary-list__value">
@@ -1306,7 +1351,7 @@ emitter.setMaxListeners(500);
         </li>
 
         <li data-options="open pollinators crops vegetation arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/FET9.html" class="govuk-link">FETF9: Mobile vertical frost fans for vineyards and horticulture
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/FETF9.html" class="govuk-link">FETF9: Mobile vertical frost fans for vineyards and horticulture
           </a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
@@ -1351,7 +1396,7 @@ emitter.setMaxListeners(500);
         </li>
 
         <li data-options="open pollinators crops vegetation arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/FET10.html" class="govuk-link">FETF10: Fruit ripeness spectrometers </a></p>
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/FETF10.html" class="govuk-link">FETF10: Fruit ripeness spectrometers </a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border" >
           <div class="govuk-summary-list__row">
             <!-- 
