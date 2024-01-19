@@ -37,13 +37,14 @@ beforeContent %}
         
         <div style=" background: 	#1d70b8"class="govuk-!-padding-4">
             <ul class="govuk-list" style="color: white;">
+              <ul class="govuk-list" style="color: white;">
                 <li><strong>Open or closed:</strong> Open</li>
-                <li><strong>Area of interest:</strong> Crops, Pollinators and wildlife</li>
-                <li><strong>Land type:</strong> Arable land</li>
+                <li><strong>Area of interest:</strong> Trees (non-woodland)</li>
+                <li><strong>Land type:</strong> Grassland, Mooreland and upland</li>
                 <li><strong>Funding types:</strong> Item</li>
-                <li><strong>Grant schemes:</strong> Farming Equipment and Technology Fund (FETF)</li>
-                <li><strong>Payment types:</strong> Capital</li>
-              </ul>
+                <li><strong>Grant schemes:</strong> Countryside Stewardship</li>
+                <li><strong>Payment types:</strong> Revenue</li>
+            </ul>
         </div>
         <hr class="govuk-section-break govuk-section-break--m">
         
@@ -60,7 +61,11 @@ beforeContent %}
             <a class="class=govuk-link govuk-link--no-underline" href="#management"><li>Recommended management</li></a>
             <a class="class=govuk-link govuk-link--no-underline" href="#records"><li>Keeping records</li></a>
             <a class="class=govuk-link govuk-link--no-underline" href="#guidance"><li>Additional guidance and advice</li></a>
-            <a class="class=govuk-link govuk-link--no-underline" href="#location"><li>Pick the right location</li>
+            <a class="class=govuk-link govuk-link--no-underline" href="#branches"><li> &#8213; Storing fallen branches</li></a>
+            <a class="class=govuk-link govuk-link--no-underline" href="#guards"><li> &#8213; Setting tree guards </li></a>
+            <a class="class=govuk-link govuk-link--no-underline" href="#pesticides"><li> &#8213; Using pesticides</li></a>
+            <a class="class=govuk-link govuk-link--no-underline" href="#livestock"><li> &#8213; Controlling livestock damage</li></a>
+            <a class="class=govuk-link govuk-link--no-underline" href="#ipm"> <li> &#8213; Integrated Pest Management (IPM) </li></a>
 
 
         </ul>
@@ -101,7 +106,34 @@ beforeContent %}
           <p class="govuk-body">
             Throughout the year there will be trees surrounded by a naturally regenerated grass buffer, protected from damage by livestock and wild animals. Tree guards will be managed to prevent any damage to growing trees. The grass buffer radius will be determined by the tree diameter at breast height.
           </p>
-          table
+          
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Tree diameter at breast height (DBH)</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Sward radius</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Area per tree</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">30cm to 99cm</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">10m</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">0.03ha</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">100cm to 199cm</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">20m</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">0.12ha</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">200cm or more</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">30m</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">0.28ha</td>
+              </tr>
+            </tbody>
+          </table>
+          <p class="govuk-body">Fallen branches will remain in the option area. Trees that die or fall will remain in their position.</p>
        
           <a class="class=govuk-link govuk-link--no-underline" id="activities"><h2 class="govuk-heading-m">Prohibited activities</h2></a>
           <p class="govuk-body">To achieve the aims and deliver the environmental benefits, do not carry out any of the following activities:</p>
@@ -127,9 +159,38 @@ beforeContent %}
           </ul>
           <p class="govuk-body">In year 1 maintain or allow a grass sward to develop around each tree by natural regeneration.</p>
 
-          <table>
-
+          <table class="govuk-table">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th scope="col" class="govuk-table__header">Tree diameter at breast height (DBH)</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Sward radius</th>
+                <th scope="col" class="govuk-table__header govuk-table__header--numeric">Area per tree</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">30cm to 99cm</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">10m</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">0.03ha</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">100cm to 199cm</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">20m</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">0.12ha</td>
+              </tr>
+              <tr class="govuk-table__row">
+                <th scope="row" class="govuk-table__header">200cm or more</th>
+                <td class="govuk-table__cell govuk-table__cell--numeric">30m</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">0.28ha</td>
+              </tr>
+            </tbody>
           </table>
+          <p class="govuk-body">Once established, maintain the sward:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>make sure that no more than 5% is covered in weeds or bare ground</li>
+            <li>only cut to control woody growth</li>
+          </ul>
+
           <a class="class=govuk-link govuk-link--no-underline" id="records"><h2 class="govuk-heading-m">Keeping records</h2></a>
           <p class="govuk-body">
             Where there is uncertainty about whether the aims of the options have been delivered, we will take into account any records or evidence you may have kept demonstrating delivery of the aims of the option. This will include any steps you’ve taken to follow the recommended management set out above. It’s your responsibility to keep such records if you want to rely on these to support your claim.
@@ -141,121 +202,38 @@ beforeContent %}
           </ul>
           <a class="class=govuk-link govuk-link--no-underline" id="guidance"><h2 class="govuk-heading-m">Additional guidance and advice</h2></a>
           <p class="govuk-body">The following advice is helpful, but they are not requirements for this item.</p>
-          <h3 class="govuk-heading-s">Storing fallen branches</h3>
+          <h3 class="govuk-heading-s" id="branches">Storing fallen branches</h3>
           <p class="govuk-body">Do not cut fallen branches into pieces but stack in piles:</p>
-        
-
-
-
-
-
-
-
-
-          
-          <h3 class="govuk-heading-s">Block and plot sizes</h3>
-          <p class="govuk-body">Use wide margins and big blocks between 0.25ha and 0.5ha. This lets insects move to safety when fields are being sprayed.</p>
-          <p class="govuk-body">Spacing five 0.5ha patches evenly within 100ha meets the food needs of many pollinators.</p>
-          <h3 class="govuk-heading-s">What to sow</h3>
-          <p class="govuk-body">
-            A seed mix which contains both shorter-lived legumes and longer-lived wild flower species delivers an extended supply of pollen and nectar from late spring through to the autumn for beneficial insects such as bees, butterflies, hoverflies and moths.
-          </p>
-          <p class="govuk-body">You can sow the following example mix on a range of soil types.</p>
-
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Flower species</th>
-                <th scope="col" class="govuk-table__header">% inclusion rate</th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Alsike clover</th>
-                <td class="govuk-table__cell">10</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Bird’s-foot trefoil</th>
-                <td class="govuk-table__cell">10</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Black medick</th>
-                <td class="govuk-table__cell">5</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Common vetch</th>
-                <td class="govuk-table__cell">40</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Early flowering red clover</th>
-                <td class="govuk-table__cell">10</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Late flowering red clover</th>
-                <td class="govuk-table__cell">10</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Lucerne</th>
-                <td class="govuk-table__cell">5</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Sweet clover</th>
-                <td class="govuk-table__cell">5</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Musk mallow</th>
-                <td class="govuk-table__cell">1</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Oxeye daisy</th>
-                <td class="govuk-table__cell">1</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Wild carrot</th>
-                <td class="govuk-table__cell">1</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Yarrow</th>
-                <td class="govuk-table__cell">0.5</td>
-              </tr>
-              <tr class="govuk-table__row">
-                <th scope="row" class="govuk-table__header">Total</th>
-                <td class="govuk-table__cell">100</td>
-              </tr>
-            </tbody>
-          </table>
-          <p class="govuk-body">Sow the seed mix at 15 kg/ha.</p>
-          <p class="govuk-body">On light free draining soils you can replace common vetch with sainfoin.</p>
-          <p class="govuk-body">Avoid short-term mixes that do not include knapweed or mallow as they will not supply pollinators with long-term food sources for years 4 and 5 of the agreement.</p>
-          <h3 class="govuk-heading-s">How to sow</h3>
-          <p class="govuk-body">Sow by broadcasting seeds rather than drilling, when the soil is warm and moist. Use a ring roll before and after sowing. Check regularly for slug damage.</p>
-          <h3 class="govuk-heading-s">Management</h3>
-          <p class="govuk-body">
-            Cut emerging flowers and weeds at least twice in year 1, and up to 4 times if necessary where the soil is particularly fertile. Regular cutting prevents weeds smothering the slow-growing flowers so all sown species can establish successfully.
-          </p>
-          <p class="govuk-body">
-            Plots may be grazed between 1 September and 14 March, but make sure that no poaching or soil compaction by livestock takes place. Supplementary feeding could result in poaching and soil compaction, so should be avoided.
-          </p>
-          <p class="govuk-body">Remember you must keep nectar plots until at least 31 December in year 5 of the agreement.</p>
-          <h3 class="govuk-heading-s">Integrated Pest Management (IPM)</h3>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>with one pile in a sunny spot and one in a shady spot</li>
+            <li>not too high, to stop the timber drying out</li>
+            <li>with as much timber as possible in contact with the ground</li>
+          </ul>
+          <h3 class="govuk-heading-s" id="guards">Setting tree guards</h3>
+          <p class="govuk-body">Do not attach tree guards to the trees as this can damage them.</p>
+          <h3 class="govuk-heading-s" id="pesticides">Using pesticides</h3>
+          <p class="govuk-body">Avoid damaging the trees when spot-treating or weed-wiping. Use chemicals as a last resort, as they can damage root fungi in the soil and trees depend on fungi for future good health.</p>
+          <h3 class="govuk-heading-s" id="livestock">Controlling livestock damage</h3>
+          <p class="govuk-body">To prevent livestock damage:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>provide different shelter with water to attract animals away from trees</li>
+            <li>fence off trees to stop animals rubbing and stripping bark or trampling the base If you use fences, place them at the edge of the option area.</li>
+          </ul>
+          <h3 class="govuk-heading-s" id="ipm">Integrated Pest Management (IPM)</h3>
           <p class="govuk-body">
             This option can form part of an IPM approach to prevent the establishment of pests, weeds and diseases. If successful, appropriate and within
              proximity of cropped areas, these may limit the need for the use of Plant Protection Products and enhance wildlife and biodiversity on your holding. 
              Read information on IPM at <a href="https://ahdb.org.uk/integrated-pest-management-ipm" class="govuk-link">AHDB (Agriculture and Horticulture Development Board) Integrated Pest Management</a>
              and <a href="https://leaf.eco/">LEAF (Linking Environment and Farming)</a>.
           </p>
-          <h3 class="govuk-heading-s">Biodiversity</h3>
-          <p class="govuk-body">
-            This option has been identified as being beneficial for biodiversity. All Countryside Stewardship habitat creation, restoration and management options are of great significance for biodiversity recovery, as are the wide range of arable options in the scheme. Capital items and supplements can support this habitat work depending on the holding’s situation and potential.
-          </p>
-          <p class="govuk-body">
-            The connectivity of habitats is also very important and habitat options should be linked wherever possible. Better connectivity will allow wildlife to move/colonise freely to access water, food, shelter and breeding habitat, and will allow natural communities of both animals and plants to adapt in response to environmental and climate change. 
-          </p>
-          <h3 class="govuk-heading-s">Further information</h3>
-          <p class="govuk-body">Order the ‘Growing farm wildlife’ DVD from Natural England which gives a step-by-step approach to sowing nectar flower mixtures.</p>
+
         </div>
         <!-- one third column-->
         <div class="govuk-grid-column-one-third">
+          <hr class="govuk-section-break govuk-section-break--m">
+          <hr class="govuk-section-break govuk-section-break--m">
+          <hr class="govuk-section-break govuk-section-break--m">
+          <hr class="govuk-section-break govuk-section-break--m">
           <hr class="govuk-section-break govuk-section-break--m">
           <hr class="govuk-section-break govuk-section-break--m">
           <hr class="govuk-section-break govuk-section-break--m">
