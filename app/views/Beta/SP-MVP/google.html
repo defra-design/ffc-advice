@@ -1,0 +1,47 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %} {% block pageTitle %} Farming grant options finder – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block
+    beforeContent %} 
+    {% endblock %} 
+    
+    {% block content %}
+
+
+  <style>
+    body {
+      background: url("/public/images/Google.png") no-repeat center center fixed;
+      /* Background properties */
+      background-size: contain;
+      
+      /* Other styles for the body element */
+      
+      padding: 100px;
+      
+    }
+
+    /* Additional styles for your content go here */
+  </style>
+</head>
+<body>
+
+  <div class="govuk-width-container">
+    <main class="govuk-main-wrapper govuk-main-wrapper--l">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds" style="background-image: images/Google: .png;">
+          <div class="govuk-form-group">
+            <hr class="govuk-section-break govuk-section-break--l">
+            <hr class="govuk-section-break govuk-section-break--l">
+            <input class="govuk-input" id="google-search" name="googleSearch" type="text" style="margin-left: 30%;">
+          </div>
+        </div>
+        <a href="home.html">
+        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-left: 20%;">
+          Google Search
+        </button>
+       </a>
+      </div>
+    </main>
+  </div>
+
+
+</body>
+</html>
+{% endblock %}
