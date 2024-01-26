@@ -107,7 +107,7 @@ beforeContent %}
     var checkboxItem = document.getElementById('item');
     var checkboxAction = document.getElementById('action');
     var checkboxCs = document.getElementById('cs');
-    var checkboxCo = document.getElementById('combined-offer');
+    //var checkboxCo = document.getElementById('combined-offer')
     var checkboxFetf = document.getElementById('fetf');
     var checkboxSfi = document.getElementById('sfi');
     var checkboxSig = document.getElementById('sig');
@@ -168,7 +168,7 @@ beforeContent %}
         (!checkboxItem.checked || options.includes('item')) &&
         (!checkboxAction.checked || options.includes('action')) &&
         (!checkboxCs.checked || options.includes('cs')) &&
-        (!checkboxCo.checked || options.includes('combinedOffer')) &&
+        //(!checkboxCo.checked || options.includes('combinedOffer')) &&
         (!checkboxFetf.checked || options.includes('fetf')) &&
         (!checkboxSfi.checked || options.includes('sfi'))  &&
         (!checkboxSig.checked || options.includes('sig')) &&
@@ -226,7 +226,7 @@ checkboxOption.checked ? createPill('option') : null;
 checkboxItem.checked ? createPill('item') : null;
 checkboxAction.checked ? createPill('action') : null;
 checkboxCs.checked ? createPill('cs') : null;
-checkboxCo.checked ? createPill('combinedOffer') : null;
+//checkboxCo.checked ? createPill('combinedOffer') : null;
 checkboxFetf.checked ? createPill('fetf') : null;
 checkboxSfi.checked ? createPill('sfi') : null;
 checkboxSig.checked ? createPill('sig') : null;
@@ -325,8 +325,8 @@ function createPill(text) {
         document.getElementById("action").checked = false;
       } else if (element.parentNode.id === 'pill-cs') {
         document.getElementById("cs").checked = false;
-      } else if (element.parentNode.id === 'pill-combinedOffer') {
-        document.getElementById("combinedOffer").checked = false;
+     // } else if (element.parentNode.id === 'pill-combinedOffer') {
+     //   document.getElementById("combinedOffer").checked = false;
       } else if (element.parentNode.id === 'pill-fetf') {
         document.getElementById("fetf").checked = false;
       } else if (element.parentNode.id === 'pill-sfi') {
@@ -691,12 +691,12 @@ function createPill(text) {
                      Countryside Stewardship
                    </label>
                  </div>
-                 <div class="govuk-checkboxes__item">
+                 <!--<div class="govuk-checkboxes__item">
                   <input class="govuk-checkboxes__input" id="combined-offer" name="combined-offer" type="checkbox" value="combined-offer" onclick="filterResults()">
                   <label class="govuk-label govuk-checkboxes__label" for="combined-offer">
                     Combined offer
                   </label>
-                </div>
+                </div> -->
                  <div class="govuk-checkboxes__item">
                    <input class="govuk-checkboxes__input" id="fetf" name="fetf" type="checkbox" value="fetf" onclick="filterResults()">
                    <label class="govuk-label govuk-checkboxes__label" for="fetf">
