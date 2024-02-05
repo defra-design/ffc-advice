@@ -8,67 +8,72 @@ beforeContent %}
   .vertical {
     height: 300px; /* vertical scroll bar height */
     overflow-y: scroll; /* Add a vertical scrollbar when content overflows */
-    
   }
+
   /*Search bar styling*/
   .search-container {
-      display: flex;
-      overflow: hidden;
-      margin-bottom: 10px;
+    display: flex;
+    overflow: hidden;
+    margin-bottom: 10px;
+  }
+
+  .search-button {
+    background-color: #1f70b8;
+    color: #fff;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  /*Row links for email, etc*/
+  .link-container {
+    display: flex;
+    justify-content: space-between; /* Distribute items with space between them */
+    flex-wrap: wrap; /* Allow wrapping to the next line if needed */
+  }
+
+  /* Style for each item */
+  .item {
+    margin: 0px 0px 0px 0px;
+  }
+
+  /* Style to align the first item to the left */
+  .item:first-child {
+    margin-right: auto;
+  }
+
+  /*Styling for pills*/
+  .pill-container {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+  }
+
+  .pill {
+    background-color: 	#f3f2f1;
+    color: #000;
+    border-radius: 20px;
+    padding: 5px 10px;
+    margin: 5px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    text-transform: capitalize;
+    border-color: #000;
+    border-style: solid;
+    border-width: thin;
+  }
+
+  .pill-close {
+    margin-left: 5px;
+    cursor: pointer;  
+    }
     }
 
-    .search-button {
-      background-color: #1f70b8;
-      color: #fff;
-      padding: 8px 12px;
-      cursor: pointer;
-    }
-    /*Row links for email, etc*/
-    .link-container {
-      display: flex;
-      justify-content: space-between; /* Distribute items with space between them */
-      flex-wrap: wrap; /* Allow wrapping to the next line if needed */
-    }
-
-    /* Style for each item */
-    .item {
-      margin: 0px 0px 0px 0px;
-    }
-
-    /* Style to align the first item to the left */
-    .item:first-child {
-      margin-right: auto;
-    }
-
-    /*Styling for pills*/
-    .pill-container {
-      display: flex;
-      flex-wrap: wrap;
-      margin-top: 10px;
-    }
-
-    .pill {
-      background-color: 	#f3f2f1;
-      color: #000;
-      border-radius: 20px;
-      padding: 5px 10px;
-      margin: 5px;
-      display: flex;
-      align-items: center;
-      cursor: pointer;
-      text-transform: capitalize;
-      border-color: #000;
-      border-style: solid;
-      border-width: thin;
-    }
-
-    .pill-close {
-      margin-left: 5px;
-      cursor: pointer;
-      
-    }
+  }
 
 </style>
+
+
 
 <script>
   function filterResults() {
@@ -184,166 +189,167 @@ beforeContent %}
         item.style.display = 'none';
       }
     }
+
     // Clear existing pills
     clearPills();
 
-// Get the search input value
-var searchQuery = document.getElementById('searchInput').value.toLowerCase();
+  // Get the search input value
+  var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 
-// Create pills for selected filters
-searchQuery != '' ? createPill(searchQuery) : null;
-checkboxOpen.checked ? createPill('open') : null;
-checkboxClosed.checked ? createPill('closed') : null;
-checkboxAccessEngagement.checked ? createPill('accessEngagement') : null;
-checkboxAirQuality.checked ? createPill('airQuality') : null;
-checkboxBiodiversity.checked ? createPill('biodiversity') : null;
-checkboxBoundaries.checked ? createPill ('boundaries') : null;
-checkboxCrops.checked ? createPill('crops'): null;
-checkboxFlood.checked ? createPill('flood'): null;
-checkboxForestry.checked ? createPill('forestry'): null;
-checkboxHistoricEnvironment.checked ? createPill('historicEnvironment') : null;
-checkboxLivestock.checked ? createPill('livestock') : null;
-checkboxPeat.checked ? createPill('peat') : null;
-checkboxPollinators.checked ? createPill('pollinators') : null;
-checkboxPrecision.checked ? createPill('precision') : null;
-checkboxSlurry.checked ? createPill('slurry') : null;
-checkboxSoil.checked ? createPill('soil') : null;
-checkboxTrees.checked ? createPill('trees') : null;
-checkboxVegetation.checked ? createPill('vegetation') : null;
-checkboxWater.checked ? createPill('water') : null;
-checkboxArableLand.checked ? createPill('arableLand') : null;
-checkboxCoast.checked ? createPill('coast') : null;
-checkboxGrassland.checked ? createPill('grassLand') : null;
-checkboxLowland.checked ? createPill('lowland') : null;
-checkboxMoorland.checked ? createPill('moorland') : null;
-checkboxOrganic.checked ? createPill('organic') : null;
-checkboxHabitat.checked ? createPill('habitat') : null;
-checkboxWaterbodies.checked ? createPill('waterbodies') : null;
-checkboxWetland.checked ? createPill('wetland') : null;
-checkboxWoodland.checked ? createPill('woodland') : null;
-//checkboxGrant.checked ? createPill('grant') : null;
-checkboxOption.checked ? createPill('option') : null;
-checkboxItem.checked ? createPill('item') : null;
-checkboxAction.checked ? createPill('action') : null;
-checkboxCs.checked ? createPill('cs') : null;
-//checkboxCo.checked ? createPill('combinedOffer') : null;
-checkboxFetf.checked ? createPill('fetf') : null;
-checkboxSfi.checked ? createPill('sfi') : null;
-checkboxSig.checked ? createPill('sig') : null;
-checkboxCapital.checked ? createPill('capital') : null;
-checkboxRevenue.checked ? createPill('revenue') : null;
-
-
-// ... (create pills for each selected checkbox)
+  // Create pills for selected filters
+  searchQuery != '' ? createPill(searchQuery) : null;
+  checkboxOpen.checked ? createPill('open') : null;
+  checkboxClosed.checked ? createPill('closed') : null;
+  checkboxAccessEngagement.checked ? createPill('accessEngagement') : null;
+  checkboxAirQuality.checked ? createPill('airQuality') : null;
+  checkboxBiodiversity.checked ? createPill('biodiversity') : null;
+  checkboxBoundaries.checked ? createPill ('boundaries') : null;
+  checkboxCrops.checked ? createPill('crops'): null;
+  checkboxFlood.checked ? createPill('flood'): null;
+  checkboxForestry.checked ? createPill('forestry'): null;
+  checkboxHistoricEnvironment.checked ? createPill('historicEnvironment') : null;
+  checkboxLivestock.checked ? createPill('livestock') : null;
+  checkboxPeat.checked ? createPill('peat') : null;
+  checkboxPollinators.checked ? createPill('pollinators') : null;
+  checkboxPrecision.checked ? createPill('precision') : null;
+  checkboxSlurry.checked ? createPill('slurry') : null;
+  checkboxSoil.checked ? createPill('soil') : null;
+  checkboxTrees.checked ? createPill('trees') : null;
+  checkboxVegetation.checked ? createPill('vegetation') : null;
+  checkboxWater.checked ? createPill('water') : null;
+  checkboxArableLand.checked ? createPill('arableLand') : null;
+  checkboxCoast.checked ? createPill('coast') : null;
+  checkboxGrassland.checked ? createPill('grassLand') : null;
+  checkboxLowland.checked ? createPill('lowland') : null;
+  checkboxMoorland.checked ? createPill('moorland') : null;
+  checkboxOrganic.checked ? createPill('organic') : null;
+  checkboxHabitat.checked ? createPill('habitat') : null;
+  checkboxWaterbodies.checked ? createPill('waterbodies') : null;
+  checkboxWetland.checked ? createPill('wetland') : null;
+  checkboxWoodland.checked ? createPill('woodland') : null;
+  //checkboxGrant.checked ? createPill('grant') : null;
+  checkboxOption.checked ? createPill('option') : null;
+  checkboxItem.checked ? createPill('item') : null;
+  checkboxAction.checked ? createPill('action') : null;
+  checkboxCs.checked ? createPill('cs') : null;
+  //checkboxCo.checked ? createPill('combinedOffer') : null;
+  checkboxFetf.checked ? createPill('fetf') : null;
+  checkboxSfi.checked ? createPill('sfi') : null;
+  checkboxSig.checked ? createPill('sig') : null;
+  checkboxCapital.checked ? createPill('capital') : null;
+  checkboxRevenue.checked ? createPill('revenue') : null;
 
 
-    document.getElementById("resultsCount").innerHTML = resultsCount;
-  
-}
-//Create pills
-function createPill(text) {
-      var pillContainer = document.getElementById('pillContainer');
-      var pill = document.createElement('div');
-      pill.id = 'pill-' + text;
-      pill.className = 'pill';
-      pill.innerHTML = '' + text + '<span class="pill-close" onclick="removePill(this)">&times;</span>';
-      pillContainer.appendChild(pill);
+  // ... (create pills for each selected checkbox)
+
+
+      document.getElementById("resultsCount").innerHTML = resultsCount;
+    
+  }
+
+  //Create pills
+  function createPill(text) {
+    var pillContainer = document.getElementById('pillContainer');
+    var pill = document.createElement('div');
+    pill.id = 'pill-' + text;
+    pill.className = 'pill';
+    pill.innerHTML = '' + text + '<span class="pill-close" onclick="removePill(this)">&times;</span>';
+    pillContainer.appendChild(pill);
+  }
+
+  function clearPills() {
+    var pillContainer = document.getElementById('pillContainer');
+    pillContainer.innerHTML = '';
+  }
+
+  function removePill(element) {
+    var pillContainer = document.getElementById('pillContainer');
+    if (element.parentNode.id === 'pill-' + document.getElementById('searchInput').value.toLowerCase()) {
+      document.getElementById('searchInput').value = '';
+    } else if (element.parentNode.id === 'pill-open') {
+      document.getElementById("open").checked = false;
+    } else if (element.parentNode.id === 'pill-closed') {
+      document.getElementById("closed").checked = false;
+    } else if (element.parentNode.id === 'pill-accessEngagement') {
+      document.getElementById("accessEngagement").checked = false;
+    } else if (element.parentNode.id === 'pill-airQuality') {
+      document.getElementById("airQuality").checked = false;
+    } else if (element.parentNode.id === 'pill-biodiversity') {
+      document.getElementById("biodiversity").checked = false;
+    } else if (element.parentNode.id === 'pill-boundaries') {
+      document.getElementById("boundaries").checked = false;
+    } else if (element.parentNode.id === 'pill-crops') {
+      document.getElementById("crops").checked = false;
+    } else if (element.parentNode.id === 'pill-flood') {
+      document.getElementById("flood").checked = false;
+    } else if (element.parentNode.id === 'pill-forestry') {
+      document.getElementById("forestry").checked = false;
+    } else if (element.parentNode.id === 'pill-historicEnvironment') {
+      document.getElementById("historicEnvironment").checked = false;
+    } else if (element.parentNode.id === 'pill-livestock') {
+      document.getElementById("livestock").checked = false;
+    } else if (element.parentNode.id === 'pill-peat') {
+      document.getElementById("peat").checked = false;
+    } else if (element.parentNode.id === 'pill-pollinators') {
+      document.getElementById("pollinators").checked = false;
+    } else if (element.parentNode.id === 'pill-precision') {
+      document.getElementById("precision").checked = false;
+    } else if (element.parentNode.id === 'pill-soil') {
+      document.getElementById("soil").checked = false;
+    } else if (element.parentNode.id === 'pill-slurry') {
+      document.getElementById("slurry").checked = false;
+    } else if (element.parentNode.id === 'pill-trees') {
+      document.getElementById("trees").checked = false;
+    } else if (element.parentNode.id === 'pill-vegetation') {
+      document.getElementById("vegetation").checked = false;
+    } else if (element.parentNode.id === 'pill-water') {
+      document.getElementById("water").checked = false;
+    } else if (element.parentNode.id === 'pill-arableLand') {
+      document.getElementById("arableLand").checked = false;
+    } else if (element.parentNode.id === 'pill-grassLand') {
+      document.getElementById("grassLand").checked = false;
+    } else if (element.parentNode.id === 'pill-lowland') {
+      document.getElementById("lowland").checked = false;
+    } else if (element.parentNode.id === 'pill-moorland') {
+      document.getElementById("moorland").checked = false;
+    } else if (element.parentNode.id === 'pill-organic') {
+      document.getElementById("organic").checked = false;
+    } else if (element.parentNode.id === 'pill-habitat') {
+      document.getElementById("habitat").checked = false;
+    } else if (element.parentNode.id === 'pill-waterbodies') {
+      document.getElementById("waterbodies").checked = false;
+    } else if (element.parentNode.id === 'pill-wetland') {
+      document.getElementById("wetland").checked = false;
+    } else if (element.parentNode.id === 'pill-woodland') {
+      document.getElementById("woodland").checked = false;
+    // } else if (element.parentNode.id === 'pill-grant') {
+    //   document.getElementById("grant").checked = false;
+    } else if (element.parentNode.id === 'pill-option') {
+      document.getElementById("option").checked = false;
+    } else if (element.parentNode.id === 'pill-item') {
+      document.getElementById("item").checked = false;
+    } else if (element.parentNode.id === 'pill-action') {
+      document.getElementById("action").checked = false;
+    } else if (element.parentNode.id === 'pill-cs') {
+      document.getElementById("cs").checked = false;
+    // } else if (element.parentNode.id === 'pill-combinedOffer') {
+    //   document.getElementById("combinedOffer").checked = false;
+    } else if (element.parentNode.id === 'pill-fetf') {
+      document.getElementById("fetf").checked = false;
+    } else if (element.parentNode.id === 'pill-sfi') {
+      document.getElementById("sfi").checked = false;
+    } else if (element.parentNode.id === 'pill-sig') {
+      document.getElementById("sig").checked = false;
+    } else if (element.parentNode.id === 'pill-capital') {
+      document.getElementById("capital").checked = false;
+    } else if (element.parentNode.id === 'pill-revenue') {
+      document.getElementById("revenue").checked = false;
     }
 
-    function clearPills() {
-      var pillContainer = document.getElementById('pillContainer');
-      pillContainer.innerHTML = '';
-    }
-
-    function removePill(element) {
-      var pillContainer = document.getElementById('pillContainer');
-      if (element.parentNode.id === 'pill-' + document.getElementById('searchInput').value.toLowerCase()) {
-        document.getElementById('searchInput').value = '';
-      } else if (element.parentNode.id === 'pill-open') {
-        document.getElementById("open").checked = false;
-      } else if (element.parentNode.id === 'pill-closed') {
-        document.getElementById("closed").checked = false;
-      } else if (element.parentNode.id === 'pill-accessEngagement') {
-        document.getElementById("accessEngagement").checked = false;
-      } else if (element.parentNode.id === 'pill-airQuality') {
-        document.getElementById("airQuality").checked = false;
-      } else if (element.parentNode.id === 'pill-biodiversity') {
-        document.getElementById("biodiversity").checked = false;
-      } else if (element.parentNode.id === 'pill-boundaries') {
-        document.getElementById("boundaries").checked = false;
-      } else if (element.parentNode.id === 'pill-crops') {
-        document.getElementById("crops").checked = false;
-      } else if (element.parentNode.id === 'pill-flood') {
-        document.getElementById("flood").checked = false;
-      } else if (element.parentNode.id === 'pill-forestry') {
-        document.getElementById("forestry").checked = false;
-      } else if (element.parentNode.id === 'pill-historicEnvironment') {
-        document.getElementById("historicEnvironment").checked = false;
-      } else if (element.parentNode.id === 'pill-livestock') {
-        document.getElementById("livestock").checked = false;
-      } else if (element.parentNode.id === 'pill-peat') {
-        document.getElementById("peat").checked = false;
-      } else if (element.parentNode.id === 'pill-pollinators') {
-        document.getElementById("pollinators").checked = false;
-      } else if (element.parentNode.id === 'pill-precision') {
-        document.getElementById("precision").checked = false;
-      } else if (element.parentNode.id === 'pill-soil') {
-        document.getElementById("soil").checked = false;
-      } else if (element.parentNode.id === 'pill-slurry') {
-        document.getElementById("slurry").checked = false;
-      } else if (element.parentNode.id === 'pill-trees') {
-        document.getElementById("trees").checked = false;
-      } else if (element.parentNode.id === 'pill-vegetation') {
-        document.getElementById("vegetation").checked = false;
-      } else if (element.parentNode.id === 'pill-water') {
-        document.getElementById("water").checked = false;
-      } else if (element.parentNode.id === 'pill-arableLand') {
-        document.getElementById("arableLand").checked = false;
-      } else if (element.parentNode.id === 'pill-grassLand') {
-        document.getElementById("grassLand").checked = false;
-      } else if (element.parentNode.id === 'pill-lowland') {
-        document.getElementById("lowland").checked = false;
-      } else if (element.parentNode.id === 'pill-moorland') {
-        document.getElementById("moorland").checked = false;
-      } else if (element.parentNode.id === 'pill-organic') {
-        document.getElementById("organic").checked = false;
-      } else if (element.parentNode.id === 'pill-habitat') {
-        document.getElementById("habitat").checked = false;
-      } else if (element.parentNode.id === 'pill-waterbodies') {
-        document.getElementById("waterbodies").checked = false;
-      } else if (element.parentNode.id === 'pill-wetland') {
-        document.getElementById("wetland").checked = false;
-      } else if (element.parentNode.id === 'pill-woodland') {
-        document.getElementById("woodland").checked = false;
-     // } else if (element.parentNode.id === 'pill-grant') {
-     //   document.getElementById("grant").checked = false;
-      } else if (element.parentNode.id === 'pill-option') {
-        document.getElementById("option").checked = false;
-      } else if (element.parentNode.id === 'pill-item') {
-        document.getElementById("item").checked = false;
-      } else if (element.parentNode.id === 'pill-action') {
-        document.getElementById("action").checked = false;
-      } else if (element.parentNode.id === 'pill-cs') {
-        document.getElementById("cs").checked = false;
-     // } else if (element.parentNode.id === 'pill-combinedOffer') {
-     //   document.getElementById("combinedOffer").checked = false;
-      } else if (element.parentNode.id === 'pill-fetf') {
-        document.getElementById("fetf").checked = false;
-      } else if (element.parentNode.id === 'pill-sfi') {
-        document.getElementById("sfi").checked = false;
-      } else if (element.parentNode.id === 'pill-sig') {
-        document.getElementById("sig").checked = false;
-      } else if (element.parentNode.id === 'pill-capital') {
-        document.getElementById("capital").checked = false;
-      } else if (element.parentNode.id === 'pill-revenue') {
-        document.getElementById("revenue").checked = false;
-      }
-
-
-      pillContainer.removeChild(element.parentNode);
-      // Trigger filtering logic after removing a pill
-      filterResults();
-    }
+    pillContainer.removeChild(element.parentNode);
+    // Trigger filtering logic after removing a pill
+    filterResults();
+  }
 
 //<!-- Initial down chevron and toggle-->
 
@@ -352,10 +358,6 @@ function createPill(text) {
     icon.classList.toggle('fa-chevron-down');
     icon.classList.toggle('fa-chevron-up');
   }
-
-
-
-
 </script>
 
 <body onload="filterResults()">
@@ -772,1833 +774,55 @@ function createPill(text) {
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
       <ul class="govuk-list"  id="results">
-        <li data-options="open arableLand biodiversity pollinators option water revenue cs" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/AB1.html" class="govuk-link">AB1: Nectar flower mix</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Pollinators and wildlife, Water
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land, Moorland and upland
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Option
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open arableLand biodiversity crops pollinators action soil revenue sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SFI/AHL1.html" class="govuk-link">AHL1: Pollen and nectar flower mix</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Crops, Pollinators and wildlife, Soil
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Action
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Sustainable Farming Incentive
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open arableLand biodiversity crops pollinators action soil revenue sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SFI/AHL2.html" class="govuk-link">AHL2: Winter bird food on arable and horticultural land</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Crops, Pollinators and wildlife, Soil
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Action
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Sustainable Farming Incentive
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open arableLand grassland crops pollinators action soil revenue sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SFI/AHL3.html" class="govuk-link">AHL3: Grassy field corners and blocks</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife, Soil
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land, Grassland
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Action
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Sustainable Farming Incentive
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b>Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open arableLand boundaries crops pollinators action soil revenue  sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SFI/AHL4.html" class="govuk-link">AHL4: 4m to 12m grass buffer strip on arable and horticultural land</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Boundaries, Crops, Pollinators and wildlife, Soil
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Action
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Sustainable Farming Incentive
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Above-ground-steel-slurry-store.html" class="govuk-link">Above ground steel slurry store</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-        
-        <li data-options="open trees grassLand moorland option cs revenue" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/BE2.html" class="govuk-link">BE2: Protection of in-field trees on intensive grassland</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-           <!-- <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Trees (non-woodland)
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Grassland, Moorland and upland
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Option
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open biodiversity boundaries pollinators moorland habitat option cs revenue" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/BE3.html" class="govuk-link">BE3: Management of hedgerows</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-           <!--  
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
-            </dd>
-          -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Boundaries, Pollinators and wildlife
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Moorland and upland, Priority habitats
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Option
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Cast-in-situ-concrete-reception-pit.html" class="govuk-link">Cast in situ concrete reception pit</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-        
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Centrifugal-chopper-pump.html" class="govuk-link">Centrifugal chopper pump</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Concrete-bunker-to-accommodate-short-term-storage-of-stackable-material-from-the-slurry-separator.html" class="govuk-link">Concrete bunker to accommodate short term storage of stackable material from the slurry separator</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Concrete-pad-for-collection-of-stackable-material-from-the-slurry-separator-by-trailer.html" class="govuk-link">Concrete pad for collection of stackable material from the slurry separator by trailer</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-        
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Earth-bank-lagoon-with-synthetic-liner.html" class="govuk-link">Earth bank lagoon with synthetic liner</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open accessEngagement moorland woodland option cs revenue" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/ED1.html" class="govuk-link">ED1: Educational access</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Access and management
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Moorland and upland, Woodland
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Option
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Earth-bank-lagoon-without-synthetic-liner.html" class="govuk-link">Earth bank lagoon without synthetic liner</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-        
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Electric-powered-slurry-transfer-pump.html" class="govuk-link">Electric powered slurry transfer pump</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF1.html" class="govuk-link">FETF1: Electronic tray filling machine</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF2.html" class="govuk-link">FETF2: Electronic row seeder</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF3.html" class="govuk-link">FETF3: Five row seeder</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF4.html" class="govuk-link">FETF4: Paper pot transplanter </a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops vegetation arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF5.html" class="govuk-link">FETF5: Inter row weeders 1.8m</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife, Vegetation control
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops vegetation arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF6.html" class="govuk-link">FETF6: Inter row hoe 3m</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife, Vegetation control
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops vegetation arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF7.html" class="govuk-link">FETF7: Inter row weeders hoe 6m</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife, Vegetation control
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops vegetation arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF8.html" class="govuk-link">FETF8: Salad leaf harvester</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife, Vegetation control
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops vegetation arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF9.html" class="govuk-link">FETF9: Mobile vertical frost fans for vineyards and horticulture
-          </a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife, Vegetation control
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open pollinators crops vegetation arableLand item fetf capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="FETF/Iteration2/FETF10.html" class="govuk-link">FETF10: Fruit ripeness spectrometers </a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Crops, Pollinators and wildlife, Vegetation control
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Farming Equipment and Technology Fund
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Fixed-flexible-cover.html" class="govuk-link">Fixed flexible cover</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open airQuality slurry sig item capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SIG/Iteration2/Floating-flexible-cover.html" class="govuk-link">Floating flexible cover</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Slurry management
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land
-            </dd>
-          </div>
-        -->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b>  Slurry Infrastructure grant
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open biodiversity boundaries pollinators action revenue sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SFI/HRW1.html" class="govuk-link">HRW1: Assess and record hedgerow condition</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Boundaries, Pollinators and wildlife
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> 
-            </dd>
-          </div>-->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Action
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Sustainable Farming Incentive
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open biodiversity boundaries pollinators action revenue sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SFI/HRW2.html" class="govuk-link">HRW2: Manage hedgerows</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Boundaries, Pollinators and wildlife
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> 
-            </dd>
-          </div>-->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Action
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Sustainable Farming Incentive
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open biodiversity boundaries pollinators trees action revenue sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="SFI/HRW3.html" class="govuk-link">HRW3: Maintain or establish hedgerow trees</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Boundaries, Pollinators and wildlife, Trees (non-woodland)
-            </dd>
-          </div>
-          <!--<div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> 
-            </dd>
-          </div>-->
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Funding types:</b> Action
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Grant schemes:</b> Sustainable Farming Incentive
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-      
-        <!--<li data-options="open biodiversity pollinators grassland action revenue capital sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold">
-            <a href="#" class="govuk-link">IGL1: Take grassland field corners or blocks out of management</a>
-          </p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              
-              <dd class="govuk-summary-list__value">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-              </dd>
-              
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Open or closed:</b> Open
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Area of interest:</b> Biodiversity, Pollinators and wildlife
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Land type:</b> Grassland
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Funding types:</b> Action
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Grant schemes:</b> Sustainable Farming Incentive
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Payment types:</b> Revenue
-              </dd>
-            </div>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li> -->
-        
-        <!--<li data-options="open biodiversity pollinators grassland action revenue capital sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold">
-            <a href="#" class="govuk-link">IGL2: Winter bird food on improved grassland</a>
-          </p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              
-              <dd class="govuk-summary-list__value">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-              </dd>
-              
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Open or closed:</b> Open
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Area of interest:</b> Biodiversity, Pollinators and wildlife
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Land type:</b> Grassland
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Funding types:</b> Action
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Grant schemes:</b> Sustainable Farming Incentive
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Payment types:</b> Capital, Revenue
-              </dd>
-            </div>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li> 
-        -->
-        <!--
-        <li data-options="open biodiversity boundaries pollinators  historicEnvironment arableLand grassland action revenue capital sfi" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold">
-            <a href="#" class="govuk-link">IGL3: 4m to 12m grass buffer strip on improved grassland</a>
-          </p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-              
-              <dd class="govuk-summary-list__value">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
-              </dd>
-              
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Open or closed:</b> Open
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Area of interest:</b> Biodiversity, Boundaries, Historic environment, Pollinators and wildlife
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Land type:</b> Arable land, Grassland
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Funding types:</b> Action
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Grant schemes:</b> Sustainable Farming Incentive
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dd class="govuk-summary-list__value">
-                <b>Payment types:</b> Capital, Revenue
-              </dd>
-            </div>
-            <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-        -->
-        <li data-options="open biodiversity arableLand organic moorland option cs revenue" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/OP1.html" class="govuk-link">OP1: Overwintered stubble</a></p>
+        {% for item in data['items'] %}
+        <li data-options="{{ item.dataOptions }}" style="list-style: none;">
+          <p class="govuk-body govuk-!-font-weight-bold"> <a href="{{ item.url }}" class="govuk-link">{{ item.name }}</a></p>
           <dl class="govuk-summary-list govuk-summary-list--no-border">
           <div class="govuk-summary-list__row">
             <!-- 
             <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis nemo nisi impedit ab nam quo aperiam nihil, ullam doloribus amet reprehenderit illum illo deserunt laborum molestiae inventore magni quae maxime?
             </dd>
             -->
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
+              <b>Open or closed:</b> {{ "Open" if item.open else "Closed" }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity
+              <b>Area of interest:</b> {{ item.areaOfInterest }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Arable land, Organic, Moorland and upland
+              <b>Land type:</b> {{ item.landTypes }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Option
+             <b> Funding types:</b> {{ item.fundingTypes }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
+             <b> Grant schemes:</b> {{ item.grantSchemes }}
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
+             <b> Payment types:</b> {{ item.paymentTypes }}
             </dd>
           </div>
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           </dl>
         </li>
-
-        <li data-options="open flood water moorland habitats item cs capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/PA1.html" class="govuk-link">PA1: Implementation plan</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Flood risk, Water
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Moorland and upland, Priority habitats
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open biodiversity water moorland item cs capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/RP4.html" class="govuk-link">RP4: Livestock and machinery hardcore tracks</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Water
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Moorland and upland
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open biodiversity flood soil water moorland item cs capital" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/RP9.html" class="govuk-link">RP9: Earth banks and soil bunds</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Flood risk, Soil, Water
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Moorland and upland
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Item
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Capital
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open biodiversity vegetation moorland option cs revenue" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/SP4.html" class="govuk-link">SP4: Control of invasive plant species supplement </a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity, Vegetation control
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Moorland and upland
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Option
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open biodiversity moorland habitat option cs revenue" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/UP3.html" class="govuk-link">UP3: Management of moorland</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Biodiversity
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Moorland and upland, Priority habitats
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Option
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-
-        <li data-options="open airQuality historicEnvironment moorland woodland option cs revenue" style="list-style: none;">
-          <p class="govuk-body govuk-!-font-weight-bold"> <a href="CS/WD10.html" class="govuk-link">WD10: Management of upland wood pasture and parkland</a></p>
-          <dl class="govuk-summary-list govuk-summary-list--no-border" >
-          <div class="govuk-summary-list__row">
-            <!-- 
-            <dd class="govuk-summary-list__value">
-              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Earum quia doloribus excepturi voluptate incidunt quas mollitia distinctio in accusamus soluta, id maxime ut cupiditate animi dolorum. Temporibus magni ipsum odit?
-            </dd>
-            -->
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Open or closed:</b> Open
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Area of interest:</b> Air quality, Historic environment
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <b>Land type:</b> Moorland and upland, Woodland
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Funding types:</b> Option
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-            <b> Grant schemes:</b> Countryside Stewardship  
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-             <b> Payment types:</b> Revenue
-            </dd>
-          </div>
-          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-          </dl>
-        </li>
-        
+        {% endfor %}
+      </ul>        
    
     </div>
   </main>
 </div>
 </body>
-
-
 {% endblock %}
