@@ -115,51 +115,51 @@ module.exports = {
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'closed arableLand airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Cast-in-situ-concrete-reception-pit.html'
     },
     {
       name: 'Centrifugal chopper pump',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Centrifugal-chopper-pump.html'
     },
     {
       name: 'Concrete bunker to accommodate short term storage of stackable material from the slurry separator',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Concrete-bunker-to-accommodate-short-term-storage-of-stackable-material-from-the-slurry-separator.html'
     },
     {
       name: 'Concrete pad for collection of stackable material from the slurry separator by trailer',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Concrete-pad-for-collection-of-stackable-material-from-the-slurry-separator-by-trailer.html'
     },
     {
       name: 'Earth bank lagoon with synthetic liner',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Earth-bank-lagoon-with-synthetic-liner.html'
     },
     {
@@ -175,24 +175,24 @@ module.exports = {
     },
     {
       name: 'Earth bank lagoon without synthetic liner',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Earth-bank-lagoon-without-synthetic-liner.html'
     },
     {
       name: 'Electric powered slurry transfer pump',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Electric-powered-slurry-transfer-pump.html'
     },
     {
@@ -307,24 +307,24 @@ module.exports = {
     },
     {
       name: 'Fixed flexible cover',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Fixed-flexible-cover.html'
     },
     {
       name: 'Floating flexible cover',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality slurry sig item capital',
+      dataOptions: 'closed airQuality slurry sig item capital',
       url: 'SIG/Iteration2/Floating-flexible-cover.html'
     },
     {
