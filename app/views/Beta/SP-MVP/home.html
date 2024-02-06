@@ -67,9 +67,7 @@ beforeContent %}
     margin-left: 5px;
     cursor: pointer;  
     }
-    }
 
-  }
 
 </style>
 
@@ -169,9 +167,9 @@ beforeContent %}
         (!checkboxWetland.checked || options.includes('wetland')) &&
         (!checkboxWoodland.checked || options.includes('woodland')) &&
         //(!checkboxGrant.checked || options.includes('grant')) &&
-        (!checkboxOption.checked || options.includes('option')) &&
-        (!checkboxItem.checked || options.includes('item')) &&
-        (!checkboxAction.checked || options.includes('action')) &&
+        //(!checkboxOption.checked || options.includes('option')) &&
+        //(!checkboxItem.checked || options.includes('item')) &&
+        //(!checkboxAction.checked || options.includes('action')) &&
         (!checkboxCs.checked || options.includes('cs')) &&
         //(!checkboxCo.checked || options.includes('combinedOffer')) &&
         (!checkboxFetf.checked || options.includes('fetf')) &&
@@ -228,9 +226,9 @@ beforeContent %}
   checkboxWetland.checked ? createPill('wetland') : null;
   checkboxWoodland.checked ? createPill('woodland') : null;
   //checkboxGrant.checked ? createPill('grant') : null;
-  checkboxOption.checked ? createPill('option') : null;
-  checkboxItem.checked ? createPill('item') : null;
-  checkboxAction.checked ? createPill('action') : null;
+  // checkboxOption.checked ? createPill('option') : null;
+  //checkboxItem.checked ? createPill('item') : null;
+  //checkboxAction.checked ? createPill('action') : null;
   checkboxCs.checked ? createPill('cs') : null;
   //checkboxCo.checked ? createPill('combinedOffer') : null;
   checkboxFetf.checked ? createPill('fetf') : null;
@@ -324,12 +322,12 @@ beforeContent %}
       document.getElementById("woodland").checked = false;
     // } else if (element.parentNode.id === 'pill-grant') {
     //   document.getElementById("grant").checked = false;
-    } else if (element.parentNode.id === 'pill-option') {
-      document.getElementById("option").checked = false;
-    } else if (element.parentNode.id === 'pill-item') {
-      document.getElementById("item").checked = false;
-    } else if (element.parentNode.id === 'pill-action') {
-      document.getElementById("action").checked = false;
+   // } else if (element.parentNode.id === 'pill-option') {
+   //  document.getElementById("option").checked = false;
+   // } else if (element.parentNode.id === 'pill-item') {
+   //   document.getElementById("item").checked = false;
+   // } else if (element.parentNode.id === 'pill-action') {
+   //   document.getElementById("action").checked = false;
     } else if (element.parentNode.id === 'pill-cs') {
       document.getElementById("cs").checked = false;
     // } else if (element.parentNode.id === 'pill-combinedOffer') {
@@ -561,7 +559,7 @@ beforeContent %}
                 </details>
                 <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-               <!--Land type details tag-->
+               <!--Land type details tags-->
                <details
                class="govuk-details"
                style="text-align: left"
@@ -640,7 +638,7 @@ beforeContent %}
               </details>
               <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
-           <!--Funding types details tag-->
+           <!--Funding types details tag
            <details
            class="govuk-details"
            style="text-align: left"
@@ -673,7 +671,7 @@ beforeContent %}
              </div>
            </div>
           </details>
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">-->
 
              <!--Grant schemes details tag-->
              <details
@@ -800,11 +798,11 @@ beforeContent %}
               <b>Land type:</b> {{ item.landTypes }}
             </dd>
           </div>
-          <div class="govuk-summary-list__row">
+          <!--<div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
              <b> Funding types:</b> {{ item.fundingTypes }}
             </dd>
-          </div>
+          </div>-->
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
              <b> Grant schemes:</b> {{ item.grantSchemes }}
