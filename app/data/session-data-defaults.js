@@ -76,13 +76,13 @@ module.exports = {
     },
     {
       name: 'Above ground steel slurry store',
-      open: true,
+      open: false,
       areaOfInterest: 'Air quality, Slurry management',
       landTypes: undefined,
       fundingTypes: 'Item',
       grantSchemes: 'Slurry Infrastructure grant',
       paymentTypes: 'Capital',
-      dataOptions: 'open airQuality arableLand slurry sig item capital',
+      dataOptions: 'closed airQuality arableLand slurry sig item capital',
       url: 'SIG/Iteration2/Above-ground-steel-slurry-store.html'
     },
     {
