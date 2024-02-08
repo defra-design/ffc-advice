@@ -186,6 +186,12 @@ beforeContent %}
       } else {
         item.style.display = 'none';
       }
+    } 
+    var resultsContainer =  document.getElementById ("resultsContainer")
+    if (resultsCount == 0) {
+      resultsContainer.removeAttribute ("hidden")
+    } else{
+      resultsContainer.setAttribute ("hidden","")
     }
 
     // Clear existing pills
@@ -356,6 +362,17 @@ beforeContent %}
     icon.classList.toggle('fa-chevron-down');
     icon.classList.toggle('fa-chevron-up');
   }
+
+  //button trigger on enter
+  document.addEventListener("DOMContentLoaded", (event) => {  
+        var input = document.getElementById("searchInput");
+     input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          filterResults ()
+        }
+      });
+});
 </script>
 
 <body onload="filterResults()">
@@ -374,17 +391,21 @@ beforeContent %}
   <div class="govuk-grid-column-full-width">
 
     <h1 class="govuk-heading-xl" style="margin-top: 20px;">
-      Farming grant options finder
+      Search for farming grants
     </h1>
     <p class="govuk-body"> From: <b><a href="/path/of/page">Department for Environment, Food & Rural Affairs</a> </b> and <a href="/path/of/page" class="govuk-link"> <b>Rural Payments Agency</a> </b></p>
 
-    <p class="govuk-body">Find out about grant options, items and actions in the Farming and Countryside Programme. This is for land or farms in England.</p>
+    <p class="govuk-body">Find out about grant options, items and actions in the Farming and Countryside Programme. This is for land or farms in England. 
+      We will add more grants when they open.
+    </p>
     
     <div class="govuk-inset-text">
       This tool does not confirm your eligibility.
       To get a grant for an option, item or action, you must meet the criteria of the grant scheme it belongs to.
     </div>
-    <p class="govuk-body">For information on grant schemes and funding see <a href="https://www.gov.uk/guidance/funding-for-farmers" class="govuk-link">Funding for farmers, growers and land managers. </p></a>
+    <p class="govuk-body">
+      You can search by keyboard or the name of a grant. Use the filters to narrow your search.
+   </p>
     
 
   </div>
@@ -397,8 +418,6 @@ beforeContent %}
       <div class="govuk-grid-column-one-third">
         <div class="govuk-form-group">
           <h2 class="govuk-heading-m">Search</h2>
-          <p class="govuk-!-font-size-16 govuk-hint">Enter a keyword or the name of a grant.
-          Use the filters to narrow your search.</p>
           <div class="search-container">
             <input type="text" name="search" class="govuk-input govuk-!-width-full" id="searchInput">
             <div class="search-button" onclick="filterResults()"><i class="fas fa-search"></i></div>
@@ -424,140 +443,19 @@ beforeContent %}
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="open" name="open" type="checkbox" value="open" onclick="filterResults()">
                  <label class="govuk-label govuk-checkboxes__label" for="open">
-                   Open
+                   Open (available)
                  </label>
                </div>
                <div class="govuk-checkboxes__item">
                  <input class="govuk-checkboxes__input" id="closed" name="closed" type="checkbox" value="closed" onclick="filterResults()">
                  <label class="govuk-label govuk-checkboxes__label" for="closed">
-                   Closed
+                   Closed (not available)
                  </label>
                </div>
              </div>
            </div>
           </details>
           <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-              <!--Area of interest details tag-->
-                <details 
-                  class="govuk-details"
-                  style="text-align: left"
-                  data-module="govuk-details">
-                  <summary class="govuk-details__summary">
-                    <span class="govuk-details__summary-text">
-                      Area of interest
-                    </span>
-                  </summary>
-                  <div class="vertical">
-                  <div class="govuk-form-group">
-                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="access-engagement" name="access-engagement" type="checkbox" value="access-engagement" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="access-engagement">
-                          Access and engagement
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="air-qualilty" name="air-qualilty" type="checkbox" value="air-qualilty" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="air-qualilty">
-                          Air quality
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="biodiversity" name="biodiversity" type="checkbox" value="biodiversity" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="biodiversity">
-                          Biodiversity
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="boundaries" name="boundaries" type="checkbox" value="boundaries" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="boundaries">
-                          Boundaries
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="crops" name="crops" type="checkbox" value="crops" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="crops">
-                          Crops
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="flood" name="flood" type="checkbox" value="flood" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="flood">
-                          Flood risk 
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="forestry" name="forestry" type="checkbox" value="forestry" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="forestry">
-                          Forestry 
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="historic-environment" name="historic-environment" type="checkbox" value="historic-environment" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="historic-environment">
-                          Historic environment
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="livestock" name="livestock" type="checkbox" value="livestock" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="livestock">
-                          Livestock management
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="peat" name="peat" type="checkbox" value="peat" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="peat">
-                          Peat
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="pollinators" name="pollinators" type="checkbox" value="pollinators" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="pollinators">
-                          Pollinators and wildlife
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="precision" name="precision" type="checkbox" value="precision" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="precision">
-                          Precision farming
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="soil" name="soil" type="checkbox" value="soil" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="soil">
-                          Soil
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="slurry" name="slurry" type="checkbox" value="slurry" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="slurry">
-                          Slurry management
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="trees" name="trees" type="checkbox" value="trees" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="trees">
-                          Trees (non-woodland)  
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="vegetation" name="vegetation" type="checkbox" value="vegetation" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="vegetation">
-                          Vegetation control
-                        </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="water">
-                          Water
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-                  </div>
-                </details>
-                <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
                <!--Land type details tags-->
                <details
@@ -637,6 +535,127 @@ beforeContent %}
                </div>
               </details>
               <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+                            <!--Area of interest details tag-->
+                            <details 
+                            class="govuk-details"
+                            style="text-align: left"
+                            data-module="govuk-details">
+                            <summary class="govuk-details__summary">
+                              <span class="govuk-details__summary-text">
+                                Area of interest
+                              </span>
+                            </summary>
+                            <div class="vertical">
+                            <div class="govuk-form-group">
+                              <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="access-engagement" name="access-engagement" type="checkbox" value="access-engagement" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="access-engagement">
+                                    Access and engagement
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="air-qualilty" name="air-qualilty" type="checkbox" value="air-qualilty" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="air-qualilty">
+                                    Air quality
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="biodiversity" name="biodiversity" type="checkbox" value="biodiversity" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="biodiversity">
+                                    Biodiversity
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="boundaries" name="boundaries" type="checkbox" value="boundaries" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="boundaries">
+                                    Boundaries
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="crops" name="crops" type="checkbox" value="crops" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="crops">
+                                    Crops
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="flood" name="flood" type="checkbox" value="flood" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="flood">
+                                    Flood risk 
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="forestry" name="forestry" type="checkbox" value="forestry" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="forestry">
+                                    Forestry 
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="historic-environment" name="historic-environment" type="checkbox" value="historic-environment" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="historic-environment">
+                                    Historic environment
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="livestock" name="livestock" type="checkbox" value="livestock" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="livestock">
+                                    Livestock management
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="peat" name="peat" type="checkbox" value="peat" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="peat">
+                                    Peat
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="pollinators" name="pollinators" type="checkbox" value="pollinators" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="pollinators">
+                                    Pollinators and wildlife
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="precision" name="precision" type="checkbox" value="precision" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="precision">
+                                    Precision farming
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="soil" name="soil" type="checkbox" value="soil" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="soil">
+                                    Soil
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="slurry" name="slurry" type="checkbox" value="slurry" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="slurry">
+                                    Slurry management
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="trees" name="trees" type="checkbox" value="trees" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="trees">
+                                    Trees (non-woodland)  
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="vegetation" name="vegetation" type="checkbox" value="vegetation" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="vegetation">
+                                    Vegetation control
+                                  </label>
+                                </div>
+                                <div class="govuk-checkboxes__item">
+                                  <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="water">
+                                    Water
+                                  </label>
+                                </div>
+                              </div>
+                            </div>
+                            </div>
+                          </details>
+                          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
            <!--Funding types details tag
            <details
@@ -763,15 +782,26 @@ beforeContent %}
         <div class="item govuk-body-l govuk-!-font-weight-bold"><span id="resultsCount"></span> results</div>
         <div class="item" style="padding-right: 20px;"><a class="govuk-link" href="#"><i class="fa-regular fa-envelope" style="padding-right: 5px;"></i>Get emails</a></div>
         <div class="item"><a class="govuk-link" href="#"><i class="fa-solid fa-wifi" style="rotate: 45deg; padding-right: 5px;"></i>Subscribe to feed</a></div>
-        <!-- Add more items as needed -->
+        
       </div>
       
       <!--Pill container-->
       <div class="pill-container" id="pillContainer"></div>
 
       <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+      <div hidden id="resultsContainer">
+        <p class="govuk-body>There are no matching results.</p>
+        <p class="govuk-body>Improve your search results by:</p>
+        <ul>
+          <li>remove filters</li>
+          <li>double-check spelling</li>
+          <li>use fewer keywords</li>
+          <li>search for something less specific</li>
+        </ul>
+      </div>
 
       <ul class="govuk-list"  id="results">
+
         {% for item in data['items'] %}
         <li data-options="{{ item.dataOptions }}" style="list-style: none;">
           <p class="govuk-body govuk-!-font-weight-bold"> <a href="{{ item.url }}" class="govuk-link">{{ item.name }}</a></p>
@@ -788,11 +818,13 @@ beforeContent %}
               <b>Open or closed:</b> {{ "Open" if item.open else "Closed" }}
             </dd>
           </div>
+          {% if item.landTypes %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
               <b>Land type:</b> {{ item.landTypes }}
             </dd>
           </div>
+          {% endif %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
               <b>Area of interest:</b> {{ item.areaOfInterest }}
@@ -816,10 +848,12 @@ beforeContent %}
           <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
           </dl>
         </li>
+        
         {% endfor %}
       </ul>        
-   
     </div>
+
+
   </main>
 </div>
 </body>

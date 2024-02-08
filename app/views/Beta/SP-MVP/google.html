@@ -3,8 +3,19 @@
     {% endblock %} 
     
     {% block content %}
+    <script>
+      document.addEventListener("DOMContentLoaded", (event) => {  
+        var input = document.getElementById("google-search");
+     input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+          event.preventDefault();
+          document.getElementById("link").click();
+        }
+      });
+});
 
-
+    </script>
+    
   <style>
     body {
       background: url("/public/images/Google.png") no-repeat center center fixed;
@@ -27,6 +38,7 @@
   <div class="govuk-width-container">
     <main class="govuk-main-wrapper govuk-main-wrapper--l">
       <div class="govuk-grid-row">
+        <form>
         <div class="govuk-grid-column-two-thirds" style="background-image: images/Google: .png;">
           <div class="govuk-form-group">
             <hr class="govuk-section-break govuk-section-break--l">
@@ -35,11 +47,15 @@
             <input class="govuk-input" id="google-search" name="googleSearch" type="text" style="margin-left: 30%;">
           </div>
         </div>
-        <a href="home.html">
-        <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-left: 20%;">
+        
+         
+       
+        <a href="home.html" id="link">
+        <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button" style="margin-left: 20%;" id="google-button">
           Google Search
         </button>
        </a>
+      </form>
       </div>
     </main>
   </div>
