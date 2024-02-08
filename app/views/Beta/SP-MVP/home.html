@@ -821,7 +821,14 @@ beforeContent %}
           {% if item.landTypes %}
           <div class="govuk-summary-list__row">
             <dd class="govuk-summary-list__value">
-              <b>Land type:</b> {{ item.landTypes }}
+              <b>Land type:</b> 
+              {% if item.landTypes.length == 1 %}
+                {{ item.landTypes }}
+              {% elif item.landTypes.length == 2 %}
+                {{ item.landTypes[0] }} and 1 other
+              {% elif item.landTypes.length > 2 %}
+                {{ item.landTypes[0] }} and {{ item.landTypes.length - 1 }} others
+              {% endif %}
             </dd>
           </div>
           {% endif %}
