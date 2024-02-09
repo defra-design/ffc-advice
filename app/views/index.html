@@ -74,13 +74,67 @@ Previous phases
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
-    <h2 class="govuk-heading-l">Alpha Sprints</h2>
+    <h2 class="govuk-heading-l">Beta Sprints</h2>
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default"><div class="govuk-accordion__controls">
+      <button type="button" class="govuk-accordion__open-all" aria-expanded="false"><span class="govuk-visually-hidden"></span></button>
+    </div>
 
-    <!--
-    {{ govukInsetText({
-      text: "No previous phases."
-    }) }}
-    -->
+                <!-- Beta Usability testing round 1 -->
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                    <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+                      Iterations based on Usability testing session – Round 1
+                      </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-full">
+                        <div class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+            
+               <!-- CONTENT -->
+               <h3 class="govuk-heading-s">Categories and search</h3>
+               <ul class="govuk-list govuk-list--bullet">
+                  <li>Swapped order of Land types and Area of interest</li>
+                  <li>Removed Funding types from categories but kept in facets for further testing</li>
+                  <li>Open and Closed – changed to Open (available) and Closed (not available)</li>
+                  <li>Removed content from above Search input box and added new content to body</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">FETF and SIG</h3>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>Moved to closed</li>
+                  <li>H1 revised to include [CLOSED]</li>
+                  <li>Facets changed to closed</li>
+                  <li>Inset text changed to include this scheme is closed and link to funding for farmers added</li>
+                  <li>Inset text added to display theme (FETF only)</li>
+                  <li>Removed apply content from Further information section</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">SFI and CS</h3>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>Contents – Added Further information and how to apply and consequent section</li>
+                  <li>Inset test revised to display scheme – SFI or CS</li>
+                  <li>Further information and how to apply section – content revised</li>
+                  <li>Abbreviation markup, added to tables (SFI)</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">Body text</h3>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>Added more context to say number of grants will increase</li>
+                  <li>Added content to encourage users to use the search input box and categories to filter</li>
+                  <li>Removed link to Funding for farmers</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">Other</h3>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>Error handling when there are 0 results found (matches with search input and checkbox selection)</li>
+                  <li>Submit on Keypress – Enter on Google page and Finder search input box</li>
+                  <li>H1 changed to Search for farming grants from Farming grants options finder</li>
+              </ul>
+              <h2 class="govuk-heading-l">Alpha Sprints</h2>
+
+
 
 
     <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default"><div class="govuk-accordion__controls">
