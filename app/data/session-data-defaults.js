@@ -28,7 +28,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Revenue',
       dataOptions: 'open arableLand biodiversity pollinators option water revenue cs',
-      url: 'CS/AB1.html'
+      url: 'CS/Iteration2/AB1.html'
     },
     {
       name: 'AHL1: Pollen and nectar flower mix',
@@ -39,7 +39,7 @@ module.exports = {
       grantSchemes: 'Sustainable Farming Incentive',
       paymentTypes: 'Revenue',
       dataOptions: 'open arableLand biodiversity crops pollinators action soil revenue sfi',
-      url: 'SFI/AHL1.html'
+      url: 'SFI/Iteration2/AHL1.html'
     },
     {
       name: 'AHL2: Winter bird food on arable and horticultural land',
@@ -50,7 +50,7 @@ module.exports = {
       grantSchemes: 'Sustainable Farming Incentive',
       paymentTypes: 'Revenue',
       dataOptions: 'open arableLand biodiversity crops pollinators action soil revenue sfi',
-      url: 'SFI/AHL2.html'
+      url: 'SFI/Iteration2/AHL2.html'
     },
     {
       name: 'AHL3: Grassy field corners and blocks',
@@ -61,7 +61,7 @@ module.exports = {
       grantSchemes: 'Sustainable Farming Incentive',
       paymentTypes: 'Revenue',
       dataOptions: 'open arableLand grassland crops pollinators action soil revenue sfi',
-      url: 'SFI/AHL3.html'
+      url: 'SFI/Iteration2/AHL3.html'
     },
     {
       name: 'AHL4: 4m to 12m grass buffer strip on arable and horticultural land',
@@ -72,7 +72,7 @@ module.exports = {
       grantSchemes: 'Sustainable Farming Incentive',
       paymentTypes: 'Revenue',
       dataOptions: 'open arableLand boundaries crops pollinators action soil revenue  sfi',
-      url: 'SFI/AHL4.html'
+      url: 'SFI/Iteration2/AHL4.html'
     },
     {
       name: 'Above ground steel slurry store',
@@ -94,7 +94,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Revenue',
       dataOptions: 'open trees grassLand moorland option cs revenue',
-      url: 'CS/BE2.html'
+      url: 'CS/Iteration2/BE2.html'
     },
     {
       name: 'BE3: Management of hedgerows',
@@ -105,7 +105,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Revenue',
       dataOptions: 'open biodiversity boundaries pollinators moorland habitat option cs revenue',
-      url: 'CS/BE3.html'
+      url: 'CS/Iteration2/BE3.html'
     },
     {
       name: 'Cast in situ concrete reception pit',
@@ -171,7 +171,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Revenue',
       dataOptions: 'open accessEngagement moorland woodland option cs revenue',
-      url: 'CS/ED1.html'
+      url: 'CS/Iteration2/ED1.html'
     },
     {
       name: 'Earth bank lagoon without synthetic liner',
@@ -336,7 +336,7 @@ module.exports = {
       grantSchemes: 'Sustainable Farming Incentive',
       paymentTypes: 'Revenue',
       dataOptions: 'open biodiversity boundaries pollinators action revenue sfi',
-      url: 'SFI/HRW1.html'
+      url: 'SFI/Iteration2/HRW1.html'
     },
     {
       name: 'HRW2: Manage hedgerows',
@@ -347,7 +347,7 @@ module.exports = {
       grantSchemes: 'Sustainable Farming Incentive',
       paymentTypes: 'Revenue',
       dataOptions: 'open biodiversity boundaries pollinators action revenue sfi',
-      url: 'SFI/HRW2.html'
+      url: 'SFI/Iteration2/HRW2.html'
     },
     {
       name: 'HRW3: Maintain or establish hedgerow trees',
@@ -358,7 +358,7 @@ module.exports = {
       grantSchemes: 'Sustainable Farming Incentive',
       paymentTypes: 'Revenue',
       dataOptions: 'open biodiversity boundaries pollinators trees action revenue sfi',
-      url: 'SFI/HRW3.html'
+      url: 'SFI/Iteration2/HRW3.html'
     },
     {
       name: 'OP1: Overwintered stubble',
@@ -369,7 +369,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Revenue',
       dataOptions: 'open biodiversity arableLand organic moorland option cs revenue',
-      url: 'CS/OP1.html'
+      url: 'CS/Iteration2/OP1.html'
     },
     {
       name: 'PA1: Implementation plan',
@@ -380,7 +380,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Capital',
       dataOptions: 'open flood water moorland habitats item cs capital',
-      url: 'CS/PA1.html'
+      url: 'CS/Iteration2/PA1.html'
     },
     {
       name: 'RP4: Livestock and machinery hardcore tracks',
@@ -391,7 +391,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Capital',
       dataOptions: 'open biodiversity water moorland item cs capital',
-      url: 'CS/RP4.html'
+      url: 'CS/Iteration2/RP4.html'
     },
     {
       name: 'RP9: Earth banks and soil bunds',
@@ -402,7 +402,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Capital',
       dataOptions: 'open biodiversity flood soil water moorland item cs capital',
-      url: 'CS/RP9.html'
+      url: 'CS/Iteration2/RP9.html'
     },
     {
       name: 'SP4: Control of invasive plant species supplement ',
@@ -413,7 +413,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Revenue',
       dataOptions: 'open biodiversity vegetation moorland option cs revenue',
-      url: 'CS/SP4.html'
+      url: 'CS/Iteration2/SP4.html'
     },
     {
       name: 'UP3: Management of moorland',
@@ -424,7 +424,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Revenue',
       dataOptions: 'open biodiversity moorland habitat option cs revenue',
-      url: 'CS/UP3.html'
+      url: 'CS/Iteration2/UP3.html'
     },
     {
       name: 'WD10: Management of upland wood pasture and parkland',
@@ -435,7 +435,7 @@ module.exports = {
       grantSchemes: 'Countryside Stewardship',
       paymentTypes: 'Revenue',
       dataOptions: 'open airQuality historicEnvironment moorland woodland option cs revenue',
-      url: 'CS/WD10.html'
+      url: 'CS/Iteration2/WD10.html'
     }
   ]
 };
