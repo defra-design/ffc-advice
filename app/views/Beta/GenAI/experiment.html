@@ -1,0 +1,103 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Check your answers
+template – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block
+beforeContent %} 
+{% endblock %} 
+
+{% block content %}
+<style>
+  /* Add your CSS styles here */
+  /* Example styles for chat bubbles */
+  .chat-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #b1b4b6;
+    border-radius: 10px;
+    background-color: 	#ffffff;
+    
+  }
+  .chat-message {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  .user-message {
+    background-color: #00a33b;
+    text-align: right;
+    font-family: GDS, transport font;
+    color: #ffffff;
+    font-size: 19px;
+    govuk-body govuk-!-font-size-19
+
+  }
+  .response {
+    background-color: #ffffff;
+    text-align: left;
+  }
+</style>
+
+<script>
+  // JavaScript for the chatbot
+  function sendMessage() {
+    var userInput = document.getElementById('user-input').value;
+    var chatLog = document.getElementById('chat-log');
+    
+    // Display user message
+    var userMessage = document.createElement('div');
+    userMessage.className = 'chat-message user-message';
+    userMessage.textContent = userInput;
+    chatLog.appendChild(userMessage);
+    
+    // Simulate response
+    var botResponse = document.createElement('div');
+    botResponse.className = 'chat-message response';
+    botResponse.textContent = 'Bot: Thanks for your message!';
+    chatLog.appendChild(botResponse);
+    
+    // Clear input field
+    document.getElementById('user-input').value = '';
+  }
+</script>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-xl">Farming funding assistant</h1>
+    <div class="govuk-inset-text">
+      This tool is designed to assist you in signposting customer inquiries. <br>
+      Please note that it is not intended to provide advice or confirm eligibility.
+    </div>
+    <div class="chat-container">
+      <div id="chat-log"></div>
+    </div>
+    <!--User input-->
+    <div class="govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
+      <div class="govuk-form-group">
+        <h1 class="govuk-label-wrapper">
+          <label class="govuk-label govuk-label--l" for="with-hint">
+            How can I help you?
+          </label>
+        </h1>
+        <div id="with-hint-hint" class="govuk-hint">
+          Prompt writing guidance text
+        </div>
+        <textarea class="govuk-textarea govuk-js-character-count" id="user-input" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
+      </div>
+      <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
+        You can enter up to 200 characters
+      </div>
+    </div>
+    <button onclick="sendMessage()" type="submit" class="govuk-button" data-module="govuk-button">
+      Send message
+    </button>
+  </div>
+</div>
+
+
+
+
+
+
+
+  {% endblock %}
+
+
+
