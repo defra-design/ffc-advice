@@ -79,7 +79,7 @@ beforeContent %}
     var checkboxOpen = document.getElementById('open');
     var checkboxClosed = document.getElementById('closed');
     var checkboxAccessEngagement = document.getElementById('access-engagement');
-    var checkboxAirQuality = document.getElementById('air-qualilty');
+    var checkboxAirQuality = document.getElementById('air-quality');
     var checkboxBiodiversity = document.getElementById('biodiversity');
     var checkboxBoundaries = document.getElementById('boundaries');
     var checkboxCrops = document.getElementById('crops');
@@ -156,7 +156,7 @@ beforeContent %}
         (!checkboxTrees.checked || options.includes('trees')) &&
         (!checkboxVegetation.checked || options.includes('vegetation')) &&
         (!checkboxWater.checked || options.includes('water')) &&
-        (!checkboxArableLand.checked || options.includes('arableLand')) &&
+        (!checkboxArableLand.checked || options.includes('arable')) &&
         (!checkboxCoast.checked || options.includes('coast')) &&
         (!checkboxGrassland.checked || options.includes('grassLand')) &&
         (!checkboxLowland.checked || options.includes('lowland')) &&
@@ -221,7 +221,7 @@ beforeContent %}
   checkboxTrees.checked ? createPill('trees') : null;
   checkboxVegetation.checked ? createPill('vegetation') : null;
   checkboxWater.checked ? createPill('water') : null;
-  checkboxArableLand.checked ? createPill('arableLand') : null;
+  checkboxArableLand.checked ? createPill('arable') : null;
   checkboxCoast.checked ? createPill('coast') : null;
   checkboxGrassland.checked ? createPill('grassLand') : null;
   checkboxLowland.checked ? createPill('lowland') : null;
@@ -266,7 +266,9 @@ beforeContent %}
     pillContainer.innerHTML = '';
   }
 
+  
   function removePill(element) {
+    console.log (element.parentNode.id)
     var pillContainer = document.getElementById('pillContainer');
     if (element.parentNode.id === 'pill-' + document.getElementById('searchInput').value.toLowerCase()) {
       document.getElementById('searchInput').value = '';
@@ -275,9 +277,9 @@ beforeContent %}
     } else if (element.parentNode.id === 'pill-closed') {
       document.getElementById("closed").checked = false;
     } else if (element.parentNode.id === 'pill-accessEngagement') {
-      document.getElementById("accessEngagement").checked = false;
+      document.getElementById("access-engagement").checked = false;
     } else if (element.parentNode.id === 'pill-airQuality') {
-      document.getElementById("airQuality").checked = false;
+      document.getElementById("air-quality").checked = false;
     } else if (element.parentNode.id === 'pill-biodiversity') {
       document.getElementById("biodiversity").checked = false;
     } else if (element.parentNode.id === 'pill-boundaries') {
@@ -289,7 +291,7 @@ beforeContent %}
     } else if (element.parentNode.id === 'pill-forestry') {
       document.getElementById("forestry").checked = false;
     } else if (element.parentNode.id === 'pill-historicEnvironment') {
-      document.getElementById("historicEnvironment").checked = false;
+      document.getElementById("historic-environment").checked = false;
     } else if (element.parentNode.id === 'pill-livestock') {
       document.getElementById("livestock").checked = false;
     } else if (element.parentNode.id === 'pill-peat') {
@@ -308,10 +310,12 @@ beforeContent %}
       document.getElementById("vegetation").checked = false;
     } else if (element.parentNode.id === 'pill-water') {
       document.getElementById("water").checked = false;
-    } else if (element.parentNode.id === 'pill-arableLand') {
-      document.getElementById("arableLand").checked = false;
+    } else if (element.parentNode.id === 'pill-arable') {
+      document.getElementById("arable").checked = false;
+    } else if (element.parentNode.id === 'pill-coast') {
+      document.getElementById("coast").checked = false;
     } else if (element.parentNode.id === 'pill-grassLand') {
-      document.getElementById("grassLand").checked = false;
+      document.getElementById("grassland").checked = false;
     } else if (element.parentNode.id === 'pill-lowland') {
       document.getElementById("lowland").checked = false;
     } else if (element.parentNode.id === 'pill-moorland') {
@@ -556,8 +560,8 @@ beforeContent %}
                                   </label>
                                 </div>
                                 <div class="govuk-checkboxes__item">
-                                  <input class="govuk-checkboxes__input" id="air-qualilty" name="air-qualilty" type="checkbox" value="air-qualilty" onclick="filterResults()">
-                                  <label class="govuk-label govuk-checkboxes__label" for="air-qualilty">
+                                  <input class="govuk-checkboxes__input" id="air-quality" name="air-quality" type="checkbox" value="air-quality" onclick="filterResults()">
+                                  <label class="govuk-label govuk-checkboxes__label" for="air-quality">
                                     Air quality
                                   </label>
                                 </div>

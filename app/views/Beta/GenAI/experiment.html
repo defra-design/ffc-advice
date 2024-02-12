@@ -20,14 +20,15 @@ beforeContent %}
     margin-bottom: 10px;
     padding: 10px;
     border-radius: 5px;
+    font-size: 19px;
   }
   .user-message {
-    background-color: #00a33b;
+    background-color: #ffffff;
+    border: 1px solid #00a33b;
     text-align: right;
-    font-family: GDS, transport font;
-    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    color: #000000;
     font-size: 19px;
-    govuk-body govuk-!-font-size-19
 
   }
   .response {
@@ -48,16 +49,40 @@ beforeContent %}
     userMessage.textContent = userInput;
     chatLog.appendChild(userMessage);
     
-    // Simulate response
-    var botResponse = document.createElement('div');
-    botResponse.className = 'chat-message response';
-    botResponse.textContent = 'Bot: Thanks for your message!';
-    chatLog.appendChild(botResponse);
+    // Generate bot response based on user input
+    var botResponse = generateBotResponse(userInput);
+    var botMessage = document.createElement('div');
+    botMessage.className = 'chat-message bot-message';
+    botMessage.textContent = 'Bot: ' + botResponse;
+    chatLog.appendChild(botMessage);
     
     // Clear input field
     document.getElementById('user-input').value = '';
   }
+
+  function generateBotResponse(userInput) {
+    // Example logic for generating bot response based on user input
+    var responses = {
+      'hello': 'Hi there! How can I help you today?',
+      'how are you': 'I am just a bot, but thanks for asking!',
+      'bye': 'Goodbye! Have a great day!'
+    };
+
+    // Default response if user input does not match any known patterns
+    var defaultResponse = "I'm sorry, I didn't understand that.";
+
+    // Check if user input matches any known patterns
+    for (var key in responses) {
+      if (userInput.toLowerCase().includes(key)) {
+        return responses[key];
+      }
+    }
+
+    // Return default response if no matching pattern is found
+    return defaultResponse;
+  }
 </script>
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-xl">Farming funding assistant</h1>
