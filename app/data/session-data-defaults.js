@@ -165,7 +165,7 @@ module.exports = {
     {
       name: 'ED1: Educational access',
       open: true,
-      areaOfInterest: 'Access and management',
+      areaOfInterest: 'Access and Engagement',
       landTypes: 'Moorland and upland, Woodland',
       fundingTypes: 'Option',
       grantSchemes: 'Countryside Stewardship',
