@@ -1,18 +1,64 @@
 module.exports = {
   filters: [
     {
-      landTypes: [
+      name: 'Open or closed',
+      filterName: 'open_closed',
+      filterType: 'OR',
+      options: [
+        {
+          name: 'Open (available)',
+          id: 'open'
+        },
+        {
+          name: 'Closed (not available)',
+          id: 'closed'
+        }
+      ]
+    },
+    {
+      name: 'Land type',
+      filterName: 'land_type',
+      filterType: 'OR',
+      options: [
         {
           name: 'Arable land',
-          id: 'arableLand',
+          id: 'arableLand'
         },
         {
           name: 'Coast',
-          id: 'coast',
+          id: 'coast'
         },
         {
           name: 'Grassland',
           id: 'grassLand'
+        },
+        {
+          name: 'Lowland heath',
+          id: 'lowlandHeath'
+        },
+        {
+          name: 'Moorland and upland',
+          id: 'moorlandAndUpland'
+        },
+        {
+          name: 'Organic land',
+          id: 'organicLand'
+        },
+        {
+          name: 'Priority habitats',
+          id: 'priorityHabitats'
+        },
+        {
+          name: 'Waterbodies',
+          id: 'waterbodies'
+        },
+        {
+          name: 'Wetland',
+          id: 'wetland'
+        },
+        {
+          name: 'Woodland',
+          id: 'woodland'
         }
       ]
     }
@@ -439,4 +485,3 @@ module.exports = {
     }
   ]
 };
-

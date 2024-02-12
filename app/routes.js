@@ -6,6 +6,8 @@
 const govukPrototypeKit = require("govuk-prototype-kit");
 const router = govukPrototypeKit.requests.setupRouter();
 
+const sessionData = require("./data/session-data-defaults");
+
 
 // Add your routes here
 
@@ -43,5 +45,10 @@ router.post('/Alpha/Version_5/Filter/filterfirst1', function (request, response)
     response.redirect("/Beta/SP-plus/Filter/filter3");
   }
 });
+
+router.get("/Beta/SP-MVP/home/data", function (req, res) {
+  const data = sessionData.items;
+  res.send(data);
+})
  
   
