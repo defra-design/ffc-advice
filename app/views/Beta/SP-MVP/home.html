@@ -88,11 +88,17 @@ beforeContent %}{% endblock %}
           openClosedResults.push(openClosedFilters[i].value);
         }
 
-        filterDataResults(openClosedResults);
+        let landTypeFilters = document.querySelectorAll('input[name="land_type"]:checked');
+        let landTypeResults = [];
+        for (let i = 0; i < landTypeFilters.length; i++) {
+          landTypeResults.push(landTypeFilters[i].value);
+        }
+
+        filterDataResults(openClosedResults, landTypeFilters);
       })
     });
 
-    function filterDataResults(selectedOpenClosed) {
+    function filterDataResults(selectedOpenClosed, selectedLandTypes) {
       var resultsList = document.getElementById('results');
       var resultsCount = 0;
 
@@ -107,10 +113,12 @@ beforeContent %}{% endblock %}
             .split(' '); // Split options into an array
 
           const openClosedProp = item.querySelector('input[name="openClosedProp"]');
+          const landTypesProp = item.querySelectorAll('input[name="landTypesProp"]');
 
           const openClosedResult = filterOpenClosed(selectedOpenClosed, openClosedProp.value);
+          const landTypesResult = filterLandTypes(selectedLandTypes, landTypesProp);
 
-          const showItem = openClosedResult;
+          const showItem = landTypesResult;
 
           if (showItem) {
             item.style.display = '';
@@ -120,16 +128,65 @@ beforeContent %}{% endblock %}
           }
         }
       }
+
+      document
+        .getElementById("resultsCount")
+        .innerHTML = resultsCount;
     }
 
     function filterOpenClosed(selectedOpenClosed, openClosedProp) {
-      console.log(selectedOpenClosed)
       if (!selectedOpenClosed || selectedOpenClosed.length === 0) {
         return true;
       }
 
       for (selectedOpenClosedItem of selectedOpenClosed) {
         if (getOpenClosedValue(openClosedProp) === selectedOpenClosedItem) {
+          return true;
+        }
+      }
+
+      return false;
+    }
+
+    function filterLandTypes(selectedLandTypes, landTypesProp) {
+      // If the user hasn't selected any land types, show all of them by default
+      if (!selectedLandTypes || selectedLandTypes.length === 0) {
+        return true;
+      }
+
+      // If the action item doesn't have a land type, don't show the item if the user has selected a land type
+      if (!landTypesProp || landTypesProp.length === 0) {
+        return false;
+      }
+
+      return andFilter(selectedLandTypes, landTypesProp);
+    }
+
+    function andFilter(selections, props) {
+      const propsArray = [...props];
+      const selectionsArray = [...selections]
+
+      const propsValues = propsArray.map((prop) => prop.value);
+      const selectionValues = selectionsArray.map((selection) => selection.value);
+
+      for (selection of selectionValues) {
+        if (!propsValues.includes(selection)) {
+          return false;
+        }
+      }
+
+      return true;
+    }
+
+    function orFilter(selections, props) {
+      const propsArray = [...props];
+      const selectionsArray = [...selections]
+
+      const propsValues = propsArray.map((prop) => prop.value);
+      const selectionValues = selectionsArray.map((selection) => selection.value);
+
+      for (selection of selectionValues) {
+        if (propsValues.includes(selection)) {
           return true;
         }
       }
@@ -633,10 +690,10 @@ beforeContent %}{% endblock %}
 
               <hr class="govuk-section-break govuk-section-break--m">
               <hr class="govuk-section-break govuk-section-break">
-
+              
               <form name="filterForm" id="filterForm">
-                {% for filterItem in data['filters'] %}
-                  <details open
+                {% for filterItem in filters %}
+                  <details {{ "open" if filterItem.openByDefault else "" }}
                   class="govuk-details"
                   style="text-align: left"
                   data-module="govuk-details">
@@ -663,88 +720,8 @@ beforeContent %}{% endblock %}
                     </div>
                   </details>
                   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-                  <input type="submit"/>
                 {% endfor %}
               </form>
-
-              <!--Land type details tags-->
-              <details
-               class="govuk-details"
-               style="text-align: left"
-               data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                   Land type
-                 </span>
-                </summary>
-                <div class="vertical">
-                  <div class="govuk-form-group">
-                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="arable" name="arable" type="checkbox" value="arable" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="arable">
-                       Arable land
-                     </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="coast" name="coast" type="checkbox" value="coast" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="coast">
-                      Coast
-                    </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="grassland" name="grassland" type="checkbox" value="grassland" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="grassland">
-                       Grassland
-                     </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="lowland" name="lowland" type="checkbox" value="lowland" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="lowland">
-                      Lowland heath
-                    </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="moorland" name="moorland" type="checkbox" value="moorland" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="moorland">
-                      Moorland and upland
-                    </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="organic" name="organic" type="checkbox" value="organic" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="organic">
-                      Organic land
-                    </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="habitat" name="habitat" type="checkbox" value="habitat" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="habitat">
-                      Priority habitats
-                    </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="waterbodies" name="waterbodies" type="checkbox" value="waterbodies" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="waterbodies">
-                      Waterbodies
-                    </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="wetland" name="wetland" type="checkbox" value="wetland" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="wetland">
-                      Wetland
-                    </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="woodland" name="woodland" type="checkbox" value="woodland" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="woodland">
-                      Woodland
-                    </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </details>
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
               <!--Area of interest details tag-->
               <details 
@@ -1013,7 +990,7 @@ beforeContent %}{% endblock %}
 
             <ul class="govuk-list"  id="results">
 
-              {% for item in data['items'] %}
+              {% for item in results %}
                 <li data-options="{{ item.dataOptions }}" style="list-style: none;">
                   <p class="govuk-body govuk-!-font-weight-bold">
                     <a href="{{ item.url }}" class="govuk-link">{{ item.name }}</a>
@@ -1037,9 +1014,12 @@ beforeContent %}{% endblock %}
                       <div class="govuk-summary-list__row">
                         <dd class="govuk-summary-list__value">
                           <b>Land type:</b>
-                          {{ item.landTypes }}
+                          {{ item.landTypes | toLandTypeValue }}
                         </dd>
                       </div>
+                      {% for landTypeItem in item.landTypes %}
+                        <input type="hidden" name="landTypesProp" value="{{ landTypeItem }}"/>
+                      {% endfor %}
                     {% endif %}
                     <div class="govuk-summary-list__row">
                       <dd class="govuk-summary-list__value">
