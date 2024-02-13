@@ -94,11 +94,17 @@ beforeContent %}{% endblock %}
           landTypeResults.push(landTypeFilters[i].value);
         }
 
-        filterDataResults(openClosedResults, landTypeFilters);
+        let areaOfInterestFilters = document.querySelectorAll('input[name="area_of_interest"]:checked');
+        let areaOfInterestResults = [];
+        for (let i = 0; i < areaOfInterestFilters.length; i++) {
+          areaOfInterestResults.push(areaOfInterestFilters[i].value);
+        }
+
+        filterDataResults(openClosedResults, landTypeResults, areaOfInterestResults);
       })
     });
 
-    function filterDataResults(selectedOpenClosed, selectedLandTypes) {
+    function filterDataResults(selectedOpenClosed, selectedLandTypes, selectedAreaOfInterest) {
       var resultsList = document.getElementById('results');
       var resultsCount = 0;
 
@@ -114,11 +120,13 @@ beforeContent %}{% endblock %}
 
           const openClosedProp = item.querySelector('input[name="openClosedProp"]');
           const landTypesProp = item.querySelectorAll('input[name="landTypesProp"]');
+          const areaOfInterestProp = item.querySelectorAll('input[name="areaOfInterestProp"]');
 
           const openClosedResult = filterOpenClosed(selectedOpenClosed, openClosedProp.value);
           const landTypesResult = filterLandTypes(selectedLandTypes, landTypesProp);
+          const areaOfInterestResult = filterAreaOfInterest(selectedAreaOfInterest, areaOfInterestProp);
 
-          const showItem = landTypesResult;
+          const showItem = areaOfInterestResult;
 
           if (showItem) {
             item.style.display = '';
@@ -162,14 +170,27 @@ beforeContent %}{% endblock %}
       return andFilter(selectedLandTypes, landTypesProp);
     }
 
+    function filterAreaOfInterest(selectedAreaOfInterest, areaOfInterestProp) {
+      // If the user hasn't selected any area of interest, show all of them by default
+      if (!selectedAreaOfInterest || selectedAreaOfInterest.length === 0) {
+        return true;
+      }
+
+      // If the action item doesn't have an area of interest, don't show the item if the user has selected an area of interest
+      if (!areaOfInterestProp || areaOfInterestProp.length === 0) {
+        return false;
+      }
+
+      return andFilter(selectedAreaOfInterest, areaOfInterestProp);
+    }
+
     function andFilter(selections, props) {
       const propsArray = [...props];
       const selectionsArray = [...selections]
 
       const propsValues = propsArray.map((prop) => prop.value);
-      const selectionValues = selectionsArray.map((selection) => selection.value);
 
-      for (selection of selectionValues) {
+      for (selection of selectionsArray) {
         if (!propsValues.includes(selection)) {
           return false;
         }
@@ -690,7 +711,7 @@ beforeContent %}{% endblock %}
 
               <hr class="govuk-section-break govuk-section-break--m">
               <hr class="govuk-section-break govuk-section-break">
-              
+
               <form name="filterForm" id="filterForm">
                 {% for filterItem in filters %}
                   <details {{ "open" if filterItem.openByDefault else "" }}
@@ -722,127 +743,6 @@ beforeContent %}{% endblock %}
                   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 {% endfor %}
               </form>
-
-              <!--Area of interest details tag-->
-              <details 
-                            class="govuk-details"
-                            style="text-align: left"
-                            data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                                Area of interest
-                              </span>
-                </summary>
-                <div class="vertical">
-                  <div class="govuk-form-group">
-                    <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="access-engagement" name="access-engagement" type="checkbox" value="access-engagement" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="access-engagement">
-                                    Access and engagement
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="air-qualilty" name="air-qualilty" type="checkbox" value="air-qualilty" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="air-qualilty">
-                                    Air quality
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="biodiversity" name="biodiversity" type="checkbox" value="biodiversity" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="biodiversity">
-                                    Biodiversity
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="boundaries" name="boundaries" type="checkbox" value="boundaries" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="boundaries">
-                                    Boundaries
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="crops" name="crops" type="checkbox" value="crops" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="crops">
-                                    Crops
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="flood" name="flood" type="checkbox" value="flood" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="flood">
-                                    Flood risk 
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="forestry" name="forestry" type="checkbox" value="forestry" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="forestry">
-                                    Forestry 
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="historic-environment" name="historic-environment" type="checkbox" value="historic-environment" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="historic-environment">
-                                    Historic environment
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="livestock" name="livestock" type="checkbox" value="livestock" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="livestock">
-                                    Livestock management
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="peat" name="peat" type="checkbox" value="peat" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="peat">
-                                    Peat
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="pollinators" name="pollinators" type="checkbox" value="pollinators" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="pollinators">
-                                    Pollinators and wildlife
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="precision" name="precision" type="checkbox" value="precision" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="precision">
-                                    Precision farming
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="soil" name="soil" type="checkbox" value="soil" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="soil">
-                                    Soil
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="slurry" name="slurry" type="checkbox" value="slurry" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="slurry">
-                                    Slurry management
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="trees" name="trees" type="checkbox" value="trees" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="trees">
-                                    Trees (non-woodland)  
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="vegetation" name="vegetation" type="checkbox" value="vegetation" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="vegetation">
-                                    Vegetation control
-                                  </label>
-                      </div>
-                      <div class="govuk-checkboxes__item">
-                        <input class="govuk-checkboxes__input" id="water" name="water" type="checkbox" value="water" onclick="filterResults()">
-                        <label class="govuk-label govuk-checkboxes__label" for="water">
-                                    Water
-                                  </label>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </details>
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
               <!--Funding types details tag
            <details
@@ -1021,12 +921,19 @@ beforeContent %}{% endblock %}
                         <input type="hidden" name="landTypesProp" value="{{ landTypeItem }}"/>
                       {% endfor %}
                     {% endif %}
-                    <div class="govuk-summary-list__row">
-                      <dd class="govuk-summary-list__value">
-                        <b>Area of interest:</b>
-                        {{ item.areaOfInterest }}
-                      </dd>
-                    </div>
+
+                    {% if item.areaOfInterest %}
+                      <div class="govuk-summary-list__row">
+                        <dd class="govuk-summary-list__value">
+                          <b>Area of interest:</b>
+                          {{ item.areaOfInterest }}
+                        </dd>
+                      </div>
+                      {% for areaOfInterestItem in item.areaOfInterest %}
+                        <input type="hidden" name="areaOfInterestProp" value="{{ areaOfInterestItem }}"/>
+                      {% endfor %}
+                    {% endif %}
+
                     <div class="govuk-summary-list__row">
                       <dd class="govuk-summary-list__value">
                         <b> Funding types:</b>

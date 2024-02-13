@@ -47,26 +47,54 @@ const AreaOfInterest = {
 const AreaOfInterestValueMap = new Map([
   [AreaOfInterest.ACCESS_AND_ENGAGEMENT, 'Access and engagement'],
   [AreaOfInterest.AIR_QUALITY, 'Air quality'],
-  [(AreaOfInterest.BIODIVERSITY, 'Biodiversity')],
-  [(AreaOfInterest.BOUNDARIES, 'Boundaries')],
-  [(AreaOfInterest.CROPS, 'Crops')],
-  [(AreaOfInterest.FLOOD_RISK, 'Flood risk')],
-  [(AreaOfInterest.FORESTRY, 'Forestry')],
-  [(AreaOfInterest.HISTORIC_ENVIRONMENT, 'Historic environment')],
-  [(AreaOfInterest.LIVESTOCK_MANAGEMENT, 'Livestock management')],
-  [(AreaOfInterest.PEAT, 'Peat')],
-  [(AreaOfInterest.POLLINATORS_AND_WILDLIFE, 'Pollinators and wildlife')],
-  [(AreaOfInterest.PRECISION_FARMING, 'Precision farming')],
-  [(AreaOfInterest.SOIL, 'Soil')],
-  [(AreaOfInterest.SLURRY_MANAGEMENT, 'Slurry management')],
-  [(AreaOfInterest.TREES_NON_WOODLAND, 'Trees (non-woodland)')],
-  [(AreaOfInterest.VEGETATION_CONTROL, 'Vegetation control')],
-  [(AreaOfInterest.WATER, 'Water')]
+  [AreaOfInterest.BIODIVERSITY, 'Biodiversity'],
+  [AreaOfInterest.BOUNDARIES, 'Boundaries'],
+  [AreaOfInterest.CROPS, 'Crops'],
+  [AreaOfInterest.FLOOD_RISK, 'Flood risk'],
+  [AreaOfInterest.FORESTRY, 'Forestry'],
+  [AreaOfInterest.HISTORIC_ENVIRONMENT, 'Historic environment'],
+  [AreaOfInterest.LIVESTOCK_MANAGEMENT, 'Livestock management'],
+  [AreaOfInterest.PEAT, 'Peat'],
+  [AreaOfInterest.POLLINATORS_AND_WILDLIFE, 'Pollinators and wildlife'],
+  [AreaOfInterest.PRECISION_FARMING, 'Precision farming'],
+  [AreaOfInterest.SOIL, 'Soil'],
+  [AreaOfInterest.SLURRY_MANAGEMENT, 'Slurry management'],
+  [AreaOfInterest.TREES_NON_WOODLAND, 'Trees (non-woodland)'],
+  [AreaOfInterest.VEGETATION_CONTROL, 'Vegetation control'],
+  [AreaOfInterest.WATER, 'Water']
+]);
+
+const GrantScheme = {
+  COUNTRYSIDE_STEWARDSHIP: 'cs',
+  FARMING_EQUIPMENT_AND_TECHNOLOGY_FUND: 'fetf',
+  SLURRY_INFRASTRUCTURE_GRANT: 'sig',
+  SUSTAINABLE_FARMING_INCENTIVE: 'sfi'
+};
+
+const GrantSchemeValueMap = new Map([
+  [COUNTRYSIDE_STEWARDSHIP, 'Countryside Stewardship'],
+  [FARMING_EQUIPMENT_AND_TECHNOLOGY_FUND, 'Farming Equipment and Technology Fund'],
+  [SLURRY_INFRASTRUCTURE_GRANT, 'Slurry Infrastructure grant'],
+  [SUSTAINABLE_FARMING_INCENTIVE, 'Sustainable Farming Incentive']
+]);
+
+const PaymentType = {
+  CAPITAL: 'capital',
+  REVENUE: 'revenue'
+};
+
+const PaymentTypeValueMap = new Map([
+  [PaymentType.CAPITAL, 'Capital'],
+  [PaymentType.REVENUE, 'Revenue']
 ]);
 
 module.exports = {
   LandType,
   LandTypeValueMap,
   AreaOfInterest,
-  AreaOfInterestValueMap
+  AreaOfInterestValueMap,
+  GrantScheme,
+  GrantSchemeValueMap,
+  PaymentType,
+  PaymentTypeValueMap
 };

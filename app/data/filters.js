@@ -1,4 +1,4 @@
-const { LandType, LandTypeValueMap } = require('./types');
+const { LandType, LandTypeValueMap, AreaOfInterestValueMap, AreaOfInterest } = require('./types');
 
 const filters = [
   {
@@ -20,7 +20,7 @@ const filters = [
   {
     name: 'Land type',
     filterName: 'land_type',
-    openByDefault: true,
+    openByDefault: false,
     filterType: 'OR',
     options: [
       {
@@ -64,9 +64,85 @@ const filters = [
         id: LandType.WOODLAND
       }
     ]
+  },
+  {
+    name: 'Area of interest',
+    filterName: 'area_of_interest',
+    openByDefault: true,
+    filterType: 'OR',
+    options: [
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.ACCESS_AND_ENGAGEMENT),
+        id: AreaOfInterest.ACCESS_AND_ENGAGEMENT
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.AIR_QUALITY),
+        id: AreaOfInterest.AIR_QUALITY
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.BIODIVERSITY),
+        id: AreaOfInterest.BIODIVERSITY
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.BOUNDARIES),
+        id: AreaOfInterest.BOUNDARIES
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.CROPS),
+        id: AreaOfInterest.CROPS
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.FLOOD_RISK),
+        id: AreaOfInterest.FLOOD_RISK
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.FORESTRY),
+        id: AreaOfInterest.FORESTRY
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.HISTORIC_ENVIRONMENT),
+        id: AreaOfInterest.HISTORIC_ENVIRONMENT
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.LIVESTOCK_MANAGEMENT),
+        id: AreaOfInterest.LIVESTOCK_MANAGEMENT
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.PEAT),
+        id: AreaOfInterest.PEAT
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.POLLINATORS_AND_WILDLIFE),
+        id: AreaOfInterest.POLLINATORS_AND_WILDLIFE
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.PRECISION_FARMING),
+        id: AreaOfInterest.PRECISION_FARMING
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.SOIL),
+        id: AreaOfInterest.SOIL
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.SLURRY_MANAGEMENT),
+        id: AreaOfInterest.SLURRY_MANAGEMENT
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.TREES_NON_WOODLAND),
+        id: AreaOfInterest.TREES_NON_WOODLAND
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.VEGETATION_CONTROL),
+        id: AreaOfInterest.VEGETATION_CONTROL
+      },
+      {
+        name: AreaOfInterestValueMap.get(AreaOfInterest.WATER),
+        id: AreaOfInterest.WATER
+      }
+    ]
   }
 ];
 
 module.exports = {
-    filters,
-}
+  filters
+};
