@@ -72,10 +72,10 @@ const GrantScheme = {
 };
 
 const GrantSchemeValueMap = new Map([
-  [COUNTRYSIDE_STEWARDSHIP, 'Countryside Stewardship'],
-  [FARMING_EQUIPMENT_AND_TECHNOLOGY_FUND, 'Farming Equipment and Technology Fund'],
-  [SLURRY_INFRASTRUCTURE_GRANT, 'Slurry Infrastructure grant'],
-  [SUSTAINABLE_FARMING_INCENTIVE, 'Sustainable Farming Incentive']
+  [GrantScheme.COUNTRYSIDE_STEWARDSHIP, 'Countryside Stewardship'],
+  [GrantScheme.FARMING_EQUIPMENT_AND_TECHNOLOGY_FUND, 'Farming Equipment and Technology Fund'],
+  [GrantScheme.SLURRY_INFRASTRUCTURE_GRANT, 'Slurry Infrastructure grant'],
+  [GrantScheme.SUSTAINABLE_FARMING_INCENTIVE, 'Sustainable Farming Incentive']
 ]);
 
 const PaymentType = {

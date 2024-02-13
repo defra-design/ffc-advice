@@ -82,29 +82,45 @@ beforeContent %}{% endblock %}
       form.addEventListener('input', function (e) {
         e.preventDefault();
 
-        let openClosedFilters = document.querySelectorAll('input[name="open_closed"]:checked');
-        let openClosedResults = [];
-        for (let i = 0; i < openClosedFilters.length; i++) {
-          openClosedResults.push(openClosedFilters[i].value);
-        }
-
-        let landTypeFilters = document.querySelectorAll('input[name="land_type"]:checked');
-        let landTypeResults = [];
-        for (let i = 0; i < landTypeFilters.length; i++) {
-          landTypeResults.push(landTypeFilters[i].value);
-        }
-
-        let areaOfInterestFilters = document.querySelectorAll('input[name="area_of_interest"]:checked');
-        let areaOfInterestResults = [];
-        for (let i = 0; i < areaOfInterestFilters.length; i++) {
-          areaOfInterestResults.push(areaOfInterestFilters[i].value);
-        }
-
-        filterDataResults(openClosedResults, landTypeResults, areaOfInterestResults);
+        filterResults();
       })
     });
 
-    function filterDataResults(selectedOpenClosed, selectedLandTypes, selectedAreaOfInterest) {
+    function filterResults() {
+      let openClosedFilters = document.querySelectorAll('input[name="open_closed"]:checked');
+      let openClosedResults = [];
+      for (let i = 0; i < openClosedFilters.length; i++) {
+        openClosedResults.push(openClosedFilters[i].value);
+      }
+
+      let landTypeFilters = document.querySelectorAll('input[name="land_type"]:checked');
+      let landTypeResults = [];
+      for (let i = 0; i < landTypeFilters.length; i++) {
+        landTypeResults.push(landTypeFilters[i].value);
+      }
+
+      let areaOfInterestFilters = document.querySelectorAll('input[name="area_of_interest"]:checked');
+      let areaOfInterestResults = [];
+      for (let i = 0; i < areaOfInterestFilters.length; i++) {
+        areaOfInterestResults.push(areaOfInterestFilters[i].value);
+      }
+
+      let grantSchemeFilters = document.querySelectorAll('input[name="grant_scheme"]:checked');
+      let grantSchemeResults = [];
+      for (let i = 0; i < grantSchemeFilters.length; i++) {
+        grantSchemeResults.push(grantSchemeFilters[i].value);
+      }
+
+      let paymentTypeFilters = document.querySelectorAll('input[name="payment_type"]:checked');
+      let paymentTypeResults = [];
+      for (let i = 0; i < paymentTypeFilters.length; i++) {
+        paymentTypeResults.push(paymentTypeFilters[i].value);
+      }
+
+      filterDataResults(openClosedResults, landTypeResults, areaOfInterestResults, grantSchemeResults, paymentTypeResults);
+    }
+
+    function filterDataResults(selectedOpenClosed, selectedLandTypes, selectedAreaOfInterest, selectedGrantSchemes, selectedPaymentTypes) {
       var resultsList = document.getElementById('results');
       var resultsCount = 0;
 
@@ -121,12 +137,16 @@ beforeContent %}{% endblock %}
           const openClosedProp = item.querySelector('input[name="openClosedProp"]');
           const landTypesProp = item.querySelectorAll('input[name="landTypesProp"]');
           const areaOfInterestProp = item.querySelectorAll('input[name="areaOfInterestProp"]');
+          const grantSchemeProp = item.querySelectorAll('input[name="grantSchemeProp"]');
+          const paymentTypeProp = item.querySelectorAll('input[name="paymentTypeProp"]');
 
           const openClosedResult = filterOpenClosed(selectedOpenClosed, openClosedProp.value);
-          const landTypesResult = filterLandTypes(selectedLandTypes, landTypesProp);
-          const areaOfInterestResult = filterAreaOfInterest(selectedAreaOfInterest, areaOfInterestProp);
+          const landTypesResult = filterAndResults(selectedLandTypes, landTypesProp);
+          const areaOfInterestResult = filterAndResults(selectedAreaOfInterest, areaOfInterestProp);
+          const grantSchemeResult = filterAndResults(selectedGrantSchemes, grantSchemeProp);
+          const paymentTypeResult = filterAndResults(selectedPaymentTypes, paymentTypeProp);
 
-          const showItem = areaOfInterestResult;
+          const showItem = openClosedResult && landTypesResult && areaOfInterestResult && grantSchemeResult && paymentTypeResult;
 
           if (showItem) {
             item.style.display = '';
@@ -135,6 +155,28 @@ beforeContent %}{% endblock %}
             item.style.display = 'none';
           }
         }
+      }
+
+      clearPills();
+
+      for (const selectedOpenClosedItem of selectedOpenClosed) {
+        createPill(selectedOpenClosedItem, 'open_closed', selectedOpenClosedItem)
+      }
+
+      for (const selectedLandTypesItem of selectedLandTypes) {
+        createPill(selectedLandTypesItem, 'land_type', selectedLandTypesItem)
+      }
+
+      for (const selectedAreaOfInterestItem of selectedAreaOfInterest) {
+        createPill(selectedAreaOfInterestItem, 'area_of_interest', selectedAreaOfInterestItem)
+      }
+
+      for (const selectedGrantSchemeItem of selectedGrantSchemes) {
+        createPill( selectedGrantSchemeItem, 'grant_scheme', selectedGrantSchemeItem)
+      }
+
+      for (const selectedPaymentTypeItem of selectedPaymentTypes) {
+        createPill(selectedPaymentTypeItem, 'payment_type', selectedPaymentTypeItem)
       }
 
       document
@@ -156,32 +198,16 @@ beforeContent %}{% endblock %}
       return false;
     }
 
-    function filterLandTypes(selectedLandTypes, landTypesProp) {
-      // If the user hasn't selected any land types, show all of them by default
-      if (!selectedLandTypes || selectedLandTypes.length === 0) {
+    function filterAndResults(selectedOptions, props) {
+      if (!selectedOptions || selectedOptions.length === 0) {
         return true;
       }
 
-      // If the action item doesn't have a land type, don't show the item if the user has selected a land type
-      if (!landTypesProp || landTypesProp.length === 0) {
+      if (!props || props.length === 0) {
         return false;
       }
 
-      return andFilter(selectedLandTypes, landTypesProp);
-    }
-
-    function filterAreaOfInterest(selectedAreaOfInterest, areaOfInterestProp) {
-      // If the user hasn't selected any area of interest, show all of them by default
-      if (!selectedAreaOfInterest || selectedAreaOfInterest.length === 0) {
-        return true;
-      }
-
-      // If the action item doesn't have an area of interest, don't show the item if the user has selected an area of interest
-      if (!areaOfInterestProp || areaOfInterestProp.length === 0) {
-        return false;
-      }
-
-      return andFilter(selectedAreaOfInterest, areaOfInterestProp);
+      return andFilter(selectedOptions, props);
     }
 
     function andFilter(selections, props) {
@@ -223,244 +249,13 @@ beforeContent %}{% endblock %}
       }
     }
 
-    function filterResults() {}
-
-    function filterResultss() {
-      // Get the checkboxes
-      var checkboxOpen = document.getElementById('open');
-      var checkboxClosed = document.getElementById('closed');
-      var checkboxAccessEngagement = document.getElementById('access-engagement');
-      var checkboxAirQuality = document.getElementById('air-qualilty');
-      var checkboxBiodiversity = document.getElementById('biodiversity');
-      var checkboxBoundaries = document.getElementById('boundaries');
-      var checkboxCrops = document.getElementById('crops');
-      var checkboxFlood = document.getElementById('flood');
-      var checkboxForestry = document.getElementById('forestry');
-      var checkboxHistoricEnvironment = document.getElementById('historic-environment');
-      var checkboxLivestock = document.getElementById('livestock');
-      var checkboxPeat = document.getElementById('peat');
-      var checkboxPollinators = document.getElementById('pollinators');
-      var checkboxPrecision = document.getElementById('precision');
-      var checkboxSlurry = document.getElementById('slurry');
-      var checkboxSoil = document.getElementById('soil');
-      var checkboxTrees = document.getElementById('trees');
-      var checkboxVegetation = document.getElementById('vegetation');
-      var checkboxWater = document.getElementById('water');
-      var checkboxArableLand = document.getElementById('arable');
-      var checkboxCoast = document.getElementById('coast');
-      var checkboxGrassland = document.getElementById('grassland');
-      var checkboxLowland = document.getElementById('lowland');
-      var checkboxMoorland = document.getElementById('moorland');
-      var checkboxOrganic = document.getElementById('organic');
-      var checkboxHabitat = document.getElementById('habitat');
-      var checkboxWaterbodies = document.getElementById('waterbodies');
-      var checkboxWetland = document.getElementById('wetland');
-      var checkboxWoodland = document.getElementById('woodland');
-      //var checkboxGrant = document.getElementById('grant');
-      var checkboxOption = document.getElementById('option');
-      var checkboxItem = document.getElementById('item');
-      var checkboxAction = document.getElementById('action');
-      var checkboxCs = document.getElementById('cs');
-      //var checkboxCo = document.getElementById('combined-offer')
-      var checkboxFetf = document.getElementById('fetf');
-      var checkboxSfi = document.getElementById('sfi');
-      var checkboxSig = document.getElementById('sig');
-      var checkboxCapital = document.getElementById('capital');
-      var checkboxRevenue = document.getElementById('revenue');
-      var searchBoxInputText = document
-        .getElementById('searchInput')
-        .value
-        .toLowerCase();
-
-      // Get the list of results
-      var resultsList = document.getElementById('results');
-
-      // Get the list items inside the results list
-      var items = resultsList.getElementsByTagName('li');
-      console.log(JSON.stringify(items));
-      var resultsCount = 0;
-      var searchQuery = document
-        .getElementById('searchInput')
-        .value
-        .toLowerCase();
-
-      // Loop through the list items and show/hide based on checkbox selection and search query
-      for (var i = 0; i < items.length; i++) {
-        var item = items[i];
-        var options = item
-          .getAttribute('data-options')
-          .split(' '); // Split options into an array
-
-        // Check if the search query is present in the text of the current item
-        var containsSearchQuery = item
-          .textContent
-          .toLowerCase()
-          .includes(searchQuery);
-
-        var showItem = (!checkboxOpen.checked || options.includes('open')) && (!checkboxClosed.checked || options.includes('closed')) && (!checkboxAccessEngagement.checked || options.includes('accessEngagement')) && (!checkboxAirQuality.checked || options.includes('airQuality')) && (!checkboxBiodiversity.checked || options.includes('biodiversity')) && (!checkboxBoundaries.checked || options.includes('boundaries')) && (!checkboxCrops.checked || options.includes('crops')) && (!checkboxFlood.checked || options.includes('flood')) && (!checkboxForestry.checked || options.includes('forestry')) && (!checkboxHistoricEnvironment.checked || options.includes('historicEnvironment')) && (!checkboxLivestock.checked || options.includes('livestock')) && (!checkboxPeat.checked || options.includes('peat')) && (!checkboxPollinators.checked || options.includes('pollinators')) && (!checkboxPrecision.checked || options.includes('precision')) && (!checkboxSlurry.checked || options.includes('slurry')) && (!checkboxSoil.checked || options.includes('soil')) && (!checkboxTrees.checked || options.includes('trees')) && (!checkboxVegetation.checked || options.includes('vegetation')) && (!checkboxWater.checked || options.includes('water')) && (!checkboxArableLand.checked || options.includes('arableLand')) && (!checkboxCoast.checked || options.includes('coast')) && (!checkboxGrassland.checked || options.includes('grassLand')) && (!checkboxLowland.checked || options.includes('lowland')) && (!checkboxMoorland.checked || options.includes('moorland')) && (!checkboxOrganic.checked || options.includes('organic')) && (!checkboxHabitat.checked || options.includes('habitat')) && (!checkboxWaterbodies.checked || options.includes('waterbodies')) && (!checkboxWetland.checked || options.includes('wetland')) && (!checkboxWoodland.checked || options.includes('woodland')) &&
-        //(!checkboxGrant.checked || options.includes('grant')) &&
-        //(!checkboxOption.checked || options.includes('option')) &&
-        //(!checkboxItem.checked || options.includes('item')) &&
-        //(!checkboxAction.checked || options.includes('action')) &&
-        (!checkboxCs.checked || options.includes('cs')) &&
-        //(!checkboxCo.checked || options.includes('combinedOffer')) &&
-        (!checkboxFetf.checked || options.includes('fetf')) && (!checkboxSfi.checked || options.includes('sfi')) && (!checkboxSig.checked || options.includes('sig')) && (!checkboxCapital.checked || options.includes('capital')) && (!checkboxRevenue.checked || options.includes('revenue'));
-
-        item.style.display = (containsSearchQuery && showItem)
-          ? ''
-          : 'none';
-
-        if (containsSearchQuery && showItem) {
-          item.style.display = '';
-          resultsCount++;
-        } else {
-          item.style.display = 'none';
-        }
-      }
-      var resultsContainer = document.getElementById("resultsContainer")
-      if (resultsCount == 0) {
-        resultsContainer.removeAttribute("hidden")
-      } else {
-        resultsContainer.setAttribute("hidden", "")
-      }
-
-      // Clear existing pills
-      clearPills();
-
-      // Get the search input value
-      var searchQuery = document
-        .getElementById('searchInput')
-        .value
-        .toLowerCase();
-
-      // Create pills for selected filters
-      searchQuery != ''
-        ? createPill(searchQuery)
-        : null;
-      checkboxOpen.checked
-        ? createPill('open')
-        : null;
-      checkboxClosed.checked
-        ? createPill('closed')
-        : null;
-      checkboxAccessEngagement.checked
-        ? createPill('accessEngagement')
-        : null;
-      checkboxAirQuality.checked
-        ? createPill('airQuality')
-        : null;
-      checkboxBiodiversity.checked
-        ? createPill('biodiversity')
-        : null;
-      checkboxBoundaries.checked
-        ? createPill('boundaries')
-        : null;
-      checkboxCrops.checked
-        ? createPill('crops')
-        : null;
-      checkboxFlood.checked
-        ? createPill('flood')
-        : null;
-      checkboxForestry.checked
-        ? createPill('forestry')
-        : null;
-      checkboxHistoricEnvironment.checked
-        ? createPill('historicEnvironment')
-        : null;
-      checkboxLivestock.checked
-        ? createPill('livestock')
-        : null;
-      checkboxPeat.checked
-        ? createPill('peat')
-        : null;
-      checkboxPollinators.checked
-        ? createPill('pollinators')
-        : null;
-      checkboxPrecision.checked
-        ? createPill('precision')
-        : null;
-      checkboxSlurry.checked
-        ? createPill('slurry')
-        : null;
-      checkboxSoil.checked
-        ? createPill('soil')
-        : null;
-      checkboxTrees.checked
-        ? createPill('trees')
-        : null;
-      checkboxVegetation.checked
-        ? createPill('vegetation')
-        : null;
-      checkboxWater.checked
-        ? createPill('water')
-        : null;
-      checkboxArableLand.checked
-        ? createPill('arableLand')
-        : null;
-      checkboxCoast.checked
-        ? createPill('coast')
-        : null;
-      checkboxGrassland.checked
-        ? createPill('grassLand')
-        : null;
-      checkboxLowland.checked
-        ? createPill('lowland')
-        : null;
-      checkboxMoorland.checked
-        ? createPill('moorland')
-        : null;
-      checkboxOrganic.checked
-        ? createPill('organic')
-        : null;
-      checkboxHabitat.checked
-        ? createPill('habitat')
-        : null;
-      checkboxWaterbodies.checked
-        ? createPill('waterbodies')
-        : null;
-      checkboxWetland.checked
-        ? createPill('wetland')
-        : null;
-      checkboxWoodland.checked
-        ? createPill('woodland')
-        : null;
-      //checkboxGrant.checked ? createPill('grant') : null;
-      // checkboxOption.checked ? createPill('option') : null;
-      //checkboxItem.checked ? createPill('item') : null;
-      //checkboxAction.checked ? createPill('action') : null;
-      checkboxCs.checked
-        ? createPill('cs')
-        : null;
-      //checkboxCo.checked ? createPill('combinedOffer') : null;
-      checkboxFetf.checked
-        ? createPill('fetf')
-        : null;
-      checkboxSfi.checked
-        ? createPill('sfi')
-        : null;
-      checkboxSig.checked
-        ? createPill('sig')
-        : null;
-      checkboxCapital.checked
-        ? createPill('capital')
-        : null;
-      checkboxRevenue.checked
-        ? createPill('revenue')
-        : null;
-
-      // ... (create pills for each selected checkbox)
-
-      document
-        .getElementById("resultsCount")
-        .innerHTML = resultsCount;
-
-    }
-
     //Create pills
-    function createPill(text) {
+    function createPill(text, filterType, filterValue) {
       var pillContainer = document.getElementById('pillContainer');
       var pill = document.createElement('div');
       pill.id = 'pill-' + text;
+      pill.setAttribute('filterType', filterType)
+      pill.setAttribute('filterValue', filterValue)
       pill.className = 'pill';
       pill.innerHTML = '' + text + '<span class="pill-close" onclick="removePill(this)">&times;</span>';
       pillContainer.appendChild(pill);
@@ -473,160 +268,17 @@ beforeContent %}{% endblock %}
 
     function removePill(element) {
       var pillContainer = document.getElementById('pillContainer');
-      if (element.parentNode.id === 'pill-' + document.getElementById('searchInput').value.toLowerCase()) {
-        document
-          .getElementById('searchInput')
-          .value = '';
-      } else if (element.parentNode.id === 'pill-open') {
-        document
-          .getElementById("open")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-closed') {
-        document
-          .getElementById("closed")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-accessEngagement') {
-        document
-          .getElementById("accessEngagement")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-airQuality') {
-        document
-          .getElementById("airQuality")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-biodiversity') {
-        document
-          .getElementById("biodiversity")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-boundaries') {
-        document
-          .getElementById("boundaries")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-crops') {
-        document
-          .getElementById("crops")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-flood') {
-        document
-          .getElementById("flood")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-forestry') {
-        document
-          .getElementById("forestry")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-historicEnvironment') {
-        document
-          .getElementById("historicEnvironment")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-livestock') {
-        document
-          .getElementById("livestock")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-peat') {
-        document
-          .getElementById("peat")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-pollinators') {
-        document
-          .getElementById("pollinators")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-precision') {
-        document
-          .getElementById("precision")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-soil') {
-        document
-          .getElementById("soil")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-slurry') {
-        document
-          .getElementById("slurry")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-trees') {
-        document
-          .getElementById("trees")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-vegetation') {
-        document
-          .getElementById("vegetation")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-water') {
-        document
-          .getElementById("water")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-arableLand') {
-        document
-          .getElementById("arableLand")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-grassLand') {
-        document
-          .getElementById("grassLand")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-lowland') {
-        document
-          .getElementById("lowland")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-moorland') {
-        document
-          .getElementById("moorland")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-organic') {
-        document
-          .getElementById("organic")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-habitat') {
-        document
-          .getElementById("habitat")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-waterbodies') {
-        document
-          .getElementById("waterbodies")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-wetland') {
-        document
-          .getElementById("wetland")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-woodland') {
-        document
-          .getElementById("woodland")
-          .checked = false;
-        // } else if (element.parentNode.id === 'pill-grant') {
-        //   document.getElementById("grant").checked = false;
-        // } else if (element.parentNode.id === 'pill-option') {
-        //  document.getElementById("option").checked = false;
-        // } else if (element.parentNode.id === 'pill-item') {
-        //   document.getElementById("item").checked = false;
-        // } else if (element.parentNode.id === 'pill-action') {
-        //   document.getElementById("action").checked = false;
-      } else if (element.parentNode.id === 'pill-cs') {
-        document
-          .getElementById("cs")
-          .checked = false;
-        // } else if (element.parentNode.id === 'pill-combinedOffer') {
-        //   document.getElementById("combinedOffer").checked = false;
-      } else if (element.parentNode.id === 'pill-fetf') {
-        document
-          .getElementById("fetf")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-sfi') {
-        document
-          .getElementById("sfi")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-sig') {
-        document
-          .getElementById("sig")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-capital') {
-        document
-          .getElementById("capital")
-          .checked = false;
-      } else if (element.parentNode.id === 'pill-revenue') {
-        document
-          .getElementById("revenue")
-          .checked = false;
-      }
+
+      const checkboxId = element
+        .parentNode
+        .getAttribute('filterValue');
+
+      document
+        .getElementById(checkboxId)
+        .checked = false;
 
       pillContainer.removeChild(element.parentNode);
-      // Trigger filtering logic after removing a pill
+
       filterResults();
     }
 
@@ -648,13 +300,12 @@ beforeContent %}{% endblock %}
       input.addEventListener("keypress", function (event) {
         if (event.key === "Enter") {
           event.preventDefault();
-          filterResults()
         }
       });
     });
   </script>
 
-  <body onload="filterResults({{ data | dump }})">
+  <body onload="">
 
     <div class="govuk-grid-row">
       <div class="govuk-phase-banner">
@@ -703,7 +354,7 @@ beforeContent %}{% endblock %}
               <h2 class="govuk-heading-m">Search</h2>
               <div class="search-container">
                 <input type="text" name="search" class="govuk-input govuk-!-width-full" id="searchInput">
-                <div class="search-button" onclick="filterResults()">
+                <div class="search-button">
                   <i class="fas fa-search"></i>
                 </div>
 
@@ -730,7 +381,7 @@ beforeContent %}{% endblock %}
 
                         {% for optionItem in filterItem.options %}
                           <div class="govuk-checkboxes__item">
-                            <input class="govuk-checkboxes__input" id="{{ optionItem.id }}" name="{{ filterItem.filterName }}" type="checkbox" value="{{ optionItem.id }}" onclick="filterResults()">
+                            <input class="govuk-checkboxes__input" id="{{ optionItem.id }}" name="{{ filterItem.filterName }}" type="checkbox" value="{{ optionItem.id }}">
                             <label class="govuk-label govuk-checkboxes__label" for="{{ optionItem.id }}">
                               {{ optionItem.name }}
                             </label>
@@ -743,118 +394,6 @@ beforeContent %}{% endblock %}
                   <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
                 {% endfor %}
               </form>
-
-              <!--Funding types details tag
-           <details
-           class="govuk-details"
-           style="text-align: left"
-           data-module="govuk-details">
-           <summary class="govuk-details__summary">
-             <span class="govuk-details__summary-text">
-               Funding types
-             </span>
-           </summary>
-           <div class="govuk-form-group">
-             <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-               <div class="govuk-checkboxes__item">
-                 <input class="govuk-checkboxes__input" id="option" name="option" type="checkbox" value="option" onclick="filterResults()">
-                 <label class="govuk-label govuk-checkboxes__label" for="option">
-                   Option
-                 </label>
-               </div>
-               <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="item" name="item" type="checkbox" value="item" onclick="filterResults()">
-                <label class="govuk-label govuk-checkboxes__label" for="item">
-                  Item
-                </label>
-              </div>
-              <div class="govuk-checkboxes__item">
-                <input class="govuk-checkboxes__input" id="action" name="action" type="checkbox" value="action" onclick="filterResults()">
-                <label class="govuk-label govuk-checkboxes__label" for="action">
-                  Action
-                </label>
-              </div>
-             </div>
-           </div>
-          </details>
-          <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">-->
-
-              <!--Grant schemes details tag-->
-              <details
-             class="govuk-details"
-             style="text-align: left"
-             data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-                 Grant schemes
-               </span>
-                </summary>
-                <div class="govuk-form-group">
-                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="cs" name="cs" type="checkbox" value="cs" onclick="filterResults()">
-                      <label class="govuk-label govuk-checkboxes__label" for="cs">
-                     Countryside Stewardship
-                   </label>
-                    </div>
-                    <!--<div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="combined-offer" name="combined-offer" type="checkbox" value="combined-offer" onclick="filterResults()">
-                  <label class="govuk-label govuk-checkboxes__label" for="combined-offer">
-                    Combined offer
-                  </label>
-                </div> -->
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="fetf" name="fetf" type="checkbox" value="fetf" onclick="filterResults()">
-                      <label class="govuk-label govuk-checkboxes__label" for="fetf">
-                     Farming Equipment and Technology Fund
-                   </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="sig" name="sig" type="checkbox" value="sig" onclick="filterResults()">
-                      <label class="govuk-label govuk-checkboxes__label" for="sig">
-                    Slurry Infrastructure grant
-                  </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="sfi" name="sfi" type="checkbox" value="sfi" onclick="filterResults()">
-                      <label class="govuk-label govuk-checkboxes__label" for="sfi">
-                     Sustainable Farming Incentive
-                   </label>
-                    </div>
-                  </div>
-                </div>
-              </details>
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
-              <!--Payment details details tag-->
-              <details
-           class="govuk-details"
-           style="text-align: left"
-           data-module="govuk-details">
-                <summary class="govuk-details__summary">
-                  <span class="govuk-details__summary-text">
-               Payment types
-             </span>
-                </summary>
-                <div class="govuk-form-group">
-                  <div class="govuk-checkboxes govuk-checkboxes--small" data-module="govuk-checkboxes">
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="capital" name="capital" type="checkbox" value="capital" onclick="filterResults()">
-                      <label class="govuk-label govuk-checkboxes__label" for="capital">
-                   Capital
-                 </label>
-                    </div>
-                    <div class="govuk-checkboxes__item">
-                      <input class="govuk-checkboxes__input" id="revenue" name="revenue" type="checkbox" value="revenue" onclick="filterResults()">
-                      <label class="govuk-label govuk-checkboxes__label" for="revenue">
-                   Revenue
-                 </label>
-                    </div>
-                  </div>
-                </div>
-              </details>
-              <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-
             </div>
 
           </div>
@@ -940,18 +479,31 @@ beforeContent %}{% endblock %}
                         {{ item.fundingTypes }}
                       </dd>
                     </div>
-                    <div class="govuk-summary-list__row">
-                      <dd class="govuk-summary-list__value">
-                        <b> Grant schemes:</b>
-                        {{ item.grantSchemes }}
-                      </dd>
-                    </div>
-                    <div class="govuk-summary-list__row">
-                      <dd class="govuk-summary-list__value">
-                        <b> Payment types:</b>
-                        {{ item.paymentTypes }}
-                      </dd>
-                    </div>
+
+                    {% if item.grantSchemes %}
+                      <div class="govuk-summary-list__row">
+                        <dd class="govuk-summary-list__value">
+                          <b> Grant schemes:</b>
+                          {{ item.grantSchemes }}
+                        </dd>
+                      </div>
+                      {% for grantSchemeItem in item.grantSchemes %}
+                        <input type="hidden" name="grantSchemeProp" value="{{ grantSchemeItem }}"/>
+                      {% endfor %}
+                    {% endif %}
+
+                    {% if item.paymentTypes %}
+                      <div class="govuk-summary-list__row">
+                        <dd class="govuk-summary-list__value">
+                          <b> Payment types:</b>
+                          {{ item.paymentTypes }}
+                        </dd>
+                      </div>
+                      {% for paymentTypeItem in item.paymentTypes %}
+                        <input type="hidden" name="paymentTypeProp" value="{{ paymentTypeItem }}"/>
+                      {% endfor %}
+                    {% endif %}
+
                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
                   </dl>
                 </li>

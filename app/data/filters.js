@@ -1,4 +1,13 @@
-const { LandType, LandTypeValueMap, AreaOfInterestValueMap, AreaOfInterest } = require('./types');
+const {
+  LandType,
+  LandTypeValueMap,
+  AreaOfInterestValueMap,
+  AreaOfInterest,
+  GrantScheme,
+  GrantSchemeValueMap,
+  PaymentType,
+  PaymentTypeValueMap,
+} = require('./types');
 
 const filters = [
   {
@@ -68,7 +77,7 @@ const filters = [
   {
     name: 'Area of interest',
     filterName: 'area_of_interest',
-    openByDefault: true,
+    openByDefault: false,
     filterType: 'OR',
     options: [
       {
@@ -138,6 +147,46 @@ const filters = [
       {
         name: AreaOfInterestValueMap.get(AreaOfInterest.WATER),
         id: AreaOfInterest.WATER
+      }
+    ]
+  },
+  {
+    name: 'Grant schemes',
+    filterName: 'grant_scheme',
+    openByDefault: false,
+    filterType: 'OR',
+    options: [
+      {
+        name: GrantSchemeValueMap.get(GrantScheme.COUNTRYSIDE_STEWARDSHIP),
+        id: GrantScheme.COUNTRYSIDE_STEWARDSHIP
+      },
+      {
+        name: GrantSchemeValueMap.get(GrantScheme.FARMING_EQUIPMENT_AND_TECHNOLOGY_FUND),
+        id: GrantScheme.FARMING_EQUIPMENT_AND_TECHNOLOGY_FUND
+      },
+      {
+        name: GrantSchemeValueMap.get(GrantScheme.SLURRY_INFRASTRUCTURE_GRANT),
+        id: GrantScheme.SLURRY_INFRASTRUCTURE_GRANT
+      },
+      {
+        name: GrantSchemeValueMap.get(GrantScheme.SUSTAINABLE_FARMING_INCENTIVE),
+        id: GrantScheme.SUSTAINABLE_FARMING_INCENTIVE
+      }
+    ]
+  },
+  {
+    name: 'Payment types',
+    filterName: 'payment_type',
+    openByDefault: false,
+    filterType: 'OR',
+    options: [
+      {
+        name: PaymentTypeValueMap.get(PaymentType.CAPITAL),
+        id: PaymentType.CAPITAL
+      },
+      {
+        name: PaymentTypeValueMap.get(PaymentType.REVENUE),
+        id: PaymentType.REVENUE
       }
     ]
   }
