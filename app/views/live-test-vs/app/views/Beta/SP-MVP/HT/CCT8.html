@@ -1,0 +1,470 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Farming grant options finder – {{ serviceName }} – GOV.UK
+Prototype Kit {% endblock %} {% block
+beforeContent %}
+{% endblock %}
+
+{% block content %}
+
+<style>
+  .custom-separator {
+    border: 0;
+    border-top: 1px solid #000;
+    width: 155%;
+    margin: 0;
+    padding-right: 0;
+    padding-top: 15px;
+  }
+
+  .link-style {
+    font-weight: bold;
+    text-decoration: underline;
+  }
+
+  .date-style {
+    margin-top: 5px;
+  }
+
+  .bottom-date {
+    margin-top: -20px;
+  }
+
+  .blue-box {
+    background-color: #1d70b8;
+    color: white;
+    padding: 8px 12px;
+    line-height: 1.3;
+    border-radius: 5px;
+    margin: 5px 0;
+    font-size: 18px !important;
+    /* Force smaller text */
+  }
+
+  .blue-box ul.govuk-list {
+    margin: 0;
+    padding: 0;
+    font-size: 18px !important;
+    /* Ensure list inherits the smaller size */
+  }
+
+  .blue-box ul.govuk-list li {
+    margin-bottom: 4px;
+    color: white;
+    font-size: 18px !important;
+  }
+
+  .section-label {
+    font-weight: normal;
+    color: white;
+    font-size: 18px !important;
+  }
+
+  .section-link {
+    text-decoration: underline;
+    color: white !important;
+    font-weight: bold;
+    font-size: 18px !important;
+  }
+
+
+  .content-link-list a {
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  .subcategory {
+    font-weight: normal;
+  }
+
+  .subcategory a {
+    font-weight: normal;
+  }
+</style>
+
+<div class="govuk-grid-row">
+  <div class="govuk-phase-banner">
+    <p class="govuk-phase-banner__content">
+      <strong class="govuk-tag govuk-phase-banner__content__tag">
+        Private Beta
+      </strong>
+      <span class="govuk-phase-banner__text">
+        This is a new tool – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+      </span>
+    </p>
+  </div>
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" href="/Beta/SP-MVP/home.html">Farming grant options finder</a>
+      </li>
+    </ol>
+  </div>
+</div>
+
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">CCT8: Manage and restore coastal sand dunes</h1>
+        <p class="govuk-body-l">Find out about eligibility and requirements for the nectar flower mix option.</p>
+
+        <div class="govuk-grid-column-full">
+               
+          <hr class="custom-separator">
+          <!-- This is the grid separation line with styling -->
+             
+        </div>
+
+
+        <p class="govuk-body-s">From <a
+            href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs"
+            class="link-style">Department for Environment, Food & Rural Affairs</a> and <a
+            href="https://www.gov.uk/government/organisations/rural-payments-agency" class="link-style">Rural Payments
+            Agency</a></p>
+        <p class="govuk-body-s date-style">Published 21 May 2024</p>
+        <p class="govuk-body-s date-style bottom-date">Last updated 29 April 2025</p>
+        <div class="govuk-!-padding-5 blue-box">
+          <ul class="govuk-list">
+            <li><span class="section-label">Land type:</span> <a href="/Beta/SP-MVP/home?filter=coastal"
+                class="section-link">Coastal</a>, <a href="/Beta/SP-MVP/home?filter=grassland"
+                class="section-link">Grassland</a>, <a href="/Beta/SP-MVP/home?filter=moorland"
+                class="section-link">Upland</a>
+            </li>
+            <li><span class="section-label">Area of interest:</span> <a href="/Beta/SP-MVP/home?filter=biodiversity"
+                class="section-link">Biodiversity</a>,
+              <a href="/Beta/SP-MVP/home?filter=pollinators" class="section-link">Pollinators and wildlife</a>, <a
+                href="/Beta/SP-MVP/home?filter=water" class="section-link">Water</a>
+            </li>
+            <li><span class="section-label">Grant type:</span> <a href="/Beta/SP-MVP/home?filter=csht"
+                class="section-link">CSHT</a></li>
+          </ul>
+        </div>
+
+
+
+
+
+        <hr class="govuk-section-break govuk-section-break--m">
+
+
+
+        <ul id="content-title" class="govuk-list content-link-list" style="color: #1d70b8;">
+          <li style="color: #0b0c0c;">Contents</li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#cost">How much will be paid</a></li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#where">Where to use this option</a></li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#where-not">Where this option cannot be used</a></li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#environment">How this option will benefit the
+              environment</a></li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#aims">Aims</a></li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#activities">Prohibited activities</a></li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#management">Recommended management</a></li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#records">Keeping records</a></li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#guidance">Additional guidance and advice</a></li>
+          <li class="subcategory"><a class="govuk-link govuk-link--no-underline" href="#location">&#8213; Pick the right
+              location</a></li>
+          <li class="subcategory"><a class="govuk-link govuk-link--no-underline" href="#sizes">&#8213; Block and plot
+              sizes</a></li>
+          <li class="subcategory"><a class="govuk-link govuk-link--no-underline" href="#what-sow">&#8213; What to
+              sow</a></li>
+          <li class="subcategory"><a class="govuk-link govuk-link--no-underline" href="#how-sow">&#8213; How to sow</a>
+          </li>
+          <li class="subcategory"><a class="govuk-link govuk-link--no-underline" href="#management">&#8213;
+              Management</a></li>
+          <li class="subcategory"><a class="govuk-link govuk-link--no-underline" href="#ipm">&#8213; Integrated Pest
+              Management (IPM)</a></li>
+          <li class="subcategory"><a class="govuk-link govuk-link--no-underline" href="#bio">&#8213; Biodiversity</a>
+          </li>
+          <li><a class="govuk-link govuk-link--no-underline" href="#info">Further information and how to apply</a></li>
+        </ul>
+
+
+        <div class="govuk-inset-text">
+          This is an action in the Sustainable Farming Incentive (SFI) scheme: expanded offer for 2024. You must read
+          the <a class="class=govuk-link govuk-link"
+            href="https://www.gov.uk/government/publications/sustainable-farming-incentive-scheme-expanded-offer-for-2024">SFI
+            scheme information</a> to understand the scheme rules and how to apply.
+        </div>
+        <h2 class="govuk-heading-m">Duration</h2>
+        <p class="govuk-body">3 years</p>
+        <h2 id="cost" class="govuk-heading-m">How much will be paid</h2>
+        <p class=" govuk-body">£620 per ha</p>
+        <h2 id="where" class="govuk-heading-m">Where to use this option</h2>
+        <p class="govuk-body">Available for Countryside Stewardship Mid Tier and Higher Tier</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Whole or part parcel</li>
+          <li>Rotational</li>
+        </ul>
+        <p class="govuk-body">Only on:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>arable land</li>
+          <li>temporary grass</li>
+          <li>bush orchards</li>
+        </ul>
+        <h2 id="where-not" class="govuk-heading-m">Where this option cannot be used</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>On organic land or on land in conversion to organic status</li>
+        </ul>
+        <h2 id="environment" class="govuk-heading-m">How this option will benefit the environment</h2>
+        <p class="govuk-body">It provides areas of flowering plants to boost essential food sources for beneficial
+          pollinators such as bumble bees, solitary bees, butterflies and hoverflies.</p>
+        <h2 id="aims" class="govuk-heading-m">Aims</h2>
+        <div style=" background: #f3f2f1" class="govuk-!-padding-4">
+          <p class="govuk-body">
+            If you’re selected for a site visit, we will check that delivery of the aims is being met and the
+            prohibited
+            activities have not been carried out. This will ensure the environmental benefits are being delivered.
+          </p>
+        </div>
+        <hr class="govuk-section-break govuk-section-break--m">
+        <p class="govuk-body">
+          Establish in blocks or strips between 1 March and 15 September by sowing a grass-free seed mix which
+          contains
+          a minimum of 6 flower species. At least 2 of these must be from the following list.
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Common knapweed</li>
+          <li>Musk mallow</li>
+          <li>Oxeye daisy</li>
+          <li>Wild carrot</li>
+          <li>Yarrow</li>
+        </ul>
+        <p class="govuk-body">Once established in the first year, the seed mix, will provide a supply of pollen and
+          nectar rich flowers.</p>
+        <p class="govuk-body">Management will ensure there is sustained flowering throughout the spring and summer.
+        </p>
+        <p class="govuk-body">In the winter the whole plot of flowering plants will be cut or grazed, and the dead
+          material removed, in preparation for regrowth during the spring.</p>
+        <h2 id="activities" class="govuk-heading-m">Prohibited activities</h2>
+        <p class="govuk-body">To achieve the aims and deliver the environmental benefits, do not carry out any of the
+          following activities:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>graze between 15 March and 31 August</li>
+          <li>allow a single species to exceed 50% of the total seed mix by weight</li>
+        </ul>
+        <p class="govuk-body">On your annual claim you will be asked to declare that you have not carried out any
+          prohibited activities.</p>
+        <h2 id="management" class="govuk-heading-m">Recommended management</h2>
+        <p class="govuk-body">To assist you in achieving the aims and deliver the environmental benefits for this
+          option, we recommend that you use best practice.</p>
+        <p class="govuk-body">In the first 12 months after sowing you can regularly cut, to help the sown species to
+          establish.</p>
+        <p class="govuk-body">You then manage established nectar flower mix plots as follows.</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Rotationally cut half (50%) of the plot area each year between 15 May and 15 June – do not cut the same
+            area in successive years</li>
+          <li>Cut the whole plot (100%) each year between 15 September and 30 March</li>
+        </ul>
+        <p class="govuk-body">Remove or shred cuttings to prevent weed ingress and patches of dead material
+          developing.
+        </p>
+        <h2 id="records" class="govuk-heading-m">Keeping records</h2>
+        <p class="govuk-body">
+          Where there’s uncertainty about whether or not the aims of the options have been delivered, we will take
+          into
+          account any records or evidence you may have kept to demonstrate delivery of the aims of the option. This
+          will
+          include any steps you’ve taken to follow the recommended management set out above. It’s your responsibility
+          to
+          keep such records if you want to rely on these to support your claim.
+        </p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Seed invoices</li>
+          <li>Field operations at the parcel level, including associated invoices</li>
+          <li>Stock records to show grazing activity on parcels in particular to cover the period where grazing is
+            prohibited</li>
+          <li>Photographs of the established mixture</li>
+        </ul>
+        <h2 id="guidance" class="govuk-heading-m">Additional guidance and advice</h2>
+        <p class="govuk-body">The following advice is helpful, but they are not requirements for this item.</p>
+        <h3 id="location" class="govuk-heading-s" id="location">Pick the right location</h3>
+        <p class="govuk-body">Use lower-yielding areas with a sunny aspect, facing south or south-southwest.</p>
+        <p class="govuk-body">Avoid planting under overhanging trees, next to tall hedges or on land facing north or
+          east. Leave access to surrounding crops to allow for management.</p>
+        <h3 id="sizes" class="govuk-heading-s" id="sizes">Block and plot sizes</h3>
+        <p class="govuk-body">Use wide margins and big blocks between 0.25ha and 0.5ha. This lets insects move to
+          safety
+          when fields are being sprayed.</p>
+        <p class="govuk-body">Spacing five 0.5ha patches evenly within 100ha meets the food needs of many pollinators.
+        </p>
+        <h3 id="what-sow" class="govuk-heading-s" id="what-sow">What to sow</h3>
+        <p class="govuk-body">
+          A seed mix which contains both shorter-lived legumes and longer-lived wild flower species delivers an
+          extended
+          supply of pollen and nectar from late spring through to the autumn for beneficial insects such as bees,
+          butterflies, hoverflies and moths.
+        </p>
+        <p class="govuk-body">You can sow the following example mix on a range of soil types.</p>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Flower species</th>
+              <th scope="col" class="govuk-table__header">% inclusion rate</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Alsike clover</th>
+              <td class="govuk-table__cell">10</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Bird’s-foot trefoil</th>
+              <td class="govuk-table__cell">10</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Black medick</th>
+              <td class="govuk-table__cell">5</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Common vetch</th>
+              <td class="govuk-table__cell">40</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Early flowering red clover</th>
+              <td class="govuk-table__cell">10</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Late flowering red clover</th>
+              <td class="govuk-table__cell">10</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Lucerne</th>
+              <td class="govuk-table__cell">5</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Sweet clover</th>
+              <td class="govuk-table__cell">5</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Musk mallow</th>
+              <td class="govuk-table__cell">1</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Oxeye daisy</th>
+              <td class="govuk-table__cell">1</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Wild carrot</th>
+              <td class="govuk-table__cell">1</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Yarrow</th>
+              <td class="govuk-table__cell">0.5</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Total</th>
+              <td class="govuk-table__cell">100</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="govuk-body">Sow the seed mix at 15 kg/ha.</p>
+        <p class="govuk-body">On light free draining soils you can replace common vetch with sainfoin.</p>
+        <p class="govuk-body">Avoid short-term mixes that do not include knapweed or mallow as they will not supply
+          pollinators with long-term food sources for years 4 and 5 of the agreement.</p>
+        <h3 id="how-sow" class="govuk-heading-s" id="how-sow">How to sow</h3>
+        <p class="govuk-body">Sow by broadcasting seeds rather than drilling, when the soil is warm and moist. Use a
+          ring roll before and after sowing. Check regularly for slug damage.</p>
+        <h3 class="govuk-heading-s" id="management"> Management</h3>
+        <p class="govuk-body">
+          Cut emerging flowers and weeds at least twice in year 1, and up to 4 times if necessary where the soil is
+          particularly fertile. Regular cutting prevents weeds smothering the slow-growing flowers so all sown species
+          can establish successfully.
+        </p>
+        <p class="govuk-body">
+          Plots may be grazed between 1 September and 14 March, but make sure that no poaching or soil compaction by
+          livestock takes place. Supplementary feeding could result in poaching and soil compaction, so should be
+          avoided.
+        </p>
+        <p class="govuk-body">Remember you must keep nectar plots until at least 31 December in year 5 of the
+          agreement.
+        </p>
+        <h3 id="ipm" class="govuk-heading-s" id="ipm">Integrated Pest Management (IPM)</h3>
+        <p class="govuk-body">
+          This option can form part of an IPM approach to prevent the establishment of pests, weeds and diseases. If
+          successful, appropriate and within
+          proximity of cropped areas, these may limit the need for the use of Plant Protection Products and enhance
+          wildlife and biodiversity on your holding.
+          Read information on IPM at <a href="https://ahdb.org.uk/integrated-pest-management-ipm"
+            class="govuk-link">AHDB
+            (Agriculture and Horticulture Development Board) Integrated Pest Management</a>
+          and <a href="https://leaf.eco/">LEAF (Linking Environment and Farming)</a>.
+        </p>
+        <h3 id="bio" class="govuk-heading-s" id="bio">Biodiversity</h3>
+
+        <table class="govuk-table">
+          <caption class="govuk-table__caption govuk-table__caption--m">Month you apply</caption>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class">Date</th>
+              <th scope="col" class="govuk-table__header app-custom-class">Rate for vehicles</th>
+              <th scope="col" class="govuk-table__header app-custom-class">Rate for bicycles</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">First 6 weeks</th>
+              <td class="govuk-table__cell">£109.80 per week</td>
+              <td class="govuk-table__cell">£59.10 per week</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+              <td class="govuk-table__cell">£159.80 per week</td>
+              <td class="govuk-table__cell">£89.10 per week</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total estimated pay</th>
+              <td class="govuk-table__cell">£4,282.20</td>
+              <td class="govuk-table__cell">£2,182.20</td>
+            </tr>
+          </tbody>
+        </table>
+        <p class="govuk-body">
+          This option has been identified as being beneficial for biodiversity. All Countryside Stewardship habitat
+          creation, restoration and management options are of great significance for biodiversity recovery, as are the
+          wide range of arable options in the scheme. Capital items and supplements can support this habitat work
+          depending on the holding’s situation and potential.
+        </p>
+        <p class="govuk-body">
+          The connectivity of habitats is also very important and habitat options should be linked wherever possible.
+          Better connectivity will allow wildlife to move/colonise freely to access water, food, shelter and breeding
+          habitat, and will allow natural communities of both animals and plants to adapt in response to environmental
+          and climate change. 
+        </p>
+        <h3 class="govuk-heading-s" id="info">Further information and how to apply</h3>
+        <p class="govuk-body">
+          Read
+          <a href="https://www.gov.uk/guidance/countryside-stewardship-get-funding-to-protect-and-improve-the-land-you-manage"
+            class="govuk-link">Countryside Stewardship guidance</a>
+          to find out more information about Mid Tier and Higher Tier including how to apply.
+        </p>
+        <p class="govuk-body">Order the ‘Growing farm wildlife’ DVD from Natural England which gives a step-by-step
+          approach to sowing nectar flower mixtures.</p>
+
+
+        <hr class="custom-separator-2">
+
+        <p class="date-style govuk-body-s top-bottom-date">Published 21 May 2024</p>
+        <p class="date-style govuk-body-s bottom-date">Last updated 27 March 2025</p>
+
+
+        <a href="#content-title" class="govuk-link govuk-link">
+          <svg class="gem-c-back-to-top-link__icon" xmlns="http://www.w3.org/2000/svg" width="13" height="17"
+            viewBox="0 0 13 17" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M6.5 0L0 6.5 1.4 8l4-4v12.7h2V4l4.3 4L13 6.4z"></path>
+          </svg>
+          Contents
+        </a>
+
+
+
+
+
+
+      </div>
+  </main>
+</div>
+
+
+{% endblock %}

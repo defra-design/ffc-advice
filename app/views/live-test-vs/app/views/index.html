@@ -1,0 +1,498 @@
+{% extends "layouts/main.html" %}
+
+{% set pageName="Home" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+  	 <span class="govuk-caption-l">Farming grant options finder Prototypes</span>
+  	  
+    </h1>
+
+  </div>
+</div>
+
+<!-- CURRENT SPRINT -->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div style="border:5px solid SteelBlue; background: GhostWhite" class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+    	<h2 class="govuk-heading-l">Find Team - Beta</h2>
+  	
+
+      <!-- CONTENT -->
+      <h3 class="govuk-heading-s">Summary</h3>
+      <p class="govuk-body-s"> To be added </p>
+
+
+          <h3 class="govuk-heading-s">Prototype links</h3>
+          <div class="govuk-grid-row govuk-!-margin-bottom-2">
+            <div class="govuk-grid-column-full">
+              <ul class="govuk-list govuk-!-margin-bottom-5">
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="Beta/GenAI/">Gen AI prototype</a><br>
+                  <a class="govuk-link govuk-link--no-visited-state" href="Beta/SP-MVP/home.html">SP MVP prototype</a><br>
+                  <a class="govuk-link govuk-link--no-visited-state" href="Beta/SP-plus/Filter/Email.html">Specialist Publisher prototype</a>
+
+                </li>
+              </ul> 
+
+              <h3 class="govuk-heading-s">Testing links</h3>
+              <div class="govuk-grid-row govuk-!-margin-bottom-2">
+                <div class="govuk-grid-column-full">
+                  <ul class="govuk-list govuk-!-margin-bottom-5">
+                    
+                    <li><a class="govuk-link govuk-link--no-visited-state" href="Beta/SP-MVP/google.html">Specialist Publisher prototype</a></li>
+                    <li><a class="govuk-link govuk-link--no-visited-state" href="">Gen AI prototype</a><br></li>
+                   
+                  </ul> 
+
+        
+
+        
+          <!-- END CONTENT -->
+
+    		</div>
+      <div class="govuk-grid-column-one-half">
+      </div>
+  	</div>
+  </div>
+  <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+</div>
+</div>
+
+<!-- END CURRENT SPRINT -->
+
+
+<!--
+============================================================================
+Previous phases
+============================================================================
+-->
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <h2 class="govuk-heading-l">Beta Sprints</h2>
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default"><div class="govuk-accordion__controls">
+      <button type="button" class="govuk-accordion__open-all" aria-expanded="false"><span class="govuk-visually-hidden"></span></button>
+    </div>
+
+                <!-- Beta Usability testing round 1 -->
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                    <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+                      Iterations based on Usability testing session – Round 1
+                      </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-full">
+                        <div class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+            
+               <!-- CONTENT -->
+               <h3 class="govuk-heading-s">Categories and search</h3>
+               <ul class="govuk-list govuk-list--bullet">
+                  <li>Swapped order of Land types and Area of interest</li>
+                  <li>Removed Funding types from categories but kept in facets for further testing</li>
+                  <li>Open and Closed – changed to Open (available) and Closed (not available)</li>
+                  <li>Removed content from above Search input box and added new content to body</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">FETF and SIG</h3>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>Moved to closed</li>
+                  <li>H1 revised to include [CLOSED]</li>
+                  <li>Facets changed to closed</li>
+                  <li>Inset text changed to include this scheme is closed and link to funding for farmers added</li>
+                  <li>Inset text added to display theme (FETF only)</li>
+                  <li>Removed apply content from Further information section</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">SFI and CS</h3>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>Contents – Added Further information and how to apply and consequent section</li>
+                  <li>Inset test revised to display scheme – SFI or CS</li>
+                  <li>Further information and how to apply section – content revised</li>
+                  <li>Abbreviation markup, added to tables (SFI)</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">Body text</h3>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>Added more context to say number of grants will increase</li>
+                  <li>Added content to encourage users to use the search input box and categories to filter</li>
+                  <li>Removed link to Funding for farmers</li>
+              </ul>
+
+              <h3 class="govuk-heading-s">Other</h3>
+              <ul class="govuk-list govuk-list--bullet">
+                  <li>Error handling when there are 0 results found (matches with search input and checkbox selection)</li>
+                  <li>Submit on Keypress – Enter on Google page and Finder search input box</li>
+                  <li>H1 changed to Search for farming grants from Farming grants options finder</li>
+              </ul>
+              <h2 class="govuk-heading-l">Alpha Sprints</h2>
+
+
+
+
+    <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default"><div class="govuk-accordion__controls">
+      <button type="button" class="govuk-accordion__open-all" aria-expanded="false"><span class="govuk-visually-hidden"></span></button>
+    </div>
+
+                <!-- Find Team Sprint 5 (Alpha) -->
+                <div class="govuk-accordion__section">
+                  <div class="govuk-accordion__section-header">
+                    <h2 class="govuk-accordion__section-heading">
+                    <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+                    Find Team Sprint 5 untested
+                      </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
+                  </div>
+                  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                    <div class="govuk-grid-row">
+                      <div class="govuk-grid-column-full">
+                        <div class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+            
+               <!-- CONTENT -->
+               <h3 class="govuk-heading-s">Summary</h3>
+               <p class="govuk-body-s">5th Iteration of prototypes</p>
+               <ul class="govuk-list govuk-list--bullet" style="margin-top: -20px">
+                 <li class="govuk-body-s">No testing took place</li>
+                 <li>New email prompt screen</li>
+                 <li>Different filtering approaches
+                     - Start page with split decision) 
+                     - Search by default
+                     -  Combination of Search, selects or checkboxes to filter cards dynamically - WIP)
+                 </li>
+                 <li> Visual hierarchy of grant / options cards (3 options)</li>
+                 <li> Accordions fixed show / hide functionality and resized</li>
+                 <li> Accordions fixed show / hide functionality and resized</li>
+                 <li> New shortlist page including print, download and share functionality</li>
+                 <li> Updated filters screen 5 columns </li>
+                 <li> New sign in / signed in pages (possible merge with RPA)</li>
+          
+              </ul>
+               
+          
+               <h3 class="govuk-heading-s">Individual Prototypes</h3>
+               <div class="govuk-grid-row govuk-!-margin-bottom-2">
+                 <div class="govuk-grid-column-full">
+                   <p class="govuk-body-s"></p>
+                   <ul class="govuk-list govuk-!-margin-bottom-5">
+                     <li>
+                       <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_5/Cards/Email.html">Cards</a> 
+                     </li>
+                     <li>
+                       <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_5/Filter/Email.html">Filter</a> 
+                     </li>
+                   </ul> 
+            
+                 
+            
+                
+                   <!-- END CONTENT -->
+                  </div>
+                  <div class="govuk-grid-column-one-half">
+                  </div>
+                  </div>
+                  </div>
+                  <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+                  </div>
+                  </div>
+                  </div>
+                  </div>
+        <!-- Find Team Sprint 4 (Alpha) -->
+        <div class="govuk-accordion__section">
+          <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+            <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+            Find Team Sprint 4
+              </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
+          </div>
+          <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                <div class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+    
+       <!-- CONTENT -->
+       <h3 class="govuk-heading-s">Summary</h3>
+       <p class="govuk-body-s">4th Iteration of prototypes</p>
+       <ul class="govuk-list govuk-list--bullet" style="margin-top: -20px">
+         <li class="govuk-body-s">Conduct 4th round of user testing</li>
+       </ul>
+       
+       <h3 class="govuk-heading-s">Testing Prototypes</h3>
+       <ul class="govuk-list govuk-!-margin-bottom-5">
+         <li>
+           <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Testing_Version_4/Testing-Index.html">Testing Index page</a>
+         </li>
+       </ul>
+       <h3 class="govuk-heading-s">Individual Prototypes</h3>
+       <div class="govuk-grid-row govuk-!-margin-bottom-2">
+         <div class="govuk-grid-column-full">
+           <p class="govuk-body-s">(Not for testing)</p>
+           <ul class="govuk-list govuk-!-margin-bottom-5">
+             <li>
+               <a class="govuk-link govuk-link--no-visited-state" href="/Alpha/Version_4/Cards/Email.html">Cards</a> 
+             </li>
+             <li>
+               <a class="govuk-link govuk-link--no-visited-state" href="/Alpha/Version_4/Filter/Email.html">Filter</a> 
+             </li>
+           </ul> 
+    
+         
+    
+        
+           <!-- END CONTENT -->
+          </div>
+          <div class="govuk-grid-column-one-half">
+          </div>
+          </div>
+          </div>
+          <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+          </div>
+          </div>
+          </div>
+          </div>
+
+    <!-- Find Team Sprint 3 (Alpha) -->
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+        <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+        Find Team Sprint 3
+          </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
+      </div>
+      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+   <!-- CONTENT -->
+   <h3 class="govuk-heading-s">Summary</h3>
+   <p class="govuk-body-s">3rd Iteration of prototypes</p>
+   <ul class="govuk-list govuk-list--bullet" style="margin-top: -20px">
+     <li class="govuk-body-s">Conduct 3rd round of user testing</li>
+     <li class="govuk-body-s">Prep for 4th and final round of user testing</li>
+   </ul>
+   
+    
+   <h3 class="govuk-heading-s">Individual Prototypes</h3>
+   <div class="govuk-grid-row govuk-!-margin-bottom-2">
+     <div class="govuk-grid-column-full">
+       <p class="govuk-body-s">(Not for testing)</p>
+       <ul class="govuk-list govuk-!-margin-bottom-5">
+         <li>
+           <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_3/AI:NLP/Emailai.html">AI/NLP Text box</a> 
+         </li>
+         <li>
+           <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_3/Hybrid/Email.html">Hybrid</a> 
+         </li>
+       </ul> 
+
+     
+
+    
+       <!-- END CONTENT -->
+      </div>
+      <div class="govuk-grid-column-one-half">
+      </div>
+      </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      </div>
+      </div>
+      </div>
+    </div>
+
+    <!-- Find Team Sprint 2 (Alpha) -->
+    <div class="govuk-accordion__section">
+      <div class="govuk-accordion__section-header">
+        <h2 class="govuk-accordion__section-heading">
+        <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+        Find Team Sprint 2
+          </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
+      </div>
+      <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+    <!-- CONTENT -->
+    <h3 class="govuk-heading-s">Summary</h3>
+    <p class="govuk-body-s">2nd Iteration of prototypes</p>
+    <ul class="govuk-list govuk-list--bullet" style="margin-top: -20px">
+      <li class="govuk-body-s">Conduct 2nd round of user testing</li>
+      <li class="govuk-body-s">Prep for 3rd round of user testing</li>
+      <li class="govuk-body-s">AI/NLP</li>
+      <li class="govuk-body-s">Wizard and Filter combination</li>
+    </ul>
+    
+   <h3 class="govuk-heading-s">Individual Prototypes</h3>
+    <div class="govuk-grid-row govuk-!-margin-bottom-2">
+      <div class="govuk-grid-column-full">
+        <p class="govuk-body-s">(Not for testing)</p>
+        <ul class="govuk-list govuk-!-margin-bottom-5">
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_3/AI:NLP/Emailai.html">AI/NLP Text box</a> 
+          </li>
+          <li>
+            <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_3/Hybrid/Email.html">Hybrid</a> 
+          </li>
+        </ul> 
+
+      
+
+        
+        <!-- END CONTENT -->
+      </div>
+      <div class="govuk-grid-column-one-half">
+      </div>
+      </div>
+      </div>
+      <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+      </div>
+      </div>
+      </div>
+      </div>
+
+
+  <!-- Find Team Sprint 1 -->
+  <div class="govuk-accordion__section">
+    <div class="govuk-accordion__section-header">
+      <h2 class="govuk-accordion__section-heading">
+      <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+        Find Team Sprint 1
+        </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
+    </div>
+    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+            <h3 class="govuk-heading-s">Summary</h3>
+            <p class="govuk-body-s">1st Iteration of prototypes</p>
+            <ul class="govuk-list govuk-list--bullet" style="margin-top: -20px">
+              <li class="govuk-body-s">Smart answer wizard</li>
+              <li class="govuk-body-s">Reactive filter (Smoke and Mirrors) with shortlist functionality</li>
+              <li class="govuk-body-s">New Funding for farmers</li>
+            </ul>
+            
+   
+            <h3 class="govuk-heading-s">Individual Prototypes</h3>
+            <div class="govuk-grid-row govuk-!-margin-bottom-2">
+              <div class="govuk-grid-column-full">
+                <p class="govuk-body-s">(Not for testing)</p>
+                <ul class="govuk-list govuk-!-margin-bottom-5">
+                  <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/Alpha/Version_2/Wizard/startwiz.html">Smart Answer Wizard </a> 
+                  </li>
+                  <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="/Alpha/Version_2/Filter/filterstart.html">Reactive Filter</a>
+                  </li>
+                  <li>
+                    <a class="govuk-link govuk-link--no-visited-state" href="https://www.gov.uk/guidance/funding-for-farmers">Funding for farmers</a> 
+                  </li>
+ 
+                </ul> 
+      
+
+<!-- END CONTENT -->
+
+</div>
+<div class="govuk-grid-column-one-half">
+</div>
+</div>
+</div>
+<hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl">
+</div>
+</div>
+</div>
+</div>
+    
+<!--  Find Team Sprint 0 -->
+
+<div class="govuk-accordion__section">
+  <div class="govuk-accordion__section-header">
+    <h2 class="govuk-accordion__section-heading">
+    <button type="button" id="accordion-default-heading-1" aria-controls="accordion-default-content-1" class="govuk-accordion__section-button" aria-expanded="false">
+    Find Team Sprint 0 (Start Alpha)
+      </button><span class="govuk-accordion__icon" aria-hidden="true"></span></h2>
+  </div>
+  <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <div class="govuk-!-padding-6 govuk-!-margin-bottom-8">
+
+          <!-- CONTENT -->
+          <h3 class="govuk-heading-s">Summary</h3>
+          <p class="govuk-body-s">Creation of prototypes</p>
+          <ul class="govuk-list govuk-list--bullet" style="margin-top: -20px">
+            <li class="govuk-body-s">Wizard with questions and conditional code </li>
+            <li class="govuk-body-s">Filter based upon Specialist Publisher</li>
+            <li class="govuk-body-s">Funding for farmers</li>
+          </ul>
+          
+          <h3 class="govuk-heading-s">Testing Prototypes</h3>
+              <ul class="govuk-list govuk-!-margin-bottom-5">
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="/Alpha/TestingVersion_1/Testing-Index.html">Testing Index page</a>
+                </li>
+              </ul>
+    
+          <h3 class="govuk-heading-s">Individual Prototypes</h3>
+          <div class="govuk-grid-row govuk-!-margin-bottom-2">
+            <div class="govuk-grid-column-full">
+              <p class="govuk-body-s">(Not for testing)</p>
+              <ul class="govuk-list govuk-!-margin-bottom-5">
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_1/Wizard/startwiz.html">Wizard Questions</a> 
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_1/Filter/filternew.html">Filter</a>
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="https://www.gov.uk/guidance/funding-for-farmers">Funding for farmers</a> 
+                </li>
+                <li>
+                  <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_1/AI:NLP/NLP-Textbox.html">AI/NLP Text box</a> 
+                </li>
+              </ul> 
+    
+              <p class="govuk-body-s">Archived</p>
+              <ul class="govuk-list govuk-!-margin-bottom-5">
+              <li>
+                <a class="govuk-link govuk-link--no-visited-state" href="Alpha/Version_1/Content/fundingcontent.html">Content Page</a> 
+              </li>
+              </ul>
+    
+            
+    
+              
+            </div>
+            <div class="govuk-grid-column-one-half">
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+
+
+
+                  </div>
+              	</div>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+  </div>
+</div>
+
+
+{% endblock %}
+

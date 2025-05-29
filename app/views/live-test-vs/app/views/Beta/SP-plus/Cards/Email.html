@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %} {% block pageTitle %} Check your answers
+template – {{ serviceName }} – GOV.UK Prototype Kit {% endblock %} {% block
+beforeContent %} {{ govukBackLink({ text: "Back", href:
+"javascript:window.history.back()" }) }} {% endblock %} {% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+    <div
+      style="border: 5px solid rgb(65, 67, 69); background: GhostWhite"
+      class="govuk-!-padding-6 govuk-!-margin-bottom-8"
+    >
+      <p class="govuk-body">From: comms@defra.gov.uk</p>
+      <hr
+        class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4"
+      />
+      <p class="govuk-body">To: youremail@emailaddress.co.uk</p>
+      <hr
+        class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4"
+      />
+      <p class="govuk-body">Subject: New tool for funding and grants</p>
+      <hr
+        class="govuk-section-break govuk-section-break--visible govuk-!-margin-bottom-4"
+      />
+      <p class="govuk-body">Dear Participant,</p>
+      <p class="govuk-body">
+        We have created a new tool for you to check available funding and
+        grants.
+      </p>
+      <p class="govuk-body">
+        <a href="cardstart.html" class="govuk-link"
+          >Check available funding and grants.</a
+        >
+      </p>
+      <p class="govuk-body">Kind Regards,</p>
+      <p class="govuk-body">Defra</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
