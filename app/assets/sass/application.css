@@ -1,0 +1,20 @@
+/* Custom styles for the details component */
+.govuk-details__summary {
+  display: flex;
+  align-items: center;
+}
+
+.govuk-details__summary::before {
+  content: ">";
+  display: inline-block;
+  margin-right: 8px;
+  transform: rotate(45deg);
+  transition: transform 0.3s;
+}
+
+.govuk-details[open] .govuk-details__summary::before {
+  content: "<";
+  transform: rotate(-45deg);
+}
+
+/*# sourceMappingURL=application.css.map */
