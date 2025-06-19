@@ -183,17 +183,6 @@ module.exports = {
       url: 'SFI/Iteration2/AHL4.html'
     },
     {
-      name: 'Above ground steel slurry store',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality arable sig item sfi',
-      url: 'SIG/Iteration2/Above-ground-steel-slurry-store.html'
-    },
-    {
       name: 'BE2: Protection of in-field trees on intensive grassland',
       open: true,
       areaOfInterest: 'Trees',
