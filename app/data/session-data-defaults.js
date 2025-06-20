@@ -349,17 +349,6 @@ module.exports = {
       url: 'HT/CAGF4.html'
     },
     {
-      name: 'Cast in situ concrete reception pit',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Cast-in-situ-concrete-reception-pit.html'
-    },
-    {
       name: 'CBE4: Manage traditional orchards',
       open: true,
       areaOfInterest: 'Orchards',
@@ -466,17 +455,6 @@ module.exports = {
       grantTypes: 'CSHT',
       dataOptions: 'open moorland woodland vegetation trees csht',
       url: 'HT/CES6.html'
-    },
-    {
-      name: 'Centrifugal chopper pump',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Centrifugal-chopper-pump.html'
     },
     {
       name: 'CGS4: Herbal leys',
@@ -675,28 +653,6 @@ module.exports = {
       grantTypes: 'CSHT',
       dataOptions: 'open lowland csht biodiversity peat vegetation',
       url: 'HT/CLH3.html'
-    },
-    {
-      name: 'Concrete bunker to accommodate short term storage of stackable material from the slurry separator',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Concrete-bunker-to-accommodate-short-term-storage-of-stackable-material-from-the-slurry-separator.html'
-    },
-    {
-      name: 'Concrete pad for collection of stackable material from the slurry separator by trailer',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Concrete-pad-for-collection-of-stackable-material-from-the-slurry-separator-by-trailer.html'
     },
     {
       name: 'COP3: Supplementary winter bird food (organic land)',
@@ -1437,17 +1393,6 @@ module.exports = {
       url: 'HT/CWT16.html'
     },
     {
-      name: 'Earth bank lagoon with synthetic liner',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Earth-bank-lagoon-with-synthetic-liner.html'
-    },
-    {
       name: 'ED1: Educational access',
       open: true,
       areaOfInterest: 'Access',
@@ -1457,28 +1402,6 @@ module.exports = {
       grantTypes: 'SFI',
       dataOptions: 'open access moorland woodland option sfi',
       url: 'CS/Iteration2/ED1.html'
-    },
-    {
-      name: 'Earth bank lagoon without synthetic liner',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Earth-bank-lagoon-without-synthetic-liner.html'
-    },
-    {
-      name: 'Electric powered slurry transfer pump',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Electric-powered-slurry-transfer-pump.html'
     },
     {
       name: 'FETF1: Electronic tray filling machine',
@@ -1589,28 +1512,6 @@ module.exports = {
       grantTypes: 'SFI',
       dataOptions: 'closed pollinators wildlife vegetation arable item fetf sfi',
       url: 'FETF/Iteration2/FETF10.html'
-    },
-    {
-      name: 'Fixed flexible cover',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Fixed-flexible-cover.html'
-    },
-    {
-      name: 'Floating flexible cover',
-      open: false,
-      areaOfInterest: 'Air quality',
-      landTypes: undefined,
-      fundingTypes: 'Item',
-      grantSchemes: 'Slurry Infrastructure grant',
-      grantTypes: 'SFI',
-      dataOptions: 'closed air-quality sig item sfi',
-      url: 'SIG/Iteration2/Floating-flexible-cover.html'
     },
     {
       name: 'HRW1: Assess and record hedgerow condition',

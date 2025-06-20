@@ -953,7 +953,7 @@ beforeContent %}
       var pill = document.createElement('div');
       pill.id = 'pill-' + text;
       pill.className = 'pill';
-      pill.innerHTML = '' + text + '<span class="pill-close" onclick="removePill(this)">×</span>';
+      pill.innerHTML = text.toUpperCase() + '<span class="pill-close" onclick="removePill(this)">×</span>';
       pillContainer.appendChild(pill);
     }
 
