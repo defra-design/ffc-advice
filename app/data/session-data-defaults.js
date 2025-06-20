@@ -244,7 +244,7 @@ module.exports = {
       name: 'CAB10: Unharvested cereal headland',
       open: true,
       areaOfInterest: 'Biodiversity, Buffer strips',
-      landTypes: 'Arable, Farmyard, Woodland and forest, Moorland and upland',
+      landTypes: 'Arable',
       grantTypes: 'CSHT',
       dataOptions: 'open arable biodiversity csht buffer-strips',
       url: 'HT/CAB10.html'
@@ -264,7 +264,7 @@ module.exports = {
       areaOfInterest: 'Species recovery and management, Wildlife',
       landTypes: 'Arable, Lowland heath',
       grantTypes: 'CSHT',
-      dataOptions: 'open arable csht species wildlife',
+      dataOptions: 'open arable csht species lowland wildlife',
       url: 'HT/CAB12.html'
     },
     {
