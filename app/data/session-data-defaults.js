@@ -622,7 +622,7 @@ module.exports = {
       name: 'CHS9: Restrict crop establishment depth on historic and archaeological features',
       open: true,
       areaOfInterest: 'Historic and archaeological features, Precision farming equipment and machinery',
-      landTypes: 'Arable, ',
+      landTypes: 'Arable',
       grantTypes: 'CSHT',
       dataOptions: 'open csht arable historic precision',
       url: 'HT/CHS9.html'
@@ -1225,7 +1225,7 @@ module.exports = {
       name: 'CWD22: Manage wood pasture and parkland',
       open: true,
       areaOfInterest: 'Agroforestry, Trees',
-      landTypes: 'Grassland,  Wood pasture',
+      landTypes: 'Grassland, Wood pasture',
       grantTypes: 'CSHT',
       dataOptions: 'open agroforestry trees csht grassland wood-pasture',
       url: 'HT/CWD22.html'
@@ -1242,10 +1242,10 @@ module.exports = {
     {
       name: 'CWS2: Manage and restore plantations on ancient woodland sites (PAWS) supplement',
       open: true,
-      areaOfInterest: 'Agroforestry, Trees',
+      areaOfInterest: 'Agroforestry, Historic and archaeological features, Trees',
       landTypes: 'Woodland and forest',
       grantTypes: 'CSHT',
-      dataOptions: 'open agroforestry trees csht woodland',
+      dataOptions: 'open agroforestry trees csht woodland historic',
       url: 'HT/CWS2.html'
     },
     {
@@ -1281,7 +1281,7 @@ module.exports = {
       areaOfInterest: 'Agroforestry, Historic and archaeological features, Trees',
       landTypes: 'Woodland and forest',
       grantTypes: 'CSHT',
-      dataOptions: 'open arable trees farmyard csht woodland moorland upland pollinators biodiversity buffer-strips option water',
+      dataOptions: 'open trees csht woodland agroforestry historic',
       url: 'HT/CWS8.html'
     },
     {
@@ -1344,7 +1344,7 @@ module.exports = {
       areaOfInterest: 'Peat, Water availability and storage',
       landTypes: 'Wetland',
       grantTypes: 'CSHT',
-      dataOptions: 'open wetland csht peat water-av storage',
+      dataOptions: 'open wetland csht peat water-av',
       url: 'HT/CWT10.html'
     },
     {
@@ -1359,10 +1359,10 @@ module.exports = {
     {
       name: 'CWT13: Manage and restore fen, reedbed and wetland mosaics',
       open: true,
-      areaOfInterest: 'Buffer strips',
-      landTypes: 'Arable, Coastal, Farmyard, Lowland heath, Wetland',
+      areaOfInterest: 'Biodiversity, Peat',
+      landTypes: 'Wetland',
       grantTypes: 'CSHT',
-      dataOptions: 'open arable coastal farmyard csht lowland wetland pollinators biodiversity buffer-strips option water',
+      dataOptions: 'open wetland csht biodiversity peat',
       url: 'HT/CWT13.html'
     },
     {
