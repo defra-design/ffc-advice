@@ -176,8 +176,8 @@ beforeContent %}
   }
 
   .govuk-body a {
-    font-size: 19px;
-    /* Adjust this value to make the link text smaller */
+    font-size: inherit;
+    /* Inherit the font size from the parent element */
     color: #1d70b8;
     text-decoration: underline;
   }
@@ -260,6 +260,11 @@ beforeContent %}
     margin-bottom: -15px;
 
   }
+
+  .smaller-font {
+    font-size: 0.9em;
+    /* Adjust this value to make the font smaller */
+  }
 </style>
 
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -272,7 +277,8 @@ beforeContent %}
           Private Beta
         </strong>
         <span class="govuk-phase-banner__text">
-          This is a new tool – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.
+          This is a new tool – your <a class="govuk-link" href="#">feedback</a> will help us to improve it. <a
+            class="govuk-link" href="/reset">Reset session</a>
         </span>
       </p>
     </div>
@@ -280,15 +286,18 @@ beforeContent %}
       <h1 class="govuk-heading-xl" style="margin-top: 20px;">
         Find funding for land or farms
       </h1>
-      <a href="/reset" class="govuk-button govuk-button--secondary" style="margin-top: 20px;">
-        Reset prototype
-      </a>
-
-      <p class="govuk-body"> From: <b><a
-            href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs">Department
-            for Environment, Food &amp; Rural Affairs</a> </b> and <b><a class="govuk-link"
-            href="https://www.gov.uk/government/organisations/rural-payments-agency"> Rural Payments
-            Agency</a> </b></p>
+      <p class="govuk-body smaller-font">
+        From: <b>
+          <a href="https://www.gov.uk/government/organisations/department-for-environment-food-rural-affairs">
+            Department for Environment, Food & Rural Affairs
+          </a>
+        </b> and
+        <b>
+          <a class="govuk-link" href="https://www.gov.uk/government/organisations/rural-payments-agency">
+            Rural Payments Agency
+          </a>
+        </b>
+      </p>
       <p class="govuk-body">Find out about grants and funding for farmers and land managers in England.
         We will add more grants and funding as we develop this tool.
       </p>
