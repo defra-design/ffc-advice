@@ -759,101 +759,44 @@ beforeContent %}
 
     function filterResults() {
       console.log("filterResults() triggered");
-      // Get the checkboxes
-      var checkboxAccess = document.getElementById('access');
-      var checkboxAgroforestry = document.getElementById('agroforestry');
-      var checkboxBiodiversity = document.getElementById('biodiversity');
-      var checkboxBoundaries = document.getElementById('boundaries');
-      var checkboxBufferStrips = document.getElementById('buffer-strips');
-      var checkboxFlood = document.getElementById('flood');
-      var checkboxHistoric = document.getElementById('historic');
-      var checkboxIntegrated = document.getElementById('integrated');
-      var checkboxLivestock = document.getElementById('livestock');
-      var checkboxOrchards = document.getElementById('orchards');
-      var checkboxOrganic = document.getElementById('organic');
-      var checkboxPeat = document.getElementById('peat');
-      var checkboxPollinators = document.getElementById('pollinators');
-      var checkboxPrecision = document.getElementById('precision');
-      var checkboxSpecies = document.getElementById('species');
-      var checkboxSoil = document.getElementById('soil');
-      var checkboxTrees = document.getElementById('trees');
-      var checkboxVegetation = document.getElementById('vegetation');
-      var checkboxWater = document.getElementById('water-av');
-      var checkboxWaterQu = document.getElementById('water-qu');
-      var checkboxWildlife = document.getElementById('wildlife');
-      var checkboxArable = document.getElementById('arable');
-      var checkboxCoastal = document.getElementById('coastal');
-      var checkboxFarmyard = document.getElementById('farmyard');
-      var checkboxGrassland = document.getElementById('grassland');
-      var checkboxLowland = document.getElementById('lowland');
-      var checkboxMoorland = document.getElementById('moorland');
-      var checkboxScrub = document.getElementById('scrub');
-      var checkboxHabitat = document.getElementById('habitat');
-      var checkboxWaterbodies = document.getElementById('waterbodies');
-      var checkboxWetland = document.getElementById('wetland');
-      var checkboxWoodland = document.getElementById('woodland');
-      var checkboxWoodpasture = document.getElementById('wood-pasture');
+
+      // Get the checkboxes for SFI and CSHT
       var checkboxSFI = document.getElementById('sfi');
       var checkboxCSHT = document.getElementById('csht');
-      var searchBoxInputText = document.getElementById('searchInput').value.toLowerCase();
+      var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 
       // Get the list of results
       var resultsList = document.getElementById('results');
-      // Get the list items inside the results list
       var items = resultsList.getElementsByTagName('li');
       var resultsCount = 0;
-      var searchQuery = document.getElementById('searchInput').value.toLowerCase();
 
-      // Create an array of selected filters
-      var selectedFilters = [];
-      if (checkboxAccess.checked) selectedFilters.push('access');
-      if (checkboxAgroforestry.checked) selectedFilters.push('agroforestry');
-      if (checkboxBiodiversity.checked) selectedFilters.push('biodiversity');
-      if (checkboxBoundaries.checked) selectedFilters.push('boundaries');
-      if (checkboxBufferStrips.checked) selectedFilters.push('buffer-strips');
-      if (checkboxFlood.checked) selectedFilters.push('flood');
-      if (checkboxHistoric.checked) selectedFilters.push('historic');
-      if (checkboxIntegrated.checked) selectedFilters.push('integrated');
-      if (checkboxLivestock.checked) selectedFilters.push('livestock');
-      if (checkboxOrchards.checked) selectedFilters.push('orchards');
-      if (checkboxOrganic.checked) selectedFilters.push('organic');
-      if (checkboxPeat.checked) selectedFilters.push('peat');
-      if (checkboxPollinators.checked) selectedFilters.push('pollinators');
-      if (checkboxPrecision.checked) selectedFilters.push('precision');
-      if (checkboxSpecies.checked) selectedFilters.push('species');
-      if (checkboxSoil.checked) selectedFilters.push('soil');
-      if (checkboxTrees.checked) selectedFilters.push('trees');
-      if (checkboxVegetation.checked) selectedFilters.push('vegetation');
-      if (checkboxWater.checked) selectedFilters.push('water-av');
-      if (checkboxWaterQu.checked) selectedFilters.push('water-qu');
-      if (checkboxWildlife.checked) selectedFilters.push('wildlife');
-      if (checkboxArable.checked) selectedFilters.push('arable');
-      if (checkboxCoastal.checked) selectedFilters.push('coastal');
-      if (checkboxGrassland.checked) selectedFilters.push('grassland');
-      if (checkboxFarmyard.checked) selectedFilters.push('farmyard');
-      if (checkboxLowland.checked) selectedFilters.push('lowland');
-      if (checkboxMoorland.checked) selectedFilters.push('moorland');
-      if (checkboxScrub.checked) selectedFilters.push('scrub');
-      if (checkboxHabitat.checked) selectedFilters.push('habitat');
-      if (checkboxWaterbodies.checked) selectedFilters.push('waterbodies');
-      if (checkboxWetland.checked) selectedFilters.push('wetland');
-      if (checkboxWoodland.checked) selectedFilters.push('woodland');
-      if (checkboxWoodpasture.checked) selectedFilters.push('wood-pasture');
-      if (checkboxSFI.checked) selectedFilters.push('sfi');
-      if (checkboxCSHT.checked) selectedFilters.push('csht');
+      // Create an array of selected grant type filters (SFI and CSHT)
+      var selectedGrantTypes = [];
+      if (checkboxSFI.checked) selectedGrantTypes.push('sfi');
+      if (checkboxCSHT.checked) selectedGrantTypes.push('csht');
 
-      // Loop through the list items and show/hide based on checkbox selection and search query
+      // Get other filters (land type and area of interest)
+      var selectedOtherFilters = [];
+      var filterCheckboxes = document.querySelectorAll('.govuk-checkboxes__input:not(#sfi):not(#csht)');
+      filterCheckboxes.forEach(checkbox => {
+        if (checkbox.checked) selectedOtherFilters.push(checkbox.value);
+      });
+
+      // Loop through the list items and show/hide based on filters
       var filteredItems = [];
       for (var i = 0; i < items.length; i++) {
         var item = items[i];
         var options = item.getAttribute('data-options').split(' '); // Split options into an array
         var containsSearchQuery = item.textContent.toLowerCase().includes(searchQuery);
 
-        // Check if the item matches at least one of the selected filters
-        var matchesFilter = selectedFilters.length === 0 ||
-          selectedFilters.some(filter => options.includes(filter));
+        // Check if the item matches the selected grant type filters (SFI or CSHT)
+        var matchesGrantType = selectedGrantTypes.length === 0 || selectedGrantTypes.some(filter => options.includes(filter));
 
-        if (containsSearchQuery && matchesFilter) {
+        // Check if the item matches the selected land type and area of interest filters (accumulative logic)
+        var matchesOtherFilters = selectedOtherFilters.length === 0 || selectedOtherFilters.some(filter => options.includes(filter));
+
+        // Show the item if it matches the grant type and accumulative filters
+        if (containsSearchQuery && matchesGrantType && matchesOtherFilters) {
           filteredItems.push(item);
         }
       }
@@ -883,7 +826,7 @@ beforeContent %}
       clearPills();
       // Create pills for selected filters
       searchQuery != '' ? createPill(searchQuery) : null;
-      selectedFilters.forEach(filter => createPill(filter));
+      selectedGrantTypes.concat(selectedOtherFilters).forEach(filter => createPill(filter));
 
       // Update the results count and pagination
       document.getElementById("resultsCount").innerHTML = resultsCount;
